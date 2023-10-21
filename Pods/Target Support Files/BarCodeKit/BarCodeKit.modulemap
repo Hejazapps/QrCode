@@ -1,0 +1,6 @@
+framework module BarCodeKit {
+  umbrella header "BarCodeKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,16 @@
+${PODS_ROOT}/Target Support Files/Pods-QrCodeMaker/Pods-QrCodeMaker-frameworks.sh
+${BUILT_PRODUCTS_DIR}/BarCodeKit/BarCodeKit.framework
+${BUILT_PRODUCTS_DIR}/CDCodabarView/CDCodabarView.framework
+${BUILT_PRODUCTS_DIR}/EAN13BarcodeGenerator/EAN13BarcodeGenerator.framework
+${BUILT_PRODUCTS_DIR}/EANBarcodeGenerator/EANBarcodeGenerator.framework
+${BUILT_PRODUCTS_DIR}/EFQRCode/EFQRCode.framework
+${BUILT_PRODUCTS_DIR}/IHProgressHUD/IHProgressHUD.framework
+${BUILT_PRODUCTS_DIR}/KRActivityIndicatorView/KRActivityIndicatorView.framework
+${BUILT_PRODUCTS_DIR}/KRProgressHUD/KRProgressHUD.framework
+${BUILT_PRODUCTS_DIR}/QRCode/QRCode.framework
+${BUILT_PRODUCTS_DIR}/RSBarcodes_Swift/RSBarcodes_Swift.framework
+${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework
+${BUILT_PRODUCTS_DIR}/SwiftImageReadWrite/SwiftImageReadWrite.framework
+${BUILT_PRODUCTS_DIR}/SwiftQRCodeGenerator/QRCodeGenerator.framework
+${BUILT_PRODUCTS_DIR}/SwiftyStoreKit/SwiftyStoreKit.framework
+${BUILT_PRODUCTS_DIR}/ZXingObjC/ZXingObjC.framework
