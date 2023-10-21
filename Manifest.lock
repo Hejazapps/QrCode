@@ -1,0 +1,89 @@
+PODS:
+  - BarCodeKit (1.4.0)
+  - CDCodabarView (1.1.0)
+  - EAN13BarcodeGenerator (0.2.0)
+  - EANBarcodeGenerator (0.2.0)
+  - EFQRCode (5.1.9):
+    - EFQRCode/Core (= 5.1.9)
+  - EFQRCode/Core (5.1.9)
+  - IHProgressHUD (0.1.4)
+  - KRActivityIndicatorView (3.0.7)
+  - KRProgressHUD (3.4.7):
+    - KRActivityIndicatorView (= 3.0.7)
+  - QRCode (15.0.0):
+    - SwiftImageReadWrite (~> 1.1.6)
+    - SwiftQRCodeGenerator
+  - RSBarcodes_Swift (5.2.0)
+  - SVProgressHUD (2.2.5)
+  - SwiftImageReadWrite (1.1.6)
+  - SwiftLint (0.52.4)
+  - SwiftQRCodeGenerator (1.0.3)
+  - SwiftyStoreKit (0.16.1)
+  - ZXingObjC (3.6.5):
+    - ZXingObjC/All (= 3.6.5)
+  - ZXingObjC/All (3.6.5)
+
+DEPENDENCIES:
+  - BarCodeKit
+  - CDCodabarView
+  - EAN13BarcodeGenerator
+  - EANBarcodeGenerator
+  - EFQRCode (~> 5.1.6)
+  - IHProgressHUD
+  - KRProgressHUD
+  - QRCode (from `https://github.com/dagronf/qrcode.git`, tag `15.0.0`)
+  - RSBarcodes_Swift
+  - SVProgressHUD
+  - SwiftLint
+  - SwiftyStoreKit
+  - ZXingObjC
+
+SPEC REPOS:
+  trunk:
+    - BarCodeKit
+    - CDCodabarView
+    - EAN13BarcodeGenerator
+    - EANBarcodeGenerator
+    - EFQRCode
+    - IHProgressHUD
+    - KRActivityIndicatorView
+    - KRProgressHUD
+    - RSBarcodes_Swift
+    - SVProgressHUD
+    - SwiftImageReadWrite
+    - SwiftLint
+    - SwiftQRCodeGenerator
+    - SwiftyStoreKit
+    - ZXingObjC
+
+EXTERNAL SOURCES:
+  QRCode:
+    :git: https://github.com/dagronf/qrcode.git
+    :tag: 15.0.0
+
+CHECKOUT OPTIONS:
+  QRCode:
+    :git: https://github.com/dagronf/qrcode.git
+    :tag: 15.0.0
+
+SPEC CHECKSUMS:
+  BarCodeKit: 216c78ff04ba206231a70fa75b83deb2bf051d3c
+  CDCodabarView: 1f7f388e99c328774dc64ccee4b013d734f89e11
+  EAN13BarcodeGenerator: 8b7c4746c25c2a42abd0ec22a669292dc82730f8
+  EANBarcodeGenerator: 61083e912254454e374d7ad88876970f9e21b942
+  EFQRCode: ac22e003a6aa09ec59ec48776c3560c024c95ba3
+  IHProgressHUD: a01846bfbb581c761c79747c67b08387c3bdfae3
+  KRActivityIndicatorView: ad69e89c4ce40c986cf580595be4829dcad0e35a
+  KRProgressHUD: a248f0bc6c9c2aed40a37b76e03ffecc7f85c887
+  QRCode: eabf9cbb131730ad02102f2d7152b348d8c1e31d
+  RSBarcodes_Swift: 416d11923d8dfff0e038a853d727d6c8254cb527
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SwiftImageReadWrite: 3508ec60fea50876964055b63558fdd02f132ba3
+  SwiftLint: 1cc5cd61ba9bacb2194e340aeb47a2a37fda00b3
+  SwiftQRCodeGenerator: c5cdef1603699784b07af0fd3cc1c2f45ac26ada
+  SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
+  ZXingObjC: fdbb269f25dd2032da343e06f10224d62f537bdb
+
+PODFILE CHECKSUM: b665c4e43fd3015c7c3ab0300be0a59d8094b5b9
+
+COCOAPODS: 1.11.3
