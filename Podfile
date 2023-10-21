@@ -32,7 +32,6 @@ end
   pod 'EFQRCode', '~> 5.1.6'
   pod 'RSBarcodes_Swift'
   pod 'EAN13BarcodeGenerator'
-  pod 'ZXingObjC'
   pod 'IHProgressHUD'
   pod 'SwiftyStoreKit'
   pod 'SVProgressHUD'
@@ -40,7 +39,7 @@ end
   pod 'EANBarcodeGenerator'
   pod 'BarCodeKit'
   pod 'SwiftyStoreKit'
-  pod 'SwiftLint'
   pod "KRProgressHUD"
+  pod 'ZXingObjC', :git => 'https://github.com/zxingify/zxingify-objc'
 
 end

@@ -10,7 +10,7 @@ import UIKit
 // MARK: - UIApplication extension ------------
 
 extension UIApplication {
-   public func topViewController(_ base: UIViewController? = nil) -> UIViewController? {
+    func topViewController(_ base: UIViewController? = nil) -> UIViewController? {
         let base = base ?? keyWindow?.rootViewController
         if let top = (base as? UINavigationController)?.topViewController {
             return topViewController(top)

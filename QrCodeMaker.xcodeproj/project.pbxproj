@@ -8,8 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3905623E2AA01DB700055103 /* Video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 3905623D2AA01DB700055103 /* Video.mp4 */; };
-		413A8F058E1F9F8863D4A5CC /* Pods_QrCodeMakerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD1961D36461C192182A9740 /* Pods_QrCodeMakerTests.framework */; };
-		C281102943CC08D2D8538920 /* Pods_QrCodeMaker_QrCodeMakerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DDC0C7A4E5A4878FB1977AC /* Pods_QrCodeMaker_QrCodeMakerUITests.framework */; };
+		C0E0FEF62D27BB2E04E1E83F /* Pods_QrCodeMaker_QrCodeMakerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 146BE22696B41A2C6DD57E28 /* Pods_QrCodeMaker_QrCodeMakerUITests.framework */; };
 		C809AB782A6BD53000160B4E /* FolderVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = C809AB772A6BD53000160B4E /* FolderVc.swift */; };
 		C809AB7A2A6C1CA600160B4E /* FolderDetailVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = C809AB792A6C1CA600160B4E /* FolderDetailVc.swift */; };
 		C814303B2A869F7700CE38C9 /* QrcOodearray.swift in Sources */ = {isa = PBXBuildFile; fileRef = C814303A2A869F7700CE38C9 /* QrcOodearray.swift */; };
@@ -96,8 +95,9 @@
 		C8B044862A57048800AB9C53 /* Position maker in Resources */ = {isa = PBXBuildFile; fileRef = C8B044852A57048800AB9C53 /* Position maker */; };
 		C8B8765A2A8FB24C00864957 /* SubscriptionVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B876592A8FB24C00864957 /* SubscriptionVc.swift */; };
 		C8F30BA92A591F8300DECA4C /* Body Shape in Resources */ = {isa = PBXBuildFile; fileRef = C8F30BA82A591F8300DECA4C /* Body Shape */; };
+		E448E33F0468AA1E6F1EC2A7 /* Pods_QrCodeMakerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A744D2D895C1C0DB02C8E5 /* Pods_QrCodeMakerTests.framework */; };
 		F0AD3D102A86B0DE00A7789A /* VideoSplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AD3D0F2A86B0DE00A7789A /* VideoSplashViewController.swift */; };
-		F39B5B9E971B77B58919DF34 /* Pods_QrCodeMaker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAE4F100375E95D7DB829630 /* Pods_QrCodeMaker.framework */; };
+		F98D13CC860C4F73BF9BE1A0 /* Pods_QrCodeMaker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 560A83E9701480074BC27C57 /* Pods_QrCodeMaker.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,14 +118,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0CD2E4910B24AEEA08A8526A /* Pods-QrCodeMakerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QrCodeMakerTests.debug.xcconfig"; path = "Target Support Files/Pods-QrCodeMakerTests/Pods-QrCodeMakerTests.debug.xcconfig"; sourceTree = "<group>"; };
-		19F582C71217D05E8923FEE5 /* Pods-QrCodeMaker-QrCodeMakerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QrCodeMaker-QrCodeMakerUITests.release.xcconfig"; path = "Target Support Files/Pods-QrCodeMaker-QrCodeMakerUITests/Pods-QrCodeMaker-QrCodeMakerUITests.release.xcconfig"; sourceTree = "<group>"; };
-		1CEB062D97CABE6CB3986EDF /* Pods-QrCodeMakerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QrCodeMakerTests.release.xcconfig"; path = "Target Support Files/Pods-QrCodeMakerTests/Pods-QrCodeMakerTests.release.xcconfig"; sourceTree = "<group>"; };
-		1E402DE9A7741D56495C44EF /* Pods-QrCodeMaker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QrCodeMaker.release.xcconfig"; path = "Target Support Files/Pods-QrCodeMaker/Pods-QrCodeMaker.release.xcconfig"; sourceTree = "<group>"; };
+		146BE22696B41A2C6DD57E28 /* Pods_QrCodeMaker_QrCodeMakerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QrCodeMaker_QrCodeMakerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3905623D2AA01DB700055103 /* Video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Video.mp4; sourceTree = "<group>"; };
-		5DDC0C7A4E5A4878FB1977AC /* Pods_QrCodeMaker_QrCodeMakerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QrCodeMaker_QrCodeMakerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6B6C8D50FD9D769A7C127807 /* Pods-QrCodeMaker-QrCodeMakerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QrCodeMaker-QrCodeMakerUITests.debug.xcconfig"; path = "Target Support Files/Pods-QrCodeMaker-QrCodeMakerUITests/Pods-QrCodeMaker-QrCodeMakerUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		BD1961D36461C192182A9740 /* Pods_QrCodeMakerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QrCodeMakerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		430902186CC4F88528A4B98F /* Pods-QrCodeMaker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QrCodeMaker.release.xcconfig"; path = "Target Support Files/Pods-QrCodeMaker/Pods-QrCodeMaker.release.xcconfig"; sourceTree = "<group>"; };
+		44D4882A17311DC70BEC4FC8 /* Pods-QrCodeMakerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QrCodeMakerTests.debug.xcconfig"; path = "Target Support Files/Pods-QrCodeMakerTests/Pods-QrCodeMakerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4CB7BDAD49209CC4B5E9EBF9 /* Pods-QrCodeMakerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QrCodeMakerTests.release.xcconfig"; path = "Target Support Files/Pods-QrCodeMakerTests/Pods-QrCodeMakerTests.release.xcconfig"; sourceTree = "<group>"; };
+		560A83E9701480074BC27C57 /* Pods_QrCodeMaker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QrCodeMaker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		56F01B1A91C665B5D743EF4F /* Pods-QrCodeMaker-QrCodeMakerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QrCodeMaker-QrCodeMakerUITests.release.xcconfig"; path = "Target Support Files/Pods-QrCodeMaker-QrCodeMakerUITests/Pods-QrCodeMaker-QrCodeMakerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C809AB772A6BD53000160B4E /* FolderVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderVc.swift; sourceTree = "<group>"; };
 		C809AB792A6C1CA600160B4E /* FolderDetailVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderDetailVc.swift; sourceTree = "<group>"; };
 		C814303A2A869F7700CE38C9 /* QrcOodearray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QrcOodearray.swift; sourceTree = "<group>"; };
@@ -216,9 +215,10 @@
 		C8B044852A57048800AB9C53 /* Position maker */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Position maker"; sourceTree = "<group>"; };
 		C8B876592A8FB24C00864957 /* SubscriptionVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionVc.swift; sourceTree = "<group>"; };
 		C8F30BA82A591F8300DECA4C /* Body Shape */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Body Shape"; sourceTree = "<group>"; };
-		CA4980A0D7066C9F80683D13 /* Pods-QrCodeMaker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QrCodeMaker.debug.xcconfig"; path = "Target Support Files/Pods-QrCodeMaker/Pods-QrCodeMaker.debug.xcconfig"; sourceTree = "<group>"; };
+		D4F949F54ADEA8F6EFDAF17D /* Pods-QrCodeMaker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QrCodeMaker.debug.xcconfig"; path = "Target Support Files/Pods-QrCodeMaker/Pods-QrCodeMaker.debug.xcconfig"; sourceTree = "<group>"; };
+		D7D7E82BEE8EC084E4EAD92F /* Pods-QrCodeMaker-QrCodeMakerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QrCodeMaker-QrCodeMakerUITests.debug.xcconfig"; path = "Target Support Files/Pods-QrCodeMaker-QrCodeMakerUITests/Pods-QrCodeMaker-QrCodeMakerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E1A744D2D895C1C0DB02C8E5 /* Pods_QrCodeMakerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QrCodeMakerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0AD3D0F2A86B0DE00A7789A /* VideoSplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoSplashViewController.swift; sourceTree = "<group>"; };
-		FAE4F100375E95D7DB829630 /* Pods_QrCodeMaker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QrCodeMaker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,7 +226,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F39B5B9E971B77B58919DF34 /* Pods_QrCodeMaker.framework in Frameworks */,
+				F98D13CC860C4F73BF9BE1A0 /* Pods_QrCodeMaker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,7 +234,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				413A8F058E1F9F8863D4A5CC /* Pods_QrCodeMakerTests.framework in Frameworks */,
+				E448E33F0468AA1E6F1EC2A7 /* Pods_QrCodeMakerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,34 +242,34 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C281102943CC08D2D8538920 /* Pods_QrCodeMaker_QrCodeMakerUITests.framework in Frameworks */,
+				C0E0FEF62D27BB2E04E1E83F /* Pods_QrCodeMaker_QrCodeMakerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		81B8510993687DB998593CD4 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				FAE4F100375E95D7DB829630 /* Pods_QrCodeMaker.framework */,
-				5DDC0C7A4E5A4878FB1977AC /* Pods_QrCodeMaker_QrCodeMakerUITests.framework */,
-				BD1961D36461C192182A9740 /* Pods_QrCodeMakerTests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		C259BB9ECDA1E8071F9B581F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CA4980A0D7066C9F80683D13 /* Pods-QrCodeMaker.debug.xcconfig */,
-				1E402DE9A7741D56495C44EF /* Pods-QrCodeMaker.release.xcconfig */,
-				6B6C8D50FD9D769A7C127807 /* Pods-QrCodeMaker-QrCodeMakerUITests.debug.xcconfig */,
-				19F582C71217D05E8923FEE5 /* Pods-QrCodeMaker-QrCodeMakerUITests.release.xcconfig */,
-				0CD2E4910B24AEEA08A8526A /* Pods-QrCodeMakerTests.debug.xcconfig */,
-				1CEB062D97CABE6CB3986EDF /* Pods-QrCodeMakerTests.release.xcconfig */,
+				D4F949F54ADEA8F6EFDAF17D /* Pods-QrCodeMaker.debug.xcconfig */,
+				430902186CC4F88528A4B98F /* Pods-QrCodeMaker.release.xcconfig */,
+				D7D7E82BEE8EC084E4EAD92F /* Pods-QrCodeMaker-QrCodeMakerUITests.debug.xcconfig */,
+				56F01B1A91C665B5D743EF4F /* Pods-QrCodeMaker-QrCodeMakerUITests.release.xcconfig */,
+				44D4882A17311DC70BEC4FC8 /* Pods-QrCodeMakerTests.debug.xcconfig */,
+				4CB7BDAD49209CC4B5E9EBF9 /* Pods-QrCodeMakerTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		C74F17E213EE22EDDB291BFB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				560A83E9701480074BC27C57 /* Pods_QrCodeMaker.framework */,
+				146BE22696B41A2C6DD57E28 /* Pods_QrCodeMaker_QrCodeMakerUITests.framework */,
+				E1A744D2D895C1C0DB02C8E5 /* Pods_QrCodeMakerTests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		C84FEB772A56734A002E9CE2 /* Plist */ = {
@@ -430,7 +430,7 @@
 				C8AC56AE2A485774002F81E7 /* QrCodeMakerTests */,
 				C8AC56B82A485774002F81E7 /* QrCodeMakerUITests */,
 				C259BB9ECDA1E8071F9B581F /* Pods */,
-				81B8510993687DB998593CD4 /* Frameworks */,
+				C74F17E213EE22EDDB291BFB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -492,11 +492,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C8AC56BF2A485774002F81E7 /* Build configuration list for PBXNativeTarget "QrCodeMaker" */;
 			buildPhases = (
-				DB043FB434E1C98554656F9F /* [CP] Check Pods Manifest.lock */,
+				CBA56C311D7A97AD6CA46EC8 /* [CP] Check Pods Manifest.lock */,
 				C8AC56912A485772002F81E7 /* Sources */,
 				C8AC56922A485772002F81E7 /* Frameworks */,
 				C8AC56932A485772002F81E7 /* Resources */,
-				189EFFE2A6975E71EC9B666C /* [CP] Embed Pods Frameworks */,
+				89DE1BF2EC98F9F4CC2FBFD5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -511,7 +511,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C8AC56C22A485774002F81E7 /* Build configuration list for PBXNativeTarget "QrCodeMakerTests" */;
 			buildPhases = (
-				861C441B103D5B162E7A65AB /* [CP] Check Pods Manifest.lock */,
+				348328E2F2CA440EE1F4CE53 /* [CP] Check Pods Manifest.lock */,
 				C8AC56A72A485774002F81E7 /* Sources */,
 				C8AC56A82A485774002F81E7 /* Frameworks */,
 				C8AC56A92A485774002F81E7 /* Resources */,
@@ -530,11 +530,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C8AC56C52A485774002F81E7 /* Build configuration list for PBXNativeTarget "QrCodeMakerUITests" */;
 			buildPhases = (
-				45D64134A34BF6AF9BE7B108 /* [CP] Check Pods Manifest.lock */,
+				12DC5CF3238987B19143F865 /* [CP] Check Pods Manifest.lock */,
 				C8AC56B12A485774002F81E7 /* Sources */,
 				C8AC56B22A485774002F81E7 /* Frameworks */,
 				C8AC56B32A485774002F81E7 /* Resources */,
-				D1F6EAEE0B8CCA0A66D72DE0 /* [CP] Embed Pods Frameworks */,
+				A75B44C0C7DFC49B3E8A206F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -633,24 +633,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		189EFFE2A6975E71EC9B666C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-QrCodeMaker/Pods-QrCodeMaker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-QrCodeMaker/Pods-QrCodeMaker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-QrCodeMaker/Pods-QrCodeMaker-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		45D64134A34BF6AF9BE7B108 /* [CP] Check Pods Manifest.lock */ = {
+		12DC5CF3238987B19143F865 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -672,7 +655,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		861C441B103D5B162E7A65AB /* [CP] Check Pods Manifest.lock */ = {
+		348328E2F2CA440EE1F4CE53 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -694,7 +677,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D1F6EAEE0B8CCA0A66D72DE0 /* [CP] Embed Pods Frameworks */ = {
+		89DE1BF2EC98F9F4CC2FBFD5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-QrCodeMaker/Pods-QrCodeMaker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-QrCodeMaker/Pods-QrCodeMaker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-QrCodeMaker/Pods-QrCodeMaker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A75B44C0C7DFC49B3E8A206F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -711,7 +711,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-QrCodeMaker-QrCodeMakerUITests/Pods-QrCodeMaker-QrCodeMakerUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DB043FB434E1C98554656F9F /* [CP] Check Pods Manifest.lock */ = {
+		CBA56C311D7A97AD6CA46EC8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -982,7 +982,7 @@
 		};
 		C8AC56C02A485774002F81E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CA4980A0D7066C9F80683D13 /* Pods-QrCodeMaker.debug.xcconfig */;
+			baseConfigurationReference = D4F949F54ADEA8F6EFDAF17D /* Pods-QrCodeMaker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1023,7 +1023,7 @@
 		};
 		C8AC56C12A485774002F81E7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1E402DE9A7741D56495C44EF /* Pods-QrCodeMaker.release.xcconfig */;
+			baseConfigurationReference = 430902186CC4F88528A4B98F /* Pods-QrCodeMaker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1064,7 +1064,7 @@
 		};
 		C8AC56C32A485774002F81E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0CD2E4910B24AEEA08A8526A /* Pods-QrCodeMakerTests.debug.xcconfig */;
+			baseConfigurationReference = 44D4882A17311DC70BEC4FC8 /* Pods-QrCodeMakerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1084,7 +1084,7 @@
 		};
 		C8AC56C42A485774002F81E7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1CEB062D97CABE6CB3986EDF /* Pods-QrCodeMakerTests.release.xcconfig */;
+			baseConfigurationReference = 4CB7BDAD49209CC4B5E9EBF9 /* Pods-QrCodeMakerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1104,7 +1104,7 @@
 		};
 		C8AC56C62A485774002F81E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6B6C8D50FD9D769A7C127807 /* Pods-QrCodeMaker-QrCodeMakerUITests.debug.xcconfig */;
+			baseConfigurationReference = D7D7E82BEE8EC084E4EAD92F /* Pods-QrCodeMaker-QrCodeMakerUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1122,7 +1122,7 @@
 		};
 		C8AC56C72A485774002F81E7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 19F582C71217D05E8923FEE5 /* Pods-QrCodeMaker-QrCodeMakerUITests.release.xcconfig */;
+			baseConfigurationReference = 56F01B1A91C665B5D743EF4F /* Pods-QrCodeMaker-QrCodeMakerUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
