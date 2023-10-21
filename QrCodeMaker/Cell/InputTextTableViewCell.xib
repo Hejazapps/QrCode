@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22129"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="KGk-i7-Jjw" customClass="InputTextTableViewCell" customModule="QrCodeMaker" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Msz-iu-5YD">
+                        <rect key="frame" x="20" y="10" width="300" height="25"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="8cx-hx-QpA"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <color key="textColor" red="0.50980392159999999" green="0.50980392159999999" blue="0.50980392159999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ArO-pm-mFN">
+                        <rect key="frame" x="20" y="45" width="280" height="45"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3qV-sG-2wN">
+                                <rect key="frame" x="12" y="16" width="252" height="13"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <segmentedControl hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="R5k-QV-lmE">
+                                <rect key="frame" x="0.0" y="0.0" width="280" height="46"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <segments>
+                                    <segment title="WAP/WAP2"/>
+                                    <segment title="WEP"/>
+                                    <segment title="None"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="R5k-QV-lmE" secondAttribute="bottom" id="EZj-lu-Ytm"/>
+                            <constraint firstAttribute="trailing" secondItem="3qV-sG-2wN" secondAttribute="trailing" constant="16" id="QaE-Pc-jlh"/>
+                            <constraint firstItem="R5k-QV-lmE" firstAttribute="leading" secondItem="ArO-pm-mFN" secondAttribute="leading" id="Qxi-Yc-q0J"/>
+                            <constraint firstItem="3qV-sG-2wN" firstAttribute="leading" secondItem="ArO-pm-mFN" secondAttribute="leading" constant="12" id="Rmb-WA-RxZ"/>
+                            <constraint firstAttribute="trailing" secondItem="R5k-QV-lmE" secondAttribute="trailing" id="Ruo-3y-Cq9"/>
+                            <constraint firstItem="3qV-sG-2wN" firstAttribute="top" secondItem="ArO-pm-mFN" secondAttribute="top" constant="16" id="YdY-wG-hUQ"/>
+                            <constraint firstAttribute="bottom" secondItem="3qV-sG-2wN" secondAttribute="bottom" constant="16" id="jSk-8w-Xih"/>
+                            <constraint firstItem="R5k-QV-lmE" firstAttribute="top" secondItem="ArO-pm-mFN" secondAttribute="top" id="qaL-H5-3Gk"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" red="0.34509803921568627" green="0.76078431372549016" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="ArO-pm-mFN" secondAttribute="trailing" constant="20" id="BgB-K7-XPp"/>
+                    <constraint firstItem="ArO-pm-mFN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="FL4-VZ-DZp"/>
+                    <constraint firstAttribute="trailing" secondItem="Msz-iu-5YD" secondAttribute="trailing" id="Kng-GU-6Pa"/>
+                    <constraint firstItem="Msz-iu-5YD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="laS-th-Jmp"/>
+                    <constraint firstItem="ArO-pm-mFN" firstAttribute="top" secondItem="Msz-iu-5YD" secondAttribute="bottom" constant="10" id="mUs-Sy-Y8k"/>
+                    <constraint firstItem="Msz-iu-5YD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="ma3-lC-lgP"/>
+                    <constraint firstAttribute="bottom" secondItem="ArO-pm-mFN" secondAttribute="bottom" constant="10" id="yae-4v-LXT"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="label" destination="Msz-iu-5YD" id="ibn-dd-CiV"/>
+                <outlet property="networkName" destination="R5k-QV-lmE" id="uSP-49-JWM"/>
+                <outlet property="textView" destination="3qV-sG-2wN" id="TzT-x4-zZJ"/>
+                <outlet property="textViewContainer" destination="ArO-pm-mFN" id="Da5-O5-0Zp"/>
+            </connections>
+            <point key="canvasLocation" x="-83" y="21"/>
+        </tableViewCell>
+    </objects>
+</document>

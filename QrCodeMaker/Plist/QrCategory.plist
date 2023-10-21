@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>Category</key>
+		<string>Personal</string>
+		<key>items</key>
+		<array>
+			<string>Website</string>
+			<string>Vcard</string>
+			<string>MMS</string>
+			<string>Phone Number</string>
+			<string>Sms</string>
+			<string>Email</string>
+		</array>
+	</dict>
+	<dict>
+		<key>Category</key>
+		<string>Utilities</string>
+		<key>items</key>
+		<array>
+			<string>Text</string>
+			<string>Event</string>
+			<string>Location</string>
+			<string>Wifi</string>
+			<string>Snapchat</string>
+			<string>Wechat</string>
+		</array>
+	</dict>
+	<dict>
+		<key>Category</key>
+		<string>Social Media</string>
+		<key>items</key>
+		<array>
+			<string>Facebook</string>
+			<string>Instagram</string>
+			<string>Twitter</string>
+			<string>LinkedIn</string>
+			<string>Skype</string>
+			<string>Viber</string>
+			<string>WhatsApp</string>
+			<string>Pinterest</string>
+			<string>Tumblr</string>
+			<string>Youtube</string>
+			<string>Youtube Video</string>
+			<string>Google Plus</string>
+		</array>
+	</dict>
+	<dict>
+		<key>Category</key>
+		<string>Search</string>
+		<key>items</key>
+		<array>
+			<string>App Store</string>
+			<string>Google Search</string>
+			<string>Yahoo</string>
+			<string>Bing Search</string>
+			<string>DuckDuck Go</string>
+			<string>TikTok</string>
+		</array>
+	</dict>
+	<dict>
+		<key>Category</key>
+		<string>Cloud Storage</string>
+		<key>items</key>
+		<array>
+			<string>iCloud</string>
+			<string>Google Drive</string>
+			<string>Dropbox</string>
+			<string>Box</string>
+			<string>One Drive</string>
+			<string>Flickr</string>
+		</array>
+	</dict>
+	<dict>
+		<key>Category</key>
+		<string>Other</string>
+		<key>items</key>
+		<array>
+			<string>MECARD</string>
+			<string>Tweet</string>
+			<string>Dropbox</string>
+			<string>Medical ID</string>
+			<string>One Drive</string>
+			<string>Flickr</string>
+		</array>
+	</dict>
+</array>
+</plist>

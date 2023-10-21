@@ -1,0 +1,464 @@
+//
+//  Database1.swift
+//  FinalDocumentScanner
+//
+//  Created by MacBook Pro Retina on 29/12/19.
+//  Copyright © 2019 MacBook Pro Retina. All rights reserved.
+//
+
+import UIKit
+import AVFoundation
+import Foundation
+import SQLite3
+
+class DBmanager: NSObject {
+    
+    
+    var DBpath:String!
+    var db : OpaquePointer!
+    
+    
+    static let shared = DBmanager()
+    
+    func  manageDBLocation () {
+        do {
+            
+            let bundle = Bundle.main
+            DBpath = bundle.path(forResource: "qrCode", ofType: "sqlite")
+            let newPath:Array=NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+            let directory:String=newPath[0]
+            let location = (directory as NSString).appendingPathComponent("qrCode.sqlite") as NSString
+            if(FileManager.default.isReadableFile(atPath: DBpath))
+            {
+                
+                try FileManager.default.copyItem(atPath: DBpath as String, toPath: location as String)
+            }
+            let fm = FileManager.default
+            
+            var attributes = [FileAttributeKey : Any]()
+            attributes[.posixPermissions] = NSNumber(value: 511)
+            do {
+                try fm.setAttributes(attributes, ofItemAtPath: DBpath)
+            }catch let error {
+                print("Permissions error: ", error)
+            }
+            
+        } catch let e {
+            
+            print("\(e)")
+        }
+        
+    }
+    
+    
+    func initDB(){
+        
+        let path:Array=NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+        let directory:String=path[0]
+        DBpath = (directory as NSString).appendingPathComponent("qrCode.sqlite")
+        
+        
+        let isSuccess = true
+        
+        if (!FileManager.default.fileExists(atPath: DBpath as String))
+        {
+            self.manageDBLocation()
+        }
+    }
+    
+    func getMaxIdForRecord() ->Int{
+        
+        var queryStatement: OpaquePointer? = nil
+        var getId  = -1
+        
+        let stmt =  "SELECT MAX(id) FROM record"
+        
+        if (sqlite3_open(DBpath, &db)==SQLITE_OK)
+        {
+            
+            if sqlite3_prepare_v2(db, stmt, -1, &queryStatement, nil) == SQLITE_OK {
+                // 2
+                while (sqlite3_step(queryStatement) == SQLITE_ROW) {
+                    
+                    
+                    
+                    let id = sqlite3_column_text(queryStatement, 0)
+                    
+                    if((id) != nil)
+                    {
+                        let str = String(cString: id!) as NSString
+                        getId = Int(str.intValue)
+                    }
+                    
+                }
+                
+            }
+            else{
+                let errmsg = String(cString: sqlite3_errmsg(db))
+                NSLog(errmsg)
+            }
+            sqlite3_finalize(queryStatement)
+            sqlite3_close(db)
+        }
+        
+        return getId
+    }
+
+    func getRecordInfo(indexPath:String) -> [DataInformation] {
+        
+         var mutableArray: [DataInformation] = []
+        var queryStatement: OpaquePointer? = nil
+        
+        let stmt =  "SELECT id,Text,indexPath,codeType,position,shape,logo,folderid FROM record  where indexPath = ('\(indexPath)') order by id DESC"
+        if (sqlite3_open(DBpath, &db)==SQLITE_OK)
+        {
+            
+            if sqlite3_prepare_v2(db, stmt, -1, &queryStatement, nil) == SQLITE_OK {
+                
+                while (sqlite3_step(queryStatement) == SQLITE_ROW){
+                    
+                    let obj : DataInformation = DataInformation()
+                    
+                    let id = sqlite3_column_text(queryStatement, 0)
+                    let Text =  sqlite3_column_text(queryStatement, 1)
+                    let indexPath =  sqlite3_column_text(queryStatement, 2)
+                    let codeType =  sqlite3_column_text(queryStatement, 3)
+                    let position =  sqlite3_column_text(queryStatement, 4)
+                    let shape =  sqlite3_column_text(queryStatement, 5)
+                    let logo =  sqlite3_column_text(queryStatement, 6)
+                    let folderid =  sqlite3_column_text(queryStatement, 7)
+                  
+                    
+                    
+                    let str = String(cString: id!)
+                    let str1 = String(cString: Text!)
+                    let str2 = String(cString: indexPath!)
+                    let str3 = String(cString: codeType!)
+                    let str4 = String(cString: position!)
+                    let str5 = String(cString: shape!)
+                    let str6 = String(cString: logo!)
+                    let str7 = String(cString: folderid!)
+                   
+                    
+
+                    obj.id = str
+                    obj.Text = str1
+                    obj.indexPath = str2
+                    obj.codeType =  str3
+                    obj.position =  str4
+                    obj.shape =  str5
+                    obj.logo =  str6
+                    obj.folderid = str7
+                    
+                    if obj.folderid.count < 1 {
+                        mutableArray .append(obj)
+                    }
+                    
+                    
+                }
+                
+            }
+            sqlite3_finalize(queryStatement)
+            sqlite3_close(db)
+        }
+        
+        
+        
+        return mutableArray
+    }
+    
+    
+    func getFolderElements(folderid:String) -> [DataInformation] {
+        
+        var mutableArray: [DataInformation] = []
+        var queryStatement: OpaquePointer? = nil
+        
+        let stmt =  "SELECT id,Text,indexPath,codeType,position,shape,logo,folderid FROM record  where folderid = ('\(folderid)') order by id DESC"
+        if (sqlite3_open(DBpath, &db)==SQLITE_OK)
+        {
+            
+            if sqlite3_prepare_v2(db, stmt, -1, &queryStatement, nil) == SQLITE_OK {
+                
+                while (sqlite3_step(queryStatement) == SQLITE_ROW){
+                    
+                    let obj : DataInformation = DataInformation()
+                    
+                    let id = sqlite3_column_text(queryStatement, 0)
+                    let Text =  sqlite3_column_text(queryStatement, 1)
+                    let indexPath =  sqlite3_column_text(queryStatement, 2)
+                    let codeType =  sqlite3_column_text(queryStatement, 3)
+                    let position =  sqlite3_column_text(queryStatement, 4)
+                    let shape =  sqlite3_column_text(queryStatement, 5)
+                    let logo =  sqlite3_column_text(queryStatement, 6)
+                    let folderid =  sqlite3_column_text(queryStatement, 7)
+                  
+                    
+                    
+                    let str = String(cString: id!)
+                    let str1 = String(cString: Text!)
+                    let str2 = String(cString: indexPath!)
+                    let str3 = String(cString: codeType!)
+                    let str4 = String(cString: position!)
+                    let str5 = String(cString: shape!)
+                    let str6 = String(cString: logo!)
+                    let str7 = String(cString: folderid!)
+                   
+                    
+
+                    obj.id = str
+                    obj.Text = str1
+                    obj.indexPath = str2
+                    obj.codeType =  str3
+                    obj.position =  str4
+                    obj.shape =  str5
+                    obj.logo =  str6
+                    obj.folderid = str7
+                    mutableArray .append(obj)
+                }
+                
+            }
+            sqlite3_finalize(queryStatement)
+            sqlite3_close(db)
+        }
+        
+        
+        
+        return mutableArray
+    }
+    
+    func getFolderInfo() -> [DataInformation] {
+        
+        var mutableArray: [DataInformation] = []
+        var queryStatement: OpaquePointer? = nil
+        
+        let stmt =  "SELECT id,name FROM Folder order by id DESC"
+        if (sqlite3_open(DBpath, &db)==SQLITE_OK)
+        {
+            
+            if sqlite3_prepare_v2(db, stmt, -1, &queryStatement, nil) == SQLITE_OK {
+                
+                while (sqlite3_step(queryStatement) == SQLITE_ROW){
+                    
+                    let obj : DataInformation = DataInformation()
+                    
+                    let id = sqlite3_column_text(queryStatement, 0)
+                    let name =  sqlite3_column_text(queryStatement, 1)
+                   
+                    
+                    let str = String(cString: id!)
+                    let str1 = String(cString: name!)
+                    
+
+                    obj.folderid = str
+                    obj.folderName = str1
+                    mutableArray .append(obj)
+                    
+                }
+                
+            }
+            sqlite3_finalize(queryStatement)
+            sqlite3_close(db)
+        }
+        
+        
+        
+        return mutableArray
+    }
+    
+    
+    func checkUniqueData(name:String) -> [DataInformation] {
+        
+        var mutableArray: [DataInformation] = []
+        var queryStatement: OpaquePointer? = nil
+        
+        let stmt =  "SELECT name FROM Folder where name = ('\(name)')"
+        if (sqlite3_open(DBpath, &db)==SQLITE_OK)
+        {
+            
+            if sqlite3_prepare_v2(db, stmt, -1, &queryStatement, nil) == SQLITE_OK {
+                
+                while (sqlite3_step(queryStatement) == SQLITE_ROW){
+                    
+                    let obj : DataInformation = DataInformation()
+
+                    mutableArray .append(obj)
+                    
+                }
+                
+            }
+            sqlite3_finalize(queryStatement)
+            sqlite3_close(db)
+        }
+        
+        
+        
+        return mutableArray
+    }
+    
+    
+    func getFileData(id:String) -> String? {
+        
+        
+        var queryStatement: OpaquePointer? = nil
+        
+        let stmt =  "SELECT Text FROM record where id = ('\(id)')"
+        if (sqlite3_open(DBpath, &db)==SQLITE_OK)
+        {
+            
+            if sqlite3_prepare_v2(db, stmt, -1, &queryStatement, nil) == SQLITE_OK {
+                
+                while (sqlite3_step(queryStatement) == SQLITE_ROW){
+                    
+                    let text = sqlite3_column_text(queryStatement, 0)
+                    let str = String(cString: text!)
+                    sqlite3_close(db)
+                    return str
+                    
+                }
+                
+            }
+            sqlite3_finalize(queryStatement)
+            sqlite3_close(db)
+        }
+        
+        
+        
+        return nil
+    }
+    
+    
+    func deleteFile(id: String)
+    {
+        
+        
+        let stmt = "DELETE FROM  record  where id = ('\(id)')"
+        
+        let  rc = sqlite3_open_v2(DBpath, &db, SQLITE_OPEN_READWRITE , nil);
+        
+        
+        if (SQLITE_OK != rc)
+        {
+            sqlite3_close(db);
+            NSLog("Failed to open db connection");
+        }
+        else
+            
+        {
+            
+            
+            if sqlite3_exec(db, stmt, nil, nil, nil)  != SQLITE_OK
+                
+            {
+                let errmsg = String(cString: sqlite3_errmsg(db))
+                NSLog(errmsg)
+            }
+             
+            sqlite3_close(db);
+        }
+        
+        
+    }
+
+    
+    func updateTableData(id: String,Text: String,position: String,shape:String,logo:String)
+    {
+        
+        
+        let createTable = "UPDATE record SET Text ='\(Text)',position ='\(position)',shape ='\(shape)',logo ='\(logo)' WHERE id ='\(id)'"
+        
+        
+        
+        
+        
+        if (sqlite3_open(DBpath, &db)==SQLITE_OK)
+        {
+            
+            
+            if sqlite3_exec(db, createTable, nil, nil, nil)  != SQLITE_OK
+                
+            {
+                print("Erro creating table")
+                
+            }
+        }
+        
+        sqlite3_close(db)
+        
+    }
+    
+    
+    func updateFolderInfo(id: String,folderid:String)
+    {
+        
+        
+        let createTable = "UPDATE record SET folderid ='\(folderid)' WHERE id ='\(id)'"
+        
+        
+        
+        
+        
+        if (sqlite3_open(DBpath, &db)==SQLITE_OK)
+        {
+            
+            
+            if sqlite3_exec(db, createTable, nil, nil, nil)  != SQLITE_OK
+                
+            {
+                print("Erro creating table")
+                
+            }
+        }
+        
+        sqlite3_close(db)
+        
+    }
+    
+   
+    func insertRecordIntoFile(Text: String,codeType:String,indexPath:String,position: String,shape:String,logo:String) {
+        
+        let insertData = "INSERT INTO record (Text,codeType,indexPath,position,shape,logo) VALUES  ('\(Text)','\(codeType)','\(indexPath)','\(position)','\(shape)','\(logo)')"
+        let  rc = sqlite3_open_v2(DBpath, &db, SQLITE_OPEN_READWRITE , nil);
+        
+        
+        if (SQLITE_OK != rc)
+        {
+            sqlite3_close(db);
+            NSLog("Failed to open db connection");
+        }
+        else {
+            if sqlite3_exec(db, insertData, nil, nil, nil)  != SQLITE_OK
+                
+            {
+                let errmsg = String(cString: sqlite3_errmsg(db))
+                NSLog(errmsg)
+            }
+            
+            sqlite3_close(db);
+        }
+        
+    }
+    
+    func insertIntoFolder(name:String) {
+        
+        let insertData = "INSERT INTO Folder (name) VALUES  ('\(name)')"
+        let  rc = sqlite3_open_v2(DBpath, &db, SQLITE_OPEN_READWRITE , nil);
+        
+        
+        if (SQLITE_OK != rc)
+        {
+            sqlite3_close(db);
+            NSLog("Failed to open db connection");
+        }
+        else {
+            if sqlite3_exec(db, insertData, nil, nil, nil)  != SQLITE_OK
+                
+            {
+                let errmsg = String(cString: sqlite3_errmsg(db))
+                NSLog(errmsg)
+            }
+            sqlite3_close(db);
+        }
+        
+    }
+    
+}
