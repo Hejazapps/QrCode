@@ -109,7 +109,7 @@ public class CameraVC: UIViewController {
         super.viewDidLoad()
         
         setupUI()
-        
+        scanView.startAnimation()
     }
     
     
@@ -121,13 +121,13 @@ public class CameraVC: UIViewController {
     public override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
-        scanView.stopAnimation()
+        
         
     }
     
     override public func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        scanView.startAnimation()
+      
     }
     
 }

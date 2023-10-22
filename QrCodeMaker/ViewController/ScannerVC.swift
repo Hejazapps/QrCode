@@ -80,6 +80,7 @@ public class ScannerVC: UIViewController {
         
         setupUI()
         
+        
     }
     
     
@@ -121,6 +122,7 @@ extension ScannerVC{
         cameraViewController.delegate = self
         
         add(cameraViewController)
+        
         
         if navigationController == nil {
             
