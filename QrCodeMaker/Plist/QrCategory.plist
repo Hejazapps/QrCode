@@ -9,7 +9,7 @@
 		<array>
 			<string>Website</string>
 			<string>Vcard</string>
-			<string>MMS</string>
+			<string>MECARD</string>
 			<string>Phone Number</string>
 			<string>Sms</string>
 			<string>Email</string>
@@ -69,19 +69,6 @@
 			<string>Google Drive</string>
 			<string>Dropbox</string>
 			<string>Box</string>
-			<string>One Drive</string>
-			<string>Flickr</string>
-		</array>
-	</dict>
-	<dict>
-		<key>Category</key>
-		<string>Other</string>
-		<key>items</key>
-		<array>
-			<string>MECARD</string>
-			<string>Tweet</string>
-			<string>Dropbox</string>
-			<string>Medical ID</string>
 			<string>One Drive</string>
 			<string>Flickr</string>
 		</array>

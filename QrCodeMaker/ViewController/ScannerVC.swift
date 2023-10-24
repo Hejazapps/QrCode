@@ -132,6 +132,7 @@ extension ScannerVC{
             
         }
         
+        ScanAnimation.shared.startAnimation()
         
     }
     
