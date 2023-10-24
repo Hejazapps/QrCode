@@ -624,6 +624,10 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
             bnTextContent.setTitle("Go to Url", for: .normal)
         }
         
+        if stringValue.containsIgnoringCase(find: "mailto") {
+            bnTextContent.setTitle("Email", for: .normal)
+        }
+        
         
         
         

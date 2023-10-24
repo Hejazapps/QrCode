@@ -42,26 +42,114 @@ class QrParser: NSObject {
         
         
         
-        if let data = text.data(using: .utf8) {
-            do{
-                contacts = try CNContactVCardSerialization.contacts(with: data)
-                let contact = contacts.first
-                print("\(String(describing: contact?.familyName))")
+        if text.containsIgnoringCase(find: "vcard") {
+            
+            if let data = text.data(using: .utf8) {
+                do{
+                    contacts = try CNContactVCardSerialization.contacts(with: data)
+                    let contact = contacts.first
+                    print("\(String(describing: contact?.familyName))")
+                }
+                catch{
+                    // Error Handling
+                    print(error.localizedDescription)
+                }
             }
-            catch{
-                // Error Handling
-                print(error.localizedDescription)
+            
+            let calendarManager = MXLCalendarManager()
+            calendarManager.parse(icsString: text) { (calendar, error) in
+                calendarValue = calendar
+                
             }
-        }
-        
-        let calendarManager = MXLCalendarManager()
-        calendarManager.parse(icsString: text) { (calendar, error) in
-            calendarValue = calendar
             
         }
         
         
         
+        if text.containsIgnoringCase(find:"mailto")
+        {
+            
+            currentType = "Mail"
+
+            let value  = dict["Email"]
+            var ar = value!.components(separatedBy: ",")  as? NSArray
+            var array =  NSMutableArray(array: ar!) as! [String]
+            
+            let txtAppend = text.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+            
+            
+            if let  mailToURL = URL(string: txtAppend!)
+            {
+                if let emailParameters = EmailParameters(url: mailToURL) {
+                    if(emailParameters.toEmails.count > 0)
+                    {
+                        var name = "Email: "
+                        var co = 0
+                        for item in emailParameters.toEmails{
+                            
+                            if co%2 == 1
+                            {
+                                name = name + ","
+                            }
+                            name  = name + item
+                            co = co + 1
+                            
+                            
+                        }
+                        let emailId = name.replacingOccurrences(of: "Email: ", with: "")
+                        array[0] = name
+                    }
+                    if(emailParameters.ccEmails.count > 0)
+                    {
+                        var name = "CC: "
+                        var co = 0
+                        for item in emailParameters.ccEmails{
+                            
+                            if co%2 == 1
+                            {
+                                name = name + ","
+                            }
+                            name  = name + item
+                            co = co + 1
+                            
+                            
+                        }
+                        let cc =  name.replacingOccurrences(of: "CC: ", with: "")
+                        array[1] = name
+                    }
+                    if let subject1 = emailParameters.subject
+                    {
+                         
+                        array[2] =  "Subject: " + subject1
+                    }
+                    if let body1 = emailParameters.body
+                    {
+                        
+                        array[3] =  "Body: " + body1
+                    }
+                    
+                }
+                
+                var output = ""
+                var index:Int = 0
+                for item in array {
+                    output = output + item
+                    
+                    if index < array.count - 1{
+                        output = output + "\n\n"
+                    }
+                    index = index + 1
+                }
+                
+                
+                output = output + "^" + currentType
+               
+                return output
+            }
+        }
+        
+        
+         
         
         if text.containsIgnoringCase(find: "MECARD") {
             
