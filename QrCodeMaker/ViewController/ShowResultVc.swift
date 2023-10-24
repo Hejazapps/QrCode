@@ -864,7 +864,149 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
         if stringValue.containsIgnoringCase(find: "mecard") {
             
             
+                let contactCard = CNMutableContact()
+                let value  = dict["vCard1"]
+                var ar = value!.components(separatedBy: ",")  as? NSArray
+                var array =  NSMutableArray(array: ar!) as! [String]
+                var tempText = stringValue
+                let maV = tempText.components(separatedBy: ";")
+                tempText = tempText.replacingOccurrences(of: "mecard:", with: "")
+                tempText = tempText.replacingOccurrences(of: "MECARD:", with: "")
+                
+                
+                for item in maV {
+                    if(item.containsIgnoringCase(find:MeCardCostant.KEY_NAME)) {
+                        var parsed = item.replacingOccurrences(of: MeCardCostant.KEY_NAME, with: "")
+                        parsed = parsed.replacingOccurrences(of: MeCardCostant.KEY_NAME.lowercased(), with: "")
+                        parsed = parsed.replacingOccurrences(of: "mecard:", with: "")
+                        parsed = parsed.replacingOccurrences(of: "MECARD:", with: "")
+                        let name = parsed.components(separatedBy: ",")
+                        if name.count == 1 {
+                            array[0] = "First Name: " + name[0]
+                            contactCard.givenName = name[0]
+                        }
+                        
+                        else if name.count == 2  {
+                            array[0] = "First Name: " + name[1]
+                            array[1] = "Last Name: " +  name[0]
+                            
+                            contactCard.givenName = name[1]
+                            contactCard.familyName = name[0]
+                        }
+                    }
+                    
+                    if(item.containsIgnoringCase(find:MeCardCostant.KEY_TELEPHONE)) {
+                        
+                        var parsed = item.replacingOccurrences(of: MeCardCostant.KEY_TELEPHONE.lowercased(), with: "")
+                        parsed = parsed.replacingOccurrences(of: MeCardCostant.KEY_TELEPHONE.uppercased(), with: "")
+                        parsed = parsed.replacingOccurrences(of: "mecard:", with: "")
+                        parsed = parsed.replacingOccurrences(of: "MECARD:", with: "")
+                        
+                        
+                        if parsed.count >= 1 {
+                            array[2] =  "Phone Number: " + parsed
+                        }
+                        
+                        let phoneNumber = CNPhoneNumber(stringValue: array[2])
+                        let labelled = CNLabeledValue(label: "TEL", value:  phoneNumber)
+                        contactCard.phoneNumbers = [labelled]
+                        
+                    }
+                    
+                    if(item.containsIgnoringCase(find:MeCardCostant.KEY_EMAIL)) {
+                        
+                        var parsed = item.replacingOccurrences(of: MeCardCostant.KEY_EMAIL.lowercased(), with: "")
+                        parsed = parsed.replacingOccurrences(of: MeCardCostant.KEY_EMAIL.uppercased(), with: "")
+                        
+                        
+                        if parsed.count >= 1 {
+                            array[3] =  "Email: " + parsed
+                        }
+                        let workEmail = CNLabeledValue(label:"Work Email", value:array[2]  as NSString)
+                        contactCard.emailAddresses = [workEmail]
+                        
+                    }
+                    
+                    if(item.containsIgnoringCase(find:MeCardCostant.KEY_URL)) {
+                        
+                        var parsed = item.replacingOccurrences(of: MeCardCostant.KEY_URL.lowercased(), with: "")
+                        parsed = parsed.replacingOccurrences(of: MeCardCostant.KEY_URL.uppercased(), with: "")
+                        
+                        
+                        if parsed.count >= 1 {
+                            array[4] =  "URL: " + parsed
+                        }
+                        
+                        let URL = CNLabeledValue(label:"URL", value:array[4]  as NSString)
+                        contactCard.urlAddresses = [URL]
+                        
+                        
+                    }
+                    
+                    if(item.containsIgnoringCase(find:MeCardCostant.KEY_NICK_NAME)) {
+                        
+                        var parsed = item.replacingOccurrences(of: MeCardCostant.KEY_NICK_NAME.lowercased(), with: "")
+                        parsed = parsed.replacingOccurrences(of: MeCardCostant.KEY_NICK_NAME.uppercased(), with: "")
+                        
+                        
+                        if parsed.count >= 1 {
+                            array[5] =  "NickName: " + parsed
+                        }
+                        
+                        contactCard.nickname = array[5]
+                    }
+                    
+                    if(item.containsIgnoringCase(find:MeCardCostant.KEY_ADDRESS)) {
+                        
+                        var parsed = item.replacingOccurrences(of: MeCardCostant.KEY_ADDRESS.lowercased(), with: "")
+                        parsed = parsed.replacingOccurrences(of: MeCardCostant.KEY_ADDRESS.uppercased(), with: "")
+                        
+                        if parsed.count >= 1 {
+                            array[6] =  "Address: " + parsed
+                        }
+                        
+                        let address = CNMutablePostalAddress()
+                        address.street =  array[6]
+                        let home = CNLabeledValue<CNPostalAddress>(label:CNLabelHome, value:address)
+                        contactCard.postalAddresses = [home]
+                    }
+                    
+                    if item.containsIgnoringCase(find:MeCardCostant.KEY_ORG) {
+                        
+                        var parsed = item.replacingOccurrences(of: MeCardCostant.KEY_ORG.lowercased(), with: "")
+                        parsed = parsed.replacingOccurrences(of: MeCardCostant.KEY_ORG.uppercased(), with: "")
+                        
+                        if parsed.count >= 1 {
+                            array[7] =  "Organization: " + parsed
+                        }
+                        
+                        contactCard.organizationName = array[7]
+                    }
+                    
+                    if item.containsIgnoringCase(find:MeCardCostant.KEY_NOTE) {
+                        
+                        var parsed = item.replacingOccurrences(of: MeCardCostant.KEY_NOTE.lowercased(), with: "")
+                        parsed = parsed.replacingOccurrences(of: MeCardCostant.KEY_NOTE.uppercased(), with: "")
+                        
+                        if parsed.count >= 1 {
+                            array[8] =  "Note: " + parsed
+                        }
+                    }
+                    
+                    if item.containsIgnoringCase(find:MeCardCostant.KEY_DAY) {
+                        
+                        var parsed = item.replacingOccurrences(of: MeCardCostant.KEY_DAY.lowercased(), with: "")
+                        parsed = parsed.replacingOccurrences(of: MeCardCostant.KEY_DAY.uppercased(), with: "")
+                        
+                        if parsed.count >= 1 {
+                            array[9] =  "Birthday: " + parsed
+                        }
+                        contactCard.note = array[7]
+                    }
+                }
             
+            self.checkContactsAccess()
+            return
         }
         
         if stringValue.containsIgnoringCase(find: "tel") {

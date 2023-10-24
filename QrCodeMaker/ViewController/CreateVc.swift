@@ -355,6 +355,7 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
     }
     
     func btnTag(index: Int) {
+        dismissKeyboard()
         inputParemeterArray.removeAll()
         createDataModelArray.removeAll()
         mapView.isHidden = true
