@@ -192,7 +192,7 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
         hideV4.isHidden = true
         hideV5.isHidden = true
         hideV6.isHidden = true
-        hide7.isHidden = true
+       // hide7.isHidden = true
         
         topLabel.text = ""
         
@@ -480,7 +480,7 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
         self.makeRoundedView(view: dotv4)
         self.makeRoundedView(view: dotv5)
         self.makeRoundedView(view: dot6)
-        self.makeRoundedView(view: dot7)
+       // self.makeRoundedView(view: dot7)
         
         dotV1.backgroundColor = tabBarBackGroundColor
         inputParemeterArray = Constant.getInputParemeterByType(type: "Website")
@@ -919,7 +919,7 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
         dotv4.backgroundColor = dotViewColor
         dotv5.backgroundColor = dotViewColor
         dot6.backgroundColor = dotViewColor
-        dot7.backgroundColor = dotViewColor
+        //dot7.backgroundColor = dotViewColor
         
         if index == 0 {
             dotV1.backgroundColor = tabBarBackGroundColor
