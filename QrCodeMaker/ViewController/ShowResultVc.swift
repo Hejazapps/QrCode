@@ -864,7 +864,7 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
         if stringValue.containsIgnoringCase(find: "mecard") {
             
             
-                let contactCard = CNMutableContact()
+                contactCard = CNMutableContact()
                 let value  = dict["vCard1"]
                 var ar = value!.components(separatedBy: ",")  as? NSArray
                 var array =  NSMutableArray(array: ar!) as! [String]
@@ -881,9 +881,14 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
                         parsed = parsed.replacingOccurrences(of: "mecard:", with: "")
                         parsed = parsed.replacingOccurrences(of: "MECARD:", with: "")
                         let name = parsed.components(separatedBy: ",")
+                        
+                        
+                        
                         if name.count == 1 {
                             array[0] = "First Name: " + name[0]
                             contactCard.givenName = name[0]
+                            
+                            print("yes")
                         }
                         
                         else if name.count == 2  {
@@ -892,6 +897,8 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
                             
                             contactCard.givenName = name[1]
                             contactCard.familyName = name[0]
+                            
+                            print("yes1")
                         }
                     }
                     

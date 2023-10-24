@@ -7,161 +7,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C94CD1C6-86BD-4921-AB1F-1F70333D1462"
+            uuid = "FC24FC92-0A8A-44EA-974F-BE8F780EA074"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QrCodeMaker/ViewController/ShowResultVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "860"
-            endingLineNumber = "860"
-            landmarkName = "copyText(_:)"
+            startingLineNumber = "405"
+            endingLineNumber = "405"
+            landmarkName = "accessGrantedForContacts()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "50B4C979-C894-464B-825C-8A21DEE60DEC"
+            uuid = "4FC9AE4C-FBA3-4A66-A2AB-F0F1E806150E"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QrCodeMaker/ViewController/ShowResultVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "762"
-            endingLineNumber = "762"
-            landmarkName = "sendEmail(subject:mailAddress:cc:meessage:)"
+            startingLineNumber = "404"
+            endingLineNumber = "404"
+            landmarkName = "accessGrantedForContacts()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "50B4C979-C894-464B-825C-8A21DEE60DEC - 5af72be1f06b978f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "QrCodeMaker.ShowResultVc.copyText(Any) -&gt; ()"
-                  moduleName = "QrCodeMaker"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sadiq/Documents/GitHub/QrCode/QrCodeMaker/ViewController/ShowResultVc.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "753"
-                  endingLineNumber = "753"
-                  offsetFromSymbolStart = "2720">
-               </Location>
-               <Location
-                  uuid = "50B4C979-C894-464B-825C-8A21DEE60DEC - 49bf751ba466d9cd"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "QrCodeMaker.ShowResultVc.sendEmail(subject: Swift.Optional&lt;Swift.String&gt;, mailAddress: Swift.Optional&lt;Swift.String&gt;, cc: Swift.Optional&lt;Swift.String&gt;, meessage: Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
-                  moduleName = "QrCodeMaker"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sadiq/Documents/GitHub/QrCode/QrCodeMaker/ViewController/ShowResultVc.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "754"
-                  endingLineNumber = "754"
-                  offsetFromSymbolStart = "288">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "ADBD97B4-0CF4-4F40-B036-D419EA8E9682"
+            uuid = "317A18F3-F814-431E-BB7D-CFEA199BD736"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QrCodeMaker/ViewController/ShowResultVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "760"
-            endingLineNumber = "760"
-            landmarkName = "sendEmail(subject:mailAddress:cc:meessage:)"
+            startingLineNumber = "415"
+            endingLineNumber = "415"
+            landmarkName = "accessGrantedForContacts()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "ADBD97B4-0CF4-4F40-B036-D419EA8E9682 - 5af72be1f06b9732"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "QrCodeMaker.ShowResultVc.copyText(Any) -&gt; ()"
-                  moduleName = "QrCodeMaker"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sadiq/Documents/GitHub/QrCode/QrCodeMaker/ViewController/ShowResultVc.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "750"
-                  endingLineNumber = "750"
-                  offsetFromSymbolStart = "2620">
-               </Location>
-               <Location
-                  uuid = "ADBD97B4-0CF4-4F40-B036-D419EA8E9682 - 49bf751ba466d98f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "QrCodeMaker.ShowResultVc.sendEmail(subject: Swift.Optional&lt;Swift.String&gt;, mailAddress: Swift.Optional&lt;Swift.String&gt;, cc: Swift.Optional&lt;Swift.String&gt;, meessage: Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
-                  moduleName = "QrCodeMaker"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sadiq/Documents/GitHub/QrCode/QrCodeMaker/ViewController/ShowResultVc.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "752"
-                  endingLineNumber = "752"
-                  offsetFromSymbolStart = "208">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7F88B6C9-0DC2-4B6C-B0BC-77C1F922F371"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "QrCodeMaker/ViewController/ShowResultVc.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "759"
-            endingLineNumber = "759"
-            landmarkName = "sendEmail(subject:mailAddress:cc:meessage:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "7F88B6C9-0DC2-4B6C-B0BC-77C1F922F371 - 5af72be1f06b9732"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "QrCodeMaker.ShowResultVc.copyText(Any) -&gt; ()"
-                  moduleName = "QrCodeMaker"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sadiq/Documents/GitHub/QrCode/QrCodeMaker/ViewController/ShowResultVc.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "750"
-                  endingLineNumber = "750"
-                  offsetFromSymbolStart = "2620">
-               </Location>
-               <Location
-                  uuid = "7F88B6C9-0DC2-4B6C-B0BC-77C1F922F371 - 49bf751ba466d9ae"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "QrCodeMaker.ShowResultVc.sendEmail(subject: Swift.Optional&lt;Swift.String&gt;, mailAddress: Swift.Optional&lt;Swift.String&gt;, cc: Swift.Optional&lt;Swift.String&gt;, meessage: Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
-                  moduleName = "QrCodeMaker"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sadiq/Documents/GitHub/QrCode/QrCodeMaker/ViewController/ShowResultVc.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "751"
-                  endingLineNumber = "751"
-                  offsetFromSymbolStart = "192">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
