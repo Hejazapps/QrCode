@@ -731,6 +731,10 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
             bnTextContent.setTitle("Add to Contact", for: .normal)
         }
         
+        if stringValue.containsIgnoringCase(find: "mecard") {
+            bnTextContent.setTitle("Add to Contact", for: .normal)
+        }
+        
         
         
         
@@ -854,6 +858,12 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
              
             
             self.sendEmail(subject: subject, mailAddress: email, cc: cc, meessage: body)
+            
+        }
+        
+        if stringValue.containsIgnoringCase(find: "mecard") {
+            
+            
             
         }
         

@@ -14,8 +14,8 @@
             filePath = "QrCodeMaker/ViewController/ShowResultVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "856"
-            endingLineNumber = "856"
+            startingLineNumber = "860"
+            endingLineNumber = "860"
             landmarkName = "copyText(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,8 +30,8 @@
             filePath = "QrCodeMaker/ViewController/ShowResultVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "758"
-            endingLineNumber = "758"
+            startingLineNumber = "762"
+            endingLineNumber = "762"
             landmarkName = "sendEmail(subject:mailAddress:cc:meessage:)"
             landmarkType = "7">
             <Locations>
@@ -78,8 +78,8 @@
             filePath = "QrCodeMaker/ViewController/ShowResultVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "756"
-            endingLineNumber = "756"
+            startingLineNumber = "760"
+            endingLineNumber = "760"
             landmarkName = "sendEmail(subject:mailAddress:cc:meessage:)"
             landmarkType = "7">
             <Locations>
@@ -126,8 +126,8 @@
             filePath = "QrCodeMaker/ViewController/ShowResultVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "755"
-            endingLineNumber = "755"
+            startingLineNumber = "759"
+            endingLineNumber = "759"
             landmarkName = "sendEmail(subject:mailAddress:cc:meessage:)"
             landmarkType = "7">
             <Locations>

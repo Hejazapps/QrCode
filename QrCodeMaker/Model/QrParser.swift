@@ -21,24 +21,7 @@ class QrParser: NSObject {
     
         
         
-        var dict = ["Image": "Enter Link/Text,Select an Image",
-                    "Email": "Enter Email Address,CC,Subject,Email Body",
-                    "Url": "Enter Url",
-                    "Phone": "Enter Phone Number",
-                    "SMS": "Enter Phone Number,Enter Message",
-                    "Text":"Enter Text"
-                    ,"vCard":"First Name,Last Name,Phone Number,Email,Organization,Job Title,Street,City,State,Country,Postal Code,Website",
-                     "vCard1":"First Name,Last Name,Phone,Email,Url,NickName,Address,Organization,Note,Birthday",
-                    "Facebook": "Enter FaceBook Link",
-                    "Instagram": "Enter Instagram Id",
-                    "Twitter": "Enter Twitter Id",
-                    "Skype": "Enter Skype Id",
-                    "Calendar": "EventName,EvenLocation,Note,StartDate,EndDate",
-                    "Google Map Location": "Enter Location Link",
-                    "AppStore": "Enter AppStore Link",
-                    "BarCode":"Text",
-                    "WIFI": "Enter Network Name,Enter Password,Enter Encription,Enter network status",
-                    "MMS": "Phone number,Body,Meesege"]
+        
         
         
         

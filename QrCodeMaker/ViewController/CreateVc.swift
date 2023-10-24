@@ -574,6 +574,7 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
     
     @IBAction func createBtnPressed(_ sender: Any) {
         
+        self.dismissKeyboard()
         print(createDataModelArray)
         
         if self.currentSelectedName == "Location" {
@@ -822,6 +823,8 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
     }
     
     @objc func dismissKeyboard() {
+        
+        tableView.reloadData()
         UIView.animate(withDuration: 0.3) {
             self.topSpaceView.constant = 0
             self.bottomSpaceOftableView.constant = 0
@@ -861,7 +864,7 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
         
         self.inputParemeterArray[index].height = max(height, Int(frame.size.height) + 20 + 35 + 30)
         
-        tableView.reloadData()
+       // tableView.reloadData()
         
          
         
