@@ -13,6 +13,7 @@ import KRProgressHUD
 import QRCode
 import EventKit
 import EventKitUI
+import Contacts
 
 class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, sendImage, sendUpdatedArray, EKEventEditViewDelegate, MFMailComposeViewControllerDelegate {
     func eventEditViewController(_ controller: EKEventEditViewController, didCompleteWith action: EKEventEditViewAction) {
@@ -168,6 +169,8 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
     @IBOutlet weak var heightForMainView: NSLayoutConstraint!
     @IBOutlet weak var heightForScrollView: NSLayoutConstraint!
     @IBOutlet weak var heightForView: NSLayoutConstraint!
+    var store: CNContactStore!
+    
     
     var idF = ""
     var showText  = ""
@@ -183,7 +186,8 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
     
     var createDataModelArray = [ResultDataModel]()
     var eventF:EKEvent?
-    
+    var contactCard:CNMutableContact!
+
     
     
     @IBOutlet weak var barLabelText: UILabel!
@@ -198,6 +202,8 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
     var colorb  = UIColor.white
     
     let doc = QRCode.Document()
+    
+    var contacts:[CNContact] = []
     //var type = ""
     
     @IBAction func gotoCustomizeDesign(_ sender: Any) {
@@ -357,10 +363,75 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
         imv.image = image
     }
     
+    
+    private func requestContactsAccess() {
+        
+        store.requestAccess(for: .contacts) {granted, error in
+            if granted {
+                
+                DispatchQueue.main.async {
+                    self.accessGrantedForContacts()
+                }
+                
+            }
+        }
+    }
+    
+    
+    private func checkContactsAccess() {
+           switch CNContactStore.authorizationStatus(for: .contacts) {
+           // Update our UI if the user has granted access to their Contacts
+           case .authorized:
+               self.accessGrantedForContacts()
+               
+           // Prompt the user for access to Contacts if there is no definitive answer
+           case .notDetermined :
+               self.requestContactsAccess()
+               
+           // Display a message if the user has denied or restricted access to Contacts
+           case .denied,
+                .restricted:
+               let alert = UIAlertController(title: "Privacy Warning!",
+                                             message: "Permission was not granted for Contacts.",
+                                             preferredStyle: .alert)
+               alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+               self.present(alert, animated: true, completion: nil)
+           @unknown default:
+               print("sadiqul amin")
+           }
+       }
+       private func accessGrantedForContacts() {
+           
+           let mutableContact:CNMutableContact!
+           
+           if stringValue.containsIgnoringCase(find: "MECARD") {
+               mutableContact = contactCard
+           }
+           else{
+               mutableContact = contacts.first!.mutableCopy() as! CNMutableContact
+           }
+           
+           
+           IHProgressHUD.show(withStatus: "Saving ........")
+           let request = CNSaveRequest()
+           request.add(mutableContact, toContainerWithIdentifier: nil)
+           do{
+               try store.execute(request)
+               DispatchQueue.main.async {
+                   IHProgressHUD.dismiss()
+               }
+           } catch let err{
+               DispatchQueue.main.async {
+                   IHProgressHUD.dismiss()
+               }
+               print("Failed to save the contact. \(err)")
+           }
+       }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print(showText)
-        
+        store = CNContactStore()
         if isfromQr {
             Store.sharedInstance.shouldShowLabel = false
         }
@@ -376,6 +447,26 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
         tablewView.separatorColor = UIColor.clear
         
         print("mamammamamamamamammaa: \(stringValue)")
+        
+        
+        
+        if stringValue.containsIgnoringCase(find: "vcard") {
+            
+            if let data = stringValue.data(using: .utf8) {
+                 do{
+                     contacts = try CNContactVCardSerialization.contacts(with: data)
+                     let contact = contacts.first
+                     
+                     
+                    
+                 }
+                catch{
+                    // Error Handling
+                     print(error.localizedDescription)
+                 }
+             }
+            
+        }
         
         if  isfromQr {
             self.updateAll()
@@ -431,6 +522,11 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
                 colorb = UserDefaults.standard.color(forKey: stringValue2)!
             }
             self.updateAll()
+            
+            
+                     
+            
+            
         }
         
         
@@ -631,6 +727,10 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
             bnTextContent.setTitle("Email", for: .normal)
         }
         
+        if stringValue.containsIgnoringCase(find: "vcard") {
+            bnTextContent.setTitle("Add to Contact", for: .normal)
+        }
+        
         
         
         
@@ -696,6 +796,12 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
             } else {
                 UIApplication.shared.openURL(url)
             }
+        }
+        
+        if stringValue.containsIgnoringCase(find: "vcard") {
+            
+            self.checkContactsAccess()
+            return
         }
         
         if stringValue.containsIgnoringCase(find: "mailto") {

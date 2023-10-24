@@ -43,6 +43,7 @@ func generateBarCode(_ string: String) -> UIImage {
     }
 }
 
+
 func checkWhichUrl (name:String) -> String {
     
     if name.containsIgnoringCase(find: "OneDrive") {
