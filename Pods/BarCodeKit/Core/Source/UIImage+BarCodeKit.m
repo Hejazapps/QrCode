@@ -6,9 +6,6 @@
 //  Copyright (c) 2013 Oliver Drobnik. All rights reserved.
 //
 
-@import Foundation;
-
-#if TARGET_OS_IOS
 #import "UIImage+BarCodeKit.h"
 #import "BCKCode.h"
 
@@ -16,23 +13,25 @@
 
 + (UIImage *)imageWithBarCode:(BCKCode *)barCode options:(NSDictionary *)options
 {
-	CGSize neededSize = [barCode sizeWithRenderOptions:options];
+    NSMutableDictionary *tmpOptions = [[NSMutableDictionary alloc] initWithDictionary:options];
+    tmpOptions[BCKCodeDrawingFillEmptyQuietZonesOption] = @(YES);
+    tmpOptions[BCKCodeDrawingBarScaleOption] = [NSNumber numberWithDouble:10];
+    
+    CGSize neededSize = [barCode sizeWithRenderOptions:tmpOptions];
 
-	if (!neededSize.width || !neededSize.height)
-	{
-		return nil;
-	}
-	
-	UIGraphicsBeginImageContextWithOptions(neededSize, NO, 0);
-	CGContextRef context = UIGraphicsGetCurrentContext();
-	
-	[barCode renderInContext:context options:options];
-	
-	UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-	UIGraphicsEndImageContext();
-	
-	return image;
+    if (!neededSize.width || !neededSize.height)
+    {
+        return nil;
+    }
+    
+    UIGraphicsBeginImageContextWithOptions(neededSize, NO, 0);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    [barCode renderInContext:context options:tmpOptions];
+    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return image;
 }
 
-@end
-#endif
