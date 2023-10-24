@@ -14,7 +14,7 @@ import QRCode
 import EventKit
 import EventKitUI
 
-class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, sendImage, sendUpdatedArray, EKEventEditViewDelegate {
+class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, sendImage, sendUpdatedArray, EKEventEditViewDelegate, MFMailComposeViewControllerDelegate {
     func eventEditViewController(_ controller: EKEventEditViewController, didCompleteWith action: EKEventEditViewAction) {
         
         if action.rawValue == 0 {
@@ -369,6 +369,9 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
             showText = (outputResult[0] as? String)!
             // type = (outputResult[1] as? String)!
             //print(type)
+            
+            
+           
         }
         tablewView.separatorColor = UIColor.clear
         
@@ -649,6 +652,38 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
     }
     
     
+    func sendEmail(subject:String?,mailAddress:String?,cc:String?,meessage:String?) {
+           if MFMailComposeViewController.canSendMail() {
+               let mail = MFMailComposeViewController()
+               mail.mailComposeDelegate = self
+               mail.modalPresentationStyle = .fullScreen
+               if let mailAddressV = mailAddress
+               {
+                   mail.setToRecipients([mailAddressV])
+               }
+               if let meessageV = meessage
+               {
+                   mail.setMessageBody(meessageV, isHTML: false)
+               }
+               
+               if let subjectV = subject
+               {
+                   mail.setSubject(subjectV)
+               }
+               if let cctV = cc
+               {
+                   mail.setCcRecipients([cctV])
+               }
+               
+               present(mail, animated: true)
+               
+           } else {
+               let alert = UIAlertController(title: "Note", message: "Email is not configured", preferredStyle: UIAlertController.Style.alert)
+               alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+               self.present(alert, animated: true, completion: nil)
+           }
+       }
+    
     @IBAction func copyText(_ sender: Any) {
         
         if showText.containsIgnoringCase(find: "url") {
@@ -661,6 +696,59 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
             } else {
                 UIApplication.shared.openURL(url)
             }
+        }
+        
+        if stringValue.containsIgnoringCase(find: "mailto") {
+            
+            var email = ""
+            var  cc = ""
+            var  subject = ""
+            var body = ""
+            
+            
+            let array = showText.components(separatedBy: "\n\n")
+            
+            for item in array {
+                
+                if let v = item as? String {
+                    
+                    if v.containsIgnoringCase(find: "email") {
+                        let ar = v.components(separatedBy: ":")
+                        
+                        if ar.count > 1 {
+                            email = ar[1]
+                        }
+                        
+                    }
+                    
+                    if v.containsIgnoringCase(find: "cc") {
+                        let ar = v.components(separatedBy: ":")
+                        
+                        if ar.count > 1 {
+                            cc = ar[1]
+                        }
+                    }
+                    
+                    if v.containsIgnoringCase(find: "subject") {
+                        let ar = v.components(separatedBy: ":")
+                        
+                        if ar.count > 1 {
+                            subject = ar[1]
+                        }
+                    }
+                    
+                    if v.containsIgnoringCase(find: "body") {
+                        let ar = v.components(separatedBy: ":")
+                        if ar.count > 1 {
+                            body = ar[1]
+                        }
+                    }
+                }
+            }
+             
+            
+            self.sendEmail(subject: subject, mailAddress: email, cc: cc, meessage: body)
+            
         }
         
         if stringValue.containsIgnoringCase(find: "tel") {
