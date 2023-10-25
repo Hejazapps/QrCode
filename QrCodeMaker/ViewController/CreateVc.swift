@@ -297,7 +297,15 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
     }
     
     func addEventToCalendar(){
-        
+        let completion: EKEventStoreRequestAccessCompletionHandler = { granted, error in
+            DispatchQueue.main.async { [weak self] in
+                if granted {
+                    self?.createEvent()
+                } else {
+                    self?.showAlert()
+                }
+            }
+        }
         
         switch EKEventStore.authorizationStatus(for: .event) {
             
@@ -308,17 +316,13 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
             print("Access denied")
             
         case .notDetermined:
-            eventStore.requestAccess(to: .event, completion:
-                                        {(granted: Bool, error: Error?) -> Void in
-                if granted {
-                    
-                    self.createEvent()
-                    
-                } else {
-                    
-                    self.showAlert()
-                }
-            })
+            if #available(iOS 17.0, *) {
+                print("iOS 17.0 and higher")
+                eventStore.requestFullAccessToEvents(completion: completion)
+            } else {
+                print("less than iOS 17.0")
+                eventStore.requestAccess(to: .event, completion: completion)
+            }
             
             print("Not Determined")
         default:
