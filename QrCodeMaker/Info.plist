@@ -21,5 +21,21 @@
 			</array>
 		</dict>
 	</dict>
+	<key>NSCalendarsUsageDescription</key>
+	<string>To create an Event QR Code, please allow Calendar access</string>
+	<key>NSCameraUsageDescription</key>
+	<string>To scan codes please allow Camera access</string>
+	<key>NSContactsUsageDescription</key>
+	<string>To save this contact, please allow this app Contacts access</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Will you allow this app to always know your location?</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Will you allow this app to always know your location?</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Do you allow this app to know your current location?</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>To scan codes from images please allow Photos access</string>
+	<key>NSCalendarsFullAccessUsageDescription</key>
+	<string></string>
 </dict>
 </plist>

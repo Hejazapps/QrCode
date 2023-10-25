@@ -716,6 +716,10 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
         print(stringValue)
         
         
+        if stringValue.containsIgnoringCase(find: "geo") {
+            bnTextContent.isHidden = true
+        }
+        
         if stringValue.containsIgnoringCase(find: "WIFI") {
             
             bnTextContent.setTitle("Connect", for: .normal)
