@@ -304,6 +304,21 @@
                   endingLineNumber = "820"
                   offsetFromSymbolStart = "2156">
                </Location>
+               <Location
+                  uuid = "3CD922EA-8810-4B82-8460-7CBFA9AD82AD - 5af72be1f06b9828"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QrCodeMaker.ShowResultVc.copyText(Any) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiq/Documents/GitHub/QrCode/QrCodeMaker/ViewController/ShowResultVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "820"
+                  endingLineNumber = "820"
+                  offsetFromSymbolStart = "2164">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -366,6 +381,21 @@
                   startingLineNumber = "829"
                   endingLineNumber = "829"
                   offsetFromSymbolStart = "2932">
+               </Location>
+               <Location
+                  uuid = "1234B847-F281-440B-AEE0-0E414A025F22 - 5af72be1f06b99c3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QrCodeMaker.ShowResultVc.copyText(Any) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiq/Documents/GitHub/QrCode/QrCodeMaker/ViewController/ShowResultVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "829"
+                  endingLineNumber = "829"
+                  offsetFromSymbolStart = "2940">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -430,6 +460,21 @@
                   endingLineNumber = "830"
                   offsetFromSymbolStart = "3152">
                </Location>
+               <Location
+                  uuid = "85E1F1C7-AE52-4829-8599-750B3B1786C0 - 5af72be1f06b99e2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QrCodeMaker.ShowResultVc.copyText(Any) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiq/Documents/GitHub/QrCode/QrCodeMaker/ViewController/ShowResultVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "830"
+                  endingLineNumber = "830"
+                  offsetFromSymbolStart = "3160">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -493,6 +538,21 @@
                   endingLineNumber = "832"
                   offsetFromSymbolStart = "3176">
                </Location>
+               <Location
+                  uuid = "B2D7811E-511B-4C41-8B8D-9C5878E7BA09 - 5af72be1f06b9a5c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QrCodeMaker.ShowResultVc.copyText(Any) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiq/Documents/GitHub/QrCode/QrCodeMaker/ViewController/ShowResultVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "832"
+                  endingLineNumber = "832"
+                  offsetFromSymbolStart = "3184">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -547,80 +607,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5E0C5C9F-332C-4CB9-AAB7-5469C0E2C395"
+            uuid = "AC386A83-916E-48F8-A4FD-E6DC9CC050B1"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "QrCodeMaker/ViewController/CreateVc.swift"
+            filePath = "QrCodeMaker/ViewController/ShowResultVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "316"
-            endingLineNumber = "316"
-            landmarkName = "addEventToCalendar()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "AA589553-1B8D-4016-84C2-C23D6969AA1E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "QrCodeMaker/ViewController/CreateVc.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "311"
-            endingLineNumber = "311"
-            landmarkName = "addEventToCalendar()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "AA589553-1B8D-4016-84C2-C23D6969AA1E - c80ba26a8c25ae2a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "QrCodeMaker.CreateVc.addEventToCalendar() -&gt; ()"
-                  moduleName = "QrCodeMaker"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sadiq/Documents/GitHub/QrCode/QrCodeMaker/ViewController/CreateVc.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "311"
-                  endingLineNumber = "311"
-                  offsetFromSymbolStart = "524">
-               </Location>
-               <Location
-                  uuid = "AA589553-1B8D-4016-84C2-C23D6969AA1E - d53b9bc322622ca1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Bool, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in QrCodeMaker.CreateVc.addEventToCalendar() -&gt; ()"
-                  moduleName = "QrCodeMaker"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sadiq/Documents/GitHub/QrCode/QrCodeMaker/ViewController/CreateVc.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "311"
-                  endingLineNumber = "311"
-                  offsetFromSymbolStart = "68">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "9ED895B5-8478-4359-9392-524DC33C8BE8"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "QrCodeMaker/ViewController/CreateVc.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "305"
-            endingLineNumber = "305"
-            landmarkName = "addEventToCalendar()"
+            startingLineNumber = "1129"
+            endingLineNumber = "1129"
+            landmarkName = "copyText(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

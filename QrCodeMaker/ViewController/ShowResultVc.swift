@@ -713,7 +713,7 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
             KRProgressHUD.dismiss()
         }
         
-        print(stringValue)
+        
         
         
         if stringValue.containsIgnoringCase(find: "geo") {
@@ -855,6 +855,8 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
                 }
             }
             
+            return
+            
         }
         
         if showText.containsIgnoringCase(find: "url") {
@@ -867,6 +869,7 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
             } else {
                 UIApplication.shared.openURL(url)
             }
+            return
         }
         
         if stringValue.containsIgnoringCase(find: "vcard") {
@@ -925,7 +928,7 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
              
             
             self.sendEmail(subject: subject, mailAddress: email, cc: cc, meessage: body)
-            
+            return
         }
         
         if stringValue.containsIgnoringCase(find: "mecard") {
@@ -1090,7 +1093,7 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
             phoneNumber = phoneNumber.replacingOccurrences(of: ":", with: "")
             phoneNumber = phoneNumber.trimmingCharacters(in: .whitespaces)
             self.dialNumber(number: phoneNumber)
-            
+            return
         }
         if stringValue.containsIgnoringCase(find: "SMS") {
             
@@ -1118,9 +1121,21 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
                 }
             }
             
-            print(sms)
+           return
             
         }
+        
+        
+        let pasteBoard = UIPasteboard.general
+        pasteBoard.string =  stringValue
+        
+        let alert = UIAlertController(title: "Note", message: "Text has been copied to clipboard", preferredStyle: UIAlertController.Style.alert)
+        
+        // add an action (button)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
         
         
     }

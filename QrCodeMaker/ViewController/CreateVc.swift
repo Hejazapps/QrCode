@@ -264,6 +264,7 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
             mapView.showsUserLocation = true
             
         case .denied:
+            
             break
         case .notDetermined:
             locationManager.requestWhenInUseAuthorization()
@@ -572,14 +573,64 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
         self.dismissKeyboard()
     }
     
+    
+    
+    func showLocationAlert()
+    {
+        DispatchQueue.main.async {
+            let alert = UIAlertController(
+                title: "Location Access required",
+                message: "To create qr code from Location you need to give location permission",
+                preferredStyle: UIAlertController.Style.alert
+            )
+            alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (alert) -> Void in
+                // Store.sharedInstance.setshouldShowHomeScreen(value: true)
+               
+                
+                
+                
+            }))
+            alert.addAction(UIAlertAction(title: "Allow Access", style: .default, handler: { (alert) -> Void in
+                UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
+        
+    }
+    
     @IBAction func createBtnPressed(_ sender: Any) {
         
         self.dismissKeyboard()
         print(createDataModelArray)
         
         if self.currentSelectedName == "Location" {
-            temp = "Location"
+            
+            
+            switch CLLocationManager.authorizationStatus() {
+            case .authorizedWhenInUse:
+                mapView.showsUserLocation = true
+                
+            case .denied:
+                showLocationAlert()
+                return
+                break
+            case .notDetermined:
+                locationManager.requestWhenInUseAuthorization()
+                
+                mapView.showsUserLocation = true
+            case .restricted:
+                break
+            case .authorizedAlways:
+                break
+            @unknown default: break
+                
+            }
+            
+            
             self.goResultVc(string: self.currentLocationString)
+            
+            temp = "Location"
+            
             return
             
         }
