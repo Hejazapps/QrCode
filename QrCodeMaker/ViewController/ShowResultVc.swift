@@ -14,6 +14,7 @@ import QRCode
 import EventKit
 import EventKitUI
 import Contacts
+import NetworkExtension
 
 class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, sendImage, sendUpdatedArray, EKEventEditViewDelegate, MFMailComposeViewControllerDelegate {
     func eventEditViewController(_ controller: EKEventEditViewController, didCompleteWith action: EKEventEditViewAction) {
@@ -713,6 +714,12 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
         }
         
         print(stringValue)
+        
+        
+        if stringValue.containsIgnoringCase(find: "WIFI") {
+            
+            bnTextContent.setTitle("Connect", for: .normal)
+        }
         if stringValue.containsIgnoringCase(find: "tel") {
             bnTextContent.setTitle("Call", for: .normal)
         }
@@ -789,6 +796,62 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
        }
     
     @IBAction func copyText(_ sender: Any) {
+        
+        
+        
+        if stringValue.containsIgnoringCase(find: "wifi") {
+            
+            var array = stringValue.components(separatedBy: ";")
+            
+            var name = ""
+            var password = ""
+            var type = ""
+            
+            for item in array {
+                var mal = (item as? String)!.replacingOccurrences(of: "WIFI:", with: "", options: .literal, range: nil)
+                mal = mal.replacingOccurrences(of: "wifi:", with: "", options: .literal, range: nil)
+                
+                if mal.containsIgnoringCase(find: "T:") {
+                    
+                    type =   mal.replacingOccurrences(of: "T:", with: "", options: .literal, range: nil)
+                }
+                
+                if mal.containsIgnoringCase(find: "S:") {
+                    
+                    name =   mal.replacingOccurrences(of: "S:", with: "", options: .literal, range: nil)
+                }
+                if mal.containsIgnoringCase(find: "P:") {
+                    
+                    password =   mal.replacingOccurrences(of: "P:", with: "", options: .literal, range: nil)
+                }
+                 
+            }
+            
+            
+            NEHotspotConfigurationManager.shared.removeConfiguration(forSSID: name)
+            
+            var valuem = false
+            if type.containsIgnoringCase(find: "wep") {
+                valuem = true
+            }
+            
+            let wiFiConfig = NEHotspotConfiguration(ssid: name, passphrase: password, isWEP: valuem)
+            wiFiConfig.joinOnce = true
+            NEHotspotConfigurationManager.shared.apply(wiFiConfig) { error in
+                if let error = error {
+                    print(error.localizedDescription)
+                    DispatchQueue.main.async {
+                        let alert = UIAlertController(title: "Alert", message: error.localizedDescription, preferredStyle: UIAlertController.Style.alert)
+                        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
+                     }
+                }
+                else {
+                    // user confirmed
+                }
+            }
+            
+        }
         
         if showText.containsIgnoringCase(find: "url") {
             guard let url = URL(string: stringValue) else {

@@ -834,7 +834,6 @@ extension Constant {
         array.append(CreateDataModel(title: "Network Name:", height: 110))
         array.append(CreateDataModel(title: "Password:", height: 110))
         array.append(CreateDataModel(title: "Encription:", height: 110))
-        array.append(CreateDataModel(title: "Hidden:", height: 110))
         return array
     }
     

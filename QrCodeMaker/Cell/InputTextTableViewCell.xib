@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22129"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -45,16 +46,30 @@
                                     <segment title="None"/>
                                 </segments>
                             </segmentedControl>
+                            <segmentedControl hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xJb-GC-bfX">
+                                <rect key="frame" x="0.0" y="7.6666666666666643" width="150" height="31"/>
+                                <color key="backgroundColor" systemColor="linkColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="8wd-gh-GGk"/>
+                                    <constraint firstAttribute="width" constant="150" id="P79-vG-ZeS"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="YES"/>
+                                    <segment title="NO"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="R5k-QV-lmE" secondAttribute="bottom" id="EZj-lu-Ytm"/>
+                            <constraint firstItem="xJb-GC-bfX" firstAttribute="centerY" secondItem="ArO-pm-mFN" secondAttribute="centerY" id="Ok1-vy-edO"/>
                             <constraint firstAttribute="trailing" secondItem="3qV-sG-2wN" secondAttribute="trailing" constant="16" id="QaE-Pc-jlh"/>
                             <constraint firstItem="R5k-QV-lmE" firstAttribute="leading" secondItem="ArO-pm-mFN" secondAttribute="leading" id="Qxi-Yc-q0J"/>
                             <constraint firstItem="3qV-sG-2wN" firstAttribute="leading" secondItem="ArO-pm-mFN" secondAttribute="leading" constant="12" id="Rmb-WA-RxZ"/>
                             <constraint firstAttribute="trailing" secondItem="R5k-QV-lmE" secondAttribute="trailing" id="Ruo-3y-Cq9"/>
                             <constraint firstItem="3qV-sG-2wN" firstAttribute="top" secondItem="ArO-pm-mFN" secondAttribute="top" constant="16" id="YdY-wG-hUQ"/>
                             <constraint firstAttribute="bottom" secondItem="3qV-sG-2wN" secondAttribute="bottom" constant="16" id="jSk-8w-Xih"/>
+                            <constraint firstItem="xJb-GC-bfX" firstAttribute="leading" secondItem="ArO-pm-mFN" secondAttribute="leading" id="otG-e6-dKL"/>
                             <constraint firstItem="R5k-QV-lmE" firstAttribute="top" secondItem="ArO-pm-mFN" secondAttribute="top" id="qaL-H5-3Gk"/>
                         </constraints>
                     </view>
@@ -75,10 +90,16 @@
             <connections>
                 <outlet property="label" destination="Msz-iu-5YD" id="ibn-dd-CiV"/>
                 <outlet property="networkName" destination="R5k-QV-lmE" id="uSP-49-JWM"/>
+                <outlet property="switchF" destination="xJb-GC-bfX" id="z9z-9X-FZQ"/>
                 <outlet property="textView" destination="3qV-sG-2wN" id="TzT-x4-zZJ"/>
                 <outlet property="textViewContainer" destination="ArO-pm-mFN" id="Da5-O5-0Zp"/>
             </connections>
             <point key="canvasLocation" x="-83" y="21"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

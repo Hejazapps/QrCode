@@ -508,7 +508,6 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
         hideV4.isHidden = false
         hideV5.isHidden = false
         hideV6.isHidden = false
-        hide7.isHidden = false
         widthForView.constant = 80.0
         
         imvHolder.layer.borderWidth = 2.0
@@ -1138,6 +1137,7 @@ extension CreateVc: UITableViewDelegate,UITableViewDataSource{
         keyboardToolbar.items = [flexBarButton, doneBarButton]
         cell.textView.inputAccessoryView = keyboardToolbar
         cell.textView.text = ""
+        cell.switchF.isHidden = true
         
         if  fromQrCode {
             if self.isOnlyDecimal(type: self.createDataModelArray[indexPath.item].title) {
@@ -1163,7 +1163,7 @@ extension CreateVc: UITableViewDelegate,UITableViewDataSource{
         }
         
         
-        
+        cell.switchF.isHidden =  true
         
         cell.textView.tag = indexPath.item
         cell.textView.delegate = self
@@ -1180,7 +1180,7 @@ extension CreateVc: UITableViewDelegate,UITableViewDataSource{
         cell.textView.text =  self.createDataModelArray[indexPath.item].description
         
         
-        
+        cell.textViewContainer.backgroundColor = UIColor.white
         
         cell.label.text =  self.createDataModelArray[indexPath.item].title
         cell.label.textColor = UIColor.white
@@ -1194,7 +1194,28 @@ extension CreateVc: UITableViewDelegate,UITableViewDataSource{
         let textF = self.createDataModelArray[indexPath.item].title
         
         cell.networkName.addTarget(self, action: #selector(segmentAction(_:)), for: .valueChanged)
-        if textF.contains(find: "Encription") {
+        
+        if  self.createDataModelArray[indexPath.item].title.containsIgnoringCase(find: "hidden") {
+            
+            print("dada")
+            
+            cell.networkName.isHidden = true
+            cell.textView.isHidden = true
+            cell.switchF.isHidden = false
+            cell.textViewContainer.backgroundColor = UIColor.clear
+            
+            let genderIndex = cell.networkName.selectedSegmentIndex
+            
+            if genderIndex == 0 {
+                self.createDataModelArray[indexPath.item].description = "Hidden"
+            }
+            else {
+                self.createDataModelArray[indexPath.item].description = "Not"
+            }
+        }
+        
+      
+        else if textF.contains(find: "Encription") {
             print("mamamamamammamamamamammama")
             cell.networkName.isHidden = false
             

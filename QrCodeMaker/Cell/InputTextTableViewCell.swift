@@ -10,6 +10,7 @@ import UIKit
 class InputTextTableViewCell: UITableViewCell {
     @IBOutlet weak var textViewContainer: UIView!
 
+    @IBOutlet weak var switchF: UISegmentedControl!
     @IBOutlet weak var textView: UITextView!
 
     @IBOutlet weak var label: UILabel!
