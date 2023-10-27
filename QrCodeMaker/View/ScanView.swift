@@ -68,7 +68,7 @@ public class ScanView: UIView {
     
     
     override public func draw(_ rect: CGRect) {
-        
+        print("In draw() scanView")
         super.draw(rect)
         
         drawScan(rect)

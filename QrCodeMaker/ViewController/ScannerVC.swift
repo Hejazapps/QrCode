@@ -76,6 +76,7 @@ public class ScannerVC: UIViewController {
     }
     
     override public func viewDidLoad() {
+        print("ScannerVC -> viewDidLoad()")
         super.viewDidLoad()
         
         setupUI()
@@ -106,7 +107,7 @@ public class ScannerVC: UIViewController {
 extension ScannerVC{
     
     func setupUI() {
-        
+        print("ScannerVC -> setupUI()")
         if title == nil {
             title = "Scan"
         }
@@ -122,7 +123,7 @@ extension ScannerVC{
         cameraViewController.delegate = self
         
         add(cameraViewController)
-        
+        print("Added cameraVC")
         
         if navigationController == nil {
             
@@ -131,9 +132,6 @@ extension ScannerVC{
             view.bringSubviewToFront(headerViewController.view)
             
         }
-        
-        ScanAnimation.shared.startAnimation()
-        
     }
     
     

@@ -103,26 +103,28 @@ public class CameraVC: UIViewController {
     /// Capture session.
     private lazy var captureSession = AVCaptureSession()
     
-    lazy var scanView = ScanView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight))
+    var scanView: ScanView!
     
     override public func viewDidLoad() {
+        print("CameraVC -> viewDidLoad()")
         super.viewDidLoad()
         
         setupUI()
-        scanView.startAnimation()
     }
     
     
     public override func viewDidAppear(_ animated: Bool) {
+        print("CameraVC -> viewDidAppear()")
         super.viewDidAppear(animated)
         
+        scanView.setNeedsDisplay()
+        scanView.startAnimation()
     }
     
     public override func viewDidDisappear(_ animated: Bool) {
+        print("CameraVC -> viewDidDisappear()")
         super.viewDidDisappear(animated)
-        
-        
-        
+        scanView.stopAnimation()
     }
     
     override public func viewWillAppear(_ animated: Bool) {
@@ -138,7 +140,7 @@ public class CameraVC: UIViewController {
 extension CameraVC {
     
     func setupUI() {
-        
+        print("CameraVC -> setupUI()")
         view.backgroundColor = .black
         
         videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
@@ -153,6 +155,7 @@ extension CameraVC {
         
         view.layer.addSublayer(videoPreviewLayer)
         
+        scanView = ScanView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight))
         scanView.scanAnimationImage = animationImage
         
         scanView.scanAnimationStyle = animationStyle

@@ -91,10 +91,6 @@ class MainTabVc: UITabBarController,UITabBarControllerDelegate,UIImagePickerCont
             vc.showPicker()
             self.tabBar.isHidden = true
         }
-        
-        if viewController is ScannerVC{
-            ScanAnimation.shared.startAnimation()
-        }
     }
 
     func checkCamera() {

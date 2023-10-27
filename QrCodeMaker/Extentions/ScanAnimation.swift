@@ -67,8 +67,11 @@ class ScanAnimation:NSObject{
     
     
     func startAnimation() {
-        
-        displayLink?.isPaused = false
+        guard let displayLink else {
+            print("displayLink is nil")
+            return
+        }
+        displayLink.isPaused = false
         
     }
     
