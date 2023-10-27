@@ -35,7 +35,7 @@
 	<string>Do you allow this app to know your current location?</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>To scan codes from images please allow Photos access</string>
-	<key>NSCalendarsWriteOnlyAccessUsageDescription</key>
-	<string></string>
+	<key>NSCalendarsFullAccessUsageDescription</key>
+	<string>To create an event, please allow Calendar usage access</string>
 </dict>
 </plist>
