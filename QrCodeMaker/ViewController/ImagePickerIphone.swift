@@ -122,10 +122,6 @@ class ImagePickerIphone: UIViewController,UIImagePickerControllerDelegate,UINavi
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-        if isSelected {
-            isSelected = false
-            return
-        }
         
         if Store.sharedInstance.shouldShowHistoryPage || Store.sharedInstance.shouldShowHomeScreen {
             self.dismiss(animated: false)
@@ -136,7 +132,6 @@ class ImagePickerIphone: UIViewController,UIImagePickerControllerDelegate,UINavi
     
     func funcToCall() {
         Store.sharedInstance.setshouldShowHomeScreen(value: true)
-        self.dismiss(animated: false, completion: nil)
     }
     
     public func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -199,7 +194,6 @@ class ImagePickerIphone: UIViewController,UIImagePickerControllerDelegate,UINavi
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         isSelected = true
-        picker.dismiss(animated: true)
         self.selectedImage(selectedImage: image)
 
     }
