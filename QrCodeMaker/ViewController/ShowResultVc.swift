@@ -16,6 +16,10 @@ import EventKitUI
 import Contacts
 import NetworkExtension
 
+protocol dismissImagePicker {
+    func  dimissAllClass()
+}
+
 class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, sendImage, sendUpdatedArray, EKEventEditViewDelegate, MFMailComposeViewControllerDelegate {
     func eventEditViewController(_ controller: EKEventEditViewController, didCompleteWith action: EKEventEditViewAction) {
         
@@ -188,7 +192,7 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
     var createDataModelArray = [ResultDataModel]()
     var eventF:EKEvent?
     var contactCard:CNMutableContact!
-
+    var delegateDis: dismissImagePicker?
     
     @IBOutlet weak var heightForView1: NSLayoutConstraint!
     
@@ -657,8 +661,9 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
         
         Store.sharedInstance.setPopValue(value: true)
         Store.sharedInstance.setShowHistoryPage(value: true)
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "sadiq"), object: nil)
+       // NotificationCenter.default.post(name: NSNotification.Name(rawValue: "sadiq"), object: nil)
        // self.view.window!.rootViewController?.dismiss(animated: true, completion: nil)
+        delegateDis?.dimissAllClass()
         self.dismiss(animated: true)
         
     }

@@ -16,21 +16,31 @@ import SVProgressHUD
 import KRProgressHUD
 
 
-class ImagePickerIphone: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+class ImagePickerIphone: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate, dismissImagePicker {
+    
+    func dimissAllClass() {
+        
+        if let v =  UIApplication.topMostViewController {
+            let name = String(describing: type(of: v))
+            print("please print: \(name)")
+            
+        }
+    }
+    
     var currentBarCode = ""
     var arr2Name = NSArray(objects: "EAN-13","EAN-8","UPC-A","UPC-E","Code128","ITF","Code39","Codabar","Data-Matrix","Aztec-Code")
     var tempSp:UIView! = nil
     var isCodeFound = false
     
-    var shouldNotDimiss = false
+    var correctCodeFound = false
     
     @IBOutlet weak var collectionview: UICollectionView!
     var allPhotos : PHFetchResult<PHAsset>? = nil
     let imagePickerController = UIImagePickerController()
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.photoLibraryAvailabilityCheck()
         
-        // Do any additional setup after loading the view.
     }
     
     @available(iOS 11.0, *)
@@ -95,6 +105,7 @@ class ImagePickerIphone: UIViewController,UIImagePickerControllerDelegate,UINavi
     }
     
     @IBAction func gotoPreviousView(_ sender: Any) {
+        print("backV")
         self.funcToCall()
     }
     func processSnapShotPhotos() {
@@ -122,14 +133,14 @@ class ImagePickerIphone: UIViewController,UIImagePickerControllerDelegate,UINavi
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-         
+         print("testKi")
         
-        print("mama = \(imagePickerController)")
-        if Store.sharedInstance.shouldShowHistoryPage || Store.sharedInstance.shouldShowHomeScreen {
-            self.dismiss(animated: false)
-            
+        if correctCodeFound {
+            self.dismiss(animated: true)
+            isCodeFound = false
         }
-        self.photoLibraryAvailabilityCheck()
+        
+       
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -142,8 +153,9 @@ class ImagePickerIphone: UIViewController,UIImagePickerControllerDelegate,UINavi
     }
     
     public func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-         imagePickerController.dismiss(animated: true)
+        imagePickerController.dismiss(animated: true)
         Store.sharedInstance.setshouldShowHomeScreen(value: true)
+        self.dismiss(animated: true)
     }
     
     func createVisionRequest(image: UIImage)
@@ -201,12 +213,15 @@ class ImagePickerIphone: UIViewController,UIImagePickerControllerDelegate,UINavi
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         self.selectedImage(selectedImage: image)
+        
 
     }
     
     
     func gotoView1(qrCodeLink:String) {
         
+        
+        correctCodeFound = true
         let value2 = QrcOodearray.getArray(text: qrCodeLink)
         let value = QrParser.getBarCodeObj(text: qrCodeLink)
         
@@ -227,15 +242,20 @@ class ImagePickerIphone: UIViewController,UIImagePickerControllerDelegate,UINavi
         vc.currenttypeOfQrBAR = type
         vc.createDataModelArray = value2
         vc.isFromScanned = true
-        UIApplication.topMostViewController?.present(vc, animated: true, completion: {
+        vc.delegateDis = self
+    
+        imagePickerController.dismiss(animated: true, completion: {
             
-            
-        })
+            UIApplication.topMostViewController?.present(vc, animated: true, completion: {
+               
+            })
+       })
         
     }
     
     
     func selectedImage(selectedImage:UIImage) {
+       
         
         
         let detector:CIDetector=CIDetector(ofType: CIDetectorTypeQRCode, context: nil, options: [CIDetectorAccuracy:CIDetectorAccuracyHigh])!
@@ -471,9 +491,10 @@ class ImagePickerIphone: UIViewController,UIImagePickerControllerDelegate,UINavi
         else
         
         {
-            self.shouldNotDimiss = true
+            
             let image = BarCodeGenerator.getBarCodeImage(type: currentBarCode, value: value)
             
+            correctCodeFound = true
             if let value1 = image {
                 isCodeFound = true
                 let vc = self.storyboard?.instantiateViewController(withIdentifier: "ShowResultVc") as! ShowResultVc
@@ -483,15 +504,15 @@ class ImagePickerIphone: UIViewController,UIImagePickerControllerDelegate,UINavi
                 vc.isFromScanned = true
                 vc.isfromQr = false
                 vc.currenttypeOfQrBAR = currentBarCode
+                vc.delegateDis = self
                 
-                
-                
-                UIApplication.topMostViewController?.present(vc, animated: true, completion: {
+                imagePickerController.dismiss(animated: true, completion: {
                     
-                    //self.imagePickerController.dismiss(animated:false)
-                })
-                
-                
+                    
+                    UIApplication.topMostViewController?.present(vc, animated: true, completion: {
+                       
+                    })
+               })
             }
             else {
                 let alert = UIAlertController(title: "Note", message: "Can not Detect Any Code", preferredStyle: UIAlertController.Style.alert)
@@ -595,3 +616,5 @@ extension PHAsset {
     }
 }
 
+
+ 
