@@ -38,6 +38,9 @@ class QrParser: NSObject {
                     print(error.localizedDescription)
                 }
             }
+        }
+        
+        if text.containsIgnoringCase(find: "vcalendar") {
             
             let calendarManager = MXLCalendarManager()
             calendarManager.parse(icsString: text) { (calendar, error) in

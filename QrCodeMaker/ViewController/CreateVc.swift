@@ -842,6 +842,7 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
         ///
         //
         
+        print(string)
         
         
         
