@@ -10,9 +10,10 @@ import UIKit
 import AVFoundation
 import IHProgressHUD
 import KRProgressHUD
+import AudioToolbox
 
 public class ScannerVC: UIViewController {
-    
+    let soundID: SystemSoundID = 1104
     
     public lazy var headerViewController:HeaderVC = .init()
     
@@ -213,6 +214,8 @@ extension ScannerVC:HeaderViewControllerDelegate{
 extension ScannerVC:CameraViewControllerDelegate{
     
     func didOutput(_ code: String ,type: String) {
+        
+        
         
         
     

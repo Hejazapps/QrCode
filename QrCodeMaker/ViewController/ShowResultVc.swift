@@ -716,7 +716,7 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
         
         
         
-        if stringValue.containsIgnoringCase(find: "geo") {
+        if stringValue.containsIgnoringCase(find: "geo") || stringValue.containsIgnoringCase(find: "vcalendar") {
             bnTextContent.isHidden = true
         }
         
