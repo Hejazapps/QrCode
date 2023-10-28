@@ -17,7 +17,6 @@ import KRProgressHUD
 
 
 class ImagePickerIphone: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
-    var imagePickerController: UIImagePickerController!
     var currentBarCode = ""
     var arr2Name = NSArray(objects: "EAN-13","EAN-8","UPC-A","UPC-E","Code128","ITF","Code39","Codabar","Data-Matrix","Aztec-Code")
     var tempSp:UIView! = nil
@@ -27,7 +26,7 @@ class ImagePickerIphone: UIViewController,UIImagePickerControllerDelegate,UINavi
     
     @IBOutlet weak var collectionview: UICollectionView!
     var allPhotos : PHFetchResult<PHAsset>? = nil
-    
+    let imagePickerController = UIImagePickerController()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -81,10 +80,10 @@ class ImagePickerIphone: UIViewController,UIImagePickerControllerDelegate,UINavi
                 preferredStyle: UIAlertController.Style.alert
             )
             alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (alert) -> Void in
-                // Store.sharedInstance.setshouldShowHomeScreen(value: true)
+                Store.sharedInstance.setshouldShowHomeScreen(value: true)
                
-                
-                self.showAlert()
+                self.dismiss(animated: true)
+                 
                 
             }))
             alert.addAction(UIAlertAction(title: "Allow Access", style: .default, handler: { (alert) -> Void in
@@ -100,14 +99,18 @@ class ImagePickerIphone: UIViewController,UIImagePickerControllerDelegate,UINavi
     }
     func processSnapShotPhotos() {
         
-        let fetchOptions = PHFetchOptions()
-        let sortOrder = [NSSortDescriptor(key: "creationDate", ascending: false)]
-        fetchOptions.sortDescriptors = sortOrder
-        fetchOptions.includeAssetSourceTypes = [.typeCloudShared, .typeiTunesSynced,.typeUserLibrary]
-        self.allPhotos = PHAsset.fetchAssets(with: .image, options: fetchOptions)
-        DispatchQueue.main.sync {
-            self.collectionview.reloadData()
+        
+        DispatchQueue.main.async {
+            
+            
+            self.imagePickerController.allowsEditing = false //If you want edit option set "true"
+            self.imagePickerController.sourceType = .photoLibrary
+            self.imagePickerController.delegate = self
+            self.imagePickerController.modalPresentationStyle = .fullScreen
+            self.present(self.imagePickerController, animated: true, completion: nil)
+            
         }
+    
         
     }
     
@@ -119,8 +122,14 @@ class ImagePickerIphone: UIViewController,UIImagePickerControllerDelegate,UINavi
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-        if Store.sharedInstance.shouldShowHistoryPage {
+        if isSelected {
+            isSelected = false
+            return
+        }
+        
+        if Store.sharedInstance.shouldShowHistoryPage || Store.sharedInstance.shouldShowHomeScreen {
             self.dismiss(animated: false)
+            
         }
         self.photoLibraryAvailabilityCheck()
     }
@@ -131,8 +140,8 @@ class ImagePickerIphone: UIViewController,UIImagePickerControllerDelegate,UINavi
     }
     
     public func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true)
         Store.sharedInstance.setshouldShowHomeScreen(value: true)
-        imagePickerController.dismiss(animated: false, completion: funcToCall)
     }
     
     func createVisionRequest(image: UIImage)
@@ -163,6 +172,8 @@ class ImagePickerIphone: UIViewController,UIImagePickerControllerDelegate,UINavi
         
     }
     
+     
+    
     func fixOrientation(img: UIImage) -> UIImage {
         if (img.imageOrientation == .up) {
             return img
@@ -184,6 +195,14 @@ class ImagePickerIphone: UIViewController,UIImagePickerControllerDelegate,UINavi
         
     }
     
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        isSelected = true
+        picker.dismiss(animated: true)
+        self.selectedImage(selectedImage: image)
+
+    }
     
     
     func gotoView1(qrCodeLink:String) {

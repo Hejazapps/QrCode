@@ -93,29 +93,9 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GCH-nF-yPJ">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="120"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TKa-rw-Uqx">
-                                        <rect key="frame" x="10" y="50" width="76.666666666666671" height="40.333333333333343"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Cancel"/>
-                                        <connections>
-                                            <action selector="gotoPreviousView:" destination="S5I-g1-JFn" eventType="touchUpInside" id="F3a-zn-9QT"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Photos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7XQ-vA-a5u">
-                                        <rect key="frame" x="155.33333333333334" y="59.666666666666657" width="82.666666666666657" height="21"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="7XQ-vA-a5u" firstAttribute="centerY" secondItem="TKa-rw-Uqx" secondAttribute="centerY" id="DRY-59-abZ"/>
                                     <constraint firstAttribute="height" constant="120" id="bUg-O8-dFl"/>
-                                    <constraint firstItem="TKa-rw-Uqx" firstAttribute="centerY" secondItem="GCH-nF-yPJ" secondAttribute="centerY" constant="10" id="fyi-Lz-IIW"/>
-                                    <constraint firstItem="TKa-rw-Uqx" firstAttribute="leading" secondItem="GCH-nF-yPJ" secondAttribute="leading" constant="10" id="rjh-vE-Ql1"/>
-                                    <constraint firstItem="7XQ-vA-a5u" firstAttribute="centerX" secondItem="GCH-nF-yPJ" secondAttribute="centerX" id="t5U-5z-dIt"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3TK-lW-w4A">
@@ -2249,7 +2229,7 @@
                                                                                                                 </connections>
                                                                                                             </tableView>
                                                                                                         </subviews>
-                                                                                                        <color key="backgroundColor" systemColor="tintColor"/>
+                                                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                         <constraints>
                                                                                                             <constraint firstAttribute="trailing" secondItem="nJa-9t-4pb" secondAttribute="trailing" id="3OD-Td-eO1"/>
                                                                                                             <constraint firstItem="nJa-9t-4pb" firstAttribute="top" secondItem="cje-nz-2wU" secondAttribute="top" id="8D0-gn-yi8"/>
@@ -2408,6 +2388,7 @@
                         <outlet property="customizeView" destination="uQM-io-FRL" id="HCj-ci-8XC"/>
                         <outlet property="editContentView" destination="NX7-7G-Hh0" id="xP2-HW-SyE"/>
                         <outlet property="heightForMainView" destination="bgx-d4-pda" id="lXn-wi-IQJ"/>
+                        <outlet property="heightForView1" destination="StQ-W2-c4O" id="fc5-JR-5NR"/>
                         <outlet property="holderView" destination="nTW-HP-cuq" id="dMY-4I-MnD"/>
                         <outlet property="imageviewHolder" destination="rpI-gb-RRE" id="bkX-JK-fwZ"/>
                         <outlet property="imv" destination="7id-KX-Npa" id="51I-wi-GWr"/>
@@ -3754,13 +3735,13 @@
         <image name="history_page" width="30" height="30"/>
         <image name="next" width="32" height="32"/>
         <image name="qrcode" catalog="system" width="128" height="114"/>
-        <image name="scan" width="32.333332061767578" height="32.333332061767578"/>
+        <image name="scan" width="30" height="30"/>
         <image name="settings" width="30" height="30"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3769,7 +3750,7 @@
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tintColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -190,6 +190,7 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
     var contactCard:CNMutableContact!
 
     
+    @IBOutlet weak var heightForView1: NSLayoutConstraint!
     
     @IBOutlet weak var barLabelText: UILabel!
     
@@ -755,6 +756,7 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
         
         if !isfromQr  {
             customizeView.isHidden =  true
+            heightForView1.constant =  100
         }
         else {
             
