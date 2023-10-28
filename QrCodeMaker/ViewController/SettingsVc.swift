@@ -9,11 +9,14 @@ import UIKit
 
 class SettingsVc: UIViewController {
 
+    @IBOutlet weak var vibrateWatch: UISwitch!
+    @IBOutlet weak var soundWatch: UISwitch!
     @IBOutlet weak var HeightForTotal: NSLayoutConstraint!
     @IBOutlet weak var holderView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         // Do any additional setup after loading the view.
     }
     
@@ -37,9 +40,31 @@ class SettingsVc: UIViewController {
         
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        if soundWatch.isOn {
+            UserDefaults.standard.set(2, forKey: "sound")
+        } else {
+            UserDefaults.standard.set(1, forKey: "sound")
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-       // DBmanager.shared.initDB()
+        
+        let a = UserDefaults.standard.integer(forKey: "sound")
+        
+        if a == 2 {
+            soundWatch.setOn(true, animated: true)
+        }
+        else {
+            soundWatch.setOn(false, animated: true)
+        }
+        print(a)
+        
+        print("sound =  \(a)")
+        
+        
     }
     /*
     // MARK: - Navigation
@@ -50,5 +75,7 @@ class SettingsVc: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    
+    
 }

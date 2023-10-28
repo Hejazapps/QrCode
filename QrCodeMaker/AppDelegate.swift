@@ -25,6 +25,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         DBmanager.shared.initDB()
         
         IHProgressHUD.setOffsetFromCenter(UIOffset(horizontal:screenWidth/2.0 , vertical: screenHeight/2.0))
+        
+        
+        let a = UserDefaults.standard.integer(forKey: "sound")
+        
+        
+        if a == 0 {
+            UserDefaults.standard.set(2, forKey: "sound")
+            UserDefaults.standard.set(2, forKey: "vibrate")
+            UserDefaults.standard.set(2, forKey: "Beep")
+        }
 
         return true
     }

@@ -215,7 +215,13 @@ extension ScannerVC:CameraViewControllerDelegate{
     
     func didOutput(_ code: String ,type: String) {
         
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
         
+       
+        
+        AudioServicesPlaySystemSoundWithCompletion(SystemSoundID(1110)) {
+            //Recording method here
+        }
         
         
     
