@@ -135,7 +135,7 @@ class ImagePickerIphone: UIViewController,UIImagePickerControllerDelegate,UINavi
     }
     
     public func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true)
+         imagePickerController.dismiss(animated: true)
         Store.sharedInstance.setshouldShowHomeScreen(value: true)
     }
     
@@ -417,7 +417,7 @@ class ImagePickerIphone: UIViewController,UIImagePickerControllerDelegate,UINavi
     
     func dismissView() {
         
-        self.funcToCall()
+        self.imagePickerControllerDidCancel(imagePickerController)
         
     }
     
