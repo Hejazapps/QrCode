@@ -767,6 +767,11 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
     }
     
     
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?){
+        controller.dismiss(animated: true, completion: nil)
+
+    }
+    
     func sendEmail(subject:String?,mailAddress:String?,cc:String?,meessage:String?) {
            if MFMailComposeViewController.canSendMail() {
                let mail = MFMailComposeViewController()
