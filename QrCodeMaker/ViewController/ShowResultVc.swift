@@ -802,132 +802,9 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
     @IBAction func copyText(_ sender: Any) {
         
         
-        
-        if stringValue.containsIgnoringCase(find: "wifi") {
-            
-            var array = stringValue.components(separatedBy: ";")
-            
-            var name = ""
-            var password = ""
-            var type = ""
-            
-            for item in array {
-                var mal = (item as? String)!.replacingOccurrences(of: "WIFI:", with: "", options: .literal, range: nil)
-                mal = mal.replacingOccurrences(of: "wifi:", with: "", options: .literal, range: nil)
-                
-                if mal.containsIgnoringCase(find: "T:") {
-                    
-                    type =   mal.replacingOccurrences(of: "T:", with: "", options: .literal, range: nil)
-                }
-                
-                if mal.containsIgnoringCase(find: "S:") {
-                    
-                    name =   mal.replacingOccurrences(of: "S:", with: "", options: .literal, range: nil)
-                }
-                if mal.containsIgnoringCase(find: "P:") {
-                    
-                    password =   mal.replacingOccurrences(of: "P:", with: "", options: .literal, range: nil)
-                }
-                 
-            }
-            
-            
-            NEHotspotConfigurationManager.shared.removeConfiguration(forSSID: name)
-            
-            var valuem = false
-            if type.containsIgnoringCase(find: "wep") {
-                valuem = true
-            }
-            
-            let wiFiConfig = NEHotspotConfiguration(ssid: name, passphrase: password, isWEP: valuem)
-            wiFiConfig.joinOnce = true
-            NEHotspotConfigurationManager.shared.apply(wiFiConfig) { error in
-                if let error = error {
-                    print(error.localizedDescription)
-                    DispatchQueue.main.async {
-                        let alert = UIAlertController(title: "Alert", message: error.localizedDescription, preferredStyle: UIAlertController.Style.alert)
-                        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
-                        self.present(alert, animated: true, completion: nil)
-                     }
-                }
-                else {
-                    // user confirmed
-                }
-            }
-            
-            return
-            
-        }
-        
-        if showText.containsIgnoringCase(find: "url") {
-            guard let url = URL(string: stringValue) else {
-                return //be safe
-            }
-            
-            if #available(iOS 10.0, *) {
-                UIApplication.shared.open(url, options: [:], completionHandler: nil)
-            } else {
-                UIApplication.shared.openURL(url)
-            }
-            return
-        }
-        
         if stringValue.containsIgnoringCase(find: "vcard") {
             
             self.checkContactsAccess()
-            return
-        }
-        
-        if stringValue.containsIgnoringCase(find: "mailto") {
-            
-            var email = ""
-            var  cc = ""
-            var  subject = ""
-            var body = ""
-            
-            
-            let array = showText.components(separatedBy: "\n\n")
-            
-            for item in array {
-                
-                if let v = item as? String {
-                    
-                    if v.containsIgnoringCase(find: "email") {
-                        let ar = v.components(separatedBy: ":")
-                        
-                        if ar.count > 1 {
-                            email = ar[1]
-                        }
-                        
-                    }
-                    
-                    if v.containsIgnoringCase(find: "cc") {
-                        let ar = v.components(separatedBy: ":")
-                        
-                        if ar.count > 1 {
-                            cc = ar[1]
-                        }
-                    }
-                    
-                    if v.containsIgnoringCase(find: "subject") {
-                        let ar = v.components(separatedBy: ":")
-                        
-                        if ar.count > 1 {
-                            subject = ar[1]
-                        }
-                    }
-                    
-                    if v.containsIgnoringCase(find: "body") {
-                        let ar = v.components(separatedBy: ":")
-                        if ar.count > 1 {
-                            body = ar[1]
-                        }
-                    }
-                }
-            }
-             
-            
-            self.sendEmail(subject: subject, mailAddress: email, cc: cc, meessage: body)
             return
         }
         
@@ -1086,6 +963,121 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
             return
         }
         
+        
+        if stringValue.containsIgnoringCase(find: "wifi") {
+            
+            var array = stringValue.components(separatedBy: ";")
+            
+            var name = ""
+            var password = ""
+            var type = ""
+            
+            for item in array {
+                var mal = (item as? String)!.replacingOccurrences(of: "WIFI:", with: "", options: .literal, range: nil)
+                mal = mal.replacingOccurrences(of: "wifi:", with: "", options: .literal, range: nil)
+                
+                if mal.containsIgnoringCase(find: "T:") {
+                    
+                    type =   mal.replacingOccurrences(of: "T:", with: "", options: .literal, range: nil)
+                }
+                
+                if mal.containsIgnoringCase(find: "S:") {
+                    
+                    name =   mal.replacingOccurrences(of: "S:", with: "", options: .literal, range: nil)
+                }
+                if mal.containsIgnoringCase(find: "P:") {
+                    
+                    password =   mal.replacingOccurrences(of: "P:", with: "", options: .literal, range: nil)
+                }
+                 
+            }
+            
+            
+            NEHotspotConfigurationManager.shared.removeConfiguration(forSSID: name)
+            
+            var valuem = false
+            if type.containsIgnoringCase(find: "wep") {
+                valuem = true
+            }
+            
+            let wiFiConfig = NEHotspotConfiguration(ssid: name, passphrase: password, isWEP: valuem)
+            wiFiConfig.joinOnce = true
+            NEHotspotConfigurationManager.shared.apply(wiFiConfig) { error in
+                if let error = error {
+                    print(error.localizedDescription)
+                    DispatchQueue.main.async {
+                        let alert = UIAlertController(title: "Alert", message: error.localizedDescription, preferredStyle: UIAlertController.Style.alert)
+                        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
+                     }
+                }
+                else {
+                    // user confirmed
+                }
+            }
+            
+            return
+            
+        }
+        
+       
+        
+        
+        if stringValue.containsIgnoringCase(find: "mailto") {
+            
+            var email = ""
+            var  cc = ""
+            var  subject = ""
+            var body = ""
+            
+            
+            let array = showText.components(separatedBy: "\n\n")
+            
+            for item in array {
+                
+                if let v = item as? String {
+                    
+                    if v.containsIgnoringCase(find: "email") {
+                        let ar = v.components(separatedBy: ":")
+                        
+                        if ar.count > 1 {
+                            email = ar[1]
+                        }
+                        
+                    }
+                    
+                    if v.containsIgnoringCase(find: "cc") {
+                        let ar = v.components(separatedBy: ":")
+                        
+                        if ar.count > 1 {
+                            cc = ar[1]
+                        }
+                    }
+                    
+                    if v.containsIgnoringCase(find: "subject") {
+                        let ar = v.components(separatedBy: ":")
+                        
+                        if ar.count > 1 {
+                            subject = ar[1]
+                        }
+                    }
+                    
+                    if v.containsIgnoringCase(find: "body") {
+                        let ar = v.components(separatedBy: ":")
+                        if ar.count > 1 {
+                            body = ar[1]
+                        }
+                    }
+                }
+            }
+             
+            
+            self.sendEmail(subject: subject, mailAddress: email, cc: cc, meessage: body)
+            return
+        }
+        
+       
+        
         if stringValue.containsIgnoringCase(find: "tel") {
             var phoneNumber = stringValue.replacingOccurrences(of: "tel", with: "")
             phoneNumber = phoneNumber.replacingOccurrences(of: "TEL", with: "")
@@ -1124,6 +1116,20 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
            return
             
         }
+        
+        if showText.containsIgnoringCase(find: "url") {
+            guard let url = URL(string: stringValue) else {
+                return //be safe
+            }
+            
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            } else {
+                UIApplication.shared.openURL(url)
+            }
+            return
+        }
+        
         
         
         let pasteBoard = UIPasteboard.general

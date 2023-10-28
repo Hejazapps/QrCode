@@ -350,6 +350,21 @@
                   endingLineNumber = "235"
                   offsetFromSymbolStart = "3192">
                </Location>
+               <Location
+                  uuid = "9F70E8BC-87DF-4CA8-BB06-DB9ED195DB53 - 14919f71f91d98b3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (__C.UIAlertAction) -&gt; () in QrCodeMaker.HistoryVc.gotoMakeFolder(Any) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/HistoryVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "235"
+                  endingLineNumber = "235"
+                  offsetFromSymbolStart = "3192">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -452,6 +467,21 @@
                   moduleName = "QrCodeMaker"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrMaker/QrCodeMaker/ViewController/HistoryVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "233"
+                  endingLineNumber = "233"
+                  offsetFromSymbolStart = "2792">
+               </Location>
+               <Location
+                  uuid = "01CB5C86-2034-4402-8C39-650718CBBD08 - 14919f71f91d9971"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (__C.UIAlertAction) -&gt; () in QrCodeMaker.HistoryVc.gotoMakeFolder(Any) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/HistoryVc.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "233"
@@ -581,6 +611,21 @@
                   endingLineNumber = "237"
                   offsetFromSymbolStart = "3292">
                </Location>
+               <Location
+                  uuid = "F984C743-EAC6-4F10-9A79-4C01F4B30111 - 14919f71f91d98fd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (__C.UIAlertAction) -&gt; () in QrCodeMaker.HistoryVc.gotoMakeFolder(Any) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/HistoryVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "237"
+                  endingLineNumber = "237"
+                  offsetFromSymbolStart = "3292">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -698,6 +743,21 @@
                   moduleName = "QrCodeMaker"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrMaker/QrCodeMaker/ViewController/HistoryVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "235"
+                  endingLineNumber = "235"
+                  offsetFromSymbolStart = "3192">
+               </Location>
+               <Location
+                  uuid = "BE397BF3-6A36-4CC4-982C-B355BC13ECE1 - 14919f71f91d98b3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (__C.UIAlertAction) -&gt; () in QrCodeMaker.HistoryVc.gotoMakeFolder(Any) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/HistoryVc.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "235"
@@ -827,6 +887,21 @@
                   endingLineNumber = "237"
                   offsetFromSymbolStart = "3292">
                </Location>
+               <Location
+                  uuid = "37E28891-C2CE-4045-9680-A6EB355A463D - 14919f71f91d98fd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (__C.UIAlertAction) -&gt; () in QrCodeMaker.HistoryVc.gotoMakeFolder(Any) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/HistoryVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "237"
+                  endingLineNumber = "237"
+                  offsetFromSymbolStart = "3292">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -950,6 +1025,21 @@
                   endingLineNumber = "238"
                   offsetFromSymbolStart = "3464">
                </Location>
+               <Location
+                  uuid = "2CDA9081-F4BE-4FC9-A894-A0617886A35B - 14919f71f91d981e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (__C.UIAlertAction) -&gt; () in QrCodeMaker.HistoryVc.gotoMakeFolder(Any) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/HistoryVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "238"
+                  endingLineNumber = "238"
+                  offsetFromSymbolStart = "3464">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -1052,6 +1142,21 @@
                   moduleName = "QrCodeMaker"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrMaker/QrCodeMaker/ViewController/HistoryVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "223"
+                  endingLineNumber = "223"
+                  offsetFromSymbolStart = "92">
+               </Location>
+               <Location
+                  uuid = "663A736C-0F5C-4718-8147-4AF8832A1CEC - bebb1f3fc2b0c22c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 (Swift.Optional&lt;__C.UIAlertAction&gt;) -&gt; () in closure #2 (__C.UIAlertAction) -&gt; () in QrCodeMaker.HistoryVc.gotoMakeFolder(Any) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/HistoryVc.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "223"
@@ -1241,6 +1346,36 @@
                   endingLineNumber = "222"
                   offsetFromSymbolStart = "40">
                </Location>
+               <Location
+                  uuid = "3CFB30B3-C3FA-41C7-80FF-0439D82806CE - 14919f71f91d9aee"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (__C.UIAlertAction) -&gt; () in QrCodeMaker.HistoryVc.gotoMakeFolder(Any) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/HistoryVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "222"
+                  endingLineNumber = "222"
+                  offsetFromSymbolStart = "2596">
+               </Location>
+               <Location
+                  uuid = "3CFB30B3-C3FA-41C7-80FF-0439D82806CE - bebb1f3fc2b0c2cd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 (Swift.Optional&lt;__C.UIAlertAction&gt;) -&gt; () in closure #2 (__C.UIAlertAction) -&gt; () in QrCodeMaker.HistoryVc.gotoMakeFolder(Any) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/HistoryVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "222"
+                  endingLineNumber = "222"
+                  offsetFromSymbolStart = "40">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -1424,6 +1559,36 @@
                   endingLineNumber = "222"
                   offsetFromSymbolStart = "40">
                </Location>
+               <Location
+                  uuid = "E0D77AFA-0A5E-4AEB-A91D-0AA8562CAA17 - 14919f71f91d9aee"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (__C.UIAlertAction) -&gt; () in QrCodeMaker.HistoryVc.gotoMakeFolder(Any) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/HistoryVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "222"
+                  endingLineNumber = "222"
+                  offsetFromSymbolStart = "2596">
+               </Location>
+               <Location
+                  uuid = "E0D77AFA-0A5E-4AEB-A91D-0AA8562CAA17 - bebb1f3fc2b0c2cd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 (Swift.Optional&lt;__C.UIAlertAction&gt;) -&gt; () in closure #2 (__C.UIAlertAction) -&gt; () in QrCodeMaker.HistoryVc.gotoMakeFolder(Any) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/HistoryVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "222"
+                  endingLineNumber = "222"
+                  offsetFromSymbolStart = "40">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -1541,6 +1706,21 @@
                   moduleName = "QrCodeMaker"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrMaker/QrCodeMaker/ViewController/HistoryVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "220"
+                  endingLineNumber = "220"
+                  offsetFromSymbolStart = "2480">
+               </Location>
+               <Location
+                  uuid = "4791882A-235E-4B9F-8CFE-41BF915E0BF2 - 14919f71f91d9aac"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (__C.UIAlertAction) -&gt; () in QrCodeMaker.HistoryVc.gotoMakeFolder(Any) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/HistoryVc.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "220"
@@ -1670,6 +1850,21 @@
                   endingLineNumber = "220"
                   offsetFromSymbolStart = "2480">
                </Location>
+               <Location
+                  uuid = "B6ECC4D8-FB61-467D-A8C7-6FC3FC87E764 - 14919f71f91d9aac"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (__C.UIAlertAction) -&gt; () in QrCodeMaker.HistoryVc.gotoMakeFolder(Any) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/HistoryVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "220"
+                  endingLineNumber = "220"
+                  offsetFromSymbolStart = "2480">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -1778,6 +1973,21 @@
                   endingLineNumber = "218"
                   offsetFromSymbolStart = "2408">
                </Location>
+               <Location
+                  uuid = "64AF6DED-24B0-4CFE-B37E-960F7C57466A - 14919f71f91d9b62"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (__C.UIAlertAction) -&gt; () in QrCodeMaker.HistoryVc.gotoMakeFolder(Any) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/HistoryVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "218"
+                  endingLineNumber = "218"
+                  offsetFromSymbolStart = "2408">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -1871,6 +2081,21 @@
                   endingLineNumber = "101"
                   offsetFromSymbolStart = "292">
                </Location>
+               <Location
+                  uuid = "49DB353E-FC30-46D0-AA01-2ACAC1053289 - 8f0fb2bc5c3d774"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #4 (__C.UIAlertAction) -&gt; () in QrCodeMaker.FolderVc.gotoSave(Any) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/FolderVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "292">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -1958,6 +2183,21 @@
                   moduleName = "QrCodeMaker"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrMaker/QrCodeMaker/ViewController/FolderVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "99"
+                  endingLineNumber = "99"
+                  offsetFromSymbolStart = "1060">
+               </Location>
+               <Location
+                  uuid = "B8F8E5A7-2BE1-4894-A6B4-D08931FE0CA0 - 8f0fb2bc5c3d7b6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #4 (__C.UIAlertAction) -&gt; () in QrCodeMaker.FolderVc.gotoSave(Any) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/FolderVc.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "99"
@@ -2117,6 +2357,36 @@
                   endingLineNumber = "97"
                   offsetFromSymbolStart = "484">
                </Location>
+               <Location
+                  uuid = "262C8F2C-2DC2-4317-A364-DABC1657CABB - 8f0fb2bc5c3d7f8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #4 (__C.UIAlertAction) -&gt; () in QrCodeMaker.FolderVc.gotoSave(Any) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/FolderVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "97"
+                  endingLineNumber = "97"
+                  offsetFromSymbolStart = "96">
+               </Location>
+               <Location
+                  uuid = "262C8F2C-2DC2-4317-A364-DABC1657CABB - 8f0fb2bc5c3d7f8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #4 (__C.UIAlertAction) -&gt; () in QrCodeMaker.FolderVc.gotoSave(Any) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/FolderVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "97"
+                  endingLineNumber = "97"
+                  offsetFromSymbolStart = "484">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -2204,6 +2474,21 @@
                   moduleName = "QrCodeMaker"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrMaker/QrCodeMaker/ViewController/FolderVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "98"
+                  endingLineNumber = "98"
+                  offsetFromSymbolStart = "516">
+               </Location>
+               <Location
+                  uuid = "C5CC563F-A6BD-4C2C-AB99-29A04048D99C - 8f0fb2bc5c3d7d9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #4 (__C.UIAlertAction) -&gt; () in QrCodeMaker.FolderVc.gotoSave(Any) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/FolderVc.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "98"
@@ -2333,6 +2618,21 @@
                   endingLineNumber = "172"
                   offsetFromSymbolStart = "764">
                </Location>
+               <Location
+                  uuid = "12A21120-C05F-4C50-845B-77B9A66DB022 - bc2fe8ebd4a50c6c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QrCodeMaker.FolderVc.tableView(_: __C.UITableView, didSelectRowAt: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/FolderVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "172"
+                  endingLineNumber = "172"
+                  offsetFromSymbolStart = "764">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -2456,6 +2756,21 @@
                   endingLineNumber = "170"
                   offsetFromSymbolStart = "368">
                </Location>
+               <Location
+                  uuid = "1AACA537-D4D7-4075-94A7-E52EA7B7820A - bc2fe8ebd4a50cb2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QrCodeMaker.FolderVc.tableView(_: __C.UITableView, didSelectRowAt: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/FolderVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "170"
+                  endingLineNumber = "170"
+                  offsetFromSymbolStart = "368">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -2513,6 +2828,21 @@
                   moduleName = "QrCodeMaker"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrMaker/QrCodeMaker/Model/DBmanager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "400"
+                  endingLineNumber = "400"
+                  offsetFromSymbolStart = "536">
+               </Location>
+               <Location
+                  uuid = "53AA2616-22B4-4BF3-B014-6D4FB7CEFAA9 - b4dcf612f68cbb41"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QrCodeMaker.DBmanager.updateFolderInfo(id: Swift.String, folderid: Swift.String) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/Model/DBmanager.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "400"
@@ -2582,6 +2912,21 @@
                   endingLineNumber = "394"
                   offsetFromSymbolStart = "216">
                </Location>
+               <Location
+                  uuid = "1C394F29-E3B7-427B-85AB-3A1B023F3294 - b4dcf612f68cb40f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QrCodeMaker.DBmanager.updateFolderInfo(id: Swift.String, folderid: Swift.String) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/Model/DBmanager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "394"
+                  endingLineNumber = "394"
+                  offsetFromSymbolStart = "216">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -2639,6 +2984,21 @@
                   moduleName = "QrCodeMaker"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrMaker/QrCodeMaker/Model/DBmanager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "394"
+                  endingLineNumber = "394"
+                  offsetFromSymbolStart = "216">
+               </Location>
+               <Location
+                  uuid = "550C187F-D9AA-4004-B669-B561573017E4 - b4dcf612f68cb40f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QrCodeMaker.DBmanager.updateFolderInfo(id: Swift.String, folderid: Swift.String) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/Model/DBmanager.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "394"
@@ -2724,6 +3084,21 @@
                   endingLineNumber = "400"
                   offsetFromSymbolStart = "536">
                </Location>
+               <Location
+                  uuid = "1A4FF033-B0F5-463F-AEA9-5589C4D86118 - b4dcf612f68cbb41"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QrCodeMaker.DBmanager.updateFolderInfo(id: Swift.String, folderid: Swift.String) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/Model/DBmanager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "400"
+                  endingLineNumber = "400"
+                  offsetFromSymbolStart = "536">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -2781,6 +3156,21 @@
                   moduleName = "QrCodeMaker"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrMaker/QrCodeMaker/Model/DBmanager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "400"
+                  endingLineNumber = "400"
+                  offsetFromSymbolStart = "536">
+               </Location>
+               <Location
+                  uuid = "73F3CFA9-04F9-45D5-9114-DAC9C9760F83 - b4dcf612f68cbb41"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QrCodeMaker.DBmanager.updateFolderInfo(id: Swift.String, folderid: Swift.String) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/Model/DBmanager.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "400"
@@ -2974,6 +3364,21 @@
                   endingLineNumber = "202"
                   offsetFromSymbolStart = "1048">
                </Location>
+               <Location
+                  uuid = "AD4BA645-14BC-4925-85C6-CD34848B5F0B - 92a9cbbc3952248e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QrCodeMaker.ScannerVC.didOutput(_: Swift.String, type: Swift.String) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/ScannerVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "232"
+                  endingLineNumber = "232"
+                  offsetFromSymbolStart = "980">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -3037,6 +3442,21 @@
                   endingLineNumber = "199"
                   offsetFromSymbolStart = "932">
                </Location>
+               <Location
+                  uuid = "770B2F65-5D74-4FBF-8BE9-480626995559 - 92a9cbbc395224eb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QrCodeMaker.ScannerVC.didOutput(_: Swift.String, type: Swift.String) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/ScannerVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "229"
+                  endingLineNumber = "229"
+                  offsetFromSymbolStart = "648">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -3099,6 +3519,36 @@
                   startingLineNumber = "198"
                   endingLineNumber = "198"
                   offsetFromSymbolStart = "684">
+               </Location>
+               <Location
+                  uuid = "BE502C83-FF38-4BD7-8AF1-499F40976864 - 92a9cbbc3952250a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QrCodeMaker.ScannerVC.didOutput(_: Swift.String, type: Swift.String) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/ScannerVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "228"
+                  endingLineNumber = "228"
+                  offsetFromSymbolStart = "580">
+               </Location>
+               <Location
+                  uuid = "BE502C83-FF38-4BD7-8AF1-499F40976864 - 92a9cbbc3952250a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QrCodeMaker.ScannerVC.didOutput(_: Swift.String, type: Swift.String) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/ScannerVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "228"
+                  endingLineNumber = "228"
+                  offsetFromSymbolStart = "636">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -3239,6 +3689,21 @@
                   endingLineNumber = "203"
                   offsetFromSymbolStart = "1080">
                </Location>
+               <Location
+                  uuid = "81EC7EBD-7D8F-4F85-B730-1BA924BBB42E - 92a9cbbc3952246f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QrCodeMaker.ScannerVC.didOutput(_: Swift.String, type: Swift.String) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/ScannerVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "233"
+                  endingLineNumber = "233"
+                  offsetFromSymbolStart = "1012">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -3362,6 +3827,21 @@
                   endingLineNumber = "205"
                   offsetFromSymbolStart = "1248">
                </Location>
+               <Location
+                  uuid = "C376DD5F-EFC7-4D31-BD6B-0FD6BF364803 - 92a9cbbc39522bf2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QrCodeMaker.ScannerVC.didOutput(_: Swift.String, type: Swift.String) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/ScannerVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "236"
+                  endingLineNumber = "236"
+                  offsetFromSymbolStart = "1212">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -3424,6 +3904,21 @@
                   startingLineNumber = "208"
                   endingLineNumber = "208"
                   offsetFromSymbolStart = "1272">
+               </Location>
+               <Location
+                  uuid = "2C6A2EA8-8D49-405B-B888-DFDD09C5D8E5 - 92a9cbbc39522bf2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QrCodeMaker.ScannerVC.didOutput(_: Swift.String, type: Swift.String) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/ScannerVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "236"
+                  endingLineNumber = "236"
+                  offsetFromSymbolStart = "1212">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -3593,6 +4088,36 @@
                   endingLineNumber = "197"
                   offsetFromSymbolStart = "672">
                </Location>
+               <Location
+                  uuid = "EB29AE9F-634A-4C90-AF98-8B5E58E3BC67 - 92a9cbbc3952250a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QrCodeMaker.ScannerVC.didOutput(_: Swift.String, type: Swift.String) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/ScannerVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "228"
+                  endingLineNumber = "228"
+                  offsetFromSymbolStart = "580">
+               </Location>
+               <Location
+                  uuid = "EB29AE9F-634A-4C90-AF98-8B5E58E3BC67 - 92a9cbbc3952250a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QrCodeMaker.ScannerVC.didOutput(_: Swift.String, type: Swift.String) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/ScannerVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "228"
+                  endingLineNumber = "228"
+                  offsetFromSymbolStart = "636">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -3655,6 +4180,21 @@
                   startingLineNumber = "208"
                   endingLineNumber = "208"
                   offsetFromSymbolStart = "1272">
+               </Location>
+               <Location
+                  uuid = "E53A0009-86D2-43FD-9CA5-8FAB731693BE - 92a9cbbc39522b91"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QrCodeMaker.ScannerVC.didOutput(_: Swift.String, type: Swift.String) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/ScannerVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "239"
+                  endingLineNumber = "239"
+                  offsetFromSymbolStart = "1236">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -3799,6 +4339,21 @@
                   endingLineNumber = "776"
                   offsetFromSymbolStart = "4">
                </Location>
+               <Location
+                  uuid = "BC436CD8-6BCF-4B8B-BAD3-AEDA42EB0C48 - 7a51f73365681c15"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.CNMutableContact&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in QrCodeMaker.CreateVc.createBtnPressed(Any) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/CreateVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "802"
+                  endingLineNumber = "802"
+                  offsetFromSymbolStart = "7104">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -3862,6 +4417,21 @@
                   endingLineNumber = "773"
                   offsetFromSymbolStart = "596">
                </Location>
+               <Location
+                  uuid = "45194129-06F4-4E22-8C79-465C268E1657 - 66066607bebb0da"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #13 () -&gt; () in closure #1 (Swift.Optional&lt;__C.CNMutableContact&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in QrCodeMaker.CreateVc.createBtnPressed(Any) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/CreateVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "800"
+                  endingLineNumber = "800"
+                  offsetFromSymbolStart = "16">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -3909,6 +4479,36 @@
                   startingLineNumber = "771"
                   endingLineNumber = "771"
                   offsetFromSymbolStart = "480">
+               </Location>
+               <Location
+                  uuid = "A8C5F79F-4F02-4E6F-B97D-51CB44BFFEC6 - 7a51f73365681c91"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.CNMutableContact&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in QrCodeMaker.CreateVc.createBtnPressed(Any) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/CreateVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "798"
+                  endingLineNumber = "798"
+                  offsetFromSymbolStart = "6088">
+               </Location>
+               <Location
+                  uuid = "A8C5F79F-4F02-4E6F-B97D-51CB44BFFEC6 - 66066607bebb01c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #13 () -&gt; () in closure #1 (Swift.Optional&lt;__C.CNMutableContact&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in QrCodeMaker.CreateVc.createBtnPressed(Any) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/CreateVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "798"
+                  endingLineNumber = "798"
+                  offsetFromSymbolStart = "4">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -3958,6 +4558,36 @@
                   endingLineNumber = "768"
                   offsetFromSymbolStart = "152">
                </Location>
+               <Location
+                  uuid = "48286D30-4EAF-499D-BDD2-B8E9719C3D73 - 7a51f73365681d1d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.CNMutableContact&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in QrCodeMaker.CreateVc.createBtnPressed(Any) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/CreateVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "794"
+                  endingLineNumber = "794"
+                  offsetFromSymbolStart = "6000">
+               </Location>
+               <Location
+                  uuid = "48286D30-4EAF-499D-BDD2-B8E9719C3D73 - 27cf09296da1a975"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #12 (__C.UIAlertAction) -&gt; () in closure #1 (Swift.Optional&lt;__C.CNMutableContact&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in QrCodeMaker.CreateVc.createBtnPressed(Any) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/CreateVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "794"
+                  endingLineNumber = "794"
+                  offsetFromSymbolStart = "16">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -4005,6 +4635,21 @@
                   startingLineNumber = "766"
                   endingLineNumber = "766"
                   offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "6D5FED57-EA58-46CD-8F26-BB74EC66B094 - 7a51f73365681d5f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.CNMutableContact&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in QrCodeMaker.CreateVc.createBtnPressed(Any) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/CreateVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "792"
+                  endingLineNumber = "792"
+                  offsetFromSymbolStart = "5880">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -4129,6 +4774,51 @@
                   endingLineNumber = "96"
                   offsetFromSymbolStart = "704">
                </Location>
+               <Location
+                  uuid = "44802575-42DF-49AF-B878-B30F8C2EB84A - fa61cd1231b4b51a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QrCodeMaker.EditVc.locationManager(_: __C.CLLocationManager, didUpdateLocations: Swift.Array&lt;__C.CLLocation&gt;) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/EditVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "96"
+                  endingLineNumber = "96"
+                  offsetFromSymbolStart = "520">
+               </Location>
+               <Location
+                  uuid = "44802575-42DF-49AF-B878-B30F8C2EB84A - fa61cd1231b4b51a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QrCodeMaker.EditVc.locationManager(_: __C.CLLocationManager, didUpdateLocations: Swift.Array&lt;__C.CLLocation&gt;) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/EditVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "96"
+                  endingLineNumber = "96"
+                  offsetFromSymbolStart = "612">
+               </Location>
+               <Location
+                  uuid = "44802575-42DF-49AF-B878-B30F8C2EB84A - fa61cd1231b4b51a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QrCodeMaker.EditVc.locationManager(_: __C.CLLocationManager, didUpdateLocations: Swift.Array&lt;__C.CLLocation&gt;) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/EditVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "96"
+                  endingLineNumber = "96"
+                  offsetFromSymbolStart = "704">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -4207,6 +4897,21 @@
                   endingLineNumber = "116"
                   offsetFromSymbolStart = "2132">
                </Location>
+               <Location
+                  uuid = "F794622C-8A35-415E-A3B1-4ABD1AC109AC - 22a8e7ea7459df5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QrCodeMaker.ButtonView.createCSV(from: Swift.Array&lt;Swift.Dictionary&lt;Swift.String, Swift.String&gt;&gt;) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/View/ButtonView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "116"
+                  endingLineNumber = "116"
+                  offsetFromSymbolStart = "2132">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -4279,6 +4984,21 @@
                   moduleName = "QrCodeMaker"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrMaker/QrCodeMaker/View/ButtonView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "115"
+                  endingLineNumber = "115"
+                  offsetFromSymbolStart = "1192">
+               </Location>
+               <Location
+                  uuid = "FE628337-D093-482C-9EE3-403BBEE836CC - 22a8e7ea7459d94"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QrCodeMaker.ButtonView.createCSV(from: Swift.Array&lt;Swift.Dictionary&lt;Swift.String, Swift.String&gt;&gt;) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/View/ButtonView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "115"
@@ -4408,6 +5128,36 @@
                   endingLineNumber = "114"
                   offsetFromSymbolStart = "1124">
                </Location>
+               <Location
+                  uuid = "FDF0A02A-9ED3-4820-BF73-2B137A4EE99C - 22a8e7ea7459db7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QrCodeMaker.ButtonView.createCSV(from: Swift.Array&lt;Swift.Dictionary&lt;Swift.String, Swift.String&gt;&gt;) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/View/ButtonView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "114"
+                  endingLineNumber = "114"
+                  offsetFromSymbolStart = "980">
+               </Location>
+               <Location
+                  uuid = "FDF0A02A-9ED3-4820-BF73-2B137A4EE99C - 22a8e7ea7459db7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QrCodeMaker.ButtonView.createCSV(from: Swift.Array&lt;Swift.Dictionary&lt;Swift.String, Swift.String&gt;&gt;) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/View/ButtonView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "114"
+                  endingLineNumber = "114"
+                  offsetFromSymbolStart = "1124">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -4480,6 +5230,21 @@
                   moduleName = "QrCodeMaker"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrMaker/QrCodeMaker/View/ButtonView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "113"
+                  endingLineNumber = "113"
+                  offsetFromSymbolStart = "608">
+               </Location>
+               <Location
+                  uuid = "3EFC1765-D2A9-4E48-8944-AE1BE8686A73 - 22a8e7ea7459d56"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QrCodeMaker.ButtonView.createCSV(from: Swift.Array&lt;Swift.Dictionary&lt;Swift.String, Swift.String&gt;&gt;) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/View/ButtonView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "113"
@@ -4594,6 +5359,21 @@
                   endingLineNumber = "47"
                   offsetFromSymbolStart = "1808">
                </Location>
+               <Location
+                  uuid = "344E07DA-CE54-4CF7-A0DE-FE3A2F3C1901 - 79e7b9521a0b3fe9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QrCodeMaker.ButtonView.createCsvFile() -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/View/ButtonView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "1808">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -4681,6 +5461,21 @@
                   moduleName = "QrCodeMaker"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrMaker/QrCodeMaker/View/ButtonView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "1152">
+               </Location>
+               <Location
+                  uuid = "A481BD89-23CF-4E94-A599-CE63E7EF0D94 - 79e7b9521a0b3f84"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QrCodeMaker.ButtonView.createCsvFile() -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/View/ButtonView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "44"
@@ -4780,6 +5575,21 @@
                   endingLineNumber = "91"
                   offsetFromSymbolStart = "1448">
                </Location>
+               <Location
+                  uuid = "B6ACEFFA-EC7B-425D-928C-976B72C21477 - 46813f54c548f21b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QrCodeMaker.ButtonView.createTextFile() -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/View/ButtonView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "91"
+                  endingLineNumber = "91"
+                  offsetFromSymbolStart = "1448">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -4852,6 +5662,21 @@
                   moduleName = "QrCodeMaker"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrMaker/QrCodeMaker/View/ButtonView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89"
+                  offsetFromSymbolStart = "1420">
+               </Location>
+               <Location
+                  uuid = "37C0EDA2-2244-4873-B6C1-14535D9D94C2 - 46813f54c548f2d9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QrCodeMaker.ButtonView.createTextFile() -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/View/ButtonView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "89"
@@ -4936,6 +5761,21 @@
                   endingLineNumber = "88"
                   offsetFromSymbolStart = "1408">
                </Location>
+               <Location
+                  uuid = "834786B1-A19A-4EB1-B266-C491B5F2DE2E - 46813f54c548f2be"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QrCodeMaker.ButtonView.createTextFile() -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/View/ButtonView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "1408">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -5008,6 +5848,21 @@
                   moduleName = "QrCodeMaker"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrMaker/QrCodeMaker/View/ButtonView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "85"
+                  endingLineNumber = "85"
+                  offsetFromSymbolStart = "1244">
+               </Location>
+               <Location
+                  uuid = "CA2164A1-C887-4594-88E5-87F3D64BB39C - 46813f54c548f55d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QrCodeMaker.ButtonView.createTextFile() -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/View/ButtonView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "85"
@@ -5185,6 +6040,36 @@
                   endingLineNumber = "82"
                   offsetFromSymbolStart = "800">
                </Location>
+               <Location
+                  uuid = "0BE1DF61-A302-45C1-9511-45B5195CD450 - 46813f54c548f5e0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QrCodeMaker.ButtonView.createTextFile() -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/View/ButtonView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "580">
+               </Location>
+               <Location
+                  uuid = "0BE1DF61-A302-45C1-9511-45B5195CD450 - 46813f54c548f5e0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QrCodeMaker.ButtonView.createTextFile() -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/View/ButtonView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "800">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -5202,6 +6087,38 @@
             endingLineNumber = "92"
             landmarkName = "processYelpData(ar:sh:st:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "572A3F6F-502A-4242-8C49-F32B3E766CFA - 49f2a7ae6ee481b0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QrCodeMaker.ShowResultVc.processYelpData(ar: Swift.Array&lt;QrCodeMaker.ResultDataModel&gt;, sh: Swift.String, st: Swift.String) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/ShowResultVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "832">
+               </Location>
+               <Location
+                  uuid = "572A3F6F-502A-4242-8C49-F32B3E766CFA - 49f2a7ae6ee481b0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QrCodeMaker.ShowResultVc.processYelpData(ar: Swift.Array&lt;QrCodeMaker.ResultDataModel&gt;, sh: Swift.String, st: Swift.String) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/ShowResultVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "1016">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -5264,6 +6181,21 @@
                   endingLineNumber = "63"
                   offsetFromSymbolStart = "616">
                </Location>
+               <Location
+                  uuid = "AD898D07-EC52-4D11-8217-8C4E8BB88AF1 - a50fce6280e1a0ce"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QrCodeMaker.ButtonView.shareImage() -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/View/ButtonView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "616">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -5312,6 +6244,21 @@
                   endingLineNumber = "200"
                   offsetFromSymbolStart = "1348">
                </Location>
+               <Location
+                  uuid = "E7CA6338-0B3C-412C-93EA-6F81724DCC55 - d5f53e9e204ab24a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QrCodeMaker.saveImageInDocumentDirectory(image: __C.UIImage, fileName: Swift.String) -&gt; Swift.Optional&lt;Foundation.URL&gt;"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/Model/AppGlobal.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "201"
+                  endingLineNumber = "201"
+                  offsetFromSymbolStart = "380">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -5359,6 +6306,21 @@
                   startingLineNumber = "199"
                   endingLineNumber = "199"
                   offsetFromSymbolStart = "1096">
+               </Location>
+               <Location
+                  uuid = "01149148-4B8E-4315-B89B-9FB684F14627 - 8e5aa2886d0429cf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QrCodeMaker.saveImage(name: Swift.String, image: __C.UIImage) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/Model/AppGlobal.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "198"
+                  endingLineNumber = "198"
+                  offsetFromSymbolStart = "2736">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -5514,6 +6476,21 @@
                   endingLineNumber = "197"
                   offsetFromSymbolStart = "672">
                </Location>
+               <Location
+                  uuid = "0416FF51-1137-46FD-AA26-F0DD3AC9F2E5 - 92a9cbbc39522567"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QrCodeMaker.ScannerVC.didOutput(_: Swift.String, type: Swift.String) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/ScannerVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "225"
+                  endingLineNumber = "225"
+                  offsetFromSymbolStart = "544">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -5641,6 +6618,21 @@
                   endingLineNumber = "480"
                   offsetFromSymbolStart = "39624">
                </Location>
+               <Location
+                  uuid = "FDC67F48-655E-4613-88FA-72C367C9F94D - 5ed797b64dd15ee6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static QrCodeMaker.QrcOodearray.getArray(text: Swift.String) -&gt; Swift.Array&lt;QrCodeMaker.ResultDataModel&gt;"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/Model/QrcOodearray.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "480"
+                  endingLineNumber = "480"
+                  offsetFromSymbolStart = "39780">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -5703,6 +6695,21 @@
                   startingLineNumber = "478"
                   endingLineNumber = "478"
                   offsetFromSymbolStart = "39268">
+               </Location>
+               <Location
+                  uuid = "B6A512EC-FA58-4A3E-9F90-C1817A990BC5 - 5ed797b64dd15ea8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static QrCodeMaker.QrcOodearray.getArray(text: Swift.String) -&gt; Swift.Array&lt;QrCodeMaker.ResultDataModel&gt;"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/Model/QrcOodearray.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "478"
+                  endingLineNumber = "478"
+                  offsetFromSymbolStart = "39424">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -5815,6 +6822,21 @@
                   endingLineNumber = "305"
                   offsetFromSymbolStart = "5836">
                </Location>
+               <Location
+                  uuid = "4B92D352-B2A6-49FC-8DC6-1D1F7357C30D - fb527c65af418955"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 (Swift.Optional&lt;__C.CNMutableContact&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in QrCodeMaker.EditVc.doneBtnPressed(Any) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/EditVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "305"
+                  endingLineNumber = "305"
+                  offsetFromSymbolStart = "5856">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -5877,6 +6899,21 @@
                   startingLineNumber = "301"
                   endingLineNumber = "301"
                   offsetFromSymbolStart = "5740">
+               </Location>
+               <Location
+                  uuid = "1C05A2B0-A685-40CB-BC28-FE93366626FD - fb527c65af4189d1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 (Swift.Optional&lt;__C.CNMutableContact&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in QrCodeMaker.EditVc.doneBtnPressed(Any) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/EditVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "301"
+                  endingLineNumber = "301"
+                  offsetFromSymbolStart = "5760">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -6107,6 +7144,21 @@
                   endingLineNumber = "66"
                   offsetFromSymbolStart = "4360">
                </Location>
+               <Location
+                  uuid = "B38C9C6C-6E04-49D9-984D-1A61108DEB05 - 5ed797b64dd19444"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static QrCodeMaker.QrcOodearray.getArray(text: Swift.String) -&gt; Swift.Array&lt;QrCodeMaker.ResultDataModel&gt;"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/Model/QrcOodearray.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "4520">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -6320,6 +7372,21 @@
                   endingLineNumber = "57"
                   offsetFromSymbolStart = "4012">
                </Location>
+               <Location
+                  uuid = "DDB0F9E1-22D3-4896-BAC2-23C9B5443528 - 5ed797b64dd1976d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static QrCodeMaker.QrcOodearray.getArray(text: Swift.String) -&gt; Swift.Array&lt;QrCodeMaker.ResultDataModel&gt;"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/Model/QrcOodearray.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "4172">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -6517,6 +7584,21 @@
                   startingLineNumber = "56"
                   endingLineNumber = "56"
                   offsetFromSymbolStart = "3876">
+               </Location>
+               <Location
+                  uuid = "4180E00F-155F-4147-B1A6-334C6C508D59 - 5ed797b64dd1970e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static QrCodeMaker.QrcOodearray.getArray(text: Swift.String) -&gt; Swift.Array&lt;QrCodeMaker.ResultDataModel&gt;"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/Model/QrcOodearray.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "4036">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -6716,6 +7798,21 @@
                   endingLineNumber = "55"
                   offsetFromSymbolStart = "3840">
                </Location>
+               <Location
+                  uuid = "4FC02DE5-B758-42D4-B7C2-6C83BF02BD29 - 5ed797b64dd1972f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static QrCodeMaker.QrcOodearray.getArray(text: Swift.String) -&gt; Swift.Array&lt;QrCodeMaker.ResultDataModel&gt;"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/Model/QrcOodearray.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "4000">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -6838,6 +7935,21 @@
                   startingLineNumber = "86"
                   endingLineNumber = "86"
                   offsetFromSymbolStart = "5704">
+               </Location>
+               <Location
+                  uuid = "35D0483E-AC78-4505-9EF7-84223C7D8606 - 5ed797b64dd16bd0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static QrCodeMaker.QrcOodearray.getArray(text: Swift.String) -&gt; Swift.Array&lt;QrCodeMaker.ResultDataModel&gt;"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/Model/QrcOodearray.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "86"
+                  endingLineNumber = "86"
+                  offsetFromSymbolStart = "5860">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -6962,6 +8074,21 @@
                   endingLineNumber = "83"
                   offsetFromSymbolStart = "5648">
                </Location>
+               <Location
+                  uuid = "CEE9225E-432D-4819-84C0-1DA8229144DA - 5ed797b64dd16bb3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static QrCodeMaker.QrcOodearray.getArray(text: Swift.String) -&gt; Swift.Array&lt;QrCodeMaker.ResultDataModel&gt;"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/Model/QrcOodearray.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "83"
+                  endingLineNumber = "83"
+                  offsetFromSymbolStart = "5804">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -7084,6 +8211,21 @@
                   startingLineNumber = "82"
                   endingLineNumber = "82"
                   offsetFromSymbolStart = "5512">
+               </Location>
+               <Location
+                  uuid = "FEC01859-4AA7-4A0B-9646-AE88F8125DDF - 5ed797b64dd16a54"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static QrCodeMaker.QrcOodearray.getArray(text: Swift.String) -&gt; Swift.Array&lt;QrCodeMaker.ResultDataModel&gt;"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/Model/QrcOodearray.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "5668">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -7208,6 +8350,21 @@
                   endingLineNumber = "80"
                   offsetFromSymbolStart = "5376">
                </Location>
+               <Location
+                  uuid = "3588515F-B86D-4E73-A62E-3B725E4F9828 - 5ed797b64dd16a16"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static QrCodeMaker.QrcOodearray.getArray(text: Swift.String) -&gt; Swift.Array&lt;QrCodeMaker.ResultDataModel&gt;"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/Model/QrcOodearray.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "5532">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -7330,6 +8487,21 @@
                   startingLineNumber = "79"
                   endingLineNumber = "79"
                   offsetFromSymbolStart = "5340">
+               </Location>
+               <Location
+                  uuid = "C1369BAD-244A-41CA-8DEF-973FC94BF422 - 5ed797b64dd16a37"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static QrCodeMaker.QrcOodearray.getArray(text: Swift.String) -&gt; Swift.Array&lt;QrCodeMaker.ResultDataModel&gt;"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/Model/QrcOodearray.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "79"
+                  endingLineNumber = "79"
+                  offsetFromSymbolStart = "5500">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -7454,6 +8626,21 @@
                   endingLineNumber = "77"
                   offsetFromSymbolStart = "5112">
                </Location>
+               <Location
+                  uuid = "E2294D59-F1B2-4042-83AE-F34056BCB7F1 - 5ed797b64dd16af9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static QrCodeMaker.QrcOodearray.getArray(text: Swift.String) -&gt; Swift.Array&lt;QrCodeMaker.ResultDataModel&gt;"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/Model/QrcOodearray.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "77"
+                  endingLineNumber = "77"
+                  offsetFromSymbolStart = "5272">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -7576,6 +8763,21 @@
                   startingLineNumber = "77"
                   endingLineNumber = "77"
                   offsetFromSymbolStart = "5112">
+               </Location>
+               <Location
+                  uuid = "ED1D9832-6A88-4F32-83E4-C69C3E6F8294 - 5ed797b64dd16af9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static QrCodeMaker.QrcOodearray.getArray(text: Swift.String) -&gt; Swift.Array&lt;QrCodeMaker.ResultDataModel&gt;"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/Model/QrcOodearray.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "77"
+                  endingLineNumber = "77"
+                  offsetFromSymbolStart = "5272">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -7700,6 +8902,21 @@
                   endingLineNumber = "82"
                   offsetFromSymbolStart = "5512">
                </Location>
+               <Location
+                  uuid = "384A70D2-4C25-42B2-A934-DA5EE664F0C3 - 5ed797b64dd16a54"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static QrCodeMaker.QrcOodearray.getArray(text: Swift.String) -&gt; Swift.Array&lt;QrCodeMaker.ResultDataModel&gt;"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/Model/QrcOodearray.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "5668">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -7747,6 +8964,21 @@
                   startingLineNumber = "699"
                   endingLineNumber = "699"
                   offsetFromSymbolStart = "59936">
+               </Location>
+               <Location
+                  uuid = "FCF2B65E-6152-49D1-B338-27B37C83B801 - f1579be31cad9ac4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static QrCodeMaker.QrParser.getBarCodeObj(text: Swift.String) -&gt; Swift.String"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/Model/QrParser.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "699"
+                  endingLineNumber = "699"
+                  offsetFromSymbolStart = "60016">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -7796,6 +9028,21 @@
                   endingLineNumber = "699"
                   offsetFromSymbolStart = "59936">
                </Location>
+               <Location
+                  uuid = "96D154F6-C199-40B7-A4DB-4E42EBE41008 - f1579be31cad9ac4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static QrCodeMaker.QrParser.getBarCodeObj(text: Swift.String) -&gt; Swift.String"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/Model/QrParser.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "699"
+                  endingLineNumber = "699"
+                  offsetFromSymbolStart = "60016">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -7844,6 +9091,21 @@
                   endingLineNumber = "699"
                   offsetFromSymbolStart = "59936">
                </Location>
+               <Location
+                  uuid = "415C84F8-E95B-4B4A-8952-BCC12621B63A - f1579be31cad9a82"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static QrCodeMaker.QrParser.getBarCodeObj(text: Swift.String) -&gt; Swift.String"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/Model/QrParser.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "697"
+                  endingLineNumber = "697"
+                  offsetFromSymbolStart = "59924">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -7891,6 +9153,21 @@
                   startingLineNumber = "1623"
                   endingLineNumber = "1623"
                   offsetFromSymbolStart = "348">
+               </Location>
+               <Location
+                  uuid = "4327A34B-E99F-4CDD-A6A9-AE965776A81D - d6871c6b2783e97a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static QrCodeMaker.Constant.createBingSearch(modelArray: Swift.Array&lt;QrCodeMaker.ResultDataModel&gt;) -&gt; Swift.String"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/Model/Constant.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1625"
+                  endingLineNumber = "1625"
+                  offsetFromSymbolStart = "376">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -8096,6 +9373,21 @@
                   endingLineNumber = "69"
                   offsetFromSymbolStart = "4624">
                </Location>
+               <Location
+                  uuid = "F0C54915-373C-4B18-A1F4-DBB3A7567AE2 - 5ed797b64dd195e1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static QrCodeMaker.QrcOodearray.getArray(text: Swift.String) -&gt; Swift.Array&lt;QrCodeMaker.ResultDataModel&gt;"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/Model/QrcOodearray.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "4784">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -8203,6 +9495,21 @@
                   startingLineNumber = "68"
                   endingLineNumber = "68"
                   offsetFromSymbolStart = "4588">
+               </Location>
+               <Location
+                  uuid = "1F0CB27B-E651-4BA6-9156-F751DFBC0BFD - 5ed797b64dd19582"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static QrCodeMaker.QrcOodearray.getArray(text: Swift.String) -&gt; Swift.Array&lt;QrCodeMaker.ResultDataModel&gt;"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/Model/QrcOodearray.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "4748">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -8312,6 +9619,21 @@
                   endingLineNumber = "70"
                   offsetFromSymbolStart = "4760">
                </Location>
+               <Location
+                  uuid = "37967ECC-3958-4EC8-99D4-753D4B7F0E3B - 5ed797b64dd195c0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static QrCodeMaker.QrcOodearray.getArray(text: Swift.String) -&gt; Swift.Array&lt;QrCodeMaker.ResultDataModel&gt;"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/Model/QrcOodearray.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "4920">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -8389,6 +9711,21 @@
                   startingLineNumber = "111"
                   endingLineNumber = "111"
                   offsetFromSymbolStart = "7264">
+               </Location>
+               <Location
+                  uuid = "31A38A33-9447-41C3-A242-D2A6275DA7D6 - 5ed797b64dd16e17"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static QrCodeMaker.QrcOodearray.getArray(text: Swift.String) -&gt; Swift.Array&lt;QrCodeMaker.ResultDataModel&gt;"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/Model/QrcOodearray.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "111"
+                  endingLineNumber = "111"
+                  offsetFromSymbolStart = "7420">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -8468,6 +9805,21 @@
                   endingLineNumber = "107"
                   offsetFromSymbolStart = "6956">
                </Location>
+               <Location
+                  uuid = "1D01F477-97F3-46F4-8EFD-75C823FC7482 - 5ed797b64dd16e9b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static QrCodeMaker.QrcOodearray.getArray(text: Swift.String) -&gt; Swift.Array&lt;QrCodeMaker.ResultDataModel&gt;"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/Model/QrcOodearray.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "107"
+                  endingLineNumber = "107"
+                  offsetFromSymbolStart = "7112">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -8545,6 +9897,21 @@
                   startingLineNumber = "108"
                   endingLineNumber = "108"
                   offsetFromSymbolStart = "6992">
+               </Location>
+               <Location
+                  uuid = "CABBF7C6-A9F2-48B5-8127-5C47EDB5FFBC - 5ed797b64dd16efa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static QrCodeMaker.QrcOodearray.getArray(text: Swift.String) -&gt; Swift.Array&lt;QrCodeMaker.ResultDataModel&gt;"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/Model/QrcOodearray.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "108"
+                  endingLineNumber = "108"
+                  offsetFromSymbolStart = "7148">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -8624,6 +9991,21 @@
                   endingLineNumber = "110"
                   offsetFromSymbolStart = "7128">
                </Location>
+               <Location
+                  uuid = "4CD2A658-5A37-4397-B701-578878D56410 - 5ed797b64dd16e38"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static QrCodeMaker.QrcOodearray.getArray(text: Swift.String) -&gt; Swift.Array&lt;QrCodeMaker.ResultDataModel&gt;"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/Model/QrcOodearray.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "110"
+                  endingLineNumber = "110"
+                  offsetFromSymbolStart = "7284">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -8702,6 +10084,21 @@
                   endingLineNumber = "105"
                   offsetFromSymbolStart = "6728">
                </Location>
+               <Location
+                  uuid = "B28FE384-5584-49A5-8CC2-65C422FA724A - 5ed797b64dd1695d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static QrCodeMaker.QrcOodearray.getArray(text: Swift.String) -&gt; Swift.Array&lt;QrCodeMaker.ResultDataModel&gt;"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/Model/QrcOodearray.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
+                  offsetFromSymbolStart = "6884">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -8717,8 +10114,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "81"
             endingLineNumber = "81"
-            landmarkName = "processYelpData(ar:sh:st:)"
-            landmarkType = "7">
+            landmarkName = "ShowResultVc"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -8733,7 +10130,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "80"
             endingLineNumber = "80"
-            landmarkName = "processYelpData(ar:sh:st:)"
+            landmarkName = "eventEditViewController(_:didCompleteWith:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -8750,54 +10147,6 @@
             startingLineNumber = "84"
             endingLineNumber = "84"
             landmarkName = "processYelpData(ar:sh:st:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "C32B06F3-684F-4753-843F-E885415AC0A8"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "QrCodeMaker/ViewController/ShowResultVc.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "738"
-            endingLineNumber = "738"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4C39EA7F-D787-4A34-A68C-8F51133CBD2B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "QrCodeMaker/ViewController/ShowResultVc.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "737"
-            endingLineNumber = "737"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B38D284C-F28E-4CC4-B062-9F78B5B1D811"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "QrCodeMaker/ViewController/ShowResultVc.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "736"
-            endingLineNumber = "736"
-            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -8894,6 +10243,21 @@
                   endingLineNumber = "317"
                   offsetFromSymbolStart = "30668">
                </Location>
+               <Location
+                  uuid = "68162979-6FBB-4C44-9193-62A87075DABC - f1579be31cadcb86"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static QrCodeMaker.QrParser.getBarCodeObj(text: Swift.String) -&gt; Swift.String"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/Model/QrParser.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "317"
+                  endingLineNumber = "317"
+                  offsetFromSymbolStart = "28868">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -8941,6 +10305,21 @@
                   startingLineNumber = "316"
                   endingLineNumber = "316"
                   offsetFromSymbolStart = "30608">
+               </Location>
+               <Location
+                  uuid = "22F54F04-2D03-455A-9CB6-C77E06862F03 - f1579be31cadcb86"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static QrCodeMaker.QrParser.getBarCodeObj(text: Swift.String) -&gt; Swift.String"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/Model/QrParser.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "317"
+                  endingLineNumber = "317"
+                  offsetFromSymbolStart = "28868">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -9050,6 +10429,21 @@
                   endingLineNumber = "286"
                   offsetFromSymbolStart = "28156">
                </Location>
+               <Location
+                  uuid = "17D6A9EA-0F86-4EB8-90B0-3FC31A1298E1 - f1579be31cadc7e8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static QrCodeMaker.QrParser.getBarCodeObj(text: Swift.String) -&gt; Swift.String"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/Model/QrParser.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "287"
+                  endingLineNumber = "287"
+                  offsetFromSymbolStart = "25368">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -9157,6 +10551,36 @@
                   startingLineNumber = "284"
                   endingLineNumber = "284"
                   offsetFromSymbolStart = "27932">
+               </Location>
+               <Location
+                  uuid = "C79B657A-9D6B-4E8B-893B-ECB56B896E54 - f1579be31cadc745"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static QrCodeMaker.QrParser.getBarCodeObj(text: Swift.String) -&gt; Swift.String"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/Model/QrParser.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "284"
+                  endingLineNumber = "284"
+                  offsetFromSymbolStart = "25120">
+               </Location>
+               <Location
+                  uuid = "C79B657A-9D6B-4E8B-893B-ECB56B896E54 - f1579be31cadc745"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static QrCodeMaker.QrParser.getBarCodeObj(text: Swift.String) -&gt; Swift.String"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/Model/QrParser.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "284"
+                  endingLineNumber = "284"
+                  offsetFromSymbolStart = "25228">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -9414,6 +10838,21 @@
                   endingLineNumber = "1354"
                   offsetFromSymbolStart = "832">
                </Location>
+               <Location
+                  uuid = "3478E5CB-0907-479F-9DF3-81364B081F46 - de02f7ba1e04b8a6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static QrCodeMaker.Constant.createWifi(modelArray: Swift.Array&lt;QrCodeMaker.ResultDataModel&gt;) -&gt; Swift.String"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/Model/Constant.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1354"
+                  endingLineNumber = "1354"
+                  offsetFromSymbolStart = "860">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -9495,6 +10934,326 @@
             endingLineNumber = "1347"
             landmarkName = "createWifi(modelArray:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A855D239-1E06-4D43-B5C4-E8FF7C31257B - de02f7ba1e04b84d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static QrCodeMaker.Constant.createWifi(modelArray: Swift.Array&lt;QrCodeMaker.ResultDataModel&gt;) -&gt; Swift.String"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/Model/Constant.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1347"
+                  endingLineNumber = "1347"
+                  offsetFromSymbolStart = "208">
+               </Location>
+               <Location
+                  uuid = "A855D239-1E06-4D43-B5C4-E8FF7C31257B - de02f7ba1e04b84d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static QrCodeMaker.Constant.createWifi(modelArray: Swift.Array&lt;QrCodeMaker.ResultDataModel&gt;) -&gt; Swift.String"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/Model/Constant.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1347"
+                  endingLineNumber = "1347"
+                  offsetFromSymbolStart = "500">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "18BD0B05-09CB-4B3B-BEBB-B6362F3C9CBB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QrCodeMaker/ViewController/ShowResultVc.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1024"
+            endingLineNumber = "1024"
+            landmarkName = "copyText(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "18BD0B05-09CB-4B3B-BEBB-B6362F3C9CBB - 9086135da5e13f33"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QrCodeMaker.ShowResultVc.copyText(Any) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/ShowResultVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1025"
+                  endingLineNumber = "1025"
+                  offsetFromSymbolStart = "17772">
+               </Location>
+               <Location
+                  uuid = "18BD0B05-09CB-4B3B-BEBB-B6362F3C9CBB - 9086135da5e13fd2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QrCodeMaker.ShowResultVc.copyText(Any) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/ShowResultVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1026"
+                  endingLineNumber = "1026"
+                  offsetFromSymbolStart = "21792">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8927CB0E-382B-437D-A366-61991755C596"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QrCodeMaker/ViewController/ShowResultVc.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "968"
+            endingLineNumber = "968"
+            landmarkName = "copyText(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8927CB0E-382B-437D-A366-61991755C596 - 9086135da5e13048"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QrCodeMaker.ShowResultVc.copyText(Any) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/ShowResultVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "968"
+                  endingLineNumber = "968"
+                  offsetFromSymbolStart = "11588">
+               </Location>
+               <Location
+                  uuid = "8927CB0E-382B-437D-A366-61991755C596 - 9086135da5e1306b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QrCodeMaker.ShowResultVc.copyText(Any) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/ShowResultVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "969"
+                  endingLineNumber = "969"
+                  offsetFromSymbolStart = "18828">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A81AAC11-85AA-4296-999F-4848D85C007F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QrCodeMaker/ViewController/ShowResultVc.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "966"
+            endingLineNumber = "966"
+            landmarkName = "copyText(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A81AAC11-85AA-4296-999F-4848D85C007F - 9086135da5e1378e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QrCodeMaker.ShowResultVc.copyText(Any) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/ShowResultVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "966"
+                  endingLineNumber = "966"
+                  offsetFromSymbolStart = "11404">
+               </Location>
+               <Location
+                  uuid = "A81AAC11-85AA-4296-999F-4848D85C007F - 9086135da5e137a9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QrCodeMaker.ShowResultVc.copyText(Any) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/ShowResultVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "967"
+                  endingLineNumber = "967"
+                  offsetFromSymbolStart = "18684">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E4699E59-F40B-4B50-918E-53559067D8D7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QrCodeMaker/ViewController/ShowResultVc.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "977"
+            endingLineNumber = "977"
+            landmarkName = "copyText(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E4699E59-F40B-4B50-918E-53559067D8D7 - 9086135da5e13163"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QrCodeMaker.ShowResultVc.copyText(Any) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/ShowResultVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "977"
+                  endingLineNumber = "977"
+                  offsetFromSymbolStart = "12424">
+               </Location>
+               <Location
+                  uuid = "E4699E59-F40B-4B50-918E-53559067D8D7 - 9086135da5e13163"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QrCodeMaker.ShowResultVc.copyText(Any) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/ShowResultVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "977"
+                  endingLineNumber = "977"
+                  offsetFromSymbolStart = "19624">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7188ABBD-665E-45AE-9B14-155AC6B435BE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QrCodeMaker/ViewController/ShowResultVc.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "981"
+            endingLineNumber = "981"
+            landmarkName = "copyText(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7188ABBD-665E-45AE-9B14-155AC6B435BE - 9086135da5e13259"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QrCodeMaker.ShowResultVc.copyText(Any) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/ShowResultVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "983"
+                  endingLineNumber = "983"
+                  offsetFromSymbolStart = "13764">
+               </Location>
+               <Location
+                  uuid = "7188ABBD-665E-45AE-9B14-155AC6B435BE - 9086135da5e1319f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QrCodeMaker.ShowResultVc.copyText(Any) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/ShowResultVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "981"
+                  endingLineNumber = "981"
+                  offsetFromSymbolStart = "20040">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D9FC8D46-925B-4FD1-988C-719EE30467B6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QrCodeMaker/ViewController/ShowResultVc.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "984"
+            endingLineNumber = "984"
+            landmarkName = "copyText(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D9FC8D46-925B-4FD1-988C-719EE30467B6 - 9086135da5e13278"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QrCodeMaker.ShowResultVc.copyText(Any) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/ShowResultVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "984"
+                  endingLineNumber = "984"
+                  offsetFromSymbolStart = "13840">
+               </Location>
+               <Location
+                  uuid = "D9FC8D46-925B-4FD1-988C-719EE30467B6 - 9086135da5e13278"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QrCodeMaker.ShowResultVc.copyText(Any) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/QrCode/QrCodeMaker/ViewController/ShowResultVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "984"
+                  endingLineNumber = "984"
+                  offsetFromSymbolStart = "20296">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
