@@ -22,7 +22,7 @@ class ImagePickerIphone: UIViewController,UIImagePickerControllerDelegate,UINavi
     var tempSp:UIView! = nil
     var isCodeFound = false
     
-    var isSelected = false
+    var shouldNotDimiss = false
     
     @IBOutlet weak var collectionview: UICollectionView!
     var allPhotos : PHFetchResult<PHAsset>? = nil
@@ -122,12 +122,19 @@ class ImagePickerIphone: UIViewController,UIImagePickerControllerDelegate,UINavi
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
+         
         
+        print("mama = \(imagePickerController)")
         if Store.sharedInstance.shouldShowHistoryPage || Store.sharedInstance.shouldShowHomeScreen {
             self.dismiss(animated: false)
             
         }
         self.photoLibraryAvailabilityCheck()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
     }
     
     func funcToCall() {
@@ -193,7 +200,6 @@ class ImagePickerIphone: UIViewController,UIImagePickerControllerDelegate,UINavi
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
-        isSelected = true
         self.selectedImage(selectedImage: image)
 
     }
@@ -268,7 +274,7 @@ class ImagePickerIphone: UIViewController,UIImagePickerControllerDelegate,UINavi
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         IHProgressHUD.dismiss()
-        isSelected = false
+        //isSelected = false
     }
     
     @available(iOS 11.0, *)
@@ -465,6 +471,7 @@ class ImagePickerIphone: UIViewController,UIImagePickerControllerDelegate,UINavi
         else
         
         {
+            self.shouldNotDimiss = true
             let image = BarCodeGenerator.getBarCodeImage(type: currentBarCode, value: value)
             
             if let value1 = image {
@@ -481,6 +488,7 @@ class ImagePickerIphone: UIViewController,UIImagePickerControllerDelegate,UINavi
                 
                 UIApplication.topMostViewController?.present(vc, animated: true, completion: {
                     
+                    //self.imagePickerController.dismiss(animated:false)
                 })
                 
                 
@@ -564,19 +572,6 @@ extension ImagePickerIphone: UICollectionViewDataSource,UICollectionViewDelegate
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        if isSelected {
-            return
-        }
-        
-        isSelected = true
-        
-        IHProgressHUD.show()
-        
-        
-        if let assets = allPhotos {
-            self.selectedImage(selectedImage: assets[indexPath.row].thumbnailImage)
-        }
         
         
         
