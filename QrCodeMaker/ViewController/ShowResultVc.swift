@@ -661,7 +661,7 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
         
         Store.sharedInstance.setPopValue(value: true)
         Store.sharedInstance.setShowHistoryPage(value: true)
-       // NotificationCenter.default.post(name: NSNotification.Name(rawValue: "sadiq"), object: nil)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "sadiq"), object: nil)
        // self.view.window!.rootViewController?.dismiss(animated: true, completion: nil)
         delegateDis?.dimissAllClass()
         self.dismiss(animated: true)

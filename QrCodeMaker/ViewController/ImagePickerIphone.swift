@@ -41,6 +41,14 @@ class ImagePickerIphone: UIViewController,UIImagePickerControllerDelegate,UINavi
         super.viewDidLoad()
         self.photoLibraryAvailabilityCheck()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(handleEvent), name: UIApplication.didBecomeActiveNotification, object: nil)
+
+        
+    }
+    
+    @objc func handleEvent() {
+        print("tos tos")
+        self.photoLibraryAvailabilityCheck()
     }
     
     @available(iOS 11.0, *)
