@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import StoreKit
 
 class SettingsVc: UIViewController {
 
@@ -137,6 +138,12 @@ class SettingsVc: UIViewController {
         self.gotoWebView(name: "Privacy Policy", url: privacyPolicyValue)
         
     }
+    
+    @IBAction func rateThisApp(_ sender: Any) {
+        SKStoreReviewController.requestReview()
+        
+    }
+    
     func gotoWebView(name:String,url:String)
     {
         let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "CommonViewController") as? CommonViewController
