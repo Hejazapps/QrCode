@@ -9,7 +9,10 @@ import UIKit
 
 class HistoryVc: UIViewController {
     
+    @IBOutlet weak var topView1: UIView!
+    @IBOutlet weak var scanLabel: UILabel!
     
+    @IBOutlet weak var holderView: UIView!
     @IBOutlet weak var searchbar: UISearchBar!
     @IBOutlet weak var heightForFolderView: NSLayoutConstraint!
     @IBOutlet weak var editBtn: UIButton!
@@ -35,14 +38,21 @@ class HistoryVc: UIViewController {
     
     @IBOutlet weak var collectionViewForFolder: UICollectionView!
     
+    
+     
+    @IBAction func gotoScanPage(_ sender: Any) {
+        
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         databaseArray = DBmanager.shared.getRecordInfo(indexPath: currentIndexPath)
         tableView.reloadData()
-        topView.roundCorners([.bottomRight, .bottomLeft], radius: 10)
+       topView.roundCorners([.bottomRight, .bottomLeft], radius: 10)
         NotificationCenter.default.addObserver(self, selector:#selector(reloadData2(notification:)), name:NSNotification.Name(rawValue: "delete"), object: nil)
         
-        
+       
         searchbar.searchBarStyle = .minimal
         searchbar.backgroundColor =  UIColor.clear
         searchbar.searchTextField.backgroundColor =  UIColor(red: 245.0/255, green: 244.0/255, blue: 244.0/255, alpha: 1.0)
@@ -60,6 +70,15 @@ class HistoryVc: UIViewController {
         searchbar.resignFirstResponder()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        holderView.layer.cornerRadius = 15.0
+        scanLabel.layer.cornerRadius = 10.0
+        scanLabel.layer.masksToBounds = true
+
+        
+    }
     
     
     @objc func reloadData2(notification: NSNotification) {
@@ -81,6 +100,9 @@ class HistoryVc: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         Store.sharedInstance.showPickerT = false
+        
+        
+        
         if Store.sharedInstance.currentIndexPath == "1" {
             self.gotoScannedBtn(AnyObject.self)
         }
@@ -89,6 +111,11 @@ class HistoryVc: UIViewController {
         }
         databaseArray = DBmanager.shared.getRecordInfo(indexPath: currentIndexPath)
         folderArray = DBmanager.shared.getFolderInfo()
+        
+        
+        if databaseArray.count < 1 {
+            topView1.isHidden = false
+        }
         
         if folderArray.count < 1 {
             heightForFolderView.constant = 0
