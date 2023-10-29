@@ -9,6 +9,7 @@ import UIKit
 
 class SettingsVc: UIViewController {
 
+    @IBOutlet weak var beepSwitch: UISwitch!
     @IBOutlet weak var vibrateWatch: UISwitch!
     @IBOutlet weak var soundWatch: UISwitch!
     @IBOutlet weak var HeightForTotal: NSLayoutConstraint!
@@ -54,6 +55,7 @@ class SettingsVc: UIViewController {
         
         let a = UserDefaults.standard.integer(forKey: "sound")
         let b = UserDefaults.standard.integer(forKey: "vibrate")
+        let c = UserDefaults.standard.integer(forKey: "Beep")
         
         if a == 2 {
             soundWatch.setOn(true, animated: true)
@@ -68,9 +70,16 @@ class SettingsVc: UIViewController {
         else {
             vibrateWatch.setOn(false, animated: true)
         }
-        print(a)
         
-        print("sound =  \(a)")
+        if c == 2 {
+            beepSwitch.setOn(true, animated: true)
+        }
+        else {
+            beepSwitch.setOn(false, animated: true)
+        }
+        
+        
+       
         
         
     }

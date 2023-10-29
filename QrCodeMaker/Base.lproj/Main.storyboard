@@ -1880,6 +1880,7 @@
                     <tabBarItem key="tabBarItem" title="Settings" image="settings" id="fct-o0-zb5"/>
                     <connections>
                         <outlet property="HeightForTotal" destination="HlN-8R-qvQ" id="AZm-GH-azP"/>
+                        <outlet property="beepSwitch" destination="tI6-tP-76d" id="tyV-HX-fLq"/>
                         <outlet property="holderView" destination="umd-KK-V6H" id="uhg-Am-Oz3"/>
                         <outlet property="soundWatch" destination="Agw-mI-B6L" id="afH-RW-c1F"/>
                         <outlet property="vibrateWatch" destination="t5J-Ph-1qj" id="3lZ-rl-BCh"/>
@@ -3737,7 +3738,7 @@
         <image name="history_page" width="30" height="30"/>
         <image name="next" width="32" height="32"/>
         <image name="qrcode" catalog="system" width="128" height="114"/>
-        <image name="scan" width="30" height="30"/>
+        <image name="scan" width="32.333332061767578" height="32.333332061767578"/>
         <image name="settings" width="30" height="30"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
