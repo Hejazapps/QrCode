@@ -218,7 +218,7 @@ extension ScannerVC:CameraViewControllerDelegate{
         print("outpout  = \(code)")
         
         
-        let a = UserDefaults.standard.integer(forKey: "Link Open")
+        let a = UserDefaults.standard.integer(forKey: "Link")
         
         if a == 2 {
             if code.containsIgnoringCase(find: "https") {

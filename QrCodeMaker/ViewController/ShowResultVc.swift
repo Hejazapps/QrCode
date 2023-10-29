@@ -578,8 +578,8 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
         
         
     }
-    @IBAction func gotoSve(_ sender: Any) {
-        
+    
+    func saveData() {
         
         DBmanager.shared.initDB()
         
@@ -657,6 +657,11 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
             UserDefaults.standard.set(encoded, forKey: "logo\(id)")
         }
         
+    }
+    @IBAction func gotoSve(_ sender: Any) {
+        
+        
+        self.saveData()
         
         
         Store.sharedInstance.setPopValue(value: true)
@@ -1159,6 +1164,19 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
     }
     
     @IBAction func gotoPreviousView(_ sender: Any) {
+        
+        
+        if isFromScanned  {
+            
+            if !isfromUpdate {
+                
+                let e = UserDefaults.standard.integer(forKey: "history")
+                
+                if e == 2 {
+                    self.saveData()
+                }
+            }
+        }
         Store.sharedInstance.showPickerT = true
         self.dismiss(animated: true)
     }

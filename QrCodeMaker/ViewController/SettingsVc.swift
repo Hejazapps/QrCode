@@ -9,6 +9,7 @@ import UIKit
 
 class SettingsVc: UIViewController {
 
+    @IBOutlet weak var historySwitch: UISwitch!
     @IBOutlet weak var linkOpen: UISwitch!
     @IBOutlet weak var beepSwitch: UISwitch!
     @IBOutlet weak var vibrateWatch: UISwitch!
@@ -50,6 +51,12 @@ class SettingsVc: UIViewController {
             UserDefaults.standard.set(1, forKey: "sound")
         }
         
+        if historySwitch.isOn {
+            UserDefaults.standard.set(2, forKey: "history")
+        } else {
+            UserDefaults.standard.set(1, forKey: "history")
+        }
+        
         if vibrateWatch.isOn {
             UserDefaults.standard.set(2, forKey: "vibrate")
         } else {
@@ -63,9 +70,9 @@ class SettingsVc: UIViewController {
         }
         
         if linkOpen.isOn {
-            UserDefaults.standard.set(2, forKey: "Link Open")
+            UserDefaults.standard.set(2, forKey: "Link")
         } else {
-            UserDefaults.standard.set(1, forKey: "Link Open")
+            UserDefaults.standard.set(1, forKey: "Link")
         }
     }
     
@@ -75,7 +82,8 @@ class SettingsVc: UIViewController {
         let a = UserDefaults.standard.integer(forKey: "sound")
         let b = UserDefaults.standard.integer(forKey: "vibrate")
         let c = UserDefaults.standard.integer(forKey: "Beep")
-        let d = UserDefaults.standard.integer(forKey: "Link Open")
+        let d = UserDefaults.standard.integer(forKey: "Link")
+        let e = UserDefaults.standard.integer(forKey: "history")
         
         if a == 2 {
             soundWatch.setOn(true, animated: true)
@@ -105,11 +113,42 @@ class SettingsVc: UIViewController {
             linkOpen.setOn(false, animated: true)
         }
         
-        
+        if e == 2 {
+            historySwitch.setOn(true, animated: true)
+        }
+        else {
+            historySwitch.setOn(false, animated: true)
+        }
        
         
         
     }
+    
+    
+    @IBAction func gotoTermOfUse(_ sender: Any) {
+        
+        self.gotoWebView(name: "Terms of Use", url: termsOfUseValue)
+        
+    }
+    
+    
+    @IBAction func gotoPrivacyPolicy(_ sender: Any) {
+        
+        self.gotoWebView(name: "Privacy Policy", url: privacyPolicyValue)
+        
+    }
+    func gotoWebView(name:String,url:String)
+    {
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "CommonViewController") as? CommonViewController
+        vc?.titleForValue = name
+        vc?.url = url
+        let navController = UINavigationController(rootViewController: vc!) // Creating a navigation controller with VC1 at the root of the navigation stack.
+        
+        navController.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+        present(navController, animated: true, completion: nil)
+    }
+    
+    
     /*
     // MARK: - Navigation
 

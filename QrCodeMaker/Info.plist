@@ -37,5 +37,7 @@
 	<string>To scan codes from images please allow Photos access</string>
 	<key>NSCalendarsFullAccessUsageDescription</key>
 	<string>To create an event, please allow Calendar usage access</string>
+	<key>PHPhotoLibraryPreventAutomaticLimitedAccessAlert</key>
+	<false/>
 </dict>
 </plist>
