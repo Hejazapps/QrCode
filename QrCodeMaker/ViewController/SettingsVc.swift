@@ -53,12 +53,20 @@ class SettingsVc: UIViewController {
         super.viewWillAppear(animated)
         
         let a = UserDefaults.standard.integer(forKey: "sound")
+        let b = UserDefaults.standard.integer(forKey: "vibrate")
         
         if a == 2 {
             soundWatch.setOn(true, animated: true)
         }
         else {
             soundWatch.setOn(false, animated: true)
+        }
+        
+        if b == 2 {
+            vibrateWatch.setOn(true, animated: true)
+        }
+        else {
+            vibrateWatch.setOn(false, animated: true)
         }
         print(a)
         
