@@ -42,6 +42,8 @@ class HistoryVc: UIViewController {
      
     @IBAction func gotoScanPage(_ sender: Any) {
         
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "homeTab"), object: nil)
+        
         
     }
     

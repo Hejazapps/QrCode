@@ -30,6 +30,9 @@ class MainTabVc: UITabBarController,UITabBarControllerDelegate,UIImagePickerCont
         NotificationCenter.default.addObserver(self, selector:#selector(reloadData(notification:)), name:NSNotification.Name(rawValue: "sadiq"), object: nil)
         NotificationCenter.default.addObserver(self, selector:#selector(reloadData1(notification:)), name:NSNotification.Name(rawValue: "hide"), object: nil)
         
+        
+        NotificationCenter.default.addObserver(self, selector:#selector(reloadData2(notification:)), name:NSNotification.Name(rawValue: "homeTab"), object: nil)
+        
         super.viewDidLoad()
         self.tabBar.isTranslucent = false
         //self.tabBar.unselectedItemTintColor = UIColor.gray
@@ -46,6 +49,18 @@ class MainTabVc: UITabBarController,UITabBarControllerDelegate,UIImagePickerCont
         myView.addSubview(myView1)
         
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func reloadData2(notification: NSNotification) {
+        
+        
+        if notification.name == NSNotification.Name(rawValue: "homeTab"){
+            
+            self.selectedIndex = 0
+            
+        }
+        
+        
     }
     
     @objc func reloadData1(notification: NSNotification) {
