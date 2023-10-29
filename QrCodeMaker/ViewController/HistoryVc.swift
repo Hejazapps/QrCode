@@ -9,6 +9,8 @@ import UIKit
 
 class HistoryVc: UIViewController {
     
+    @IBOutlet weak var noScanLabel: UILabel!
+    @IBOutlet weak var lbl2: UILabel!
     @IBOutlet weak var topView1: UIView!
     @IBOutlet weak var scanLabel: UILabel!
     
@@ -42,7 +44,14 @@ class HistoryVc: UIViewController {
      
     @IBAction func gotoScanPage(_ sender: Any) {
         
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "homeTab"), object: nil)
+        
+        if Store.sharedInstance.currentIndexPath == "1" {
+            
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "homeTab"), object: nil)
+        }
+        else {
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "createdTab"), object: nil)
+        }
         
         
     }
@@ -106,9 +115,15 @@ class HistoryVc: UIViewController {
         
         
         if Store.sharedInstance.currentIndexPath == "1" {
+            scanLabel.text = "Scan"
+            lbl2.text = "Scan Your Code"
+            noScanLabel.text = "No Scans Yet"
             self.gotoScannedBtn(AnyObject.self)
         }
         else {
+            scanLabel.text = "Create"
+            lbl2.text = "Create Your Code"
+            noScanLabel.text = "No created code Yet"
             self.gotoCreatedBtn(AnyObject.self)
         }
         databaseArray = DBmanager.shared.getRecordInfo(indexPath: currentIndexPath)
@@ -140,6 +155,17 @@ class HistoryVc: UIViewController {
         Store.sharedInstance.currentIndexPath = currentIndexPath
         databaseArray = DBmanager.shared.getRecordInfo(indexPath: currentIndexPath)
         tableView.reloadData()
+        
+        if databaseArray.count < 1 {
+            topView1.isHidden = false
+        }
+        else {
+            topView1.isHidden = true
+        }
+        
+        scanLabel.text = "Scan"
+        lbl2.text = "Scan Your Code"
+        noScanLabel.text = "No Scans Yet"
         
         UIView.animate(withDuration: 0.2, animations: {
             self.leadingSpaceColorView.constant = 30
@@ -290,6 +316,18 @@ class HistoryVc: UIViewController {
         Store.sharedInstance.currentIndexPath = currentIndexPath
         databaseArray = DBmanager.shared.getRecordInfo(indexPath: currentIndexPath)
         tableView.reloadData()
+        
+        if databaseArray.count < 1 {
+            topView1.isHidden = false
+        }
+        else {
+            topView1.isHidden = true
+        }
+        
+        scanLabel.text = "Create"
+        lbl2.text = "Create Your Code"
+        noScanLabel.text = "No created code"
+        
         createdLabel.textColor = UIColor.white
         UIView.animate(withDuration: 0.2, animations: {
             self.leadingSpaceColorView.constant = 30 + self.view.frame.width / 2.0

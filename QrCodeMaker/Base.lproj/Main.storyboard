@@ -1059,19 +1059,19 @@
                                         <rect key="frame" x="59" y="196.66666666666669" width="275" height="250"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Scans Yet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7lh-WM-gtW">
-                                                <rect key="frame" x="51.666666666666671" y="60" width="171.66666666666663" height="33.666666666666657"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                                <rect key="frame" x="58.000000000000014" y="60.000000000000007" width="159.33333333333337" height="31.333333333333336"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan your code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPP-Mm-N0b">
-                                                <rect key="frame" x="69.333333333333329" y="113.66666666666663" width="136.33333333333337" height="23"/>
+                                                <rect key="frame" x="69.333333333333329" y="111.33333333333331" width="136.33333333333337" height="23"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                                                 <color key="textColor" red="0.55686274509803924" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L84-YB-h4h">
-                                                <rect key="frame" x="47.666666666666686" y="166.66666666666669" width="180" height="45"/>
+                                                <rect key="frame" x="47.666666666666686" y="164.33333333333331" width="180" height="45"/>
                                                 <color key="backgroundColor" red="0.070588235294117646" green="0.47058823529411764" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="9eQ-kb-cnu"/>
@@ -1145,7 +1145,9 @@
                         <outlet property="editBtn" destination="HAe-ge-v2C" id="KcM-dK-xUg"/>
                         <outlet property="heightForFolderView" destination="JR9-1C-KPq" id="Wvs-7T-6CP"/>
                         <outlet property="holderView" destination="NuL-ov-SBf" id="olS-9Q-od7"/>
+                        <outlet property="lbl2" destination="gPP-Mm-N0b" id="xGw-wu-yUh"/>
                         <outlet property="leadingSpaceColorView" destination="aiD-zJ-S4o" id="0pH-9Y-xhD"/>
+                        <outlet property="noScanLabel" destination="7lh-WM-gtW" id="RUB-0D-TIM"/>
                         <outlet property="scanLabel" destination="L84-YB-h4h" id="YHh-BL-ScP"/>
                         <outlet property="scannedLabel" destination="kje-F0-VY1" id="1Og-Gk-R4q"/>
                         <outlet property="searchbar" destination="mtj-DO-oAu" id="1L6-Zh-cJA"/>

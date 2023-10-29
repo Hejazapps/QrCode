@@ -31,6 +31,8 @@ class MainTabVc: UITabBarController,UITabBarControllerDelegate,UIImagePickerCont
         NotificationCenter.default.addObserver(self, selector:#selector(reloadData1(notification:)), name:NSNotification.Name(rawValue: "hide"), object: nil)
         
         
+        NotificationCenter.default.addObserver(self, selector:#selector(reloadData2(notification:)), name:NSNotification.Name(rawValue: "createdTab"), object: nil)
+        
         NotificationCenter.default.addObserver(self, selector:#selector(reloadData2(notification:)), name:NSNotification.Name(rawValue: "homeTab"), object: nil)
         
         super.viewDidLoad()
@@ -58,6 +60,8 @@ class MainTabVc: UITabBarController,UITabBarControllerDelegate,UIImagePickerCont
             
             self.selectedIndex = 0
             
+        } else if notification.name == NSNotification.Name(rawValue: "createdTab"){
+            self.selectedIndex = 2
         }
         
         
