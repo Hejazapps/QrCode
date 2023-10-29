@@ -1159,7 +1159,7 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
     }
     
     @IBAction func gotoPreviousView(_ sender: Any) {
-        
+        Store.sharedInstance.showPickerT = true
         self.dismiss(animated: true)
     }
     

@@ -41,6 +41,7 @@ class Store: NSObject {
     var currentPosiiton = ""
     var currentShape = ""
     var currentLogo = ""
+    var showPickerT = false
 
     static let sharedInstance = Store()
     

@@ -148,6 +148,11 @@ class ImagePickerIphone: UIViewController,UIImagePickerControllerDelegate,UINavi
             isCodeFound = false
         }
         
+        if Store.sharedInstance.showPickerT {
+            self.photoLibraryAvailabilityCheck()
+            Store.sharedInstance.showPickerT = false
+        }
+        
        
     }
     

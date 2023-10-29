@@ -80,7 +80,7 @@ class HistoryVc: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        Store.sharedInstance.showPickerT = false
         if Store.sharedInstance.currentIndexPath == "1" {
             self.gotoScannedBtn(AnyObject.self)
         }
