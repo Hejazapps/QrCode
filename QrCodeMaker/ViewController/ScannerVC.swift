@@ -215,7 +215,25 @@ extension ScannerVC:CameraViewControllerDelegate{
     
     func didOutput(_ code: String ,type: String) {
         
-       
+        print("outpout  = \(code)")
+        
+        
+        let a = UserDefaults.standard.integer(forKey: "Link Open")
+        
+        if a == 2 {
+            if code.containsIgnoringCase(find: "https") {
+                guard let url = URL(string: code) else {
+                    return //be safe
+                }
+                
+                if #available(iOS 10.0, *) {
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                } else {
+                    UIApplication.shared.openURL(url)
+                }
+                return
+            }
+        }
         
         
         let b = UserDefaults.standard.integer(forKey: "vibrate")
@@ -227,18 +245,19 @@ extension ScannerVC:CameraViewControllerDelegate{
         let c = UserDefaults.standard.integer(forKey: "Beep")
         
         if c == 2 {
+            print("sadiqul amin")
             AudioServicesPlaySystemSoundWithCompletion(SystemSoundID(1110)) {
                 //Recording method here
             }
         }
         
-       
-    
+        
+        
         let fullNameArr = type.components(separatedBy: ".")
         let name = fullNameArr[2] as? String
         let image = BarCodeGenerator.getBarCodeImage(type: name!, value: code)
         
-       // print("image ratio size  = \(image!.size.width)")
+        // print("image ratio size  = \(image!.size.width)")
         
         let v = QrcOodearray.getArray(text: code)
         

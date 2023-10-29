@@ -14,8 +14,8 @@
             filePath = "QrCodeMaker/AppDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "application(_:didFinishLaunchingWithOptions:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3074,8 +3074,8 @@
             filePath = "QrCodeMaker/ViewController/ScannerVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "250"
-            endingLineNumber = "250"
+            startingLineNumber = "269"
+            endingLineNumber = "269"
             landmarkName = "didOutput(_:type:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3090,8 +3090,8 @@
             filePath = "QrCodeMaker/ViewController/ScannerVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "247"
-            endingLineNumber = "247"
+            startingLineNumber = "266"
+            endingLineNumber = "266"
             landmarkName = "didOutput(_:type:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3106,8 +3106,8 @@
             filePath = "QrCodeMaker/ViewController/ScannerVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "246"
-            endingLineNumber = "246"
+            startingLineNumber = "265"
+            endingLineNumber = "265"
             landmarkName = "didOutput(_:type:)"
             landmarkType = "7">
             <Locations>
@@ -3154,8 +3154,8 @@
             filePath = "QrCodeMaker/ViewController/ScannerVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "252"
-            endingLineNumber = "252"
+            startingLineNumber = "271"
+            endingLineNumber = "271"
             landmarkName = "didOutput(_:type:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3170,8 +3170,8 @@
             filePath = "QrCodeMaker/ViewController/ScannerVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "251"
-            endingLineNumber = "251"
+            startingLineNumber = "270"
+            endingLineNumber = "270"
             landmarkName = "didOutput(_:type:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3186,8 +3186,8 @@
             filePath = "QrCodeMaker/ViewController/ScannerVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "253"
-            endingLineNumber = "253"
+            startingLineNumber = "272"
+            endingLineNumber = "272"
             landmarkName = "didOutput(_:type:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3202,8 +3202,8 @@
             filePath = "QrCodeMaker/ViewController/ScannerVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "254"
-            endingLineNumber = "254"
+            startingLineNumber = "273"
+            endingLineNumber = "273"
             landmarkName = "didOutput(_:type:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3218,8 +3218,8 @@
             filePath = "QrCodeMaker/ViewController/ScannerVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "255"
-            endingLineNumber = "255"
+            startingLineNumber = "274"
+            endingLineNumber = "274"
             landmarkName = "didOutput(_:type:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -5631,8 +5631,8 @@
             filePath = "QrCodeMaker/ViewController/ScannerVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "239"
-            endingLineNumber = "239"
+            startingLineNumber = "258"
+            endingLineNumber = "258"
             landmarkName = "didOutput(_:type:)"
             landmarkType = "7">
             <Locations>

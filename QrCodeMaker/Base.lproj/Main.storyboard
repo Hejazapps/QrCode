@@ -1882,6 +1882,7 @@
                         <outlet property="HeightForTotal" destination="HlN-8R-qvQ" id="AZm-GH-azP"/>
                         <outlet property="beepSwitch" destination="tI6-tP-76d" id="tyV-HX-fLq"/>
                         <outlet property="holderView" destination="umd-KK-V6H" id="uhg-Am-Oz3"/>
+                        <outlet property="linkOpen" destination="p2V-dv-5JK" id="lxY-Th-qeC"/>
                         <outlet property="soundWatch" destination="Agw-mI-B6L" id="afH-RW-c1F"/>
                         <outlet property="vibrateWatch" destination="t5J-Ph-1qj" id="3lZ-rl-BCh"/>
                     </connections>

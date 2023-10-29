@@ -9,6 +9,7 @@ import UIKit
 
 class SettingsVc: UIViewController {
 
+    @IBOutlet weak var linkOpen: UISwitch!
     @IBOutlet weak var beepSwitch: UISwitch!
     @IBOutlet weak var vibrateWatch: UISwitch!
     @IBOutlet weak var soundWatch: UISwitch!
@@ -48,6 +49,24 @@ class SettingsVc: UIViewController {
         } else {
             UserDefaults.standard.set(1, forKey: "sound")
         }
+        
+        if vibrateWatch.isOn {
+            UserDefaults.standard.set(2, forKey: "vibrate")
+        } else {
+            UserDefaults.standard.set(1, forKey: "vibrate")
+        }
+        
+        if beepSwitch.isOn {
+            UserDefaults.standard.set(2, forKey: "Beep")
+        } else {
+            UserDefaults.standard.set(1, forKey: "Beep")
+        }
+        
+        if linkOpen.isOn {
+            UserDefaults.standard.set(2, forKey: "Link Open")
+        } else {
+            UserDefaults.standard.set(1, forKey: "Link Open")
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,6 +75,7 @@ class SettingsVc: UIViewController {
         let a = UserDefaults.standard.integer(forKey: "sound")
         let b = UserDefaults.standard.integer(forKey: "vibrate")
         let c = UserDefaults.standard.integer(forKey: "Beep")
+        let d = UserDefaults.standard.integer(forKey: "Link Open")
         
         if a == 2 {
             soundWatch.setOn(true, animated: true)
@@ -76,6 +96,13 @@ class SettingsVc: UIViewController {
         }
         else {
             beepSwitch.setOn(false, animated: true)
+        }
+        
+        if d == 2 {
+            linkOpen.setOn(true, animated: true)
+        }
+        else {
+            linkOpen.setOn(false, animated: true)
         }
         
         

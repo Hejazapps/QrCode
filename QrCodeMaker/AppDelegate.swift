@@ -34,6 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UserDefaults.standard.set(2, forKey: "sound")
             UserDefaults.standard.set(2, forKey: "vibrate")
             UserDefaults.standard.set(2, forKey: "Beep")
+            UserDefaults.standard.set(2, forKey: "Link Open")
         }
 
         return true
