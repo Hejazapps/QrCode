@@ -117,6 +117,8 @@ class HistoryVc: UIViewController {
         
         if databaseArray.count < 1 {
             topView1.isHidden = false
+        } else {
+            topView1.isHidden = true
         }
         
         if folderArray.count < 1 {
