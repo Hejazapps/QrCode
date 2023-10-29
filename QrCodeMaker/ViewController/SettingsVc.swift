@@ -7,9 +7,10 @@
 
 import UIKit
 import StoreKit
+import MessageUI
 
-class SettingsVc: UIViewController {
-
+class SettingsVc: UIViewController, MFMailComposeViewControllerDelegate {
+    
     @IBOutlet weak var historySwitch: UISwitch!
     @IBOutlet weak var linkOpen: UISwitch!
     @IBOutlet weak var beepSwitch: UISwitch!
@@ -19,7 +20,7 @@ class SettingsVc: UIViewController {
     @IBOutlet weak var holderView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         
         // Do any additional setup after loading the view.
     }
@@ -120,7 +121,7 @@ class SettingsVc: UIViewController {
         else {
             historySwitch.setOn(false, animated: true)
         }
-       
+        
         
         
     }
@@ -130,6 +131,45 @@ class SettingsVc: UIViewController {
         
         self.gotoWebView(name: "Terms of Use", url: termsOfUseValue)
         
+    }
+    
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?){
+        controller.dismiss(animated: true, completion: nil)
+
+    }
+    
+    
+    func sendEmail(subject:String?,mailAddress:String?,cc:String?,meessage:String?) {
+        if MFMailComposeViewController.canSendMail() {
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self
+            mail.modalPresentationStyle = .fullScreen
+            if let mailAddressV = mailAddress
+            {
+                mail.setToRecipients([mailAddressV])
+            }
+            if let meessageV = meessage
+            {
+                mail.setMessageBody(meessageV, isHTML: false)
+            }
+            
+            if let subjectV = subject
+            {
+                mail.setSubject(subjectV)
+            }
+            if let cctV = cc
+            {
+                mail.setCcRecipients([cctV])
+            }
+            
+            present(mail, animated: true)
+            
+        } else {
+            let alert = UIAlertController(title: "Note", message: "Email is not configured", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     
@@ -144,6 +184,21 @@ class SettingsVc: UIViewController {
         
     }
     
+    
+    @IBAction func sendFeedBack(_ sender: Any) {
+        
+        self.sendEmail(subject: "Send Us FeedBack", mailAddress: "hejazapps@gmail.com", cc: "", meessage: "")
+    }
+    
+    @IBAction func shareTheApp(_ sender: Any) {
+        
+        if let link = NSURL(string: "https://apps.apple.com/in/app/qr-code-barcode-scanner-pro/id1511139064") {
+            let objectsToShare = ["Hi, download this cool app now!",link] as [Any]
+            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+            self.present(activityVC, animated: true, completion: nil)
+        }
+        
+    }
     func gotoWebView(name:String,url:String)
     {
         let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "CommonViewController") as? CommonViewController
@@ -157,14 +212,14 @@ class SettingsVc: UIViewController {
     
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
     
     
     

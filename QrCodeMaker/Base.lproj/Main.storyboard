@@ -1604,14 +1604,27 @@
                                                                                                             <constraint firstAttribute="width" constant="25" id="kZT-x2-2oU"/>
                                                                                                         </constraints>
                                                                                                     </imageView>
+                                                                                                    <button opaque="NO" alpha="0.10000000000000001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="njT-HU-WIh">
+                                                                                                        <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
+                                                                                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                                        <state key="normal" title="Button"/>
+                                                                                                        <buttonConfiguration key="configuration" style="plain"/>
+                                                                                                        <connections>
+                                                                                                            <action selector="shareTheApp:" destination="88R-HU-4D7" eventType="touchUpInside" id="XTx-Jr-V8L"/>
+                                                                                                        </connections>
+                                                                                                    </button>
                                                                                                 </subviews>
                                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                 <constraints>
                                                                                                     <constraint firstItem="0IZ-Hu-1YT" firstAttribute="leading" secondItem="F0b-mq-I2c" secondAttribute="trailing" constant="15" id="71D-kx-vqH"/>
                                                                                                     <constraint firstItem="F0b-mq-I2c" firstAttribute="leading" secondItem="JwM-zc-dzM" secondAttribute="leading" constant="20" id="86g-fC-HXj"/>
                                                                                                     <constraint firstItem="whW-bo-79Z" firstAttribute="centerY" secondItem="JwM-zc-dzM" secondAttribute="centerY" id="8zn-1C-bjQ"/>
+                                                                                                    <constraint firstItem="njT-HU-WIh" firstAttribute="centerY" secondItem="JwM-zc-dzM" secondAttribute="centerY" id="E7x-nv-GOR"/>
                                                                                                     <constraint firstAttribute="height" constant="50" id="PMl-Jx-Nx2"/>
+                                                                                                    <constraint firstItem="njT-HU-WIh" firstAttribute="centerX" secondItem="JwM-zc-dzM" secondAttribute="centerX" id="TGG-Vg-WrL"/>
+                                                                                                    <constraint firstItem="njT-HU-WIh" firstAttribute="width" secondItem="JwM-zc-dzM" secondAttribute="width" id="jtb-Ph-Yv3"/>
                                                                                                     <constraint firstAttribute="trailing" secondItem="whW-bo-79Z" secondAttribute="trailing" constant="20" id="n8l-P0-q9t"/>
+                                                                                                    <constraint firstItem="njT-HU-WIh" firstAttribute="height" secondItem="JwM-zc-dzM" secondAttribute="height" id="npO-Zt-VEm"/>
                                                                                                     <constraint firstItem="0IZ-Hu-1YT" firstAttribute="centerY" secondItem="F0b-mq-I2c" secondAttribute="centerY" id="sHv-KE-62T"/>
                                                                                                     <constraint firstItem="F0b-mq-I2c" firstAttribute="top" secondItem="JwM-zc-dzM" secondAttribute="top" constant="10" id="tnK-mC-KKk"/>
                                                                                                 </constraints>
@@ -1685,16 +1698,29 @@
                                                                                                             <constraint firstAttribute="width" secondItem="FmZ-q0-wVd" secondAttribute="height" multiplier="1:1" id="DDW-Zq-aYr"/>
                                                                                                         </constraints>
                                                                                                     </imageView>
+                                                                                                    <button opaque="NO" alpha="0.10000000000000001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YYC-9s-8ce">
+                                                                                                        <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
+                                                                                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                                        <state key="normal" title="Button"/>
+                                                                                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                                                                        <connections>
+                                                                                                            <action selector="sendFeedBack:" destination="88R-HU-4D7" eventType="touchUpInside" id="a1F-Vq-ore"/>
+                                                                                                        </connections>
+                                                                                                    </button>
                                                                                                 </subviews>
                                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                 <constraints>
                                                                                                     <constraint firstAttribute="trailing" secondItem="FmZ-q0-wVd" secondAttribute="trailing" constant="20" id="0kH-oS-mMI"/>
                                                                                                     <constraint firstItem="FmZ-q0-wVd" firstAttribute="centerY" secondItem="J5c-8X-kXd" secondAttribute="centerY" id="8It-pL-2Ze"/>
+                                                                                                    <constraint firstItem="YYC-9s-8ce" firstAttribute="centerX" secondItem="J5c-8X-kXd" secondAttribute="centerX" id="Ayd-km-cb4"/>
+                                                                                                    <constraint firstItem="YYC-9s-8ce" firstAttribute="width" secondItem="J5c-8X-kXd" secondAttribute="width" id="CyD-bu-LdE"/>
                                                                                                     <constraint firstItem="mpR-r4-MAY" firstAttribute="centerY" secondItem="dOQ-F8-KZf" secondAttribute="centerY" id="McE-y7-Xv3"/>
                                                                                                     <constraint firstItem="mpR-r4-MAY" firstAttribute="leading" secondItem="dOQ-F8-KZf" secondAttribute="trailing" constant="15" id="WN2-e8-FJp"/>
+                                                                                                    <constraint firstItem="YYC-9s-8ce" firstAttribute="centerY" secondItem="J5c-8X-kXd" secondAttribute="centerY" id="aon-vo-MgM"/>
                                                                                                     <constraint firstItem="dOQ-F8-KZf" firstAttribute="leading" secondItem="J5c-8X-kXd" secondAttribute="leading" constant="20" id="bPp-aI-hXI"/>
                                                                                                     <constraint firstItem="dOQ-F8-KZf" firstAttribute="top" secondItem="J5c-8X-kXd" secondAttribute="top" constant="10" id="mjq-BO-3dj"/>
                                                                                                     <constraint firstAttribute="height" constant="50" id="q5r-Lt-5sq"/>
+                                                                                                    <constraint firstItem="YYC-9s-8ce" firstAttribute="height" secondItem="J5c-8X-kXd" secondAttribute="height" id="uBh-o6-YAF"/>
                                                                                                 </constraints>
                                                                                             </view>
                                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0GS-m0-af5">
