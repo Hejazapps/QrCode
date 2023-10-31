@@ -210,6 +210,7 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
     let doc = QRCode.Document()
     
     var contacts:[CNContact] = []
+    var isFromGallery = false
     //var type = ""
     
     @IBAction func gotoCustomizeDesign(_ sender: Any) {
@@ -1165,6 +1166,10 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
     
     @IBAction func gotoPreviousView(_ sender: Any) {
         
+        
+        if isFromGallery {
+            Store.sharedInstance.shouldShowHomeScreen = true
+        }
         
         if isFromScanned  {
             

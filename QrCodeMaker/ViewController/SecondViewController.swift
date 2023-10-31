@@ -137,6 +137,13 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate {
     }
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if Store.sharedInstance.shouldShowHomeScreen {
+            self.tabBarController?.selectedIndex = 0
+        }
+    }
     
     func photoLibraryAvailabilityCheck()
     {
@@ -261,8 +268,15 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate {
                 vc.isFromScanned = true
                 vc.isfromQr = false
                 vc.currenttypeOfQrBAR = currentBarCode
+                vc.isFromGallery = true
                 
-                
+                self.dismiss(animated: true) { [weak self] in
+                     
+                    UIApplication.topMostViewController?.present(vc, animated: true, completion: {
+                       
+                    })
+                    
+                }
                 
                 
             }
@@ -359,6 +373,14 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate {
         vc.currenttypeOfQrBAR = type
         vc.createDataModelArray = value2
         vc.isFromScanned = true
+        vc.isFromGallery  = true
+        self.dismiss(animated: true) { [weak self] in
+             
+            UIApplication.topMostViewController?.present(vc, animated: true, completion: {
+               
+            })
+            
+        }
         
         
     }
