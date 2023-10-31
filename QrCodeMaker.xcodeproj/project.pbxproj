@@ -66,7 +66,6 @@
 		C84FEBE72A567668002E9CE2 /* ACProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84FEBE12A567668002E9CE2 /* ACProgressHUD.swift */; };
 		C84FEBE82A567668002E9CE2 /* ACProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84FEBE22A567668002E9CE2 /* ACProgressView.swift */; };
 		C84FEBE92A567668002E9CE2 /* qrCode.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = C84FEBE32A567668002E9CE2 /* qrCode.sqlite */; };
-		C84FEBF32A567753002E9CE2 /* ImagePickerIphone.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84FEBEB2A567752002E9CE2 /* ImagePickerIphone.swift */; };
 		C84FEBF42A567753002E9CE2 /* HistoryVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84FEBEC2A567752002E9CE2 /* HistoryVc.swift */; };
 		C84FEBF52A567753002E9CE2 /* CreateVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84FEBED2A567752002E9CE2 /* CreateVc.swift */; };
 		C84FEBF62A567753002E9CE2 /* SettingsVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84FEBEE2A567752002E9CE2 /* SettingsVc.swift */; };
@@ -94,6 +93,7 @@
 		C8B044842A56F76500AB9C53 /* ImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B044832A56F76500AB9C53 /* ImageViewCell.swift */; };
 		C8B044862A57048800AB9C53 /* Position maker in Resources */ = {isa = PBXBuildFile; fileRef = C8B044852A57048800AB9C53 /* Position maker */; };
 		C8B8765A2A8FB24C00864957 /* SubscriptionVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B876592A8FB24C00864957 /* SubscriptionVc.swift */; };
+		C8D00DE42AF0B36500BD083C /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D00DE32AF0B36500BD083C /* SecondViewController.swift */; };
 		C8F30BA92A591F8300DECA4C /* Body Shape in Resources */ = {isa = PBXBuildFile; fileRef = C8F30BA82A591F8300DECA4C /* Body Shape */; };
 		C8F913AF2AEE7341006A40B0 /* CommonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F913AE2AEE7341006A40B0 /* CommonViewController.swift */; };
 		E448E33F0468AA1E6F1EC2A7 /* Pods_QrCodeMakerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A744D2D895C1C0DB02C8E5 /* Pods_QrCodeMakerTests.framework */; };
@@ -184,7 +184,6 @@
 		C84FEBE12A567668002E9CE2 /* ACProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACProgressHUD.swift; sourceTree = "<group>"; };
 		C84FEBE22A567668002E9CE2 /* ACProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACProgressView.swift; sourceTree = "<group>"; };
 		C84FEBE32A567668002E9CE2 /* qrCode.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = qrCode.sqlite; sourceTree = "<group>"; };
-		C84FEBEB2A567752002E9CE2 /* ImagePickerIphone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerIphone.swift; sourceTree = "<group>"; };
 		C84FEBEC2A567752002E9CE2 /* HistoryVc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryVc.swift; sourceTree = "<group>"; };
 		C84FEBED2A567752002E9CE2 /* CreateVc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateVc.swift; sourceTree = "<group>"; };
 		C84FEBEE2A567752002E9CE2 /* SettingsVc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVc.swift; sourceTree = "<group>"; };
@@ -216,6 +215,7 @@
 		C8B044832A56F76500AB9C53 /* ImageViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewCell.swift; sourceTree = "<group>"; };
 		C8B044852A57048800AB9C53 /* Position maker */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Position maker"; sourceTree = "<group>"; };
 		C8B876592A8FB24C00864957 /* SubscriptionVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionVc.swift; sourceTree = "<group>"; };
+		C8D00DE32AF0B36500BD083C /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		C8F30BA82A591F8300DECA4C /* Body Shape */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Body Shape"; sourceTree = "<group>"; };
 		C8F913AE2AEE7341006A40B0 /* CommonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonViewController.swift; sourceTree = "<group>"; };
 		D4F949F54ADEA8F6EFDAF17D /* Pods-QrCodeMaker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QrCodeMaker.debug.xcconfig"; path = "Target Support Files/Pods-QrCodeMaker/Pods-QrCodeMaker.debug.xcconfig"; sourceTree = "<group>"; };
@@ -409,7 +409,7 @@
 			isa = PBXGroup;
 			children = (
 				C8F913AE2AEE7341006A40B0 /* CommonViewController.swift */,
-				C84FEBEB2A567752002E9CE2 /* ImagePickerIphone.swift */,
+				C8D00DE32AF0B36500BD083C /* SecondViewController.swift */,
 				C84FEBEC2A567752002E9CE2 /* HistoryVc.swift */,
 				C84FEBED2A567752002E9CE2 /* CreateVc.swift */,
 				C84FEBEE2A567752002E9CE2 /* SettingsVc.swift */,
@@ -797,7 +797,7 @@
 				C84FEBC12A567639002E9CE2 /* Common.swift in Sources */,
 				C84FEB922A5675A3002E9CE2 /* MXLCalendarManager.swift in Sources */,
 				C8AC569B2A485773002F81E7 /* SceneDelegate.swift in Sources */,
-				C84FEBF32A567753002E9CE2 /* ImagePickerIphone.swift in Sources */,
+				C8D00DE42AF0B36500BD083C /* SecondViewController.swift in Sources */,
 				C809AB7A2A6C1CA600160B4E /* FolderDetailVc.swift in Sources */,
 				C848F6C62A86175500B56456 /* MeCardGenerator.swift in Sources */,
 				C84FEBC22A567639002E9CE2 /* TorchMode.swift in Sources */,
@@ -1011,7 +1011,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1053,7 +1053,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

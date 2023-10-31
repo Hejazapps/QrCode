@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 import AVFoundation
 
-class MainTabVc: UITabBarController,UITabBarControllerDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,ClassBVCDelegate{
+class MainTabVc: UITabBarController,UITabBarControllerDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
     let vc = ScannerVC()
     var codeValue:String!
     var myView:UIView!
@@ -101,15 +101,26 @@ class MainTabVc: UITabBarController,UITabBarControllerDelegate,UIImagePickerCont
     }
 
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        if viewController is ImportVc{
+//        if viewController is ImportVc{
+//            Store.sharedInstance.setPopValue(value: false)
+//            Store.sharedInstance.setshouldShowHomeScreen(value: false)
+//            Store.sharedInstance.setshouldShowScanner(value: false)
+//            let vc = self.storyboard?.instantiateViewController(withIdentifier: "ImportVc") as! ImportVc
+//            vc.delegate = self
+//            vc.showPicker()
+//            self.tabBar.isHidden = true
+//        }
+        
+        
+        if let secondVC = viewController as? SecondViewController {
+            print("SecondVC is selected")
             Store.sharedInstance.setPopValue(value: false)
             Store.sharedInstance.setshouldShowHomeScreen(value: false)
             Store.sharedInstance.setshouldShowScanner(value: false)
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "ImportVc") as! ImportVc
-            vc.delegate = self
-            vc.showPicker()
-            self.tabBar.isHidden = true
+            secondVC.selectPhotoFromSavedPhotosAlbum()
         }
+        
+        
     }
 
     func checkCamera() {
