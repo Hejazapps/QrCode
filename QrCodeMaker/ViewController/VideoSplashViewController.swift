@@ -12,10 +12,6 @@ class VideoSplashViewController: UIViewController {
     var player: AVPlayer!
     
     deinit {
-        NotificationCenter.default.removeObserver(
-            self,
-            name: .AVPlayerItemDidPlayToEndTime,
-            object: player.currentItem)
         print("deinit of VideoSplashViewController")
     }
     
@@ -23,6 +19,18 @@ class VideoSplashViewController: UIViewController {
         super.viewDidLoad()
         print("video splash view controller")
         loadVideo()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        print("VideoSplashViewController -> viewDidDisappear()")
+        
+        removeAllObservers()
+    }
+    
+    func removeAllObservers() {
+        NotificationCenter.default.removeObserver(self, name: .AVPlayerItemDidPlayToEndTime, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIApplication.willEnterForegroundNotification, object: nil)
     }
     
     private func loadVideo() {
@@ -46,11 +54,18 @@ class VideoSplashViewController: UIViewController {
         player.seek(to: CMTime.zero)
         player.play()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.playerDidFinish(note:)), name: .AVPlayerItemDidPlayToEndTime, object: player.currentItem)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.playerDidFinish(note:)), name: .AVPlayerItemDidPlayToEndTime, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(appWillEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
     
     @objc func playerDidFinish(note: NSNotification) {
         print("Video Finished")
         self.performSegue(withIdentifier: "mainSegue", sender: nil)
+    }
+    
+    @objc func appWillEnterForeground() {
+        print("appWillEnterForeground()")
+        
+        player.play()
     }
 }
