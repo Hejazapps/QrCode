@@ -13,6 +13,7 @@ class FolderDetailVc: UIViewController {
     @IBOutlet weak var bottomView: UIView!
     
     
+    @IBOutlet weak var editbtn: UIButton!
     @IBOutlet weak var bottomSpaceOfBottomView: NSLayoutConstraint!
     
     @IBOutlet weak var folderDetailTableView: UITableView!
@@ -20,6 +21,8 @@ class FolderDetailVc: UIViewController {
     let searchActive = false
     var folderName = ""
     var folderId = ""
+    var shouldToggle = -20
+    var editModeActive = false
     
     var databaseArray: [DataInformation] = []
     var filterArray: [DataInformation] = []
@@ -40,6 +43,28 @@ class FolderDetailVc: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    
+    func editState() {
+        selectedIndexList.removeAll()
+        shouldToggle =  shouldToggle < 0 ? 15 : -20
+        if shouldToggle > 0 {
+            editModeActive = true
+            editbtn.setTitle("Done", for: .normal)
+            bottomSpaceOfBottomView.constant = 0
+        }
+        else {
+            editModeActive = false
+            editbtn.setTitle("Edit", for: .normal)
+            bottomSpaceOfBottomView.constant = -1000
+        }
+        
+        let imageDataDict:[String: Int] = ["image": shouldToggle]
+        
+        folderDetailTableView.reloadData()
+    }
+    
+    
+    
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         myView1.frame = bottomView.bounds
@@ -48,10 +73,7 @@ class FolderDetailVc: UIViewController {
     
     @IBAction func gotoEditBtn(_ sender: Any) {
         
-        UIView.animate(withDuration: 0.4) {
-            self.bottomSpaceOfBottomView.constant = 0
-            self.view.layoutIfNeeded()
-        }
+        self.editState()
     }
     
     func reloadData() {
@@ -76,6 +98,29 @@ class FolderDetailVc: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //DBmanager.shared.initDB()
+    }
+    
+    @objc func buttonTapped(sender : UIButton) {
+        print(sender.tag)
+        let value = sender.tag - 1000
+        
+        var obj:DataInformation!
+        obj = databaseArray[value]
+        if(searchActive) {
+            obj = filterArray[value]
+        }
+        
+        if selectedIndexList.contains(obj.id) {
+            
+            if let index = selectedIndexList.index(where: {$0 == obj.id}) {
+                selectedIndexList.remove(at: index)
+            }
+        }
+        else {
+            selectedIndexList.append(obj.id)
+        }
+        folderDetailTableView.reloadData()
+        //Write button action here
     }
     
     
@@ -183,7 +228,7 @@ extension FolderDetailVc: UITableViewDelegate,UITableViewDataSource  {
         
         let temp = secondString
         
-        if obj.codeType == "1" {
+        if obj.codeType == "1",outputResult1.count >= 1 {
             let outputResult = value.components(separatedBy: "^") as NSArray
             let topText = (outputResult[1] as? String)!
             firstString = topText
@@ -240,7 +285,30 @@ extension FolderDetailVc: UITableViewDelegate,UITableViewDataSource  {
         let image = trimmedString! + "1"
         cell.imv.image = UIImage(named: image)
         cell.imv.layer.cornerRadius = 10.0
-        cell.selectionStyle = .none
+        cell.selectedBtn.tag =  1000 + indexPath.row
+        cell.selectedBtn.addTarget(self, action: #selector(self.buttonTapped), for: .touchUpInside)
+        // cell.roundedImv.layer.cornerRadius = cell.roundedImv.frame.width / 2.0
+        // cell.roundedImv.layer.borderWidth = 1.0
+        // cell.roundedImv.layer.borderColor = UIColor.lightGray.cgColor
+        
+        UIView.animate(withDuration: 0.2, animations: {
+            cell.leadingSpaceConstrain.constant = CGFloat(self.shouldToggle)
+            self.view.layoutIfNeeded()
+        }, completion: {_ in
+            
+        })
+        
+        if editModeActive {
+            if selectedIndexList.contains(obj.id) {
+                cell.roundedImv.image = UIImage(named: "Green Redio Button")
+            }
+            else {
+                cell.roundedImv.image = UIImage(named: "White Redio Button")
+            }
+        }
+        else {
+            cell.roundedImv.image = UIImage(named: "White Redio Button")
+        }
         
         
         return cell

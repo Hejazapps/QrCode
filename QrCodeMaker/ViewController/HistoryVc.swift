@@ -9,6 +9,7 @@ import UIKit
 
 class HistoryVc: UIViewController {
     
+    @IBOutlet weak var topSpaceEmptyView: NSLayoutConstraint!
     @IBOutlet weak var bottomSpacetableView: NSLayoutConstraint!
     @IBOutlet weak var noScanLabel: UILabel!
     @IBOutlet weak var lbl2: UILabel!
@@ -174,6 +175,8 @@ class HistoryVc: UIViewController {
         collectionViewForFolder.reloadData()
         Store.sharedInstance.shouldShowHistoryPage = false
         filterArray = databaseArray
+        
+        
         
     }
     
