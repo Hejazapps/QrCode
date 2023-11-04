@@ -9,6 +9,7 @@ import UIKit
 
 class HistoryVc: UIViewController {
     
+    @IBOutlet weak var bottomSpacetableView: NSLayoutConstraint!
     @IBOutlet weak var noScanLabel: UILabel!
     @IBOutlet weak var lbl2: UILabel!
     @IBOutlet weak var topView1: UIView!
@@ -28,13 +29,16 @@ class HistoryVc: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var currentIndexPath =  "1"
-    let searchActive = false
+    var searchActive = false
     var shouldToggle = -20
     var editModeActive = false
     
     var databaseArray: [DataInformation] = []
     var folderArray: [DataInformation] = []
     var filterArray: [DataInformation] = []
+    
+     
+    @IBOutlet weak var historyTableView: UITableView!
     
     
     
@@ -58,6 +62,14 @@ class HistoryVc: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillShow),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
+        )
+        
         databaseArray = DBmanager.shared.getRecordInfo(indexPath: currentIndexPath)
         tableView.reloadData()
        topView.roundCorners([.bottomRight, .bottomLeft], radius: 10)
@@ -77,8 +89,24 @@ class HistoryVc: UIViewController {
     }
     
     
+    func updateAll () {
+        searchActive =  false
+        self.databaseArray = DBmanager.shared.getRecordInfo(indexPath: currentIndexPath)
+        searchbar.showsCancelButton = false
+        if #available(iOS 13.0, *) {
+            searchbar.searchTextField.resignFirstResponder()
+        } else {
+            searchbar.textField?.resignFirstResponder()
+        }
+        searchbar.text = ""
+        self.historyTableView.reloadData()
+        bottomSpacetableView.constant = 0
+    }
+    
+    
     @objc func dismissKeyboard() {
-        searchbar.resignFirstResponder()
+        
+        self.updateAll()
     }
     
     override func viewDidLayoutSubviews() {
@@ -145,6 +173,7 @@ class HistoryVc: UIViewController {
         tableView.reloadData()
         collectionViewForFolder.reloadData()
         Store.sharedInstance.shouldShowHistoryPage = false
+        filterArray = databaseArray
         
     }
     
@@ -173,6 +202,8 @@ class HistoryVc: UIViewController {
         }, completion: {_ in
             self.createdLabel.textColor  =   UIColor(red: 173.0/255.0, green: 173.0/255.0, blue: 173.0/255.0, alpha: 1.0)
         })
+        
+        filterArray = databaseArray
         
     }
     
@@ -335,7 +366,18 @@ class HistoryVc: UIViewController {
         }, completion: {_ in
             self.scannedLabel.textColor  =   UIColor(red: 173.0/255.0, green: 173.0/255.0, blue: 173.0/255.0, alpha: 1.0)
         })
+        filterArray = databaseArray
     }
+    
+    @objc func keyboardWillShow(_ notification: Notification) {
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            let keyboardHeight = keyboardRectangle.height
+            bottomSpacetableView.constant = keyboardHeight - 70
+            searchActive = true
+        }
+    }
+    
     
     @objc func buttonTapped(sender : UIButton) {
         print(sender.tag)
@@ -552,5 +594,99 @@ extension HistoryVc:UICollectionViewDelegate, UICollectionViewDataSource, UIColl
 extension UISearchBar {
     var textField: UITextField? {
         return subviews.first?.subviews.first(where: { $0.isKind(of: UITextField.self) }) as? UITextField
+    }
+}
+
+
+extension HistoryVc: UISearchBarDelegate{
+    
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        
+        searchBar.showsCancelButton = true
+        return true
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.updateAll()
+        
+    }
+   
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        searchActive  = true
+        filterArray.removeAll()
+        
+        for obj in databaseArray {
+            
+            var firstString = ""
+            var secondString = ""
+            
+            
+            let value = QrParser.getBarCodeObj(text: obj.Text)
+            let outputResult1 = value.components(separatedBy: "\n\n") as NSArray
+            
+            secondString = outputResult1[0] as! String
+            
+            let temp = secondString
+            
+            if obj.codeType == "1",outputResult1.count >= 1 {
+                let outputResult = value.components(separatedBy: "^") as NSArray
+                let topText = (outputResult[1] as? String)!
+                firstString = topText
+                
+                if ((temp.contains(find: "^")) != nil) {
+                    secondString = (outputResult[0] as? String)!
+                }
+                
+                let newString  = secondString.components(separatedBy: ":") as NSArray
+                let trimmedString = (newString[0] as? String)?.trimmingCharacters(in: .whitespaces)
+                
+                var final = trimmedString! + ":"
+                for (index, element) in newString.enumerated() {
+                    if index > 0 {
+                        final = final + ((element as? String)!)
+                    }
+                }
+                
+                secondString = final
+                
+                if firstString == "Website" {
+                    let m = checkWhichUrl(name: secondString)
+                    if m.count > 0 {
+                        firstString = m
+                    }
+                    
+                }else {
+                    let m = checkWhichUrl(name: secondString)
+                    if m.containsIgnoringCase(find: "Google Search") {
+                       secondString = m
+                    }
+                }
+            }
+            
+            else {
+                firstString =  "BarCode"
+                secondString = obj.Text
+            }
+            
+            
+            if firstString.containsIgnoringCase(find: searchText) || secondString.containsIgnoringCase(find: searchText)
+            {
+                filterArray.append(obj)
+            }
+            
+        }
+        
+        if(searchText.count == 0)
+        {
+            self.databaseArray = DBmanager.shared.getRecordInfo(indexPath: currentIndexPath)
+            filterArray = databaseArray
+            
+        }
+        self.historyTableView.reloadData()
+        
+        
+        
+        
     }
 }

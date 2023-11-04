@@ -1051,10 +1051,12 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="History" image="history" id="v6x-0H-tk7"/>
                     <connections>
+                        <outlet property="bottomSpacetableView" destination="3kE-VT-iol" id="IlV-fu-tar"/>
                         <outlet property="collectionViewForFolder" destination="o8Y-qG-rv3" id="Pfb-Mc-Mhl"/>
                         <outlet property="createdLabel" destination="dvL-lS-StN" id="E1e-hW-MaQ"/>
                         <outlet property="editBtn" destination="HAe-ge-v2C" id="KcM-dK-xUg"/>
                         <outlet property="heightForFolderView" destination="JR9-1C-KPq" id="Wvs-7T-6CP"/>
+                        <outlet property="historyTableView" destination="hiV-Z8-sut" id="yJT-qd-F7D"/>
                         <outlet property="holderView" destination="NuL-ov-SBf" id="olS-9Q-od7"/>
                         <outlet property="lbl2" destination="gPP-Mm-N0b" id="xGw-wu-yUh"/>
                         <outlet property="leadingSpaceColorView" destination="aiD-zJ-S4o" id="0pH-9Y-xhD"/>
@@ -3826,13 +3828,13 @@
         <image name="history_page" width="30" height="30"/>
         <image name="next" width="32" height="32"/>
         <image name="qrcode" catalog="system" width="128" height="114"/>
-        <image name="scan" width="30" height="30"/>
+        <image name="scan" width="32.333332061767578" height="32.333332061767578"/>
         <image name="settings" width="30" height="30"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3841,7 +3843,7 @@
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tintColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
