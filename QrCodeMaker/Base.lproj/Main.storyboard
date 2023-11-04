@@ -2790,13 +2790,23 @@
                                             <action selector="gotoPreviousView:" destination="rgg-3s-bCs" eventType="touchUpInside" id="4af-BQ-RLY"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="npN-fe-Kwo">
+                                        <rect key="frame" x="329.66666666666669" y="54.666666666666657" width="53.333333333333314" height="41"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Edit"/>
+                                        <connections>
+                                            <action selector="gotoEditBtn:" destination="rgg-3s-bCs" eventType="touchUpInside" id="m2D-aS-cgf"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="NHh-P1-aYb" firstAttribute="centerX" secondItem="fRt-We-Qe1" secondAttribute="centerX" id="1A1-Tp-Lri"/>
+                                    <constraint firstAttribute="trailing" secondItem="npN-fe-Kwo" secondAttribute="trailing" constant="10" id="3EC-iS-nbv"/>
                                     <constraint firstItem="fkA-Bx-dOr" firstAttribute="centerY" secondItem="NHh-P1-aYb" secondAttribute="centerY" id="Wma-CR-HCq"/>
                                     <constraint firstItem="fkA-Bx-dOr" firstAttribute="leading" secondItem="fRt-We-Qe1" secondAttribute="leading" constant="5" id="Znb-5y-9ig"/>
                                     <constraint firstAttribute="height" constant="100" id="ffo-SQ-YYB"/>
+                                    <constraint firstItem="npN-fe-Kwo" firstAttribute="centerY" secondItem="fkA-Bx-dOr" secondAttribute="centerY" id="o0a-6m-arD"/>
                                     <constraint firstItem="NHh-P1-aYb" firstAttribute="centerY" secondItem="fRt-We-Qe1" secondAttribute="centerY" constant="25" id="px0-Di-CFq"/>
                                 </constraints>
                             </view>
@@ -2905,15 +2915,25 @@
                                             <outlet property="delegate" destination="rgg-3s-bCs" id="wfY-Qx-dIE"/>
                                         </connections>
                                     </tableView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2HX-ct-wSS">
+                                        <rect key="frame" x="0.0" y="752" width="393" height="100"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="LYv-R4-NCS"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="fiZ-Rs-xbA" firstAttribute="top" secondItem="nwP-sy-tPE" secondAttribute="bottom" id="5MS-5P-K9F"/>
                                     <constraint firstAttribute="trailing" secondItem="fiZ-Rs-xbA" secondAttribute="trailing" id="7f6-94-vlG"/>
+                                    <constraint firstItem="2HX-ct-wSS" firstAttribute="leading" secondItem="Bzr-Tj-8FE" secondAttribute="leading" id="M7h-TP-SWz"/>
                                     <constraint firstItem="nwP-sy-tPE" firstAttribute="top" secondItem="Bzr-Tj-8FE" secondAttribute="top" constant="10" id="T44-ty-gdb"/>
                                     <constraint firstItem="fiZ-Rs-xbA" firstAttribute="leading" secondItem="Bzr-Tj-8FE" secondAttribute="leading" id="ZU5-ZE-Jtf"/>
                                     <constraint firstAttribute="bottom" secondItem="fiZ-Rs-xbA" secondAttribute="bottom" id="g5p-zZ-Fco"/>
                                     <constraint firstAttribute="trailing" secondItem="nwP-sy-tPE" secondAttribute="trailing" constant="10" id="hdj-rC-ZJ5"/>
+                                    <constraint firstAttribute="trailing" secondItem="2HX-ct-wSS" secondAttribute="trailing" id="jcz-BM-tk2"/>
+                                    <constraint firstAttribute="bottom" secondItem="2HX-ct-wSS" secondAttribute="bottom" constant="-100" id="lBN-dU-T7E"/>
                                     <constraint firstItem="nwP-sy-tPE" firstAttribute="leading" secondItem="Bzr-Tj-8FE" secondAttribute="leading" constant="10" id="sVx-HD-VCn"/>
                                 </constraints>
                             </view>
@@ -2931,6 +2951,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomSpaceOfBottomView" destination="lBN-dU-T7E" id="bp2-G1-5pr"/>
+                        <outlet property="bottomView" destination="2HX-ct-wSS" id="Bkz-bv-4gL"/>
                         <outlet property="folderDetailTableView" destination="fiZ-Rs-xbA" id="73i-Mh-Npi"/>
                         <outlet property="titleLabel" destination="NHh-P1-aYb" id="etA-Nr-eC1"/>
                     </connections>
@@ -3834,7 +3856,7 @@
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3843,7 +3865,7 @@
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tintColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

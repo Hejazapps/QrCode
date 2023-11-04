@@ -9,6 +9,12 @@ import UIKit
 
 class FolderDetailVc: UIViewController {
     
+    
+    @IBOutlet weak var bottomView: UIView!
+    
+    
+    @IBOutlet weak var bottomSpaceOfBottomView: NSLayoutConstraint!
+    
     @IBOutlet weak var folderDetailTableView: UITableView!
     @IBOutlet weak var titleLabel: UILabel!
     let searchActive = false
@@ -17,14 +23,35 @@ class FolderDetailVc: UIViewController {
     
     var databaseArray: [DataInformation] = []
     var filterArray: [DataInformation] = []
-    
+    let allViewsInXibArray = Bundle.main.loadNibNamed("ButtonView", owner: self, options: nil)
+    var myView1:ButtonView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         titleLabel.text = folderName
         
+        
+        myView1 = allViewsInXibArray?.first as! ButtonView
+        
+        bottomView.addSubview(myView1)
+        
+        
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        myView1.frame = bottomView.bounds
+    }
+    
+    
+    @IBAction func gotoEditBtn(_ sender: Any) {
+        
+        UIView.animate(withDuration: 0.4) {
+            self.bottomSpaceOfBottomView.constant = 0
+            self.view.layoutIfNeeded()
+        }
     }
     
     func reloadData() {
