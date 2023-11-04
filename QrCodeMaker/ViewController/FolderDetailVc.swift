@@ -10,15 +10,17 @@ import UIKit
 class FolderDetailVc: UIViewController {
     
     
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var bottomView: UIView!
     
     
+    @IBOutlet weak var bottomSpaceTableView: NSLayoutConstraint!
     @IBOutlet weak var editbtn: UIButton!
     @IBOutlet weak var bottomSpaceOfBottomView: NSLayoutConstraint!
     
     @IBOutlet weak var folderDetailTableView: UITableView!
     @IBOutlet weak var titleLabel: UILabel!
-    let searchActive = false
+    var searchActive = false
     var folderName = ""
     var folderId = ""
     var shouldToggle = -20
@@ -43,9 +45,37 @@ class FolderDetailVc: UIViewController {
         NotificationCenter.default.addObserver(self, selector:#selector(updateName(notification:)), name:NSNotification.Name(rawValue: "updateFolder"), object: nil)
         
         
+        
+        let keyboardToolbar = UIToolbar()
+        keyboardToolbar.sizeToFit()
+        let flexBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneBarButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.dismissKeyboard))
+        keyboardToolbar.items = [flexBarButton, doneBarButton]
+        searchBar.searchTextField.inputAccessoryView = keyboardToolbar
+        searchBar.delegate  = self
         // Do any additional setup after loading the view.
     }
     
+    
+    func updateAll () {
+        searchActive =  false
+        databaseArray = DBmanager.shared.getFolderElements(folderid: folderId)
+        searchBar.showsCancelButton = false
+        if #available(iOS 13.0, *) {
+            searchBar.searchTextField.resignFirstResponder()
+        } else {
+            searchBar.textField?.resignFirstResponder()
+        }
+        searchBar.text = ""
+        self.folderDetailTableView.reloadData()
+        bottomSpaceOfBottomView.constant = 0
+    }
+    
+    
+    @objc func dismissKeyboard() {
+        
+        self.updateAll()
+    }
     
     @objc func reloadData2(notification: NSNotification) {
         
@@ -124,6 +154,7 @@ class FolderDetailVc: UIViewController {
     func reloadData1() {
         
         databaseArray = DBmanager.shared.getFolderElements(folderid: folderId)
+        filterArray = databaseArray
         folderDetailTableView.reloadData()
         
     }
@@ -145,6 +176,7 @@ class FolderDetailVc: UIViewController {
         //DBmanager.shared.initDB()
         
         Store.sharedInstance.isFromHistory = false
+        
     }
     
     @objc func buttonTapped(sender : UIButton) {
@@ -365,6 +397,7 @@ extension FolderDetailVc: UITableViewDelegate,UITableViewDataSource  {
     func tableView(_ tableView: UITableView, didSelectRowAt
                    indexPath: IndexPath){
         
+        self.updateAll()
         var obj:DataInformation!
         obj = databaseArray[indexPath.row]
         if searchActive {
@@ -374,4 +407,99 @@ extension FolderDetailVc: UITableViewDelegate,UITableViewDataSource  {
         self.goResultVc(string: obj.Text, id: obj.id, indexPath: obj.indexPath, codeType: obj.codeType,position: obj.position,shape: obj.shape,logo: obj.logo)
     }
     
+}
+
+
+extension FolderDetailVc: UISearchBarDelegate{
+    
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        
+        searchBar.showsCancelButton = true
+        return true
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.updateAll()
+        
+    }
+   
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print("asche")
+        
+        searchActive  = true
+        filterArray.removeAll()
+        
+        for obj in databaseArray {
+            
+            var firstString = ""
+            var secondString = ""
+            
+            
+            let value = QrParser.getBarCodeObj(text: obj.Text)
+            let outputResult1 = value.components(separatedBy: "\n\n") as NSArray
+            
+            secondString = outputResult1[0] as! String
+            
+            let temp = secondString
+            
+            if obj.codeType == "1",outputResult1.count >= 1 {
+                let outputResult = value.components(separatedBy: "^") as NSArray
+                let topText = (outputResult[1] as? String)!
+                firstString = topText
+                
+                if ((temp.contains(find: "^")) != nil) {
+                    secondString = (outputResult[0] as? String)!
+                }
+                
+                let newString  = secondString.components(separatedBy: ":") as NSArray
+                let trimmedString = (newString[0] as? String)?.trimmingCharacters(in: .whitespaces)
+                
+                var final = trimmedString! + ":"
+                for (index, element) in newString.enumerated() {
+                    if index > 0 {
+                        final = final + ((element as? String)!)
+                    }
+                }
+                
+                secondString = final
+                
+                if firstString == "Website" {
+                    let m = checkWhichUrl(name: secondString)
+                    if m.count > 0 {
+                        firstString = m
+                    }
+                    
+                }else {
+                    let m = checkWhichUrl(name: secondString)
+                    if m.containsIgnoringCase(find: "Google Search") {
+                       secondString = m
+                    }
+                }
+            }
+            
+            else {
+                firstString =  "BarCode"
+                secondString = obj.Text
+            }
+            
+            
+            if firstString.containsIgnoringCase(find: searchText) || secondString.containsIgnoringCase(find: searchText)
+            {
+                filterArray.append(obj)
+            }
+            
+        }
+        
+        if(searchText.count == 0)
+        {
+            databaseArray = DBmanager.shared.getFolderElements(folderid: folderId)
+            filterArray = databaseArray
+            
+        }
+        self.folderDetailTableView.reloadData()
+        
+        
+        
+        
+    }
 }

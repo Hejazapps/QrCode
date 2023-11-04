@@ -2984,9 +2984,11 @@
                     </view>
                     <connections>
                         <outlet property="bottomSpaceOfBottomView" destination="lBN-dU-T7E" id="bp2-G1-5pr"/>
+                        <outlet property="bottomSpaceTableView" destination="g5p-zZ-Fco" id="xE2-Lh-Wqp"/>
                         <outlet property="bottomView" destination="2HX-ct-wSS" id="Bkz-bv-4gL"/>
                         <outlet property="editbtn" destination="npN-fe-Kwo" id="S8O-kg-b2R"/>
                         <outlet property="folderDetailTableView" destination="fiZ-Rs-xbA" id="73i-Mh-Npi"/>
+                        <outlet property="searchBar" destination="nwP-sy-tPE" id="15y-HL-4Gi"/>
                         <outlet property="titleLabel" destination="NHh-P1-aYb" id="etA-Nr-eC1"/>
                     </connections>
                 </viewController>
