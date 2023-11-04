@@ -77,6 +77,7 @@ class FolderDetailVc: UIViewController {
                 if let v1 = array[0] as? String {
                     
                     folderId = v1
+                    selectedIndexList.removeAll()
                     self.reloadData1()
                 }
                 
