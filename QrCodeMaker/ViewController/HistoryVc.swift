@@ -178,7 +178,7 @@ class HistoryVc: UIViewController {
     }
     
     @IBAction func gotoScannedBtn(_ sender: Any) {
-        
+        self.updateAll()
         scannedLabel.textColor = UIColor.white
         currentIndexPath = "1"
         Store.sharedInstance.currentIndexPath = currentIndexPath
@@ -285,6 +285,7 @@ class HistoryVc: UIViewController {
                 
                 refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
                     print("Handle Ok logic here")
+                    self.bottomSpacetableView.constant = 0
                 }))
                 self.present(refreshAlert, animated: true, completion: nil)
             } else {
@@ -296,9 +297,10 @@ class HistoryVc: UIViewController {
                     let refreshAlert = UIAlertController(title: "Alert", message: "Folder name is empty", preferredStyle: UIAlertController.Style.alert)
                     
                     refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
-                        print("Handle Ok logic here")
+                        self.bottomSpacetableView.constant = 0
                     }))
                     self.present(refreshAlert, animated: true, completion: nil)
+                    
                     return
                     
                 }
@@ -309,6 +311,7 @@ class HistoryVc: UIViewController {
                     
                     refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
                         print("Handle Ok logic here")
+                        self.bottomSpacetableView.constant = 0
                     }))
                     self.present(refreshAlert, animated: true, completion: nil)
                     return
@@ -330,7 +333,7 @@ class HistoryVc: UIViewController {
         
         
         alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { [weak alert] (_) in
-            
+            self.bottomSpacetableView.constant = 0
             
         }))
         
@@ -342,6 +345,7 @@ class HistoryVc: UIViewController {
     }
     
     @IBAction func gotoCreatedBtn(_ sender: Any) {
+        self.updateAll()
         DBmanager.shared.initDB()
         currentIndexPath = "2"
         Store.sharedInstance.currentIndexPath = currentIndexPath
@@ -528,6 +532,7 @@ extension HistoryVc: UITableViewDelegate,UITableViewDataSource  {
     func tableView(_ tableView: UITableView, didSelectRowAt
                    indexPath: IndexPath){
         
+        self.updateAll()
         var obj:DataInformation!
         obj = databaseArray[indexPath.row]
         if searchActive {
