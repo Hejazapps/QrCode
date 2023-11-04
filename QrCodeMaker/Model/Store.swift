@@ -42,6 +42,7 @@ class Store: NSObject {
     var currentShape = ""
     var currentLogo = ""
     var showPickerT = false
+    var isFromHistory = true
 
     static let sharedInstance = Store()
     

@@ -140,6 +140,7 @@ class HistoryVc: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         Store.sharedInstance.showPickerT = false
+        Store.sharedInstance.isFromHistory = true
         
         
         
@@ -176,7 +177,7 @@ class HistoryVc: UIViewController {
         Store.sharedInstance.shouldShowHistoryPage = false
         filterArray = databaseArray
         
-        
+    
         
     }
     

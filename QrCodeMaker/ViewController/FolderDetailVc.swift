@@ -34,13 +34,24 @@ class FolderDetailVc: UIViewController {
         super.viewDidLoad()
         titleLabel.text = folderName
         
-        
+        NotificationCenter.default.addObserver(self, selector:#selector(reloadData2(notification:)), name:NSNotification.Name(rawValue: "delete"), object: nil)
         myView1 = allViewsInXibArray?.first as! ButtonView
         
         bottomView.addSubview(myView1)
         
         
         // Do any additional setup after loading the view.
+    }
+    
+    
+    @objc func reloadData2(notification: NSNotification) {
+        
+        if notification.name == NSNotification.Name(rawValue: "delete"){
+            
+            self.reloadData()
+            
+        }
+        
     }
     
     
@@ -98,6 +109,8 @@ class FolderDetailVc: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //DBmanager.shared.initDB()
+        
+        Store.sharedInstance.isFromHistory = false
     }
     
     @objc func buttonTapped(sender : UIButton) {

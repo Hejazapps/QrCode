@@ -102,7 +102,11 @@ class FolderVc: UIViewController {
             
             
             self.dismiss(animated: true) {
-                self.sendData()
+                
+                if Store.sharedInstance.isFromHistory {
+                    self.sendData()
+                }
+                
             }
             
             
