@@ -39,6 +39,9 @@ class FolderDetailVc: UIViewController {
         
         bottomView.addSubview(myView1)
         
+        let imageDataDict:[String: String] = ["": ""]
+        NotificationCenter.default.addObserver(self, selector:#selector(updateName(notification:)), name:NSNotification.Name(rawValue: "updateFolder"), object: nil)
+        
         
         // Do any additional setup after loading the view.
     }
@@ -48,7 +51,37 @@ class FolderDetailVc: UIViewController {
         
         if notification.name == NSNotification.Name(rawValue: "delete"){
             
-            self.reloadData()
+            self.reloadData1()
+            
+        }
+        
+    }
+    
+    
+    @objc func updateName(notification: NSNotification) {
+        print("testful")
+        
+        if let info = notification.userInfo as? Dictionary<String,String> {
+            
+            
+            if let v  = notification.userInfo?["string"] as? String {
+                 
+                let array = v.components(separatedBy: ",")
+                
+                if let v = array[1] as? String {
+                    folderName = v
+                    titleLabel.text = folderName
+                }
+                
+                
+                if let v1 = array[0] as? String {
+                    
+                    folderId = v1
+                    self.reloadData1()
+                }
+                
+            }
+             
             
         }
         
@@ -87,7 +120,7 @@ class FolderDetailVc: UIViewController {
         self.editState()
     }
     
-    func reloadData() {
+    func reloadData1() {
         
         databaseArray = DBmanager.shared.getFolderElements(folderid: folderId)
         folderDetailTableView.reloadData()
@@ -209,7 +242,7 @@ extension FolderDetailVc: UITableViewDelegate,UITableViewDataSource  {
                 DBmanager.shared.deleteFile(id: obj.id)
             
                 //DBmanager.shared.initDB()
-                reloadData()
+                reloadData1()
                 
             }))
             

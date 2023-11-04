@@ -106,7 +106,12 @@ class FolderVc: UIViewController {
                 if Store.sharedInstance.isFromHistory {
                     self.sendData()
                 }
+                var a = "\(currentIndexFolder)" + "," + currentFolderName
                 
+                
+                let imageDataDict:[String: String] = ["string": a]
+                
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateFolder"), object: nil, userInfo: imageDataDict)
             }
             
             
