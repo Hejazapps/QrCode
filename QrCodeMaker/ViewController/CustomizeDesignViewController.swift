@@ -293,6 +293,9 @@ class CustomizeDesignViewController: UIViewController, UIColorPickerViewControll
         if let v = logoImage {
             self.updateImage(imGW: v)
         }
+        else {
+            doc.logoTemplate = nil
+        }
 
         doc.design.backgroundColor(backgroundColor.cgColor)
         doc.design.foregroundColor(foreGroundColor.cgColor)
@@ -558,7 +561,12 @@ extension CustomizeDesignViewController: UITableViewDelegate,UITableViewDataSour
                     }
                     else if m.contains(find: "Logo") {
                          let  logo1 = "\(indexPath.row)"
-                        logoImage = self.getImage(path: logo1)
+                        if indexPath.row == 0 {
+                            logoImage = nil
+                        } else {
+                            logoImage = self.getImage(path: logo1)
+                        }
+                        
                         
                     }
                     else {

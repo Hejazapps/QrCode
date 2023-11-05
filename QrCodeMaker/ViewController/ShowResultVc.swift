@@ -361,6 +361,9 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
         if  let v = logo1  {
             self.updateImage(imGW: v)
         }
+        else {
+            doc.logoTemplate = nil
+        }
         
         doc.design.foregroundColor(colora.cgColor)
         doc.design.backgroundColor(colorb.cgColor)
