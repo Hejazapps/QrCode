@@ -20,33 +20,18 @@ class SettingsVc: UIViewController, MFMailComposeViewControllerDelegate {
     @IBOutlet weak var holderView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        soundWatch.addTarget(self, action: #selector(switchChanged), for: UIControl.Event.valueChanged)
+        vibrateWatch.addTarget(self, action: #selector(switchChanged), for: UIControl.Event.valueChanged)
+        beepSwitch.addTarget(self, action: #selector(switchChanged), for: UIControl.Event.valueChanged)
+        historySwitch.addTarget(self, action: #selector(switchChanged), for: UIControl.Event.valueChanged)
+        linkOpen.addTarget(self, action: #selector(switchChanged), for: UIControl.Event.valueChanged)
         
         
         // Do any additional setup after loading the view.
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        print(holderView.frame.origin.y)
-        print(holderView.frame.size.height)
-        
-        HeightForTotal.constant = holderView.frame.origin.y + holderView.frame.size.height + 50
-    }
-    
-    
-    @IBAction func gotoSubscription(_ sender: Any) {
-        
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let initialViewController = storyboard.instantiateViewController(withIdentifier: "SubscriptionVc") as! SubscriptionVc
-        initialViewController.modalPresentationStyle = .fullScreen
-        self.present(initialViewController, animated: true, completion: nil)
-        
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
+    @objc func switchChanged(mySwitch: UISwitch) {
+         
         if soundWatch.isOn {
             UserDefaults.standard.set(2, forKey: "sound")
         } else {
@@ -76,6 +61,33 @@ class SettingsVc: UIViewController, MFMailComposeViewControllerDelegate {
         } else {
             UserDefaults.standard.set(1, forKey: "Link")
         }
+        
+    }
+    
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        print(holderView.frame.origin.y)
+        print(holderView.frame.size.height)
+        
+        HeightForTotal.constant = holderView.frame.origin.y + holderView.frame.size.height + 50
+    }
+    
+    
+    @IBAction func gotoSubscription(_ sender: Any) {
+        
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let initialViewController = storyboard.instantiateViewController(withIdentifier: "SubscriptionVc") as! SubscriptionVc
+        initialViewController.modalPresentationStyle = .fullScreen
+        self.present(initialViewController, animated: true, completion: nil)
+        
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+       
     }
     
     override func viewWillAppear(_ animated: Bool) {
