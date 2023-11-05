@@ -38,7 +38,7 @@ class HistoryVc: UIViewController {
     var folderArray: [DataInformation] = []
     var filterArray: [DataInformation] = []
     
-     
+    
     @IBOutlet weak var historyTableView: UITableView!
     
     
@@ -46,7 +46,7 @@ class HistoryVc: UIViewController {
     @IBOutlet weak var collectionViewForFolder: UICollectionView!
     
     
-     
+    
     @IBAction func gotoScanPage(_ sender: Any) {
         
         
@@ -73,10 +73,10 @@ class HistoryVc: UIViewController {
         
         databaseArray = DBmanager.shared.getRecordInfo(indexPath: currentIndexPath)
         tableView.reloadData()
-       topView.roundCorners([.bottomRight, .bottomLeft], radius: 10)
+        topView.roundCorners([.bottomRight, .bottomLeft], radius: 10)
         NotificationCenter.default.addObserver(self, selector:#selector(reloadData2(notification:)), name:NSNotification.Name(rawValue: "delete"), object: nil)
         
-       
+        
         searchbar.searchBarStyle = .minimal
         searchbar.backgroundColor =  UIColor.clear
         searchbar.searchTextField.backgroundColor =  UIColor(red: 245.0/255, green: 244.0/255, blue: 244.0/255, alpha: 1.0)
@@ -116,7 +116,7 @@ class HistoryVc: UIViewController {
         holderView.layer.cornerRadius = 15.0
         scanLabel.layer.cornerRadius = 10.0
         scanLabel.layer.masksToBounds = true
-
+        
         
     }
     
@@ -177,7 +177,7 @@ class HistoryVc: UIViewController {
         Store.sharedInstance.shouldShowHistoryPage = false
         filterArray = databaseArray
         
-    
+        
         
     }
     
@@ -326,7 +326,7 @@ class HistoryVc: UIViewController {
                 
                 currentIndexFolder = -1
                 DBmanager.shared.insertIntoFolder(name: (textField?.text)!)
-              //  DBmanager.shared.initDB()
+                //  DBmanager.shared.initDB()
                 self.folderArray = DBmanager.shared.getFolderInfo()
                 
                 self.heightForFolderView.constant = 70.0
@@ -378,12 +378,25 @@ class HistoryVc: UIViewController {
     }
     
     @objc func keyboardWillShow(_ notification: Notification) {
+        
+        
+        
+        
+        
+        
         if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
             let keyboardRectangle = keyboardFrame.cgRectValue
             let keyboardHeight = keyboardRectangle.height
             bottomSpacetableView.constant = keyboardHeight - 70
             searchActive = true
         }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [unowned self] in
+            if editModeActive {
+                self.editState()
+            }
+        }
+        
     }
     
     
@@ -581,7 +594,7 @@ extension HistoryVc:UICollectionViewDelegate, UICollectionViewDataSource, UIColl
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if editModeActive {
-            self.editState() 
+            self.editState()
         }
         let obj = folderArray[indexPath.row]
         
@@ -619,7 +632,7 @@ extension HistoryVc: UISearchBarDelegate{
         self.updateAll()
         
     }
-   
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
         searchActive  = true
@@ -668,7 +681,7 @@ extension HistoryVc: UISearchBarDelegate{
                 }else {
                     let m = checkWhichUrl(name: secondString)
                     if m.containsIgnoringCase(find: "Google Search") {
-                       secondString = m
+                        secondString = m
                     }
                 }
             }
