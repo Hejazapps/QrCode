@@ -54,6 +54,30 @@ class FolderDetailVc: UIViewController {
         searchBar.searchTextField.inputAccessoryView = keyboardToolbar
         searchBar.delegate  = self
         // Do any additional setup after loading the view.
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillShow),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
+        )
+    }
+    
+    
+    @objc func keyboardWillShow(_ notification: Notification) {
+        if editModeActive {
+            self.editState()
+        }
+        self.reloadData1()
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            let keyboardHeight = keyboardRectangle.height
+            bottomSpaceTableView.constant = keyboardHeight
+            searchActive = true
+        }
+        
+       
+        
     }
     
     
@@ -68,7 +92,7 @@ class FolderDetailVc: UIViewController {
         }
         searchBar.text = ""
         self.folderDetailTableView.reloadData()
-        bottomSpaceOfBottomView.constant = 0
+        bottomSpaceTableView.constant = 0
     }
     
     
@@ -126,11 +150,13 @@ class FolderDetailVc: UIViewController {
             editModeActive = true
             editbtn.setTitle("Done", for: .normal)
             bottomSpaceOfBottomView.constant = 0
+            bottomSpaceTableView.constant = 90
         }
         else {
             editModeActive = false
             editbtn.setTitle("Edit", for: .normal)
             bottomSpaceOfBottomView.constant = -1000
+            bottomSpaceTableView.constant = 0
         }
         
         let imageDataDict:[String: Int] = ["image": shouldToggle]
