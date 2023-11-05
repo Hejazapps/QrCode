@@ -129,7 +129,29 @@ class SettingsVc: UIViewController, MFMailComposeViewControllerDelegate {
     
     @IBAction func gotoTermOfUse(_ sender: Any) {
         
-        self.gotoWebView(name: "Terms of Use", url: termsOfUseValue)
+        
+        if currentReachabilityStatus == .notReachable {
+            self.showAlert()
+            
+        } else {
+            self.gotoWebView(name: "Terms of Use", url: termsOfUseValue)
+        }
+        
+        
+        
+        
+    }
+    
+    func showAlert() {
+        
+        let alert = UIAlertController(title: "", message: "Check Your Internet", preferredStyle: .alert)
+            
+             let ok = UIAlertAction(title: "OK", style: .default, handler: { action in
+             })
+             alert.addAction(ok)
+             DispatchQueue.main.async(execute: {
+                self.present(alert, animated: true)
+        })
         
     }
     
@@ -175,7 +197,13 @@ class SettingsVc: UIViewController, MFMailComposeViewControllerDelegate {
     
     @IBAction func gotoPrivacyPolicy(_ sender: Any) {
         
-        self.gotoWebView(name: "Privacy Policy", url: privacyPolicyValue)
+        
+        if currentReachabilityStatus == .notReachable {
+            self.showAlert()
+            
+        } else {
+            self.gotoWebView(name: "Privacy Policy", url: privacyPolicyValue)
+        }
         
     }
     
@@ -187,7 +215,15 @@ class SettingsVc: UIViewController, MFMailComposeViewControllerDelegate {
     
     @IBAction func sendFeedBack(_ sender: Any) {
         
-        self.sendEmail(subject: "Send Us FeedBack", mailAddress: "hejazapps@gmail.com", cc: "", meessage: "")
+        
+        if currentReachabilityStatus == .notReachable {
+            self.showAlert()
+            
+        } else {
+            self.sendEmail(subject: "Send Us FeedBack", mailAddress: "hejazapps@gmail.com", cc: "", meessage: "")
+        }
+        
+       
     }
     
     @IBAction func shareTheApp(_ sender: Any) {

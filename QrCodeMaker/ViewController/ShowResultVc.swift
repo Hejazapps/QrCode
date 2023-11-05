@@ -817,6 +817,20 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
            }
        }
     
+    func showAlert() {
+        
+        let alert = UIAlertController(title: "", message: "Check Your Internet", preferredStyle: .alert)
+            
+             let ok = UIAlertAction(title: "OK", style: .default, handler: { action in
+             })
+             alert.addAction(ok)
+             DispatchQueue.main.async(execute: {
+                self.present(alert, animated: true)
+        })
+        
+    }
+    
+    
     @IBAction func copyText(_ sender: Any) {
         
         
@@ -1090,6 +1104,11 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
             }
              
             
+            if currentReachabilityStatus == .notReachable {
+                self.showAlert()
+                return
+            }
+            
             self.sendEmail(subject: subject, mailAddress: email, cc: cc, meessage: body)
             return
         }
@@ -1136,6 +1155,12 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
         }
         
         if showText.containsIgnoringCase(find: "url") {
+            
+            if currentReachabilityStatus == .notReachable {
+                self.showAlert()
+                return
+            }
+            
             guard let url = URL(string: stringValue) else {
                 return //be safe
             }
