@@ -563,6 +563,7 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
     }
     
     @objc func keyboardWillShow(_ notification: Notification) {
+       
         if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
             let keyboardRectangle = keyboardFrame.cgRectValue
             let keyboardHeight = keyboardRectangle.height

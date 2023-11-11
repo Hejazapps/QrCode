@@ -70,6 +70,7 @@ class FolderDetailVc: UIViewController {
     
     
     @objc func keyboardWillShow(_ notification: Notification) {
+        editbtn.isHidden = true
         if editModeActive {
             self.editState()
         }
@@ -102,7 +103,7 @@ class FolderDetailVc: UIViewController {
     
     
     @objc func dismissKeyboard() {
-        
+        editbtn.isHidden = false
         self.updateAll()
     }
     
@@ -450,6 +451,7 @@ extension FolderDetailVc: UISearchBarDelegate{
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        editbtn.isHidden = false
         self.updateAll()
         
     }

@@ -124,7 +124,7 @@ class HistoryVc: UIViewController {
     
     
     @objc func dismissKeyboard() {
-        
+        editBtn.isHidden = false
         self.updateAll()
     }
     
@@ -399,7 +399,7 @@ class HistoryVc: UIViewController {
         
         
         
-        
+        editBtn.isHidden = true
         
         
         if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
@@ -647,6 +647,7 @@ extension HistoryVc: UISearchBarDelegate{
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        editBtn.isHidden  = false
         self.updateAll()
         
     }
