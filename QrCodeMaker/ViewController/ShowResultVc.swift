@@ -430,6 +430,9 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
                DispatchQueue.main.async {
                    IHProgressHUD.dismiss()
                }
+               
+               self.showToast(message: "Contact has been added", font: .systemFont(ofSize: 12.0))
+               
            } catch let err{
                DispatchQueue.main.async {
                    IHProgressHUD.dismiss()
@@ -1187,13 +1190,8 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
         let pasteBoard = UIPasteboard.general
         pasteBoard.string =  stringValue
         
-        let alert = UIAlertController(title: "Note", message: "Text has been copied to clipboard", preferredStyle: UIAlertController.Style.alert)
+        self.showToast(message: "Text has been copied to clipboard", font: .systemFont(ofSize: 12.0))
         
-        // add an action (button)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-        
-        // show the alert
-        self.present(alert, animated: true, completion: nil)
         
         
     }
