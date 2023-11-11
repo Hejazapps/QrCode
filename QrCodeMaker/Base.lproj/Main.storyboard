@@ -51,7 +51,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="nI0-qt-fDb"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <connections>
                         <segue destination="iou-Q2-k5x" kind="presentation" identifier="mainSegue" modalPresentationStyle="fullScreen" id="N9L-Qj-Klu"/>
@@ -3885,7 +3885,7 @@
         <image name="history_page" width="30" height="30"/>
         <image name="next" width="32" height="32"/>
         <image name="qrcode" catalog="system" width="128" height="114"/>
-        <image name="scan" width="32.333332061767578" height="32.333332061767578"/>
+        <image name="scan" width="30" height="30"/>
         <image name="settings" width="30" height="30"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

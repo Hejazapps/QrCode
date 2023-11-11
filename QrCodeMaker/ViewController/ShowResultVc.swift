@@ -743,7 +743,7 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
             bnTextContent.setTitle("Call", for: .normal)
         }
         if stringValue.containsIgnoringCase(find: "sms") {
-            bnTextContent.setTitle("Sms", for: .normal)
+            bnTextContent.setTitle("SMS", for: .normal)
         }
         if showText.containsIgnoringCase(find: "Url") {
             bnTextContent.setTitle("Go to Url", for: .normal)
