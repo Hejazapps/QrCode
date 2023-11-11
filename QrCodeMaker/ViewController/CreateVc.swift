@@ -1182,7 +1182,7 @@ extension CreateVc: UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        let height = CGFloat(self.inputParemeterArray[indexPath.item].height) + 7
+        let height = CGFloat(self.inputParemeterArray[indexPath.item].height) + 10
         return height
     }
     
