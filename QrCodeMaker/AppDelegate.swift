@@ -18,6 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let screenHeight = UIScreen.main.bounds.height
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+         
+      
+        UITextField.appearance().keyboardAppearance = .light
         // Override point for customization after application launch.
         UITabBar.appearance().backgroundColor =  tabBarBackGroundColor
         UITabBar.appearance().unselectedItemTintColor = tabBarUnSelectedColor
