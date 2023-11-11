@@ -1168,11 +1168,17 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
                 return //be safe
             }
             
+            guard UIApplication.shared.canOpenURL(url) else {
+                print("Can't open url!")
+                return
+            }
+            
             if #available(iOS 10.0, *) {
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
             } else {
                 UIApplication.shared.openURL(url)
             }
+            
             return
         }
         
