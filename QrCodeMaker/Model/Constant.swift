@@ -980,7 +980,7 @@ extension Constant {
     
     static func getIcloudLink() -> [CreateDataModel] {
         var array = [CreateDataModel]()
-        array.append(CreateDataModel(title: "Icloud link:", text: "https://www.icloud.com/", height: 110))
+        array.append(CreateDataModel(title: "Icloud Link:", text: "https://www.icloud.com/", height: 110))
         return array
     }
     
