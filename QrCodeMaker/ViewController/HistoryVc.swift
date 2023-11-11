@@ -68,7 +68,12 @@ class HistoryVc: UIViewController {
        
          
        
-         
+        searchbar.searchBarStyle = .default
+        searchbar.backgroundColor =  UIColor.yellow
+        searchbar.searchTextField.backgroundColor = UIColor.yellow
+        searchbar.searchTextField.attributedPlaceholder = NSAttributedString.init(string: "Search", attributes: [NSAttributedString.Key.foregroundColor:UIColor.lightGray])
+        searchbar.searchTextField.textColor = UIColor.black
+        
         
         NotificationCenter.default.addObserver(
             self,
@@ -83,10 +88,7 @@ class HistoryVc: UIViewController {
         NotificationCenter.default.addObserver(self, selector:#selector(reloadData2(notification:)), name:NSNotification.Name(rawValue: "delete"), object: nil)
         
         
-        searchbar.searchBarStyle = .default
-        searchbar.backgroundColor =  UIColor.yellow
-        searchbar.searchTextField.backgroundColor = UIColor.yellow
-        searchbar.searchTextField.attributedPlaceholder = NSAttributedString.init(string: "Search", attributes: [NSAttributedString.Key.foregroundColor:UIColor.lightGray])
+       
         
         
         let keyboardToolbar = UIToolbar()
