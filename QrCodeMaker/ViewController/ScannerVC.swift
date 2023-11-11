@@ -239,19 +239,22 @@ extension ScannerVC:CameraViewControllerDelegate{
         let b = UserDefaults.standard.integer(forKey: "vibrate")
         
         if b == 2 {
+            print("Vibrating")
             AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
         }
         
         let c = UserDefaults.standard.integer(forKey: "Beep")
         
         if c == 2 {
-            print("sadiqul amin")
-            AudioServicesPlaySystemSoundWithCompletion(SystemSoundID(1110)) {
-                //Recording method here
-            }
+            print("Playing beep")
+            AudioServicesPlaySystemSound(SystemSoundID(1110))
         }
         
-        
+        let shouldPlayCaptureSound = UserDefaults.standard.integer(forKey: "sound") == 2
+        if shouldPlayCaptureSound {
+            print("Playing capture")
+            AudioServicesPlaySystemSound(SystemSoundID(1108))
+        }
         
         let fullNameArr = type.components(separatedBy: ".")
         let name = fullNameArr[2] as? String
