@@ -391,8 +391,21 @@ class EditVc: UIViewController, UITextViewDelegate,CLLocationManagerDelegate {
     }
     
     @objc func segmentAction(_ segmentedControl: UISegmentedControl) {
-        tableView.reloadData()
-        dismissKeyboard()
+        currentTextview?.resignFirstResponder()
+       
+       
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            let indexPath = IndexPath(row: 2, section: 0)
+            self.tableView.scrollToRow(at: indexPath , at: .bottom, animated: true)
+            
+        }
+        
+        if let gender = segmentedControl.titleForSegment(at: segmentedControl.selectedSegmentIndex) {
+          
+            self.createDataModelArray[2].description = gender
+            
+            
+        }
     }
     
 }
@@ -497,13 +510,6 @@ extension EditVc: UITableViewDelegate,UITableViewDataSource{
             print("mamamamamammamamamamammama")
             cell.networkName.isHidden = false
             
-            let genderIndex = cell.networkName.selectedSegmentIndex
-            if let gender = cell.networkName.titleForSegment(at: genderIndex) {
-                cell.textView.text = gender
-                self.createDataModelArray[indexPath.item].description = gender
-                cell.textView.isHidden = true
-                
-            }
         } else {
             cell.networkName.isHidden = true
             cell.textView.isHidden = false
