@@ -62,25 +62,32 @@ class HistoryVc: UIViewController {
     }
     
     
-   
+    
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         print("nosto")
         return .darkContent
     }
     
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
-         
-       
+        
+        
         searchbar.searchBarStyle = .default
-        searchbar.backgroundColor =  UIColor.yellow
-        searchbar.searchTextField.backgroundColor = UIColor.yellow
+        
+        searchbar.searchTextField.backgroundColor =  UIColor(red: 243/255.0, green: 242.0/255.0, blue: 242.0/255.0, alpha: 1.0)
+        
         searchbar.searchTextField.attributedPlaceholder = NSAttributedString.init(string: "Search", attributes: [NSAttributedString.Key.foregroundColor:UIColor.lightGray])
         searchbar.searchTextField.textColor = UIColor.black
+        
+        
+        searchbar.isTranslucent = true
+        searchbar.alpha = 1
+        searchbar.backgroundImage = UIImage()
+        searchbar.barTintColor = UIColor.clear
         
         
         NotificationCenter.default.addObserver(
@@ -96,7 +103,7 @@ class HistoryVc: UIViewController {
         NotificationCenter.default.addObserver(self, selector:#selector(reloadData2(notification:)), name:NSNotification.Name(rawValue: "delete"), object: nil)
         
         
-       
+        
         
         
         let keyboardToolbar = UIToolbar()
@@ -599,6 +606,7 @@ extension HistoryVc:UICollectionViewDelegate, UICollectionViewDataSource, UIColl
         
         let obj = folderArray[indexPath.row]
         cell?.lblV.text = obj.folderName
+        cell?.lblV.textColor = UIColor.black
         
         return cell!
     }

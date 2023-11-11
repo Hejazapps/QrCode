@@ -50,6 +50,20 @@ class FolderDetailVc: UIViewController {
         NotificationCenter.default.addObserver(self, selector:#selector(updateName(notification:)), name:NSNotification.Name(rawValue: "updateFolder"), object: nil)
         
         
+        searchBar.searchBarStyle = .default
+        
+        searchBar.searchTextField.backgroundColor =  UIColor(red: 243/255.0, green: 242.0/255.0, blue: 242.0/255.0, alpha: 1.0)
+        
+        searchBar.searchTextField.attributedPlaceholder = NSAttributedString.init(string: "Search", attributes: [NSAttributedString.Key.foregroundColor:UIColor.lightGray])
+        searchBar.searchTextField.textColor = UIColor.black
+        
+        
+        searchBar.isTranslucent = true
+        searchBar.alpha = 1
+        searchBar.backgroundImage = UIImage()
+        searchBar.barTintColor = UIColor.clear
+        
+        
         
         let keyboardToolbar = UIToolbar()
         keyboardToolbar.sizeToFit()
