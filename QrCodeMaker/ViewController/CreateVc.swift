@@ -103,6 +103,8 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
     var currentLocationString  = ""
     var temp = ""
     var fromQrCode =  true
+    let currentSegmentindex = 0
+    var currentTextViewF:UITextView?
     func eventEditViewController(_ controller: EKEventEditViewController, didCompleteWith action: EKEventEditViewAction) {
         
         self.dismissKeyboard()
@@ -200,7 +202,7 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
         hideV4.isHidden = true
         hideV5.isHidden = true
         hideV6.isHidden = true
-       // hide7.isHidden = true
+        // hide7.isHidden = true
         
         topLabel.text = ""
         
@@ -493,7 +495,7 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
         self.makeRoundedView(view: dotv4)
         self.makeRoundedView(view: dotv5)
         self.makeRoundedView(view: dot6)
-       // self.makeRoundedView(view: dot7)
+        // self.makeRoundedView(view: dot7)
         
         dotV1.backgroundColor = tabBarBackGroundColor
         inputParemeterArray = Constant.getInputParemeterByType(type: "Website")
@@ -556,14 +558,14 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
-       heightForImv.constant = imvHolder.frame.height - 50
-       widthForBtn1.constant  = imvHolder.frame.width
-       heightForbtn1.constant = imvHolder.frame.height
+        heightForImv.constant = imvHolder.frame.height - 50
+        widthForBtn1.constant  = imvHolder.frame.width
+        heightForbtn1.constant = imvHolder.frame.height
         
     }
     
     @objc func keyboardWillShow(_ notification: Notification) {
-    
+        
         if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
             let keyboardRectangle = keyboardFrame.cgRectValue
             let keyboardHeight = keyboardRectangle.height
@@ -599,7 +601,7 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
             )
             alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (alert) -> Void in
                 // Store.sharedInstance.setshouldShowHomeScreen(value: true)
-               
+                
                 
                 
                 
@@ -930,9 +932,9 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
         
         self.inputParemeterArray[index].height = max(height, Int(frame.size.height) + 20 + 35 + 30)
         
-       // tableView.reloadData()
+        // tableView.reloadData()
         
-         
+        
         
         ///print("mammamamma")
         
@@ -949,7 +951,7 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
         label.sizeToFit()
         return label.frame.height
     }
-     
+    
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         var visibleRect = CGRect()
@@ -1172,8 +1174,29 @@ extension CreateVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollec
     }
     
     @objc func segmentAction(_ segmentedControl: UISegmentedControl) {
-        tableView.reloadData()
-        dismissKeyboard()
+        
+        currentTextView.resignFirstResponder()
+        self.topSpaceView.constant = 0
+        self.bottomSpaceOftableView.constant = 0
+        
+       
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            let indexPath = IndexPath(row: 2, section: 0)
+            self.tableView.scrollToRow(at: indexPath , at: .bottom, animated: true)
+            
+        }
+        
+        if let gender = segmentedControl.titleForSegment(at: segmentedControl.selectedSegmentIndex) {
+          
+            self.createDataModelArray[2].description = gender
+            
+            
+        }
+        
+        // print()
+        print("your cat is \(segmentedControl.selectedSegmentIndex) cat years old")
+        // tableView.reloadData()
+        // dismissKeyboard()
     }
     
 }
@@ -1203,7 +1226,7 @@ extension CreateVc: UITableViewDelegate,UITableViewDataSource{
         keyboardToolbar.items = [flexBarButton, doneBarButton]
         cell.textView.inputAccessoryView = keyboardToolbar
         cell.textView.text = ""
-        cell.switchF.isHidden = true
+        
         
         if  fromQrCode {
             if self.isOnlyDecimal(type: self.createDataModelArray[indexPath.item].title) {
@@ -1229,7 +1252,7 @@ extension CreateVc: UITableViewDelegate,UITableViewDataSource{
         }
         
         
-        cell.switchF.isHidden =  true
+        //cell.switchF.isHidden =  true
         
         cell.textView.tag = indexPath.item
         cell.textView.delegate = self
@@ -1254,8 +1277,8 @@ extension CreateVc: UITableViewDelegate,UITableViewDataSource{
         cell.configCell()
         cell.textView.centerVertically()
         cell.textView.textContainerInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
-       /// cell.textView.adjustUITextViewHeight()
-         
+        /// cell.textView.adjustUITextViewHeight()
+        
         print(self.inputParemeterArray[indexPath.item].title)
         let textF = self.createDataModelArray[indexPath.item].title
         
@@ -1267,7 +1290,7 @@ extension CreateVc: UITableViewDelegate,UITableViewDataSource{
             
             cell.networkName.isHidden = true
             cell.textView.isHidden = true
-            cell.switchF.isHidden = false
+            // cell.switchF.isHidden = false
             cell.textViewContainer.backgroundColor = UIColor.clear
             
             let genderIndex = cell.networkName.selectedSegmentIndex
@@ -1280,18 +1303,11 @@ extension CreateVc: UITableViewDelegate,UITableViewDataSource{
             }
         }
         
-      
+        
         else if textF.contains(find: "Encription") {
             print("mamamamamammamamamamammama")
             cell.networkName.isHidden = false
             
-            let genderIndex = cell.networkName.selectedSegmentIndex
-            if let gender = cell.networkName.titleForSegment(at: genderIndex) {
-                cell.textView.text = gender
-                self.createDataModelArray[indexPath.item].description = gender
-                cell.textView.isHidden = true
-                
-            }
         } else {
             cell.networkName.isHidden = true
             cell.textView.isHidden = false

@@ -20,6 +20,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
          
       
+        UISegmentedControl.appearance().selectedSegmentTintColor = UIColor.white
+        UISegmentedControl.appearance().backgroundColor =  UIColor.white
+        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.black], for: .normal)
+        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.black], for: .selected)
+        
         
         
         UITextField.appearance().keyboardAppearance = .light
