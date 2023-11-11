@@ -32,6 +32,11 @@ class FolderDetailVc: UIViewController {
     var myView1:ButtonView!
     
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        print("nosto")
+        return .darkContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         titleLabel.text = folderName
@@ -200,7 +205,7 @@ class FolderDetailVc: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //DBmanager.shared.initDB()
-        
+        setNeedsStatusBarAppearanceUpdate()
         Store.sharedInstance.isFromHistory = false
         
     }

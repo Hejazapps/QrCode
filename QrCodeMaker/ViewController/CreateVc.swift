@@ -178,6 +178,14 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
         })
     }
     
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        print("nosto")
+        return .darkContent
+    }
+    
+    
+    
     @IBAction func gotoOption2(_ sender: Any) {
         fromQrCode = false
         mapView.isHidden = true
@@ -425,7 +433,7 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        UITextField.appearance().keyboardAppearance = .light
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
         CIEANBarcodeGenerator.register()
@@ -575,6 +583,7 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.dismissKeyboard()
+        setNeedsStatusBarAppearanceUpdate()
     }
     
     

@@ -42,6 +42,16 @@ class SubscriptionVc: UIViewController,UIScrollViewDelegate {
         view.clipsToBounds = true
     }
 
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        print("nosto")
+        return .lightContent
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setNeedsStatusBarAppearanceUpdate()
+    }
 
     @IBAction func gotoDismiss(_ sender: Any) {
         self.dismiss(animated: true)

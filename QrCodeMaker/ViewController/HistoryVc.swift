@@ -61,11 +61,19 @@ class HistoryVc: UIViewController {
         
     }
     
+    
+   
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        print("nosto")
+        return .darkContent
+    }
+    
    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
+        
          
        
         searchbar.searchBarStyle = .default
@@ -152,7 +160,7 @@ class HistoryVc: UIViewController {
         Store.sharedInstance.showPickerT = false
         Store.sharedInstance.isFromHistory = true
         
-        
+        setNeedsStatusBarAppearanceUpdate()
         
         if Store.sharedInstance.currentIndexPath == "1" {
             scanLabel.text = "Scan"

@@ -43,5 +43,7 @@
 	<string>To create an event, please allow Calendar usage access</string>
 	<key>PHPhotoLibraryPreventAutomaticLimitedAccessAlert</key>
 	<false/>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<true/>
 </dict>
 </plist>

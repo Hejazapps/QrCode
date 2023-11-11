@@ -90,9 +90,14 @@ class SettingsVc: UIViewController, MFMailComposeViewControllerDelegate {
        
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        print("nosto")
+        return .darkContent
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        setNeedsStatusBarAppearanceUpdate()
         let a = UserDefaults.standard.integer(forKey: "sound")
         let b = UserDefaults.standard.integer(forKey: "vibrate")
         let c = UserDefaults.standard.integer(forKey: "Beep")

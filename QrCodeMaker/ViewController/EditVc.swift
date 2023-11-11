@@ -58,6 +58,12 @@ class EditVc: UIViewController, UITextViewDelegate,CLLocationManagerDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //DBmanager.shared.initDB()
+        setNeedsStatusBarAppearanceUpdate()
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        print("nosto")
+        return .darkContent
     }
     
     func setUpLocation () {

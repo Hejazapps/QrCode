@@ -63,9 +63,18 @@ class CustomizeDesignViewController: UIViewController, UIColorPickerViewControll
     }
     
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        print("nosto")
+        return .darkContent
+    }
+    
+    
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //DBmanager.shared.initDB()
+        setNeedsStatusBarAppearanceUpdate()
     }
     
     
