@@ -13,6 +13,9 @@ import KRProgressHUD
 import AudioToolbox
 
 public class ScannerVC: UIViewController {
+    
+    @IBOutlet weak var gotosettings: UIButton!
+    @IBOutlet weak var permissionView: UIView!
     let soundID: SystemSoundID = 1104
     
     public lazy var headerViewController:HeaderVC = .init()
@@ -96,8 +99,54 @@ public class ScannerVC: UIViewController {
         super.viewWillAppear(true)
         KRProgressHUD.dismiss()
         //DBmanager.shared.initDB()
+        
+        self.checkCameraAccess()
+        gotosettings.layer.cornerRadius = 15.0
+        gotosettings.clipsToBounds = true
+        
     }
     
+    
+    func presentCameraSettings() {
+//        let alertController = UIAlertController(title: "Error",
+//                                      message: "Camera access is denied",
+//                                      preferredStyle: .alert)
+//        alertController.addAction(UIAlertAction(title: "Cancel", style: .default))
+//        alertController.addAction(UIAlertAction(title: "Settings", style: .cancel) { _ in
+//            if let url = URL(string: UIApplication.openSettingsURLString) {
+//                UIApplication.shared.open(url, options: [:], completionHandler: { _ in
+//                    // Handle
+//                })
+//            }
+//        })
+
+         
+        permissionView.isHidden = false
+        self.view.bringSubviewToFront(permissionView)
+    }
+    
+    
+    func checkCameraAccess() {
+        switch AVCaptureDevice.authorizationStatus(for: .video) {
+        case .denied:
+            print("Denied, request permission from settings")
+            presentCameraSettings()
+        case .restricted:
+            print("Restricted, device owner must approve")
+        case .authorized:
+            print("Authorized, proceed")
+        case .notDetermined:
+            AVCaptureDevice.requestAccess(for: .video) { success in
+                if success {
+                    print("Permission granted, proceed")
+                } else {
+                    print("Permission denied")
+                }
+            }
+        @unknown default:
+            print("Hello")
+        }
+    }
     
 }
 

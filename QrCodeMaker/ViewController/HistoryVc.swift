@@ -202,7 +202,8 @@ class HistoryVc: UIViewController {
         Store.sharedInstance.shouldShowHistoryPage = false
         filterArray = databaseArray
         
-        
+        editBtn.isHidden = false
+        print("asche")
         
     }
     
@@ -356,6 +357,8 @@ class HistoryVc: UIViewController {
                 
                 self.heightForFolderView.constant = 70.0
                 self.collectionViewForFolder.reloadData()
+                self.bottomSpacetableView.constant = 0
+                self.editBtn.isHidden = false
             }
             
         }))
