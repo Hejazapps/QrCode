@@ -12,6 +12,8 @@ class FolderVc: UIViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!
     var folderArray: [DataInformation] = []
+    var filterArray: [DataInformation] = []
+    var searchactive = false
     
     
     @IBOutlet weak var folderTableView: UITableView!
@@ -31,6 +33,7 @@ class FolderVc: UIViewController {
         searchBar.alpha = 1
         searchBar.backgroundImage = UIImage()
         searchBar.barTintColor = UIColor.clear
+        searchBar.delegate = self
         
         
         // Do any additional setup after loading the view.
@@ -40,6 +43,7 @@ class FolderVc: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         folderArray = DBmanager.shared.getFolderInfo()
+        filterArray = folderArray
         folderTableView.reloadData()
         //DBmanager.shared.initDB()
         
@@ -165,6 +169,11 @@ extension FolderVc: UITableViewDelegate,UITableViewDataSource  {
         80
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if searchactive {
+            return  filterArray.count
+        }
+        
         return folderArray.count
         
     }
@@ -173,8 +182,14 @@ extension FolderVc: UITableViewDelegate,UITableViewDataSource  {
         //        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath as IndexPath) as!TempTableViewCell
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath as IndexPath) as!ExpandableCellTableViewCell
-        cell.lbl.text = folderArray[indexPath.row].folderName
-        let obj = folderArray[indexPath.row]
+      
+        var obj = folderArray[indexPath.row]
+        
+        if searchactive {
+            obj = filterArray[indexPath.row]
+        }
+        
+        cell.lbl.text = obj.folderName
         
         if Int(obj.folderid) ?? 0 == currentIndexFolder {
             cell.roundedImv.image = UIImage(named: "Green Redio Button")
@@ -190,7 +205,10 @@ extension FolderVc: UITableViewDelegate,UITableViewDataSource  {
     func tableView(_ tableView: UITableView, didSelectRowAt
                    indexPath: IndexPath){
         
-        let obj = folderArray[indexPath.row]
+        var obj = folderArray[indexPath.row]
+        if searchactive {
+            obj = filterArray[indexPath.row]
+        }
         
         currentIndexFolder = Int(obj.folderid) ?? 0
         currentFolderName = obj.folderName
@@ -200,3 +218,50 @@ extension FolderVc: UITableViewDelegate,UITableViewDataSource  {
     
 }
 
+
+extension FolderVc: UISearchBarDelegate{
+    
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        
+        searchBar.showsCancelButton = true
+        return true
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+         
+        searchactive = false
+        folderTableView.reloadData()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        
+        
+        searchactive =  true
+        
+        filterArray.removeAll()
+        
+        for item in folderArray {
+            
+            if item.folderName.containsIgnoringCase(find: searchText) {
+                
+                filterArray.append(item)
+            }
+        }
+        
+        print(searchText)
+        print(filterArray)
+        
+        for item in filterArray {
+            print("yes = \(item.folderName)")
+        }
+        if(searchText.count == 0)
+        {
+            folderArray = DBmanager.shared.getFolderInfo()
+            filterArray = folderArray
+            
+        }
+        folderTableView.reloadData()
+        
+    }
+}

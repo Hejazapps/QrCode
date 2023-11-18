@@ -90,12 +90,7 @@ class HistoryVc: UIViewController {
         searchbar.barTintColor = UIColor.clear
         
         
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(keyboardWillShow),
-            name: UIResponder.keyboardWillShowNotification,
-            object: nil
-        )
+      
         
         databaseArray = DBmanager.shared.getRecordInfo(indexPath: currentIndexPath)
         tableView.reloadData()
@@ -159,13 +154,25 @@ class HistoryVc: UIViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
         print("tostos")
     }
+    
+    
+   
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         Store.sharedInstance.showPickerT = false
         Store.sharedInstance.isFromHistory = true
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillShow),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
+        )
+        
         
         setNeedsStatusBarAppearanceUpdate()
         
@@ -275,6 +282,7 @@ class HistoryVc: UIViewController {
     }
     
     func editState() {
+        print("dhuksec")
         selectedIndexList.removeAll()
         shouldToggle =  shouldToggle < 0 ? 15 : -20
         if shouldToggle > 0 {

@@ -41,7 +41,7 @@ class FolderDetailVc: UIViewController {
         super.viewDidLoad()
         titleLabel.text = folderName
         
-        NotificationCenter.default.addObserver(self, selector:#selector(reloadData2(notification:)), name:NSNotification.Name(rawValue: "delete"), object: nil)
+      
         myView1 = allViewsInXibArray?.first as! ButtonView
         
         bottomView.addSubview(myView1)
@@ -151,6 +151,7 @@ class FolderDetailVc: UIViewController {
                 if let v1 = array[0] as? String {
                     
                     folderId = v1
+                    print("dhuksea")
                     selectedIndexList.removeAll()
                     self.reloadData1()
                 }
@@ -164,6 +165,7 @@ class FolderDetailVc: UIViewController {
     
     
     func editState() {
+        print("dhukseb")
         selectedIndexList.removeAll()
         shouldToggle =  shouldToggle < 0 ? 15 : -20
         if shouldToggle > 0 {
@@ -223,7 +225,17 @@ class FolderDetailVc: UIViewController {
         setNeedsStatusBarAppearanceUpdate()
         Store.sharedInstance.isFromHistory = false
         
+        NotificationCenter.default.addObserver(self, selector:#selector(reloadData2(notification:)), name:NSNotification.Name(rawValue: "delete"), object: nil)
+        
+        
     }
+    
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        NotificationCenter.default.removeObserver(self)
+     }
+    
     
     @objc func buttonTapped(sender : UIButton) {
         print(sender.tag)
