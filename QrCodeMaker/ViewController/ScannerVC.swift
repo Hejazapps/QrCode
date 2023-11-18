@@ -89,6 +89,25 @@ public class ScannerVC: UIViewController {
     }
     
     
+    @IBAction func gotoSettings(_ sender: Any) {
+        
+       
+        self.openAppSpecificSettings()
+        
+    }
+    
+    
+    @objc func openAppSpecificSettings() {
+        guard let url = URL(string: UIApplication.openSettingsURLString),
+            UIApplication.shared.canOpenURL(url) else {
+                return
+        }
+        let optionsKeyDictionary = [UIApplication.OpenExternalURLOptionsKey(rawValue: "universalLinksOnly"): NSNumber(value: true)]
+        
+        UIApplication.shared.open(url, options: optionsKeyDictionary, completionHandler: nil)
+    }
+    
+    
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
