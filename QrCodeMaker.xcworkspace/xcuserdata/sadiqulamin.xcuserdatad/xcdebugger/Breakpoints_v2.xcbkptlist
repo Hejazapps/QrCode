@@ -14,8 +14,8 @@
             filePath = "QrCodeMaker/ViewController/HistoryVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "363"
-            endingLineNumber = "363"
+            startingLineNumber = "376"
+            endingLineNumber = "376"
             landmarkName = "gotoMakeFolder(_:)"
             landmarkType = "7">
             <Locations>
@@ -62,8 +62,8 @@
             filePath = "QrCodeMaker/ViewController/HistoryVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "362"
-            endingLineNumber = "362"
+            startingLineNumber = "375"
+            endingLineNumber = "375"
             landmarkName = "gotoMakeFolder(_:)"
             landmarkType = "7">
             <Locations>
@@ -110,8 +110,8 @@
             filePath = "QrCodeMaker/ViewController/HistoryVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "365"
-            endingLineNumber = "365"
+            startingLineNumber = "378"
+            endingLineNumber = "378"
             landmarkName = "gotoMakeFolder(_:)"
             landmarkType = "7">
             <Locations>
@@ -158,8 +158,8 @@
             filePath = "QrCodeMaker/ViewController/HistoryVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "364"
-            endingLineNumber = "364"
+            startingLineNumber = "377"
+            endingLineNumber = "377"
             landmarkName = "gotoMakeFolder(_:)"
             landmarkType = "7">
             <Locations>
@@ -206,8 +206,8 @@
             filePath = "QrCodeMaker/ViewController/HistoryVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "366"
-            endingLineNumber = "366"
+            startingLineNumber = "379"
+            endingLineNumber = "379"
             landmarkName = "gotoMakeFolder(_:)"
             landmarkType = "7">
             <Locations>
@@ -254,8 +254,8 @@
             filePath = "QrCodeMaker/ViewController/HistoryVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "367"
-            endingLineNumber = "367"
+            startingLineNumber = "380"
+            endingLineNumber = "380"
             landmarkName = "gotoMakeFolder(_:)"
             landmarkType = "7">
             <Locations>
@@ -317,8 +317,8 @@
             filePath = "QrCodeMaker/ViewController/HistoryVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "351"
-            endingLineNumber = "351"
+            startingLineNumber = "364"
+            endingLineNumber = "364"
             landmarkName = "gotoMakeFolder(_:)"
             landmarkType = "7">
             <Locations>
@@ -365,8 +365,8 @@
             filePath = "QrCodeMaker/ViewController/HistoryVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "350"
-            endingLineNumber = "350"
+            startingLineNumber = "363"
+            endingLineNumber = "363"
             landmarkName = "gotoMakeFolder(_:)"
             landmarkType = "7">
             <Locations>
@@ -428,8 +428,8 @@
             filePath = "QrCodeMaker/ViewController/HistoryVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "349"
-            endingLineNumber = "349"
+            startingLineNumber = "362"
+            endingLineNumber = "362"
             landmarkName = "gotoMakeFolder(_:)"
             landmarkType = "7">
             <Locations>
@@ -491,8 +491,8 @@
             filePath = "QrCodeMaker/ViewController/HistoryVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "348"
-            endingLineNumber = "348"
+            startingLineNumber = "361"
+            endingLineNumber = "361"
             landmarkName = "gotoMakeFolder(_:)"
             landmarkType = "7">
             <Locations>
@@ -539,8 +539,8 @@
             filePath = "QrCodeMaker/ViewController/HistoryVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "347"
-            endingLineNumber = "347"
+            startingLineNumber = "360"
+            endingLineNumber = "360"
             landmarkName = "gotoMakeFolder(_:)"
             landmarkType = "7">
             <Locations>
@@ -587,8 +587,8 @@
             filePath = "QrCodeMaker/ViewController/HistoryVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "345"
-            endingLineNumber = "345"
+            startingLineNumber = "358"
+            endingLineNumber = "358"
             landmarkName = "gotoMakeFolder(_:)"
             landmarkType = "7">
             <Locations>
@@ -2707,8 +2707,8 @@
             filePath = "QrCodeMaker/ViewController/CreateVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "813"
-            endingLineNumber = "813"
+            startingLineNumber = "866"
+            endingLineNumber = "866"
             landmarkName = "createBtnPressed(_:)"
             landmarkType = "7">
             <Locations>
@@ -2830,8 +2830,8 @@
             filePath = "QrCodeMaker/ViewController/CreateVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "811"
-            endingLineNumber = "811"
+            startingLineNumber = "864"
+            endingLineNumber = "864"
             landmarkName = "createBtnPressed(_:)"
             landmarkType = "7">
             <Locations>
@@ -2923,8 +2923,8 @@
             filePath = "QrCodeMaker/ViewController/CreateVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "809"
-            endingLineNumber = "809"
+            startingLineNumber = "862"
+            endingLineNumber = "862"
             landmarkName = "createBtnPressed(_:)"
             landmarkType = "7">
             <Locations>
@@ -3061,8 +3061,8 @@
             filePath = "QrCodeMaker/ViewController/CreateVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "805"
-            endingLineNumber = "805"
+            startingLineNumber = "858"
+            endingLineNumber = "858"
             landmarkName = "createBtnPressed(_:)"
             landmarkType = "7">
             <Locations>
@@ -3199,8 +3199,8 @@
             filePath = "QrCodeMaker/ViewController/CreateVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "804"
-            endingLineNumber = "804"
+            startingLineNumber = "857"
+            endingLineNumber = "857"
             landmarkName = "createBtnPressed(_:)"
             landmarkType = "7">
             <Locations>
@@ -9469,54 +9469,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "FA51EEF0-8144-49F7-91C4-080F8C0E124B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "QrCodeMaker/ViewController/CreateVc.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "369"
-            endingLineNumber = "369"
-            landmarkName = "showAlert()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "31D3CD65-8462-4122-BDC9-6B13C80CF039"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "QrCodeMaker/ViewController/CreateVc.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "368"
-            endingLineNumber = "368"
-            landmarkName = "showAlert()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "BA3679E7-3ACE-4BE2-A15D-6643A374ED02"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "QrCodeMaker/ViewController/CreateVc.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "367"
-            endingLineNumber = "367"
-            landmarkName = "showAlert()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "68162979-6FBB-4C44-9193-62A87075DABC"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -11100,8 +11052,8 @@
             filePath = "QrCodeMaker/ViewController/CreateVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "857"
-            endingLineNumber = "857"
+            startingLineNumber = "910"
+            endingLineNumber = "910"
             landmarkName = "goResultVc(string:event:)"
             landmarkType = "7">
          </BreakpointContent>

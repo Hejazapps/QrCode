@@ -105,6 +105,7 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
     var fromQrCode =  true
     let currentSegmentindex = 0
     var currentTextViewF:UITextView?
+    var currentBrCode  = 0
     func eventEditViewController(_ controller: EKEventEditViewController, didCompleteWith action: EKEventEditViewAction) {
         
         self.dismissKeyboard()
@@ -323,7 +324,7 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
             createEvent()
             
         case .denied:
-            print("Access denied")
+            self.showAlert()
             
         case .notDetermined:
             if #available(iOS 17.0, *) {
@@ -378,6 +379,13 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
         self.currentTextView.text = ""
         
         if heightForView.constant < 300 {
+            
+            currentBrCode = index
+            print("muntasir = \(currentIndex.row)")
+            print("muntasir1 = \(currentIndex.section)")
+            
+           
+            
             currentSelectedName = barCategoryArray[currentIndex.row * 6 + index] as! String
             inputParemeterArray = Constant.getInputParemeterByType(type: "BarCode")
             for _ in self.inputParemeterArray {
@@ -388,8 +396,15 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
             return
         }
         
+        
+        
         print(currentIndex.row)
         print(currentIndex.section)
+        
+        print("muntasir = \(currentIndex.row)")
+        print("muntasir1 = \(currentIndex.section)")
+        
+       
         
         let dic = qrCategoryArray[currentIndex.section] as? Dictionary<String, Any>
         if let  itemName  = dic!["items"] as? NSArray {
@@ -618,6 +633,44 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
         
         self.dismissKeyboard()
         print(createDataModelArray)
+        
+        
+        if self.heightForView.constant < 300  {
+            
+            if currentBrCode > 0 {
+                if !Store.sharedInstance.isActiveSubscription() {
+                    
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let initialViewController = storyboard.instantiateViewController(withIdentifier: "SubscriptionVc") as! SubscriptionVc
+                    initialViewController.modalPresentationStyle = .fullScreen
+                    self.present(initialViewController, animated: true, completion: nil)
+                    return
+                    
+                }
+            }
+            
+        }
+        
+        if  self.heightForView.constant >= 300  {
+            
+            
+            if currentIndex.section > 1 {
+                
+                
+                if !Store.sharedInstance.isActiveSubscription() {
+                    
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let initialViewController = storyboard.instantiateViewController(withIdentifier: "SubscriptionVc") as! SubscriptionVc
+                    initialViewController.modalPresentationStyle = .fullScreen
+                    self.present(initialViewController, animated: true, completion: nil)
+                    return
+                    
+                }
+
+            }
+            
+            
+        }
         
         if self.currentSelectedName == "Location" {
             

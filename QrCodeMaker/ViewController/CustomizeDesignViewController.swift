@@ -42,6 +42,18 @@ class CustomizeDesignViewController: UIViewController, UIColorPickerViewControll
     
     @IBAction func gotoSave(_ sender: Any) {
         
+        
+        if !Store.sharedInstance.isActiveSubscription() {
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "SubscriptionVc") as! SubscriptionVc
+            initialViewController.modalPresentationStyle = .fullScreen
+            self.present(initialViewController, animated: true, completion: nil)
+            return
+            
+        }
+        
+        
         delegate?.sendScreenSort(image: imv.image!,position: position,shape:shape,logo: logoImage,color1: foreGroundColor,color2: backgroundColor)
         self.dismiss(animated: true)
         

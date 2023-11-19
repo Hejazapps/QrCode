@@ -304,6 +304,17 @@ class HistoryVc: UIViewController {
     
     @IBAction func gotoMakeFolder(_ sender: Any) {
         
+        
+        if !Store.sharedInstance.isActiveSubscription() {
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "SubscriptionVc") as! SubscriptionVc
+            initialViewController.modalPresentationStyle = .fullScreen
+            self.present(initialViewController, animated: true, completion: nil)
+            return
+            
+        }
+        
         //DBmanager.shared.initDB()
         folderArray = DBmanager.shared.getFolderInfo()
         let alert = UIAlertController(title: "", message: "Enter Folder Name", preferredStyle: .alert)
@@ -323,6 +334,7 @@ class HistoryVc: UIViewController {
                 
                 refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
                     print("Handle Ok logic here")
+                    self.editBtn.isHidden = false
                     self.bottomSpacetableView.constant = 0
                 }))
                 self.present(refreshAlert, animated: true, completion: nil)
@@ -336,6 +348,7 @@ class HistoryVc: UIViewController {
                     
                     refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
                         self.bottomSpacetableView.constant = 0
+                        self.editBtn.isHidden = false
                     }))
                     self.present(refreshAlert, animated: true, completion: nil)
                     
@@ -374,6 +387,7 @@ class HistoryVc: UIViewController {
         
         alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { [weak alert] (_) in
             self.bottomSpacetableView.constant = 0
+            self.editBtn.isHidden = false
             
         }))
         
