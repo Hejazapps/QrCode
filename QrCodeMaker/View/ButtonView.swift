@@ -38,16 +38,29 @@ class ButtonView: UIView {
         var employeeArray:[Dictionary<String, String>] =  Array()
         for item in selectedIndexList {
             
-            if let value = DBmanager.shared.getFileData(id: "\(item)") {
-                print("mama = \(value)")
-                
-                var dct = Dictionary<String, String>()
-                dct.updateValue("\(index)", forKey: "CONTENTSERIAl")
-                dct.updateValue("\(value)", forKey: "CODECONTENT")
-                employeeArray.append(dct)
-                index = index + 1
-                
+            DBmanager.shared.getFileData(id: "\(item)") { value in
+                if let value {
+                    print("mama = \(value)")
+                    
+                    var dct = Dictionary<String, String>()
+                    dct.updateValue("\(index)", forKey: "CONTENTSERIAl")
+                    dct.updateValue("\(value)", forKey: "CODECONTENT")
+                    employeeArray.append(dct)
+                    index = index + 1
+                    
+                }
             }
+            
+//            if let value = DBmanager.shared.getFileData(id: "\(item)") {
+//                print("mama = \(value)")
+//                
+//                var dct = Dictionary<String, String>()
+//                dct.updateValue("\(index)", forKey: "CONTENTSERIAl")
+//                dct.updateValue("\(value)", forKey: "CODECONTENT")
+//                employeeArray.append(dct)
+//                index = index + 1
+//                
+//            }
         }
         
         self.createCSV(from: employeeArray)
