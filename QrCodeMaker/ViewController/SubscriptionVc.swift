@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import ProgressHUD
+import StoreKit
+import SwiftyStoreKit
 
 class SubscriptionVc: UIViewController,UIScrollViewDelegate {
     
@@ -63,6 +66,105 @@ class SubscriptionVc: UIViewController,UIScrollViewDelegate {
         
         
         print(lastContentOffset)
+    }
+    
+    
+    @IBAction func weeklyView(_ sender: Any) {
+        
+        self.purchaseItemIndex(index: 1)
+        
+    }
+    
+    
+    @IBAction func MostPopularview(_ sender: Any) {
+        
+        self.purchaseItemIndex(index: 0)
+    }
+    
+    
+    @IBAction func gotoMonthlyView(_ sender: Any) {
+        self.purchaseItemIndex(index: 2)
+    }
+    
+    
+    func buyAproduct(value:String)
+    {
+        SwiftyStoreKit.purchaseProduct(value, quantity: 1, atomically: false) { result in
+            switch result {
+            case .success(let product):
+                // fetch content from your server, then:
+                if product.needsFinishTransaction {
+                    Store.sharedInstance.setPurchaseActive(value: true)
+                    Store.sharedInstance.verifyReciept()
+                    ProgressHUD.dismiss()
+                    SwiftyStoreKit.finishTransaction(product.transaction)
+                }
+                print("Purchase Success: \(product.productId)")
+            case .error(let error):
+                switch error.code {
+                case .unknown: ProgressHUD.dismiss()
+                case .clientInvalid: ProgressHUD.dismiss()
+                case .paymentCancelled:  ProgressHUD.dismiss()
+                case .paymentInvalid: ProgressHUD.dismiss()
+                case .paymentNotAllowed:  ProgressHUD.dismiss()
+                case .storeProductNotAvailable:ProgressHUD.dismiss()
+                case .cloudServicePermissionDenied: ProgressHUD.dismiss()
+                case .cloudServiceNetworkConnectionFailed: ProgressHUD.dismiss()
+                case .cloudServiceRevoked: ProgressHUD.dismiss()
+                default: print((error as NSError).localizedDescription)
+                }
+            }
+        }
+    }
+    
+    
+    
+    private func purchaseItemIndex(index: Int) {
+       
+        DispatchQueue.main.async{
+            
+
+        }
+        
+        var productId =
+            [PoohWisdomProducts.yearlySub, PoohWisdomProducts.weeklySub,PoohWisdomProducts.monthlySub]
+        
+        self.buyAproduct(value: productId[index])
+        
+        return
+            
+            Store.sharedInstance.setCurrentItem(value: productId[index])
+        PoohWisdomProducts.store.requestProducts { [weak self] success, products in
+            guard let self = self else { return }
+            guard success else {
+                
+                DispatchQueue.main.async {
+                    
+                    //ERProgressHud.sharedInstance.hide()
+                    let alertController = UIAlertController(title: "Failed to load list of products",
+                                                            message: "Check logs for details",
+                                                            preferredStyle: .alert)
+                    alertController.addAction(UIAlertAction(title: "OK", style: .default))
+                    
+                }
+                
+                
+                return
+            }
+            PoohWisdomProducts.store.buyProduct(products![0] as SKProduct) { [weak self] success, productId in
+                guard let self = self else {
+                    
+                   // return
+                    
+                }
+                guard success else {
+                    
+                    return
+                }
+                
+            }
+        }
+        
     }
     
     

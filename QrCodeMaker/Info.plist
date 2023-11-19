@@ -6,6 +6,10 @@
 	<array>
 		<string>whatsapp</string>
 	</array>
+	<key>NSCalendarsFullAccessUsageDescription</key>
+	<string>To create an event, please allow Calendar usage access</string>
+	<key>PHPhotoLibraryPreventAutomaticLimitedAccessAlert</key>
+	<false/>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -25,24 +29,6 @@
 			</array>
 		</dict>
 	</dict>
-	<key>NSCalendarsUsageDescription</key>
-	<string>To create an Event QR Code, please allow Calendar access</string>
-	<key>NSCameraUsageDescription</key>
-	<string>This allows QRcode Maker to access your camera and allows you for scannig QRcode Barcode. Your Photos will stay safe and private.</string>
-	<key>NSContactsUsageDescription</key>
-	<string>To save this contact, please allow this app Contacts access</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Will you allow this app to always know your location?</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Will you allow this app to always know your location?</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Do you allow this app to know your current location?</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>This allows QRcode Maker to access your photos and lets you scan the QRcode. Your Photos will stay safe and private.</string>
-	<key>NSCalendarsFullAccessUsageDescription</key>
-	<string>To create an event, please allow Calendar usage access</string>
-	<key>PHPhotoLibraryPreventAutomaticLimitedAccessAlert</key>
-	<false/>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
 </dict>

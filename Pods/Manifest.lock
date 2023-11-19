@@ -6,15 +6,15 @@ PODS:
   - EFQRCode (5.1.9):
     - EFQRCode/Core (= 5.1.9)
   - EFQRCode/Core (5.1.9)
-  - Firebase/Analytics (10.16.0):
+  - Firebase/Analytics (10.18.0):
     - Firebase/Core
-  - Firebase/Core (10.16.0):
+  - Firebase/Core (10.18.0):
     - Firebase/CoreOnly
-    - FirebaseAnalytics (~> 10.16.0)
-  - Firebase/CoreOnly (10.16.0):
-    - FirebaseCore (= 10.16.0)
-  - FirebaseAnalytics (10.16.0):
-    - FirebaseAnalytics/AdIdSupport (= 10.16.0)
+    - FirebaseAnalytics (~> 10.18.0)
+  - Firebase/CoreOnly (10.18.0):
+    - FirebaseCore (= 10.18.0)
+  - FirebaseAnalytics (10.18.0):
+    - FirebaseAnalytics/AdIdSupport (= 10.18.0)
     - FirebaseCore (~> 10.0)
     - FirebaseInstallations (~> 10.0)
     - GoogleUtilities/AppDelegateSwizzler (~> 7.11)
@@ -22,80 +22,83 @@ PODS:
     - GoogleUtilities/Network (~> 7.11)
     - "GoogleUtilities/NSData+zlib (~> 7.11)"
     - nanopb (< 2.30910.0, >= 2.30908.0)
-  - FirebaseAnalytics/AdIdSupport (10.16.0):
+  - FirebaseAnalytics/AdIdSupport (10.18.0):
     - FirebaseCore (~> 10.0)
     - FirebaseInstallations (~> 10.0)
-    - GoogleAppMeasurement (= 10.16.0)
+    - GoogleAppMeasurement (= 10.18.0)
     - GoogleUtilities/AppDelegateSwizzler (~> 7.11)
     - GoogleUtilities/MethodSwizzler (~> 7.11)
     - GoogleUtilities/Network (~> 7.11)
     - "GoogleUtilities/NSData+zlib (~> 7.11)"
     - nanopb (< 2.30910.0, >= 2.30908.0)
-  - FirebaseCore (10.16.0):
+  - FirebaseCore (10.18.0):
     - FirebaseCoreInternal (~> 10.0)
-    - GoogleUtilities/Environment (~> 7.8)
-    - GoogleUtilities/Logger (~> 7.8)
-  - FirebaseCoreInternal (10.16.0):
+    - GoogleUtilities/Environment (~> 7.12)
+    - GoogleUtilities/Logger (~> 7.12)
+  - FirebaseCoreInternal (10.18.0):
     - "GoogleUtilities/NSData+zlib (~> 7.8)"
-  - FirebaseInstallations (10.16.0):
+  - FirebaseInstallations (10.18.0):
     - FirebaseCore (~> 10.0)
     - GoogleUtilities/Environment (~> 7.8)
     - GoogleUtilities/UserDefaults (~> 7.8)
     - PromisesObjC (~> 2.1)
-  - GoogleAppMeasurement (10.16.0):
-    - GoogleAppMeasurement/AdIdSupport (= 10.16.0)
+  - GoogleAppMeasurement (10.18.0):
+    - GoogleAppMeasurement/AdIdSupport (= 10.18.0)
     - GoogleUtilities/AppDelegateSwizzler (~> 7.11)
     - GoogleUtilities/MethodSwizzler (~> 7.11)
     - GoogleUtilities/Network (~> 7.11)
     - "GoogleUtilities/NSData+zlib (~> 7.11)"
     - nanopb (< 2.30910.0, >= 2.30908.0)
-  - GoogleAppMeasurement/AdIdSupport (10.16.0):
-    - GoogleAppMeasurement/WithoutAdIdSupport (= 10.16.0)
+  - GoogleAppMeasurement/AdIdSupport (10.18.0):
+    - GoogleAppMeasurement/WithoutAdIdSupport (= 10.18.0)
     - GoogleUtilities/AppDelegateSwizzler (~> 7.11)
     - GoogleUtilities/MethodSwizzler (~> 7.11)
     - GoogleUtilities/Network (~> 7.11)
     - "GoogleUtilities/NSData+zlib (~> 7.11)"
     - nanopb (< 2.30910.0, >= 2.30908.0)
-  - GoogleAppMeasurement/WithoutAdIdSupport (10.16.0):
+  - GoogleAppMeasurement/WithoutAdIdSupport (10.18.0):
     - GoogleUtilities/AppDelegateSwizzler (~> 7.11)
     - GoogleUtilities/MethodSwizzler (~> 7.11)
     - GoogleUtilities/Network (~> 7.11)
     - "GoogleUtilities/NSData+zlib (~> 7.11)"
     - nanopb (< 2.30910.0, >= 2.30908.0)
-  - GoogleUtilities/AppDelegateSwizzler (7.11.5):
+  - GoogleUtilities/AppDelegateSwizzler (7.12.0):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
     - GoogleUtilities/Network
-  - GoogleUtilities/Environment (7.11.5):
+  - GoogleUtilities/Environment (7.12.0):
     - PromisesObjC (< 3.0, >= 1.2)
-  - GoogleUtilities/Logger (7.11.5):
+  - GoogleUtilities/Logger (7.12.0):
     - GoogleUtilities/Environment
-  - GoogleUtilities/MethodSwizzler (7.11.5):
+  - GoogleUtilities/MethodSwizzler (7.12.0):
     - GoogleUtilities/Logger
-  - GoogleUtilities/Network (7.11.5):
+  - GoogleUtilities/Network (7.12.0):
     - GoogleUtilities/Logger
     - "GoogleUtilities/NSData+zlib"
     - GoogleUtilities/Reachability
-  - "GoogleUtilities/NSData+zlib (7.11.5)"
-  - GoogleUtilities/Reachability (7.11.5):
+  - "GoogleUtilities/NSData+zlib (7.12.0)"
+  - GoogleUtilities/Reachability (7.12.0):
     - GoogleUtilities/Logger
-  - GoogleUtilities/UserDefaults (7.11.5):
+  - GoogleUtilities/UserDefaults (7.12.0):
     - GoogleUtilities/Logger
   - IHProgressHUD (0.1.4)
   - KRActivityIndicatorView (3.0.7)
   - KRProgressHUD (3.4.7):
     - KRActivityIndicatorView (= 3.0.7)
-  - nanopb (2.30909.0):
-    - nanopb/decode (= 2.30909.0)
-    - nanopb/encode (= 2.30909.0)
-  - nanopb/decode (2.30909.0)
-  - nanopb/encode (2.30909.0)
+  - nanopb (2.30909.1):
+    - nanopb/decode (= 2.30909.1)
+    - nanopb/encode (= 2.30909.1)
+  - nanopb/decode (2.30909.1)
+  - nanopb/encode (2.30909.1)
+  - ProgressHUD (14.1.0)
   - PromisesObjC (2.3.1)
   - QRCode (15.0.0):
     - SwiftImageReadWrite (~> 1.1.6)
     - SwiftQRCodeGenerator
   - RSBarcodes_Swift (5.2.0)
-  - SVProgressHUD (2.2.5)
+  - SVProgressHUD (2.3.1):
+    - SVProgressHUD/Core (= 2.3.1)
+  - SVProgressHUD/Core (2.3.1)
   - SwiftImageReadWrite (1.1.6)
   - SwiftQRCodeGenerator (1.0.3)
   - SwiftyStoreKit (0.16.1)
@@ -112,6 +115,7 @@ DEPENDENCIES:
   - Firebase/Analytics
   - IHProgressHUD
   - KRProgressHUD
+  - ProgressHUD
   - QRCode (from `https://github.com/dagronf/qrcode.git`, tag `15.0.0`)
   - RSBarcodes_Swift
   - SVProgressHUD
@@ -136,6 +140,7 @@ SPEC REPOS:
     - KRActivityIndicatorView
     - KRProgressHUD
     - nanopb
+    - ProgressHUD
     - PromisesObjC
     - RSBarcodes_Swift
     - SVProgressHUD
@@ -164,26 +169,27 @@ SPEC CHECKSUMS:
   EAN13BarcodeGenerator: 8b7c4746c25c2a42abd0ec22a669292dc82730f8
   EANBarcodeGenerator: 61083e912254454e374d7ad88876970f9e21b942
   EFQRCode: ac22e003a6aa09ec59ec48776c3560c024c95ba3
-  Firebase: 25899099b77d255a636e3579c3d9dce10ec150d5
-  FirebaseAnalytics: 7b41efc4eba5ff841cc94d5994b5f339361258f4
-  FirebaseCore: 65a801af84cca84361ef9eac3fd868656968a53b
-  FirebaseCoreInternal: 26233f705cc4531236818a07ac84d20c333e505a
-  FirebaseInstallations: b822f91a61f7d1ba763e5ccc9d4f2e6f2ed3b3ee
-  GoogleAppMeasurement: 079d7632810e9d9704a99932547ba1554acc4342
-  GoogleUtilities: 13e2c67ede716b8741c7989e26893d151b2b2084
+  Firebase: 414ad272f8d02dfbf12662a9d43f4bba9bec2a06
+  FirebaseAnalytics: 4d310b35c48eaa4a058ddc04bdca6bdb5dc0fe80
+  FirebaseCore: 2322423314d92f946219c8791674d2f3345b598f
+  FirebaseCoreInternal: 8eb002e564b533bdcf1ba011f33f2b5c10e2ed4a
+  FirebaseInstallations: e842042ec6ac1fd2e37d7706363ebe7f662afea4
+  GoogleAppMeasurement: 70ce9aa438cff1cfb31ea3e660bcc67734cb716e
+  GoogleUtilities: 0759d1a57ebb953965c2dfe0ba4c82e95ccc2e34
   IHProgressHUD: a01846bfbb581c761c79747c67b08387c3bdfae3
   KRActivityIndicatorView: ad69e89c4ce40c986cf580595be4829dcad0e35a
   KRProgressHUD: a248f0bc6c9c2aed40a37b76e03ffecc7f85c887
-  nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
+  nanopb: d4d75c12cd1316f4a64e3c6963f879ecd4b5e0d5
+  ProgressHUD: c4a55f108815c46a6bf082407d2f806840b7a869
   PromisesObjC: c50d2056b5253dadbd6c2bea79b0674bd5a52fa4
   QRCode: eabf9cbb131730ad02102f2d7152b348d8c1e31d
   RSBarcodes_Swift: 416d11923d8dfff0e038a853d727d6c8254cb527
-  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SVProgressHUD: 4837c74bdfe2e51e8821c397825996a8d7de6e22
   SwiftImageReadWrite: 3508ec60fea50876964055b63558fdd02f132ba3
   SwiftQRCodeGenerator: c5cdef1603699784b07af0fd3cc1c2f45ac26ada
   SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
   ZXingObjC: 8898711ab495761b2dbbdec76d90164a6d7e14c5
 
-PODFILE CHECKSUM: 0268e918700c0cabf40c06301d731ca1d17e18fe
+PODFILE CHECKSUM: e5d60c2bf2a05f4cf32537806e555d1902ebb125
 
-COCOAPODS: 1.13.0
+COCOAPODS: 1.14.2

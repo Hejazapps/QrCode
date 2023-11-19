@@ -8,7 +8,14 @@
 
 
 import SystemConfiguration
+import SwiftyStoreKit
 import UIKit
+
+
+var weeklyPrice = "$2.99/week"
+var monthlyPrice = "Try 3-days for free, then $5.99/Year"
+var yearlyPrice = "Try 3-days for free, then $39.99/Year"
+
 
 
 var tabBarUnSelectedColor = UIColor(red: 103.0/255.0, green: 175.0/255.0, blue: 255.0/255.0, alpha: 1)
@@ -595,6 +602,44 @@ extension NSObject: Utilities {
         }
         else {
             return .notReachable
+        }
+    }
+}
+
+
+func retriveProduct()  {
+    SwiftyStoreKit.retrieveProductsInfo([PoohWisdomProducts.yearlySub,PoohWisdomProducts.weeklySub,PoohWisdomProducts.monthlySub]) { result in
+        result.retrievedProducts.forEach { product in
+            
+            
+            
+            if product.productIdentifier.elementsEqual(PoohWisdomProducts.weeklySub){
+                weeklyPrice =  "\(product.localizedPrice ?? "$3.99")/Week"
+                
+            }
+            else if product.productIdentifier.elementsEqual(PoohWisdomProducts.monthlySub){
+                var mama  = "Try \(3) for free, then "
+                var kikos =  "\(product.localizedPrice ?? "10.99")/Year"
+                yearlyPrice = mama + kikos
+                
+            }
+            
+            else if product.productIdentifier.elementsEqual(PoohWisdomProducts.yearlySub){
+                
+                if let tril = product.introductoryPrice?.localizedSubscriptionPeriod{
+                    let day = tril.replacingOccurrences(of: " ", with: "-")
+                    var mama  = "Try \(day) for free, then "
+                    var kikos =  "\(product.localizedPrice ?? "$28.99")/Year"
+                    yearlyPrice = mama + kikos
+                    
+                    
+                    
+                }else{
+                    
+                }
+                
+                
+            }
         }
     }
 }

@@ -42,5 +42,6 @@ end
   pod "KRProgressHUD"
   pod 'ZXingObjC', :git => 'https://github.com/zxingify/zxingify-objc'
   pod 'Firebase/Analytics'
+  pod 'ProgressHUD'
 
 end
