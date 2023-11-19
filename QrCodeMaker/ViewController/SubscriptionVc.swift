@@ -123,7 +123,8 @@ class SubscriptionVc: UIViewController,UIScrollViewDelegate {
        
         DispatchQueue.main.async{
             
-
+            ProgressHUD.animate("Purchasing...", interaction: false)
+            
         }
         
         var productId =
