@@ -174,6 +174,9 @@ class DBmanager: NSObject {
                 sqlite3_close(db)
             }
             
+            print("\(indexPath) testP  \(mutableArray.count)")
+            
+            
             completion(mutableArray)
        }
     }

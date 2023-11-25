@@ -70,6 +70,8 @@ class FolderVc: UIViewController {
     }
     
     func sendData() {
+        
+        print("murad")
         DBmanager.shared.getFolderElements(folderid: "\(currentIndexFolder)") { [weak self] value in
             guard let self else {
                 print("Can't make self strong!")

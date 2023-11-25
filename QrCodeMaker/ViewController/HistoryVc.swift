@@ -305,6 +305,14 @@ class HistoryVc: UIViewController {
                 return
             }
             
+            databaseArray.removeAll()
+            
+            for item in value {
+                databaseArray.append(item)
+            }
+            
+            print("createBtn22  \(value.count)")
+            print("createBtn2  \(databaseArray.count)")
             databaseArray = value
             filterArray = databaseArray
             
@@ -525,6 +533,7 @@ class HistoryVc: UIViewController {
     
     @IBAction func gotoCreatedBtn(_ sender: Any) {
         self.updateAll()
+       
         
         currentIndexPath = "2"
         Store.sharedInstance.currentIndexPath = currentIndexPath
@@ -534,8 +543,20 @@ class HistoryVc: UIViewController {
                 return
             }
             
-            databaseArray = value
+            
+            databaseArray.removeAll()
+            
+            for item in value {
+                databaseArray.append(item)
+            }
+            
+            
+            print("createBtn1  \(value.count)")
+            
+            
             filterArray = databaseArray
+            
+            print("createBtn11  \(databaseArray.count)")
             
             DispatchQueue.main.async { [weak self] in
                 guard let self else {
