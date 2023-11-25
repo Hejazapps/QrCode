@@ -176,65 +176,64 @@ class DBmanager: NSObject {
             
             completion(mutableArray)
        }
-       
-       
-        func getFolderElements(folderid: String, completion: @escaping ([DataInformation]) -> Void) {
-           queue.async { [weak self] in
-               guard let self else {
-                   print("Can't make self strong!")
-                   return
-               }
-               
-               var mutableArray: [DataInformation] = []
-               var queryStatement: OpaquePointer? = nil
-               
-               let stmt =  "SELECT id,Text,indexPath,codeType,position,shape,logo,folderid FROM record  where folderid = ('\(folderid)') order by id DESC"
-               if (sqlite3_open(DBpath, &db)==SQLITE_OK)
-               {
-                   
-                   if sqlite3_prepare_v2(db, stmt, -1, &queryStatement, nil) == SQLITE_OK {
-                       
-                       while (sqlite3_step(queryStatement) == SQLITE_ROW){
-                           
-                           let obj : DataInformation = DataInformation()
-                           
-                           let id = sqlite3_column_text(queryStatement, 0)
-                           let Text =  sqlite3_column_text(queryStatement, 1)
-                           let indexPath =  sqlite3_column_text(queryStatement, 2)
-                           let codeType =  sqlite3_column_text(queryStatement, 3)
-                           let position =  sqlite3_column_text(queryStatement, 4)
-                           let shape =  sqlite3_column_text(queryStatement, 5)
-                           let logo =  sqlite3_column_text(queryStatement, 6)
-                           let folderid =  sqlite3_column_text(queryStatement, 7)
-                           
-                           let str = String(cString: id!)
-                           let str1 = String(cString: Text!)
-                           let str2 = String(cString: indexPath!)
-                           let str3 = String(cString: codeType!)
-                           let str4 = String(cString: position!)
-                           let str5 = String(cString: shape!)
-                           let str6 = String(cString: logo!)
-                           let str7 = String(cString: folderid!)
-                           
-                           obj.id = str
-                           obj.Text = str1
-                           obj.indexPath = str2
-                           obj.codeType =  str3
-                           obj.position =  str4
-                           obj.shape =  str5
-                           obj.logo =  str6
-                           obj.folderid = str7
-                           mutableArray .append(obj)
-                       }
-                       
-                   }
-                   sqlite3_finalize(queryStatement)
-                   sqlite3_close(db)
-               }
-               
-               completion(mutableArray)
+    }
+    
+    func getFolderElements(folderid: String, completion: @escaping ([DataInformation]) -> Void) {
+       queue.async { [weak self] in
+           guard let self else {
+               print("Can't make self strong!")
+               return
            }
-        }
+           
+           var mutableArray: [DataInformation] = []
+           var queryStatement: OpaquePointer? = nil
+           
+           let stmt =  "SELECT id,Text,indexPath,codeType,position,shape,logo,folderid FROM record  where folderid = ('\(folderid)') order by id DESC"
+           if (sqlite3_open(DBpath, &db)==SQLITE_OK)
+           {
+               
+               if sqlite3_prepare_v2(db, stmt, -1, &queryStatement, nil) == SQLITE_OK {
+                   
+                   while (sqlite3_step(queryStatement) == SQLITE_ROW){
+                       
+                       let obj : DataInformation = DataInformation()
+                       
+                       let id = sqlite3_column_text(queryStatement, 0)
+                       let Text =  sqlite3_column_text(queryStatement, 1)
+                       let indexPath =  sqlite3_column_text(queryStatement, 2)
+                       let codeType =  sqlite3_column_text(queryStatement, 3)
+                       let position =  sqlite3_column_text(queryStatement, 4)
+                       let shape =  sqlite3_column_text(queryStatement, 5)
+                       let logo =  sqlite3_column_text(queryStatement, 6)
+                       let folderid =  sqlite3_column_text(queryStatement, 7)
+                       
+                       let str = String(cString: id!)
+                       let str1 = String(cString: Text!)
+                       let str2 = String(cString: indexPath!)
+                       let str3 = String(cString: codeType!)
+                       let str4 = String(cString: position!)
+                       let str5 = String(cString: shape!)
+                       let str6 = String(cString: logo!)
+                       let str7 = String(cString: folderid!)
+                       
+                       obj.id = str
+                       obj.Text = str1
+                       obj.indexPath = str2
+                       obj.codeType =  str3
+                       obj.position =  str4
+                       obj.shape =  str5
+                       obj.logo =  str6
+                       obj.folderid = str7
+                       mutableArray .append(obj)
+                   }
+                   
+               }
+               sqlite3_finalize(queryStatement)
+               sqlite3_close(db)
+           }
+           
+           completion(mutableArray)
+       }
     }
     
     func getFolderInfo(completion: @escaping ([DataInformation]) -> Void) {

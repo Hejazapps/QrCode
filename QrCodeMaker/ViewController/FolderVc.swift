@@ -42,11 +42,25 @@ class FolderVc: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        folderArray = DBmanager.shared.getFolderInfo()
-        filterArray = folderArray
-        folderTableView.reloadData()
-        //DBmanager.shared.initDB()
         
+        DBmanager.shared.getFolderInfo() { [weak self] value in
+            guard let self else {
+                print("Can't make self strong!")
+                return
+            }
+            
+            folderArray = value
+            filterArray = folderArray
+            
+            DispatchQueue.main.async { [weak self] in
+                guard let self else {
+                    print("Can't make self strong!")
+                    return
+                }
+                
+                folderTableView.reloadData()
+            }
+        }
     }
     
     
@@ -56,16 +70,28 @@ class FolderVc: UIViewController {
     }
     
     func sendData() {
-        let ar = DBmanager.shared.getFolderElements(folderid: "\(currentIndexFolder)")
-        
-        
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "FolderDetailVc") as! FolderDetailVc
-        vc.databaseArray = ar
-        vc.modalPresentationStyle = .fullScreen
-        vc.folderName = currentFolderName
-        vc.folderId = "\(currentIndexFolder)"
-        UIApplication.topMostViewController?.present(vc, animated: true, completion: {
-        })
+        DBmanager.shared.getFolderElements(folderid: "\(currentIndexFolder)") { [weak self] value in
+            guard let self else {
+                print("Can't make self strong!")
+                return
+            }
+            
+            let ar = value
+            
+            DispatchQueue.main.async { [weak self] in
+                guard let self else {
+                    print("Can't make self strong!")
+                    return
+                }
+                
+                let vc = storyboard?.instantiateViewController(withIdentifier: "FolderDetailVc") as! FolderDetailVc
+                vc.databaseArray = ar
+                vc.modalPresentationStyle = .fullScreen
+                vc.folderName = currentFolderName
+                vc.folderId = "\(currentIndexFolder)"
+                UIApplication.topMostViewController?.present(vc, animated: true, completion: nil)
+            }
+        }
     }
     
     
@@ -257,10 +283,26 @@ extension FolderVc: UISearchBarDelegate{
         }
         if(searchText.count == 0)
         {
-            folderArray = DBmanager.shared.getFolderInfo()
-            filterArray = folderArray
-            
+            DBmanager.shared.getFolderInfo() { [weak self] value in
+                guard let self else {
+                    print("Can't make self strong!")
+                    return
+                }
+                
+                folderArray = value
+                filterArray = folderArray
+                
+                DispatchQueue.main.async { [weak self] in
+                    guard let self else {
+                        print("Can't make self strong!")
+                        return
+                    }
+                    
+                    folderTableView.reloadData()
+                }
+            }
         }
+        
         folderTableView.reloadData()
         
     }

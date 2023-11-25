@@ -117,7 +117,6 @@ public class ScannerVC: UIViewController {
     override public func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         KRProgressHUD.dismiss()
-        //DBmanager.shared.initDB()
         
         self.checkCameraAccess()
         gotosettings.layer.cornerRadius = 15.0

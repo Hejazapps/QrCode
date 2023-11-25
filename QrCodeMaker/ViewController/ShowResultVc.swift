@@ -619,52 +619,52 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
             }
         }
         
-        var id = DBmanager.shared.getMaxIdForRecord()
-        
-        print(idF)
-        if idF.count > 0 {
-            id  = Int(idF) ?? 0
-        }
-        
-        
-        let cfcpArray = createDataModelArray.map{ $0.dictionaryRepresentation}
-        UserDefaults.standard.set(cfcpArray, forKey: "array\(id)")
-        
-        
-        let fileName = "Image\(id)"
-        
-        
-        
-        if isfromQr {
-            saveImageInDocumentDirectory(image: imv.image!, fileName: fileName)
-        }
-        else {
-            if Store.sharedInstance.shouldShowLabel {
-                
-                
+        DBmanager.shared.getMaxIdForRecord() { [weak self] id in
+            guard let self else {
+                print("Can't make self strong!")
+                return
             }
-            else {
+            var id = id
+            
+            print(idF)
+            if idF.count > 0 {
+                id  = Int(idF) ?? 0
+            }
+            
+            
+            let cfcpArray = createDataModelArray.map{ $0.dictionaryRepresentation}
+            UserDefaults.standard.set(cfcpArray, forKey: "array\(id)")
+            
+            let fileName = "Image\(id)"
+            
+            if isfromQr {
                 saveImageInDocumentDirectory(image: imv.image!, fileName: fileName)
             }
+            else {
+                if Store.sharedInstance.shouldShowLabel {
+                    
+                }
+                else {
+                    saveImageInDocumentDirectory(image: imv.image!, fileName: fileName)
+                }
+            }
+            
+            var stringValue = "colora\(id)"
+            var stringValue1 = "colorb\(id)"
+            
+            UserDefaults.standard.set(colora, forKey: stringValue)
+            UserDefaults.standard.set(colorb, forKey: stringValue1)
+            
+            if let v = logo1 {
+                guard let data = v.jpegData(compressionQuality: 1.0) else { return }
+                let encoded = try! PropertyListEncoder().encode(data)
+                UserDefaults.standard.set(encoded, forKey: "logo\(id)")
+            }
         }
         
-        
-        
-        var stringValue = "colora\(id)"
-        var stringValue1 = "colorb\(id)"
-        
-        UserDefaults.standard.set(colora, forKey: stringValue)
-        UserDefaults.standard.set(colorb, forKey: stringValue1)
-        
-        
-        
-        if let v = logo1 {
-            guard let data = v.jpegData(compressionQuality: 1.0) else { return }
-            let encoded = try! PropertyListEncoder().encode(data)
-            UserDefaults.standard.set(encoded, forKey: "logo\(id)")
-        }
         
     }
+    
     @IBAction func gotoSve(_ sender: Any) {
         
         
@@ -725,8 +725,6 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        
-        //DBmanager.shared.initDB()
         DispatchQueue.main.async {
             KRProgressHUD.dismiss()
         }

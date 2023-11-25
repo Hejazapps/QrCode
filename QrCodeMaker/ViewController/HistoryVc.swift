@@ -92,14 +92,27 @@ class HistoryVc: UIViewController {
         
       
         
-        databaseArray = DBmanager.shared.getRecordInfo(indexPath: currentIndexPath)
-        tableView.reloadData()
+        DBmanager.shared.getRecordInfo(indexPath: currentIndexPath) { [weak self] value in
+            guard let self else {
+                print("Can't make self strong!")
+                return
+            }
+            
+            databaseArray = value
+            
+            DispatchQueue.main.async { [weak self] in
+                guard let self else {
+                    print("Can't make self strong!")
+                    return
+                }
+                
+                tableView.reloadData()
+            }
+        }
+        
+        
         topView.roundCorners([.bottomRight, .bottomLeft], radius: 10)
         NotificationCenter.default.addObserver(self, selector:#selector(reloadData2(notification:)), name:NSNotification.Name(rawValue: "delete"), object: nil)
-        
-        
-        
-        
         
         let keyboardToolbar = UIToolbar()
         keyboardToolbar.sizeToFit()
@@ -112,7 +125,25 @@ class HistoryVc: UIViewController {
     
     func updateAll () {
         searchActive =  false
-        self.databaseArray = DBmanager.shared.getRecordInfo(indexPath: currentIndexPath)
+        
+        DBmanager.shared.getRecordInfo(indexPath: currentIndexPath) { [weak self] value in
+            guard let self else {
+                print("Can't make self strong!")
+                return
+            }
+            
+            databaseArray = value
+            
+            DispatchQueue.main.async { [weak self] in
+                guard let self else {
+                    print("Can't make self strong!")
+                    return
+                }
+                
+                historyTableView.reloadData()
+            }
+        }
+        
         searchbar.showsCancelButton = false
         if #available(iOS 13.0, *) {
             searchbar.searchTextField.resignFirstResponder()
@@ -120,7 +151,6 @@ class HistoryVc: UIViewController {
             searchbar.textField?.resignFirstResponder()
         }
         searchbar.text = ""
-        self.historyTableView.reloadData()
         bottomSpacetableView.constant = 0
     }
     
@@ -144,10 +174,23 @@ class HistoryVc: UIViewController {
     @objc func reloadData2(notification: NSNotification) {
         
         if notification.name == NSNotification.Name(rawValue: "delete"){
-            
-            databaseArray = DBmanager.shared.getRecordInfo(indexPath: currentIndexPath)
-            tableView.reloadData()
-            
+            DBmanager.shared.getRecordInfo(indexPath: currentIndexPath) { [weak self] value in
+                guard let self else {
+                    print("Can't make self strong!")
+                    return
+                }
+                
+                databaseArray = value
+                
+                DispatchQueue.main.async { [weak self] in
+                    guard let self else {
+                        print("Can't make self strong!")
+                        return
+                    }
+                    
+                    tableView.reloadData()
+                }
+            }
         }
         
     }
@@ -188,26 +231,62 @@ class HistoryVc: UIViewController {
             noScanLabel.text = "No created code Yet"
             self.gotoCreatedBtn(AnyObject.self)
         }
-        databaseArray = DBmanager.shared.getRecordInfo(indexPath: currentIndexPath)
-        folderArray = DBmanager.shared.getFolderInfo()
         
-        
-        if databaseArray.count < 1 {
-            topView1.isHidden = false
-        } else {
-            topView1.isHidden = true
+        DBmanager.shared.getRecordInfo(indexPath: currentIndexPath) { [weak self] value in
+            guard let self else {
+                print("Can't make self strong!")
+                return
+            }
+            
+            databaseArray = value
+            filterArray = databaseArray
+            
+            DispatchQueue.main.async { [weak self] in
+                guard let self else {
+                    print("Can't make self strong!")
+                    return
+                }
+                
+                if databaseArray.count < 1 {
+                    topView1.isHidden = false
+                } else {
+                    topView1.isHidden = true
+                }
+                
+                tableView.reloadData()
+                collectionViewForFolder.reloadData()
+            }
         }
         
-        if folderArray.count < 1 {
-            heightForFolderView.constant = 0
+        DBmanager.shared.getFolderInfo() { [weak self] value in
+            guard let self else {
+                print("Can't make self strong!")
+                return
+            }
+            
+            folderArray = value
+            
+            DispatchQueue.main.async { [weak self] in
+                guard let self else {
+                    print("Can't make self strong!")
+                    return
+                }
+                
+                if folderArray.count < 1 {
+                    heightForFolderView.constant = 0
+                }
+                else {
+                    heightForFolderView.constant = 70
+                }
+                
+                tableView.reloadData()
+                collectionViewForFolder.reloadData()
+            }
         }
-        else {
-            heightForFolderView.constant = 70
-        }
-        tableView.reloadData()
-        collectionViewForFolder.reloadData()
+//        databaseArray = DBmanager.shared.getRecordInfo(indexPath: currentIndexPath)
+//        folderArray = DBmanager.shared.getFolderInfo()
+        
         Store.sharedInstance.shouldShowHistoryPage = false
-        filterArray = databaseArray
         
         editBtn.isHidden = false
         print("asche")
@@ -219,14 +298,31 @@ class HistoryVc: UIViewController {
         scannedLabel.textColor = UIColor.white
         currentIndexPath = "1"
         Store.sharedInstance.currentIndexPath = currentIndexPath
-        databaseArray = DBmanager.shared.getRecordInfo(indexPath: currentIndexPath)
-        tableView.reloadData()
         
-        if databaseArray.count < 1 {
-            topView1.isHidden = false
-        }
-        else {
-            topView1.isHidden = true
+        DBmanager.shared.getRecordInfo(indexPath: currentIndexPath) { [weak self] value in
+            guard let self else {
+                print("Can't make self strong!")
+                return
+            }
+            
+            databaseArray = value
+            filterArray = databaseArray
+            
+            DispatchQueue.main.async { [weak self] in
+                guard let self else {
+                    print("Can't make self strong!")
+                    return
+                }
+                
+                if databaseArray.count < 1 {
+                    topView1.isHidden = false
+                }
+                else {
+                    topView1.isHidden = true
+                }
+                
+                tableView.reloadData()
+            }
         }
         
         scanLabel.text = "Scan"
@@ -239,9 +335,6 @@ class HistoryVc: UIViewController {
         }, completion: {_ in
             self.createdLabel.textColor  =   UIColor(red: 173.0/255.0, green: 173.0/255.0, blue: 173.0/255.0, alpha: 1.0)
         })
-        
-        filterArray = databaseArray
-        
     }
     
     func goResultVc(string: String,id:String,indexPath:String,codeType:String,position:String,shape:String,logo:String) {
@@ -315,8 +408,15 @@ class HistoryVc: UIViewController {
             
         }
         
-        //DBmanager.shared.initDB()
-        folderArray = DBmanager.shared.getFolderInfo()
+        DBmanager.shared.getFolderInfo() { [weak self] value in
+            guard let self else {
+                print("Can't make self strong!")
+                return
+            }
+            
+            folderArray = value
+        }
+        
         let alert = UIAlertController(title: "", message: "Enter Folder Name", preferredStyle: .alert)
         
         //2. Add the text field. You can configure it however you need.
@@ -339,45 +439,53 @@ class HistoryVc: UIViewController {
                 }))
                 self.present(refreshAlert, animated: true, completion: nil)
             } else {
-                let  ar = DBmanager.shared.checkUniqueData(name: (textField?.text)!)
-                
-                
-                if (textField?.text!.count)! < 1 {
+                DBmanager.shared.checkUniqueData(name: (textField?.text)!) { [weak self] ar in
+                    guard let self else {
+                        print("Can't make self strong!")
+                        return
+                    }
                     
-                    let refreshAlert = UIAlertController(title: "Alert", message: "Folder name is empty", preferredStyle: UIAlertController.Style.alert)
-                    
-                    refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
-                        self.bottomSpacetableView.constant = 0
-                        self.editBtn.isHidden = false
-                    }))
-                    self.present(refreshAlert, animated: true, completion: nil)
-                    
-                    return
-                    
-                }
-                
-                if ar.count > 0 {
-                    
-                    let refreshAlert = UIAlertController(title: "Alert", message: "Folder name exists Already", preferredStyle: UIAlertController.Style.alert)
-                    
-                    refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
-                        print("Handle Ok logic here")
-                        self.bottomSpacetableView.constant = 0
-                    }))
-                    self.present(refreshAlert, animated: true, completion: nil)
-                    return
-                    
+                    if (textField?.text!.count)! < 1 {
+                        
+                        let refreshAlert = UIAlertController(title: "Alert", message: "Folder name is empty", preferredStyle: UIAlertController.Style.alert)
+                        
+                        refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { [weak self] action in
+                            guard let self else {
+                                print("Can't make self strong!")
+                                return
+                            }
+                            bottomSpacetableView.constant = 0
+                            editBtn.isHidden = false
+                        }))
+                        present(refreshAlert, animated: true, completion: nil)
+                        currentIndexFolder = -1
+                        
+                        return
+                    }
                 }
                 
                 
-                
-                currentIndexFolder = -1
                 DBmanager.shared.insertIntoFolder(name: (textField?.text)!)
-                //  DBmanager.shared.initDB()
-                self.folderArray = DBmanager.shared.getFolderInfo()
+                
+                DBmanager.shared.getFolderInfo() { [weak self] value in
+                    guard let self else {
+                        print("Can't make self strong!")
+                        return
+                    }
+                    
+                    folderArray = value
+                    
+                    DispatchQueue.main.async { [weak self] in
+                        guard let self else {
+                            print("Can't make self strong!")
+                            return
+                        }
+                        
+                        collectionViewForFolder.reloadData()
+                    }
+                }
                 
                 self.heightForFolderView.constant = 70.0
-                self.collectionViewForFolder.reloadData()
                 self.bottomSpacetableView.constant = 0
                 self.editBtn.isHidden = false
             }

@@ -85,7 +85,6 @@ class CustomizeDesignViewController: UIViewController, UIColorPickerViewControll
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //DBmanager.shared.initDB()
         setNeedsStatusBarAppearanceUpdate()
     }
     

@@ -37,7 +37,6 @@ class ButtonView: UIView {
         var index  = 1
         var employeeArray:[Dictionary<String, String>] =  Array()
         for item in selectedIndexList {
-            
             DBmanager.shared.getFileData(id: "\(item)") { value in
                 if let value {
                     print("mama = \(value)")
@@ -50,21 +49,11 @@ class ButtonView: UIView {
                     
                 }
             }
-            
-//            if let value = DBmanager.shared.getFileData(id: "\(item)") {
-//                print("mama = \(value)")
-//                
-//                var dct = Dictionary<String, String>()
-//                dct.updateValue("\(index)", forKey: "CONTENTSERIAl")
-//                dct.updateValue("\(value)", forKey: "CODECONTENT")
-//                employeeArray.append(dct)
-//                index = index + 1
-//                
-//            }
         }
         
-        self.createCSV(from: employeeArray)
-        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            self.createCSV(from: employeeArray)
+        }
     }
     
     func shareImage() {
@@ -93,31 +82,33 @@ class ButtonView: UIView {
         var text = ""
         var employeeArray:[Dictionary<String, String>] =  Array()
         for item in selectedIndexList {
-            
-            if let value = DBmanager.shared.getFileData(id: "\(item)") {
-                text = text + value
-                text = text + "\n\n"
-                
+            DBmanager.shared.getFileData(id: "\(item)") { value in
+                if let value {
+                    text = text + value
+                    text = text + "\n\n"
+                    
+                }
             }
         }
         
-        let fileManager = FileManager.default
-        do {
-            let path = try fileManager.url(for: .documentDirectory, in: .allDomainsMask, appropriateFor: nil, create: false)
-            print("PATH: \(path)")
-            let fileURL = path.appendingPathComponent("doc.txt")
-            try text.write(to: fileURL, atomically: true, encoding: .utf8)
-            let objectsToShare = [fileURL]
-            let activityViewController = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
-            
-            UIApplication.topMostViewController?.present(activityViewController, animated: true, completion: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            let fileManager = FileManager.default
+            do {
+                let path = try fileManager.url(for: .documentDirectory, in: .allDomainsMask, appropriateFor: nil, create: false)
+                print("PATH: \(path)")
+                let fileURL = path.appendingPathComponent("doc.txt")
+                try text.write(to: fileURL, atomically: true, encoding: .utf8)
+                let objectsToShare = [fileURL]
+                let activityViewController = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
                 
-            })
-            
-        } catch {
-            print("error creating file")
+                UIApplication.topMostViewController?.present(activityViewController, animated: true, completion: {
+                    
+                })
+                
+            } catch {
+                print("error creating file")
+            }
         }
-        
     }
     
     

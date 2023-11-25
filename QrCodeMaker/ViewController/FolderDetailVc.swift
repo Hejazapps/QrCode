@@ -103,7 +103,25 @@ class FolderDetailVc: UIViewController {
     
     func updateAll () {
         searchActive =  false
-        databaseArray = DBmanager.shared.getFolderElements(folderid: folderId)
+        //databaseArray = DBmanager.shared.getFolderElements(folderid: folderId)
+        DBmanager.shared.getFolderElements(folderid: folderId) { [weak self] value in
+            guard let self else {
+                print("Can't make self strong!")
+                return
+            }
+            
+            databaseArray = value
+            
+            DispatchQueue.main.async { [weak self] in
+                guard let self else {
+                    print("Can't make self strong!")
+                    return
+                }
+                
+                folderDetailTableView.reloadData()
+            }
+        }
+        
         searchBar.showsCancelButton = false
         if #available(iOS 13.0, *) {
             searchBar.searchTextField.resignFirstResponder()
@@ -111,7 +129,7 @@ class FolderDetailVc: UIViewController {
             searchBar.textField?.resignFirstResponder()
         }
         searchBar.text = ""
-        self.folderDetailTableView.reloadData()
+        
         bottomSpaceTableView.constant = 0
     }
     
@@ -200,12 +218,26 @@ class FolderDetailVc: UIViewController {
     }
     
     func reloadData1() {
-        
-        databaseArray = DBmanager.shared.getFolderElements(folderid: folderId)
-        filterArray = databaseArray
-        folderDetailTableView.reloadData()
-        
+        DBmanager.shared.getFolderElements(folderid: folderId) { [weak self] value in
+            guard let self else {
+                print("Can't make self strong!")
+                return
+            }
+            
+            databaseArray = value
+            filterArray = databaseArray
+            
+            DispatchQueue.main.async { [weak self] in
+                guard let self else {
+                    print("Can't make self strong!")
+                    return
+                }
+                
+                folderDetailTableView.reloadData()
+            }
+        }
     }
+    
     @IBAction func gotoPreviousView(_ sender: Any) {
         self.dismiss(animated: true)
     }
@@ -221,7 +253,7 @@ class FolderDetailVc: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //DBmanager.shared.initDB()
+        
         setNeedsStatusBarAppearanceUpdate()
         Store.sharedInstance.isFromHistory = false
         
@@ -332,7 +364,6 @@ extension FolderDetailVc: UITableViewDelegate,UITableViewDataSource  {
                
                 DBmanager.shared.deleteFile(id: obj.id)
             
-                //DBmanager.shared.initDB()
                 reloadData1()
                 
             }))
@@ -551,14 +582,26 @@ extension FolderDetailVc: UISearchBarDelegate{
         
         if(searchText.count == 0)
         {
-            databaseArray = DBmanager.shared.getFolderElements(folderid: folderId)
-            filterArray = databaseArray
-            
+            //databaseArray = DBmanager.shared.getFolderElements(folderid: folderId)
+            DBmanager.shared.getFolderElements(folderid: folderId) { [weak self] value in
+                guard let self else {
+                    print("Can't make self strong!")
+                    return
+                }
+                
+                databaseArray = value
+                filterArray = databaseArray
+                
+                DispatchQueue.main.async { [weak self] in
+                    guard let self else {
+                        print("Can't make self strong!")
+                        return
+                    }
+                    
+                    folderDetailTableView.reloadData()
+                }
+            }
         }
         self.folderDetailTableView.reloadData()
-        
-        
-        
-        
     }
 }
