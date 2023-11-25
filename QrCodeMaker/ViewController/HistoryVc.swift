@@ -525,7 +525,7 @@ class HistoryVc: UIViewController {
     
     @IBAction func gotoCreatedBtn(_ sender: Any) {
         self.updateAll()
-        DBmanager.shared.initDB()
+        
         currentIndexPath = "2"
         Store.sharedInstance.currentIndexPath = currentIndexPath
         DBmanager.shared.getRecordInfo(indexPath: currentIndexPath) { [weak self] value in

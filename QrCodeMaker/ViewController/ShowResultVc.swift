@@ -588,7 +588,7 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
     
     func saveData() {
         
-        DBmanager.shared.initDB()
+       
         
         if isfromUpdate {
             DBmanager.shared.updateTableData(id: idF, Text: stringValue, position: position1, shape: shape1, logo: currenttypeOfQrBAR)

@@ -348,6 +348,7 @@ class Store: NSObject {
     }
     
     func isActiveSubscription() -> Bool {
+         return true
         
         if Store.sharedInstance.getPurchase() {
             return true
