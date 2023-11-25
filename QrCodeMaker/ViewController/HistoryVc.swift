@@ -439,53 +439,45 @@ class HistoryVc: UIViewController {
                 }))
                 self.present(refreshAlert, animated: true, completion: nil)
             } else {
-                DBmanager.shared.checkUniqueData(name: (textField?.text)!) { [weak self] ar in
-                    guard let self else {
-                        print("Can't make self strong!")
-                        return
-                    }
+                let  ar = DBmanager.shared.checkUniqueData(name: (textField?.text)!)
+                
+                
+                if (textField?.text!.count)! < 1 {
                     
-                    if (textField?.text!.count)! < 1 {
-                        
-                        let refreshAlert = UIAlertController(title: "Alert", message: "Folder name is empty", preferredStyle: UIAlertController.Style.alert)
-                        
-                        refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { [weak self] action in
-                            guard let self else {
-                                print("Can't make self strong!")
-                                return
-                            }
-                            bottomSpacetableView.constant = 0
-                            editBtn.isHidden = false
-                        }))
-                        present(refreshAlert, animated: true, completion: nil)
-                        currentIndexFolder = -1
-                        
-                        return
-                    }
+                    let refreshAlert = UIAlertController(title: "Alert", message: "Folder name is empty", preferredStyle: UIAlertController.Style.alert)
+                    
+                    refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+                        self.bottomSpacetableView.constant = 0
+                        self.editBtn.isHidden = false
+                    }))
+                    self.present(refreshAlert, animated: true, completion: nil)
+                    
+                    return
+                    
+                }
+                
+                if ar.count > 0 {
+                    
+                    let refreshAlert = UIAlertController(title: "Alert", message: "Folder name exists Already", preferredStyle: UIAlertController.Style.alert)
+                    
+                    refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+                        print("Handle Ok logic here")
+                        self.bottomSpacetableView.constant = 0
+                    }))
+                    self.present(refreshAlert, animated: true, completion: nil)
+                    return
+                    
                 }
                 
                 
+                
+                currentIndexFolder = -1
                 DBmanager.shared.insertIntoFolder(name: (textField?.text)!)
-                
-                DBmanager.shared.getFolderInfo() { [weak self] value in
-                    guard let self else {
-                        print("Can't make self strong!")
-                        return
-                    }
-                    
-                    folderArray = value
-                    
-                    DispatchQueue.main.async { [weak self] in
-                        guard let self else {
-                            print("Can't make self strong!")
-                            return
-                        }
-                        
-                        collectionViewForFolder.reloadData()
-                    }
-                }
+                //  DBmanager.shared.initDB()
+                self.folderArray = DBmanager.shared.getFolderInfo()
                 
                 self.heightForFolderView.constant = 70.0
+                self.collectionViewForFolder.reloadData()
                 self.bottomSpacetableView.constant = 0
                 self.editBtn.isHidden = false
             }
