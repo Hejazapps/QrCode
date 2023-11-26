@@ -112,7 +112,7 @@ class HistoryVc: UIViewController {
         
         
         topView.roundCorners([.bottomRight, .bottomLeft], radius: 10)
-        NotificationCenter.default.addObserver(self, selector:#selector(reloadData2(notification:)), name:NSNotification.Name(rawValue: "delete"), object: nil)
+        
         
         let keyboardToolbar = UIToolbar()
         keyboardToolbar.sizeToFit()
@@ -196,6 +196,8 @@ class HistoryVc: UIViewController {
             name: UIResponder.keyboardWillShowNotification,
             object: nil
         )
+        
+        NotificationCenter.default.addObserver(self, selector:#selector(reloadData2(notification:)), name:NSNotification.Name(rawValue: "delete"), object: nil)
         
         
         setNeedsStatusBarAppearanceUpdate()
