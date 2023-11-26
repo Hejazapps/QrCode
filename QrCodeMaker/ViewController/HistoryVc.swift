@@ -229,12 +229,17 @@ class HistoryVc: UIViewController {
                     return
                 }
                 
+                 
+                
                 if databaseArray.count < 1 {
                     topView1.isHidden = false
+                   // print("dhur1 = \(databaseArray.count)")
                 } else {
                     topView1.isHidden = true
+                    //print("dhur2 = \(databaseArray.count)")
                 }
-                print("hi1")
+               
+                
                 tableView.reloadData()
                 collectionViewForFolder.reloadData()
             }

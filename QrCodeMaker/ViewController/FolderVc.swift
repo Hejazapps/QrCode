@@ -136,6 +136,7 @@ class FolderVc: UIViewController {
                 return
             }
             
+            
             for item in selectedIndexList {
                 DBmanager.shared.updateFolderInfo(id: "\(item)", folderid: "\(currentIndexFolder)")
             }
