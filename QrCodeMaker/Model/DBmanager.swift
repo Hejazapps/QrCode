@@ -352,7 +352,7 @@ class DBmanager: NSObject {
     }
     
     
-    func deleteFile(id: String)
+    func deleteFile(id: String, completion: @escaping () -> Void)
     {
         queue.async { [weak self] in
             guard let self else {
@@ -382,6 +382,8 @@ class DBmanager: NSObject {
                  
                 sqlite3_close(db);
             }
+            
+            completion()
         }
     }
 

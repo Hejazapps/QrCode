@@ -151,7 +151,7 @@ class HistoryVc: UIViewController {
     
     
     @objc func reloadData2(notification: NSNotification) {
-        
+        print("reloading after delete")
         if notification.name == NSNotification.Name(rawValue: "delete"){
             DBmanager.shared.getRecordInfo(indexPath: currentIndexPath) { [weak self] value in
                 guard let self else {
@@ -167,7 +167,6 @@ class HistoryVc: UIViewController {
                         return
                     }
                     
-                    print("Hi")
                     tableView.reloadData()
                 }
             }

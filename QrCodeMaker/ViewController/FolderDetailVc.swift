@@ -364,10 +364,9 @@ extension FolderDetailVc: UITableViewDelegate,UITableViewDataSource  {
                     obj = self.filterArray[indexPath.row]
                 }
                
-                DBmanager.shared.deleteFile(id: obj.id)
-            
-                reloadData1()
-                
+                DBmanager.shared.deleteFile(id: obj.id) {
+                    reloadData1()
+                }
             }))
             
             self.present(alert, animated: true)

@@ -233,12 +233,13 @@ class ButtonView: UIView {
         }))
         alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (alert) -> Void in
             for item in selectedIndexList {
-                DBmanager.shared.deleteFile(id: "\(item)")
-                let fileName = "Image\(item)"
-                deleteImage(fileName: fileName)
+                print("deleting file")
+                DBmanager.shared.deleteFile(id: "\(item)") {
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "delete"), object: nil)
+                    let fileName = "Image\(item)"
+                    deleteImage(fileName: fileName)
+                }
             }
-            
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "delete"), object: nil)
         }))
         
         
