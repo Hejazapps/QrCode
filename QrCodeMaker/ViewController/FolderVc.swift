@@ -136,24 +136,24 @@ class FolderVc: UIViewController {
                 return
             }
             
-            
-            for item in selectedIndexList {
-                DBmanager.shared.updateFolderInfo(id: "\(item)", folderid: "\(currentIndexFolder)")
-            }
-            
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "delete"), object: nil)
-            
-            self.dismiss(animated: true) {
+            DBmanager.shared.updateFolderInfoBatch(items: selectedIndexList, folderid: "\(currentIndexFolder)") {
+                selectedIndexList.removeAll()
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "delete"), object: nil)
                 
-                if Store.sharedInstance.isFromHistory {
-                    self.sendData()
+                DispatchQueue.main.async {
+                    self.dismiss(animated: true) {
+                        
+                        if Store.sharedInstance.isFromHistory {
+                            self.sendData()
+                        }
+                        var a = "\(currentIndexFolder)" + "," + currentFolderName
+                        
+                        
+                        let imageDataDict:[String: String] = ["string": a]
+                        
+                        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateFolder"), object: nil, userInfo: imageDataDict)
+                    }
                 }
-                var a = "\(currentIndexFolder)" + "," + currentFolderName
-                
-                
-                let imageDataDict:[String: String] = ["string": a]
-                
-                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateFolder"), object: nil, userInfo: imageDataDict)
             }
         })
         alert.addAction(ok)
