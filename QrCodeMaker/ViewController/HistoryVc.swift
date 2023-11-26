@@ -126,23 +126,7 @@ class HistoryVc: UIViewController {
     func updateAll () {
         searchActive =  false
         
-        DBmanager.shared.getRecordInfo(indexPath: currentIndexPath) { [weak self] value in
-            guard let self else {
-                print("Can't make self strong!")
-                return
-            }
-            
-            databaseArray = value
-            
-            DispatchQueue.main.async { [weak self] in
-                guard let self else {
-                    print("Can't make self strong!")
-                    return
-                }
-                
-                historyTableView.reloadData()
-            }
-        }
+       
         
         searchbar.showsCancelButton = false
         if #available(iOS 13.0, *) {
