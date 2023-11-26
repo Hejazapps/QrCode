@@ -23,22 +23,24 @@ class DBmanager: NSObject {
     private func manageDBLocation () {
         do {
             
-            let bundle = Bundle.main
-            DBpath = bundle.path(forResource: "qrCode", ofType: "sqlite")
-            let newPath:Array=NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
-            let directory:String=newPath[0]
-            let location = (directory as NSString).appendingPathComponent("qrCode.sqlite") as NSString
-            if(FileManager.default.isReadableFile(atPath: DBpath))
-            {
-                
-                try FileManager.default.copyItem(atPath: DBpath as String, toPath: location as String)
+            
+            let fileManager = FileManager.default
+
+            let DBpath = try fileManager
+                .url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+                .appendingPathComponent("qrCode.sqlite")
+                .path
+
+            if !fileManager.fileExists(atPath: DBpath) {
+                let dbResourcePath = Bundle.main.path(forResource: "qrCode", ofType: "sqlite")!
+                try fileManager.copyItem(atPath: dbResourcePath, toPath: DBpath)
             }
-            let fm = FileManager.default
+
             
             var attributes = [FileAttributeKey : Any]()
             attributes[.posixPermissions] = NSNumber(value: 511)
             do {
-                try fm.setAttributes(attributes, ofItemAtPath: DBpath)
+                try fileManager.setAttributes(attributes, ofItemAtPath: DBpath)
             }catch let error {
                 print("Permissions error: ", error)
             }
@@ -58,9 +60,12 @@ class DBmanager: NSObject {
                 return
             }
             
-            let path:Array=NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+            let path:Array=NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.applicationSupportDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
             let directory:String=path[0]
             DBpath = (directory as NSString).appendingPathComponent("qrCode.sqlite")
+            
+            
+            
             
             
             let isSuccess = true
