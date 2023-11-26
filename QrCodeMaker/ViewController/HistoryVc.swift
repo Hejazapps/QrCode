@@ -264,6 +264,7 @@ class HistoryVc: UIViewController {
                 }
                 else {
                     heightForFolderView.constant = 70
+                    topView1.isHidden  = true
                 }
                 
                 print("hi6")
@@ -314,6 +315,10 @@ class HistoryVc: UIViewController {
                     topView1.isHidden = false
                 }
                 else {
+                    topView1.isHidden = true
+                }
+                
+                if folderArray.count > 0 {
                     topView1.isHidden = true
                 }
                 print("hi7")
@@ -562,6 +567,11 @@ class HistoryVc: UIViewController {
                 else {
                     topView1.isHidden = true
                 }
+                
+                if folderArray.count > 0 {
+                    topView1.isHidden = true
+                }
+                
             }
         }
         
