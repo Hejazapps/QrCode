@@ -281,6 +281,7 @@ extension ScannerVC:HeaderViewControllerDelegate{
 extension ScannerVC:CameraViewControllerDelegate{
     
     func didOutput(_ code: String ,type: String) {
+       
         
         print("outpout  = \(code)")
         
@@ -298,6 +299,8 @@ extension ScannerVC:CameraViewControllerDelegate{
                 } else {
                     UIApplication.shared.openURL(url)
                 }
+                
+                cameraViewController.startCapturing()
                 return
             }
         }

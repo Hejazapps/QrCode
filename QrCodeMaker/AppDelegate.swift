@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let screenHeight = UIScreen.main.bounds.height
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
+        DBmanager.shared.initDB()
         
         UISegmentedControl.appearance().selectedSegmentTintColor = UIColor.white
         UISegmentedControl.appearance().backgroundColor =  UIColor.white
@@ -34,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().backgroundColor =  tabBarBackGroundColor
         UITabBar.appearance().unselectedItemTintColor = tabBarUnSelectedColor
         UITabBar.appearance().tintColor = UIColor.white
-        DBmanager.shared.initDB()
+      
         
         IHProgressHUD.setOffsetFromCenter(UIOffset(horizontal:screenWidth/2.0 , vertical: screenHeight/2.0))
         

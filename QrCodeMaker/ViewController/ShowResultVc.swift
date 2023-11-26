@@ -667,7 +667,7 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
     
     @IBAction func gotoSve(_ sender: Any) {
         
-        DBmanager.shared.initDB()
+    
         self.saveData()
         
         
