@@ -105,7 +105,7 @@ class HistoryVc: UIViewController {
                     print("Can't make self strong!")
                     return
                 }
-                
+                print("hi3")
                 tableView.reloadData()
             }
         }
@@ -188,6 +188,7 @@ class HistoryVc: UIViewController {
                         return
                     }
                     
+                    print("Hi")
                     tableView.reloadData()
                 }
             }
@@ -252,7 +253,7 @@ class HistoryVc: UIViewController {
                 } else {
                     topView1.isHidden = true
                 }
-                
+                print("hi1")
                 tableView.reloadData()
                 collectionViewForFolder.reloadData()
             }
@@ -279,6 +280,7 @@ class HistoryVc: UIViewController {
                     heightForFolderView.constant = 70
                 }
                 
+                print("hi6")
                 tableView.reloadData()
                 collectionViewForFolder.reloadData()
             }
@@ -328,7 +330,7 @@ class HistoryVc: UIViewController {
                 else {
                     topView1.isHidden = true
                 }
-                
+                print("hi7")
                 tableView.reloadData()
             }
         }
@@ -398,6 +400,7 @@ class HistoryVc: UIViewController {
         let imageDataDict:[String: Int] = ["image": shouldToggle]
         
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "hide"), object: nil, userInfo: imageDataDict)
+        print("hi4")
         tableView.reloadData()
     }
     
@@ -564,6 +567,7 @@ class HistoryVc: UIViewController {
                     return
                 }
                 
+                print("hi2")
                 tableView.reloadData()
                 
                 if databaseArray.count < 1 {
@@ -627,6 +631,7 @@ class HistoryVc: UIViewController {
         else {
             selectedIndexList.append(obj.id)
         }
+        print("hi5")
         tableView.reloadData()
         //Write button action here
     }
