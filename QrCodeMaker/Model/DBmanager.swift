@@ -416,27 +416,37 @@ class DBmanager: NSObject {
     
     func updateFolderInfo(id: String,folderid:String)
     {
+        let createTable = "UPDATE record SET folderid ='\(folderid)' WHERE id ='\(id)'"
+        
+        if (sqlite3_open(DBpath, &db)==SQLITE_OK)
+        {
+            
+            
+            if sqlite3_exec(db, createTable, nil, nil, nil)  != SQLITE_OK
+                
+            {
+                print("Erro creating table")
+                
+            }
+        }
+        
+        sqlite3_close(db)
+    }
+    
+    func updateFolderInfoBatch(items: [String], folderid: String, completion: @escaping () -> Void) {
         queue.async { [weak self] in
             guard let self else {
                 print("Can't make self strong!")
                 return
             }
             
-            let createTable = "UPDATE record SET folderid ='\(folderid)' WHERE id ='\(id)'"
-            
-            if (sqlite3_open(DBpath, &db)==SQLITE_OK)
-            {
-                
-                
-                if sqlite3_exec(db, createTable, nil, nil, nil)  != SQLITE_OK
-                    
-                {
-                    print("Erro creating table")
-                    
-                }
+            print("folderid: \(folderid)")
+            for item in items {
+                print("item: \(item)")
+                updateFolderInfo(id: item, folderid: folderid)
             }
             
-            sqlite3_close(db)
+            completion()
         }
     }
     
@@ -498,3 +508,4 @@ class DBmanager: NSObject {
         }
     }
 }
+
