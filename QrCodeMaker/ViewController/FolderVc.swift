@@ -70,23 +70,15 @@ class FolderVc: UIViewController {
     }
     
     func sendData() {
+        let `self` = self
         
-        print("murad = \(currentIndexFolder)")
-        DBmanager.shared.getFolderElements(folderid: "\(currentIndexFolder)") { [weak self] value in
-            guard let self else {
-                print("Can't make self strong!")
-                return
-            }
-            
+        DBmanager.shared.getFolderElements(folderid: "\(currentIndexFolder)") { value in
             let ar = value
             
-            DispatchQueue.main.async { [weak self] in
-                guard let self else {
-                    print("Can't make self strong!")
-                    return
-                }
+            print("Presenting folderDetailVC")
+            DispatchQueue.main.async {
                 
-                let vc = storyboard?.instantiateViewController(withIdentifier: "FolderDetailVc") as! FolderDetailVc
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "FolderDetailVc") as! FolderDetailVc
                 vc.databaseArray = ar
                 vc.modalPresentationStyle = .fullScreen
                 vc.folderName = currentFolderName
@@ -138,16 +130,17 @@ class FolderVc: UIViewController {
         
         let alert = UIAlertController(title: "", message: "Do you want to move the selected files to folder", preferredStyle: .alert)
         
-        let ok = UIAlertAction(title: "OK", style: .default, handler: { action in
-            
-            
+        let ok = UIAlertAction(title: "OK", style: .default, handler: { [weak self] action in
+            guard let self else {
+                print("Can't make self strong!")
+                return
+            }
             
             for item in selectedIndexList {
                 DBmanager.shared.updateFolderInfo(id: "\(item)", folderid: "\(currentIndexFolder)")
             }
             
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "delete"), object: nil)
-            
             
             self.dismiss(animated: true) {
                 
@@ -161,10 +154,6 @@ class FolderVc: UIViewController {
                 
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateFolder"), object: nil, userInfo: imageDataDict)
             }
-            
-            
-            
-            
         })
         alert.addAction(ok)
         let cancel = UIAlertAction(title: "Cancel", style: .default, handler: { action in

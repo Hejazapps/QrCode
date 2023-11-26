@@ -147,8 +147,6 @@ class HistoryVc: UIViewController {
         holderView.layer.cornerRadius = 15.0
         scanLabel.layer.cornerRadius = 10.0
         scanLabel.layer.masksToBounds = true
-        
-        
     }
     
     
