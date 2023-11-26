@@ -102,7 +102,7 @@ class FolderDetailVc: UIViewController {
     
     
     func updateAll () {
-        searchActive =  false
+        
         //databaseArray = DBmanager.shared.getFolderElements(folderid: folderId)
         DBmanager.shared.getFolderElements(folderid: folderId) { [weak self] value in
             guard let self else {
@@ -253,7 +253,7 @@ class FolderDetailVc: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        searchActive = false
         setNeedsStatusBarAppearanceUpdate()
         Store.sharedInstance.isFromHistory = false
         
@@ -509,6 +509,7 @@ extension FolderDetailVc: UISearchBarDelegate{
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         editbtn.isHidden = false
+        searchActive = false
         self.updateAll()
         
     }

@@ -124,9 +124,6 @@ class HistoryVc: UIViewController {
     
     
     func updateAll () {
-        searchActive =  false
-        
-       
         
         searchbar.showsCancelButton = false
         if #available(iOS 13.0, *) {
@@ -191,6 +188,7 @@ class HistoryVc: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        searchActive  = false
         Store.sharedInstance.showPickerT = false
         Store.sharedInstance.isFromHistory = true
         
@@ -750,6 +748,7 @@ extension HistoryVc: UITableViewDelegate,UITableViewDataSource  {
         var obj:DataInformation!
         obj = databaseArray[indexPath.row]
         if searchActive {
+            print("dhukse search")
             obj = filterArray[indexPath.row]
         }
         
@@ -833,6 +832,7 @@ extension HistoryVc: UISearchBarDelegate{
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         editBtn.isHidden  = false
+        searchActive = false
         self.updateAll()
         
     }
