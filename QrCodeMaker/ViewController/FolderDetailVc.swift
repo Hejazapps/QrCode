@@ -47,7 +47,7 @@ class FolderDetailVc: UIViewController {
         bottomView.addSubview(myView1)
         
         let imageDataDict:[String: String] = ["": ""]
-        NotificationCenter.default.addObserver(self, selector:#selector(updateName(notification:)), name:NSNotification.Name(rawValue: "updateFolder"), object: nil)
+        
         
         
         searchBar.searchBarStyle = .default
@@ -258,6 +258,8 @@ class FolderDetailVc: UIViewController {
         Store.sharedInstance.isFromHistory = false
         
         NotificationCenter.default.addObserver(self, selector:#selector(reloadData2(notification:)), name:NSNotification.Name(rawValue: "delete"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector:#selector(updateName(notification:)), name:NSNotification.Name(rawValue: "updateFolder"), object: nil)
         
         
     }
