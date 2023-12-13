@@ -17,6 +17,7 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate {
     
     var picker: UIImagePickerController?
     var currentBarCode = ""
+    var alreadySelected = false
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -137,12 +138,22 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate {
     }
     
     
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+     
+    
         
         if Store.sharedInstance.shouldShowHomeScreen {
             self.tabBarController?.selectedIndex = 0
         }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+      
+        print("nosto")
+       
     }
     
     func photoLibraryAvailabilityCheck()
@@ -165,6 +176,7 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate {
     
     func showAlert()
     {
+        alreadySelected = false
         DispatchQueue.main.async {
             let alert = UIAlertController(
                 title: "Photos Access required",
@@ -232,6 +244,7 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate {
     func setBarCode(currentBarCode:String,value:String)
     {
         print("halua1")
+        alreadySelected = false
         if(currentBarCode.count < 1 && !isCodeFound)
         {
             print("halua2")
@@ -459,8 +472,14 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate {
 extension SecondViewController: UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let okImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            
+            if alreadySelected {
+                print("ttouched")
+                return
+            }
             self.selectedImage(selectedImage:okImage)
         }
+        alreadySelected = true
        
         
     }
