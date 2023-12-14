@@ -106,6 +106,7 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
     let currentSegmentindex = 0
     var currentTextViewF:UITextView?
     var currentBrCode  = 0
+    var isFromEvnt = false
     func eventEditViewController(_ controller: EKEventEditViewController, didCompleteWith action: EKEventEditViewAction) {
         
         self.dismissKeyboard()
@@ -371,6 +372,7 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
     }
     
     func btnTag(index: Int) {
+        
         dismissKeyboard()
         inputParemeterArray.removeAll()
         createDataModelArray.removeAll()
@@ -411,6 +413,7 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
             
             
             if (itemName[index] as! String)  == "Event" {
+                isFromEvnt = true
                 self.createDataModelArray.removeAll()
                 self.inputParemeterArray.removeAll()
                 self.addEventToCalendar()
@@ -451,6 +454,7 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
             collectionViewForIcon.reloadData()
         }
         self.dismissKeyboard()
+        isFromEvnt = false
         //self.currentTextView.becomeFirstResponder()
     }
     
@@ -951,7 +955,10 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
     
     @objc func dismissKeyboard() {
         
-        tableView.reloadData()
+        if !isFromEvnt {
+            tableView.reloadData()
+        }
+       
         UIView.animate(withDuration: 0.3) {
             self.topSpaceView.constant = 0
             self.bottomSpaceOftableView.constant = 0
