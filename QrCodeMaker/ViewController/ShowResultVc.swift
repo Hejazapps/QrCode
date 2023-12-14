@@ -24,6 +24,7 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
     func eventEditViewController(_ controller: EKEventEditViewController, didCompleteWith action: EKEventEditViewAction) {
         
         if action.rawValue == 0 {
+            
             controller.dismiss(animated: true, completion: nil)
             return
         }

@@ -109,6 +109,13 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
     var isFromEvnt = false
     func eventEditViewController(_ controller: EKEventEditViewController, didCompleteWith action: EKEventEditViewAction) {
         
+        if action.rawValue == 0 {
+            
+            isFromEvnt = false
+            print("mamal")
+        }
+        
+        
         self.dismissKeyboard()
         currentSelectedName = "Text"
         inputParemeterArray = Constant.getInputParemeterByType(type: "Text")
@@ -955,10 +962,9 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
     
     @objc func dismissKeyboard() {
         
-        if !isFromEvnt {
-            tableView.reloadData()
-        }
+      
        
+        tableView.reloadData()
         UIView.animate(withDuration: 0.3) {
             self.topSpaceView.constant = 0
             self.bottomSpaceOftableView.constant = 0
@@ -1271,12 +1277,21 @@ extension CreateVc: UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
+        if isFromEvnt {
+            print("perfect")
+            return 0
+        }
+        
         let height = CGFloat(self.inputParemeterArray[indexPath.item].height) + 10
         return height
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        self.inputParemeterArray.count
+        if isFromEvnt {
+            print("perfect")
+            return 0
+        }
+       return   self.inputParemeterArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -1294,7 +1309,7 @@ extension CreateVc: UITableViewDelegate,UITableViewDataSource{
         cell.textView.text = ""
         
         
-        if  fromQrCode {
+        if  fromQrCode,!isFromEvnt {
             if self.isOnlyDecimal(type: self.createDataModelArray[indexPath.item].title) {
                 cell.textView.keyboardType = .asciiCapableNumberPad
             }else{
