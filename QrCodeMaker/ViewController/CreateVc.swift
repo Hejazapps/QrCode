@@ -408,6 +408,15 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
         
         let dic = qrCategoryArray[currentIndex.section] as? Dictionary<String, Any>
         if let  itemName  = dic!["items"] as? NSArray {
+            
+            
+            if (itemName[index] as! String)  == "Event" {
+                self.createDataModelArray.removeAll()
+                self.inputParemeterArray.removeAll()
+                self.addEventToCalendar()
+                return
+            }
+            
             let index =   currentIndex.row*6 + index
             print(itemName[index])
             selectedIndex = index
@@ -416,10 +425,7 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
             
             tableView.isHidden = false
             mapView.isHidden = true
-            if (itemName[index] as! String)  == "Event" {
-                self.addEventToCalendar()
-                return
-            }
+            
             
             if (itemName[index] as! String)  == "Location" {
                 self.checkLocationServices()

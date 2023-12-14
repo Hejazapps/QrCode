@@ -952,6 +952,21 @@
                   endingLineNumber = "240"
                   offsetFromSymbolStart = "1668">
                </Location>
+               <Location
+                  uuid = "9FEFF4B3-15CB-4DD7-8587-4BCEB9A16446 - 1fb3e027fe103044"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Array&lt;QrCodeMaker.DataInformation&gt;) -&gt; () in QrCodeMaker.HistoryVc.viewWillAppear(Swift.Bool) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiq/Documents/GitHub/QrCode/QrCodeMaker/ViewController/HistoryVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "240"
+                  endingLineNumber = "240"
+                  offsetFromSymbolStart = "860">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -999,6 +1014,21 @@
                   startingLineNumber = "237"
                   endingLineNumber = "237"
                   offsetFromSymbolStart = "1088">
+               </Location>
+               <Location
+                  uuid = "DA18D0A9-87D6-488F-BA4B-13840ADF5A5F - 1fb3e027fe1031d9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Array&lt;QrCodeMaker.DataInformation&gt;) -&gt; () in QrCodeMaker.HistoryVc.viewWillAppear(Swift.Bool) -&gt; ()"
+                  moduleName = "QrCodeMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiq/Documents/GitHub/QrCode/QrCodeMaker/ViewController/HistoryVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "237"
+                  endingLineNumber = "237"
+                  offsetFromSymbolStart = "684">
                </Location>
             </Locations>
          </BreakpointContent>
