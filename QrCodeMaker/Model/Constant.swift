@@ -1020,6 +1020,7 @@ extension Constant {
     static func getBarCode() -> [CreateDataModel] {
         var array = [CreateDataModel]()
         array.append(CreateDataModel(title: "Enter Code:", text: "", height: 110))
+        array.append(CreateDataModel(title: "Notes", text: "", height: 120))
         return array
     }
     

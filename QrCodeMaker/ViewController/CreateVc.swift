@@ -1084,6 +1084,48 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
         
     }
     
+    func getNotes() -> String {
+        
+        if currentSelectedName.containsIgnoringCase(find: "EAN-13") {
+            
+            return "12 digits and 1 check digit"
+        }
+        
+        if currentSelectedName.containsIgnoringCase(find: "EAN-8") {
+            
+            return "7  digits and 1 check digit"
+        }
+        
+        if currentSelectedName.containsIgnoringCase(find: "UPC-A") {
+            
+            return "11 digits and 1 check digit"
+        }
+        
+        if currentSelectedName.containsIgnoringCase(find: "UPC-E") {
+            
+            return "7 digits and 1 check digit"
+        }
+        
+        if currentSelectedName.containsIgnoringCase(find: "CODE 39") {
+            
+            return "Only A-Z, digits, -, ., space, $, /, +, %, *"
+        }
+        
+        if currentSelectedName.containsIgnoringCase(find: "CODE 128") {
+            
+            return "Text, no special characters"
+        }
+        
+        if currentSelectedName.containsIgnoringCase(find: "ITF") {
+            
+            return "Even number of digits"
+        }
+        
+        return ""
+        
+        
+    }
+    
 }
 extension CreateVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     
@@ -1142,7 +1184,7 @@ extension CreateVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollec
             cell.lbl6.text = barCategoryArray[index + 5] as? String
         }
         
-        print("your cat is \(currentSelectedName)  \(cell.lbl1.text)  cat years old")
+        print("your cat is \(currentSelectedName)")
         
         if cell.lbl1.text == currentSelectedName {
             cell.view1.dropShadow(shouldShow: true)
@@ -1346,19 +1388,23 @@ extension CreateVc: UITableViewDelegate,UITableViewDataSource{
         cell.backgroundColor = tableView.backgroundColor
         
         print("mamam = \(inputParemeterArray[indexPath.item].text)")
+        print("mamam = \(inputParemeterArray[indexPath.item].title)")
         
         cell.textView.text =  self.createDataModelArray[indexPath.item].description
         
         
         cell.textViewContainer.backgroundColor = UIColor.white
         
-        cell.label.text =  self.createDataModelArray[indexPath.item].title
+        cell.label.text =  self.inputParemeterArray[indexPath.item].title
+      
         cell.label.textColor = UIColor.white
         cell.textView.textColor = UIColor.black
         cell.configCell()
         cell.textView.centerVertically()
         cell.textView.textContainerInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         /// cell.textView.adjustUITextViewHeight()
+        
+        
         
         print(self.inputParemeterArray[indexPath.item].title)
         let textF = self.createDataModelArray[indexPath.item].title
@@ -1392,6 +1438,17 @@ extension CreateVc: UITableViewDelegate,UITableViewDataSource{
         } else {
             cell.networkName.isHidden = true
             cell.textView.isHidden = false
+        }
+        
+        
+        if !fromQrCode, indexPath.row == 1 {
+            
+            cell.textView.isUserInteractionEnabled = false
+            cell.textView.text = self.getNotes()
+            
+        }
+        else {
+            cell.textView.isUserInteractionEnabled = true
         }
         return cell
         
