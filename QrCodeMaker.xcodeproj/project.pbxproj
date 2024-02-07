@@ -1003,8 +1003,8 @@
 				CODE_SIGN_ENTITLEMENTS = QrCodeMaker/QrCodeMaker.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9WH2TL74WM;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = 6LHLWBRU4S;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = QrCodeMaker/Info.plist;
 				INFOPLIST_KEY_NSCalendarsUsageDescription = "To create an Event QR Code, please allow Calendar access";
@@ -1024,8 +1024,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.woodenapps.qr1;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hejazapps.qrmaker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1045,8 +1045,8 @@
 				CODE_SIGN_ENTITLEMENTS = QrCodeMaker/QrCodeMaker.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9WH2TL74WM;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = 6LHLWBRU4S;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = QrCodeMaker/Info.plist;
 				INFOPLIST_KEY_NSCalendarsUsageDescription = "To create an Event QR Code, please allow Calendar access";
@@ -1066,8 +1066,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.woodenapps.qr1;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hejazapps.qrmaker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
