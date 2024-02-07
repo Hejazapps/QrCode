@@ -1116,9 +1116,17 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
             return "Text, no special characters"
         }
         
-        if currentSelectedName.containsIgnoringCase(find: "ITF") {
+        if currentSelectedName.containsIgnoringCase(find: "Data Matrix") {
             
-            return "Even number of digits"
+            return "Numeric, alphanumeric and binary Data"
+        }
+        if currentSelectedName.containsIgnoringCase(find: "Aztec") {
+            
+            return "Numeric and alphanumeric characters, binary data, and special characters."
+        }
+        if currentSelectedName.containsIgnoringCase(find: "PDF417") {
+            
+            return "Alphanumeric characters & digits"
         }
         
         return ""
