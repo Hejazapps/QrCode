@@ -100,6 +100,7 @@
 		C8F913AF2AEE7341006A40B0 /* CommonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F913AE2AEE7341006A40B0 /* CommonViewController.swift */; };
 		E448E33F0468AA1E6F1EC2A7 /* Pods_QrCodeMakerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A744D2D895C1C0DB02C8E5 /* Pods_QrCodeMakerTests.framework */; };
 		F0AD3D102A86B0DE00A7789A /* VideoSplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AD3D0F2A86B0DE00A7789A /* VideoSplashViewController.swift */; };
+		F0E8566B2B7D1B05006DF088 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0E8566A2B7D1B05006DF088 /* GoogleService-Info.plist */; };
 		F98D13CC860C4F73BF9BE1A0 /* Pods_QrCodeMaker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 560A83E9701480074BC27C57 /* Pods_QrCodeMaker.framework */; };
 /* End PBXBuildFile section */
 
@@ -226,6 +227,7 @@
 		D7D7E82BEE8EC084E4EAD92F /* Pods-QrCodeMaker-QrCodeMakerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QrCodeMaker-QrCodeMakerUITests.debug.xcconfig"; path = "Target Support Files/Pods-QrCodeMaker-QrCodeMakerUITests/Pods-QrCodeMaker-QrCodeMakerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E1A744D2D895C1C0DB02C8E5 /* Pods_QrCodeMakerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QrCodeMakerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0AD3D0F2A86B0DE00A7789A /* VideoSplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoSplashViewController.swift; sourceTree = "<group>"; };
+		F0E8566A2B7D1B05006DF088 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -474,6 +476,7 @@
 				C8AC56A12A485774002F81E7 /* Assets.xcassets */,
 				C8AC56A32A485774002F81E7 /* LaunchScreen.storyboard */,
 				C8AC56A62A485774002F81E7 /* Info.plist */,
+				F0E8566A2B7D1B05006DF088 /* GoogleService-Info.plist */,
 			);
 			path = QrCodeMaker;
 			sourceTree = "<group>";
@@ -622,6 +625,7 @@
 				C84FEB7A2A56734A002E9CE2 /* QrCategory.plist in Resources */,
 				C84FEBE42A567668002E9CE2 /* lunch.gif in Resources */,
 				C84FEBD62A56764F002E9CE2 /* ButtonView.xib in Resources */,
+				F0E8566B2B7D1B05006DF088 /* GoogleService-Info.plist in Resources */,
 				C8B044862A57048800AB9C53 /* Position maker in Resources */,
 				C84FEB882A56736D002E9CE2 /* IconViewColl.xib in Resources */,
 			);

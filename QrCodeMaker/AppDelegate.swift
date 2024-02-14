@@ -5,6 +5,9 @@
 //  Created by Mostofa Mahmud on 10/4/21.
 //
 
+import Firebase
+import FirebaseMessaging
+import UserNotifications
 import UIKit
 import SVProgressHUD
 import IHProgressHUD
@@ -12,13 +15,36 @@ import SwiftyStoreKit
 
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUserNotificationCenterDelegate {
     
     var window: UIWindow?
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height
     
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+        messaging.token { token, error in
+            guard let token else {
+                print("[murad] error token: \(String(describing: error?.localizedDescription))")
+                return
+            }
+            
+            print("[murad] token: \(token)")
+        }
+    }
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        FirebaseApp.configure()
+        Messaging.messaging().delegate = self
+        UNUserNotificationCenter.current().delegate = self
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { success, error in
+            if success {
+                print("[murad] success Push authorization")
+            } else {
+                print("[murad] error Push authorization: \(String(describing: error?.localizedDescription))")
+            }
+        }
+        application.registerForRemoteNotifications()
+        
         DBmanager.shared.initDB()
         
         UISegmentedControl.appearance().selectedSegmentTintColor = UIColor.white
