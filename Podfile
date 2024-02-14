@@ -43,5 +43,7 @@ end
   pod 'ZXingObjC', :git => 'https://github.com/zxingify/zxingify-objc'
   pod 'Firebase/Analytics'
   pod 'ProgressHUD'
+  pod 'Firebase/Core'
+  pod 'Firebase/Messaging'
 
 end
