@@ -237,7 +237,7 @@ class SettingsVc: UIViewController, MFMailComposeViewControllerDelegate {
             self.showAlert()
             
         } else {
-            self.sendEmail(subject: "Send Us FeedBack", mailAddress: "hejazapps@gmail.com", cc: "", meessage: "")
+            self.sendEmail(subject: "Send Us FeedBack", mailAddress: "assistance.scannr@gmail.com", cc: "", meessage: "")
         }
         
        

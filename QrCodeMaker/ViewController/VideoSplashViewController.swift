@@ -44,6 +44,8 @@ class VideoSplashViewController: UIViewController {
             return
         }
         
+        
+        
         let videoURL = NSURL(fileURLWithPath: path)
         player = AVPlayer(url: videoURL as URL)
         let playerLayer = AVPlayerLayer(player: player)

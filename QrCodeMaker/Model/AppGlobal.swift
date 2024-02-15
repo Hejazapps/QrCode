@@ -30,8 +30,8 @@ var backgroundColorValue:[UIColor] = []
 
 var currentIndexFolder = -1
 var currentFolderName  = ""
-var termsOfUseValue = "https://sites.google.com/view/woodenapps/terms-of-use"
-var privacyPolicyValue = "https://sites.google.com/view/woodenapps/privacy-policy"
+var termsOfUseValue = "https://sites.google.com/view/scannr-terms"
+var privacyPolicyValue = "https://sites.google.com/view/scannr-privacy"
 
 var dict = ["Image": "Enter Link/Text,Select an Image",
             "Email": "Enter Email Address,CC,Subject,Email Body",

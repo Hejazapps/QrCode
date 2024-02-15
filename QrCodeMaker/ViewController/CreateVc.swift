@@ -1454,6 +1454,7 @@ extension CreateVc: UITableViewDelegate,UITableViewDataSource{
             cell.textView.isUserInteractionEnabled = false
             cell.textView.text = self.getNotes()
             
+            
         }
         else {
             cell.textView.isUserInteractionEnabled = true
