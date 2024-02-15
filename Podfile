@@ -45,5 +45,6 @@ end
   pod 'ProgressHUD'
   pod 'Firebase/Core'
   pod 'Firebase/Messaging'
+  pod 'Firebase/Crashlytics'
 
 end
