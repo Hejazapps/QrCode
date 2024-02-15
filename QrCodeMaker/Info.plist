@@ -7,7 +7,7 @@
 		<string>whatsapp</string>
 	</array>
 	<key>NSCalendarsFullAccessUsageDescription</key>
-	<string>To create an event, please allow Calendar usage access</string>
+	<string>This allows you add a calendar event to your device's calendar after scanning a QR code containing a calendar event. </string>
 	<key>PHPhotoLibraryPreventAutomaticLimitedAccessAlert</key>
 	<false/>
 	<key>UIApplicationSceneManifest</key>
