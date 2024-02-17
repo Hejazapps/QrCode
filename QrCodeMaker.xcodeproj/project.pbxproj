@@ -100,6 +100,8 @@
 		C8F913AF2AEE7341006A40B0 /* CommonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F913AE2AEE7341006A40B0 /* CommonViewController.swift */; };
 		E448E33F0468AA1E6F1EC2A7 /* Pods_QrCodeMakerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A744D2D895C1C0DB02C8E5 /* Pods_QrCodeMakerTests.framework */; };
 		F0AD3D102A86B0DE00A7789A /* VideoSplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AD3D0F2A86B0DE00A7789A /* VideoSplashViewController.swift */; };
+		F0D33CA42B80CC4D00C95EAB /* SecondLandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D33CA32B80CC4D00C95EAB /* SecondLandingViewController.swift */; };
+		F0D33CA62B80E7B800C95EAB /* ThirdLandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D33CA52B80E7B800C95EAB /* ThirdLandingViewController.swift */; };
 		F0E8566B2B7D1B05006DF088 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0E8566A2B7D1B05006DF088 /* GoogleService-Info.plist */; };
 		F98D13CC860C4F73BF9BE1A0 /* Pods_QrCodeMaker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 560A83E9701480074BC27C57 /* Pods_QrCodeMaker.framework */; };
 /* End PBXBuildFile section */
@@ -227,6 +229,8 @@
 		D7D7E82BEE8EC084E4EAD92F /* Pods-QrCodeMaker-QrCodeMakerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QrCodeMaker-QrCodeMakerUITests.debug.xcconfig"; path = "Target Support Files/Pods-QrCodeMaker-QrCodeMakerUITests/Pods-QrCodeMaker-QrCodeMakerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E1A744D2D895C1C0DB02C8E5 /* Pods_QrCodeMakerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QrCodeMakerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0AD3D0F2A86B0DE00A7789A /* VideoSplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoSplashViewController.swift; sourceTree = "<group>"; };
+		F0D33CA32B80CC4D00C95EAB /* SecondLandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondLandingViewController.swift; sourceTree = "<group>"; };
+		F0D33CA52B80E7B800C95EAB /* ThirdLandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdLandingViewController.swift; sourceTree = "<group>"; };
 		F0E8566A2B7D1B05006DF088 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -431,6 +435,8 @@
 				C896757A2A70D6ED00B855D6 /* EditVc.swift */,
 				F0AD3D0F2A86B0DE00A7789A /* VideoSplashViewController.swift */,
 				C8B876592A8FB24C00864957 /* SubscriptionVc.swift */,
+				F0D33CA32B80CC4D00C95EAB /* SecondLandingViewController.swift */,
+				F0D33CA52B80E7B800C95EAB /* ThirdLandingViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -786,6 +792,7 @@
 				C84FEBF72A567753002E9CE2 /* MainTabVc.swift in Sources */,
 				C8B044842A56F76500AB9C53 /* ImageViewCell.swift in Sources */,
 				C8AC569D2A485773002F81E7 /* ViewController.swift in Sources */,
+				F0D33CA42B80CC4D00C95EAB /* SecondLandingViewController.swift in Sources */,
 				C8B8765A2A8FB24C00864957 /* SubscriptionVc.swift in Sources */,
 				C8E640AF2B09AA40005DEE84 /* IAPManager.swift in Sources */,
 				C84FEBA22A56761F002E9CE2 /* Platform.swift in Sources */,
@@ -844,6 +851,7 @@
 				C84FEBC92A567639002E9CE2 /* Parser.swift in Sources */,
 				C84FEB832A56736D002E9CE2 /* CategoryCell.swift in Sources */,
 				C84FEBF92A567753002E9CE2 /* ShowResultVc.swift in Sources */,
+				F0D33CA62B80E7B800C95EAB /* ThirdLandingViewController.swift in Sources */,
 				C84FEB902A5675A3002E9CE2 /* MXLCalendarEvent.swift in Sources */,
 				C84FEB932A5675A3002E9CE2 /* MXLCalendar.swift in Sources */,
 				C84FEBCB2A567639002E9CE2 /* iCalError.swift in Sources */,
