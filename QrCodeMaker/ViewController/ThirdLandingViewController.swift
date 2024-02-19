@@ -19,4 +19,14 @@ class ThirdLandingViewController: UIViewController {
             print("swipe direction: \(sender.direction)")
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "onboardPurchaseSegue" else { return }
+        
+        let destination = segue.destination as! SubscriptionVc // change that to the real class
+        destination.completeOnboarding = {
+            UserDefaults.standard.set(true, forKey: "onboardingCompleted")
+        }
+        destination.presentMainTabOnAnyAction = true
+    }
 }

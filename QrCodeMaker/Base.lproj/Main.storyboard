@@ -147,7 +147,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xT2-sT-QeI" userLabel="Dot View">
-                                <rect key="frame" x="146.66666666666666" y="678" width="100" height="15"/>
+                                <rect key="frame" x="146.66666666666666" y="712" width="100" height="15"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AEt-bU-Jkt">
                                         <rect key="frame" x="37" y="2.6666666666666288" width="10" height="10"/>
@@ -187,7 +187,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7DC-l9-pHb">
-                                <rect key="frame" x="40" y="713" width="313" height="60"/>
+                                <rect key="frame" x="40" y="747" width="313" height="60"/>
                                 <color key="backgroundColor" systemColor="tintColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="1sw-Oe-DTU"/>
@@ -268,7 +268,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8du-dp-EdH" userLabel="Dot View">
-                                <rect key="frame" x="146.66666666666666" y="678" width="100" height="15"/>
+                                <rect key="frame" x="146.66666666666666" y="712" width="100" height="15"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EHu-hg-dug">
                                         <rect key="frame" x="53" y="2.6666666666666288" width="10" height="10"/>
@@ -308,7 +308,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0QH-kI-WXv">
-                                <rect key="frame" x="40" y="713" width="313" height="60"/>
+                                <rect key="frame" x="40" y="747" width="313" height="60"/>
                                 <color key="backgroundColor" systemColor="tintColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="o2e-Zo-tbd"/>
@@ -324,7 +324,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="b2F-XB-jnz" kind="presentation" modalPresentationStyle="fullScreen" id="9uT-qG-V2x"/>
+                                    <segue destination="b2F-XB-jnz" kind="presentation" identifier="onboardPurchaseSegue" modalPresentationStyle="fullScreen" id="9uT-qG-V2x"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -373,6 +373,7 @@
                     </view>
                     <connections>
                         <segue destination="iou-Q2-k5x" kind="presentation" identifier="mainSegue" modalPresentationStyle="fullScreen" id="N9L-Qj-Klu"/>
+                        <segue destination="lww-pb-5RP" kind="presentation" identifier="welcomeSegue" modalPresentationStyle="fullScreen" id="GhG-T0-E3V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZrZ-Ib-Amj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -4147,6 +4148,7 @@
                         <outlet property="mostPopularView" destination="PLL-zW-xCd" id="097-N4-nmI"/>
                         <outlet property="topLabel" destination="Y8R-T4-fco" id="Ckh-0b-M0o"/>
                         <outlet property="weeklyView" destination="7er-3P-iew" id="MQa-4m-8wx"/>
+                        <segue destination="iou-Q2-k5x" kind="presentation" identifier="onboardMainTabSegue" modalPresentationStyle="fullScreen" id="fvf-Rn-EjM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ubl-Vz-Dak" sceneMemberID="firstResponder"/>
@@ -4214,7 +4216,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oRY-50-8i6">
-                                <rect key="frame" x="40" y="713" width="313" height="60"/>
+                                <rect key="frame" x="40" y="747" width="313" height="60"/>
                                 <color key="backgroundColor" systemColor="tintColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="pMH-iX-LuK"/>
@@ -4246,7 +4248,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="By continuing, you agree to our Privacy Policy and User Agreements" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="mOF-yS-hIe" customClass="LinkTextView" customModule="QrCodeMaker" customModuleProvider="target">
-                                <rect key="frame" x="70" y="648" width="253" height="50"/>
+                                <rect key="frame" x="70" y="682" width="253" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="cHU-oI-UJ6"/>
@@ -4307,6 +4309,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="fvf-Rn-EjM"/>
         <segue reference="YX3-B7-kMN"/>
     </inferredMetricsTieBreakers>
     <resources>
