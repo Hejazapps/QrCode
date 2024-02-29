@@ -4345,16 +4345,16 @@
         <image name="color code" width="32.333332061767578" height="32.333332061767578"/>
         <image name="continue" width="328.33334350585938" height="60.666667938232422"/>
         <image name="create" width="30" height="30"/>
-        <image name="first-landing" width="298" height="333"/>
+        <image name="first-landing" width="298" height="332.33334350585938"/>
         <image name="gallery" width="30" height="30"/>
         <image name="history" width="30" height="30"/>
         <image name="history_page" width="30" height="30"/>
         <image name="next" width="32" height="32"/>
         <image name="qrcode" catalog="system" width="128" height="114"/>
         <image name="scan" width="30" height="30"/>
-        <image name="second-landing" width="298" height="298"/>
+        <image name="second-landing" width="393" height="436"/>
         <image name="settings" width="30" height="30"/>
-        <image name="third-landing" width="298" height="296"/>
+        <image name="third-landing" width="393" height="436"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
