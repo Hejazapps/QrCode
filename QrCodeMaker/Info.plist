@@ -2,12 +2,16 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSPrivacyAccessedAPICategoryUserDefaults</key>
+	<string>This allows you to save your preferences.</string>
+	<key>NSPrivacyAccessedAPICategoryDiskSpace</key>
+	<string>This allows you to save QR and Barcodes in your device.</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>whatsapp</string>
 	</array>
 	<key>NSCalendarsFullAccessUsageDescription</key>
-	<string>This allows you add a calendar event to your device's calendar after scanning a QR code containing a calendar event. </string>
+	<string>This allows you add a calendar event to your device&apos;s calendar after scanning a QR code containing a calendar event. </string>
 	<key>PHPhotoLibraryPreventAutomaticLimitedAccessAlert</key>
 	<false/>
 	<key>UIApplicationSceneManifest</key>
