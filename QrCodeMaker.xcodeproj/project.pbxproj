@@ -230,6 +230,7 @@
 		D4F949F54ADEA8F6EFDAF17D /* Pods-QrCodeMaker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QrCodeMaker.debug.xcconfig"; path = "Target Support Files/Pods-QrCodeMaker/Pods-QrCodeMaker.debug.xcconfig"; sourceTree = "<group>"; };
 		D7D7E82BEE8EC084E4EAD92F /* Pods-QrCodeMaker-QrCodeMakerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QrCodeMaker-QrCodeMakerUITests.debug.xcconfig"; path = "Target Support Files/Pods-QrCodeMaker-QrCodeMakerUITests/Pods-QrCodeMaker-QrCodeMakerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E1A744D2D895C1C0DB02C8E5 /* Pods_QrCodeMakerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QrCodeMakerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F00F81992BB7C0A700F139F3 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		F0AD3D0F2A86B0DE00A7789A /* VideoSplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoSplashViewController.swift; sourceTree = "<group>"; };
 		F0CD5A742B82645900E27880 /* LinkTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkTextView.swift; sourceTree = "<group>"; };
 		F0CD5A762B82664400E27880 /* FirstLandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLandingViewController.swift; sourceTree = "<group>"; };
@@ -486,6 +487,7 @@
 				C8AC569E2A485773002F81E7 /* Main.storyboard */,
 				C8AC56A12A485774002F81E7 /* Assets.xcassets */,
 				C8AC56A32A485774002F81E7 /* LaunchScreen.storyboard */,
+				F00F81992BB7C0A700F139F3 /* PrivacyInfo.xcprivacy */,
 				C8AC56A62A485774002F81E7 /* Info.plist */,
 				F0E8566A2B7D1B05006DF088 /* GoogleService-Info.plist */,
 				F0CD5A762B82664400E27880 /* FirstLandingViewController.swift */,
