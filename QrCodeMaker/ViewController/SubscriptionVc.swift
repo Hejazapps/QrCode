@@ -11,7 +11,8 @@ import StoreKit
 import SwiftyStoreKit
 
 class SubscriptionVc: UIViewController,UIScrollViewDelegate {
-    
+    var completeOnboarding : (() -> Void)?
+    var presentMainTabOnAnyAction = false
     
     @IBOutlet weak var holderView: UIView!
     
@@ -57,7 +58,13 @@ class SubscriptionVc: UIViewController,UIScrollViewDelegate {
     }
 
     @IBAction func gotoDismiss(_ sender: Any) {
-        self.dismiss(animated: true)
+        completeOnboarding?()
+        
+        if presentMainTabOnAnyAction {
+            performSegue(withIdentifier: "onboardMainTabSegue", sender: nil)
+        } else {
+            self.dismiss(animated: true)
+        }
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

@@ -62,7 +62,14 @@ class VideoSplashViewController: UIViewController {
     
     @objc func playerDidFinish(note: NSNotification) {
         print("Video Finished")
-        self.performSegue(withIdentifier: "mainSegue", sender: nil)
+        
+        let onboardingCompleted = UserDefaults.standard.bool(forKey: "onboardingCompleted")
+        
+        if onboardingCompleted {
+            self.performSegue(withIdentifier: "mainSegue", sender: nil)
+        } else {
+            self.performSegue(withIdentifier: "welcomeSegue", sender: nil)
+        }
     }
     
     @objc func appWillEnterForeground() {
