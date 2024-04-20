@@ -15,6 +15,7 @@ import EventKit
 import EventKitUI
 import Contacts
 import NetworkExtension
+import StoreKit
 
 protocol dismissImagePicker {
     func  dimissAllClass()
@@ -589,7 +590,7 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
     
     func saveData() {
         
-       
+        
         
         if isfromUpdate {
             DBmanager.shared.updateTableData(id: idF, Text: stringValue, position: position1, shape: shape1, logo: currenttypeOfQrBAR)
@@ -663,7 +664,22 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
             }
         }
         
+        let defaults = UserDefaults.standard
         
+        var valueOfText  = defaults.integer(forKey: "no_of_image")
+        
+        if( valueOfText % 5 == 0){
+            
+            if #available(iOS 14.0, *) {
+                if let scene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
+                    SKStoreReviewController.requestReview(in: scene)
+                }
+            } else {
+                SKStoreReviewController.requestReview()
+            }
+        }
+        
+        UserDefaults.standard.set(valueOfText + 1, forKey:"no_of_image")
     }
     
     @IBAction func gotoSve(_ sender: Any) {

@@ -31,7 +31,7 @@ class SettingsVc: UIViewController, MFMailComposeViewControllerDelegate {
     }
     
     @objc func switchChanged(mySwitch: UISwitch) {
-         
+        
         if soundWatch.isOn {
             UserDefaults.standard.set(2, forKey: "sound")
         } else {
@@ -87,7 +87,7 @@ class SettingsVc: UIViewController, MFMailComposeViewControllerDelegate {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-       
+        
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -162,12 +162,12 @@ class SettingsVc: UIViewController, MFMailComposeViewControllerDelegate {
     func showAlert() {
         
         let alert = UIAlertController(title: "", message: "Check Your Internet", preferredStyle: .alert)
-            
-             let ok = UIAlertAction(title: "OK", style: .default, handler: { action in
-             })
-             alert.addAction(ok)
-             DispatchQueue.main.async(execute: {
-                self.present(alert, animated: true)
+        
+        let ok = UIAlertAction(title: "OK", style: .default, handler: { action in
+        })
+        alert.addAction(ok)
+        DispatchQueue.main.async(execute: {
+            self.present(alert, animated: true)
         })
         
     }
@@ -175,7 +175,7 @@ class SettingsVc: UIViewController, MFMailComposeViewControllerDelegate {
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?){
         controller.dismiss(animated: true, completion: nil)
-
+        
     }
     
     
@@ -225,7 +225,13 @@ class SettingsVc: UIViewController, MFMailComposeViewControllerDelegate {
     }
     
     @IBAction func rateThisApp(_ sender: Any) {
-        SKStoreReviewController.requestReview()
+        if #available(iOS 14.0, *) {
+            if let scene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
+                SKStoreReviewController.requestReview(in: scene)
+            }
+        } else {
+            SKStoreReviewController.requestReview()
+        }
         
     }
     
@@ -240,7 +246,7 @@ class SettingsVc: UIViewController, MFMailComposeViewControllerDelegate {
             self.sendEmail(subject: "Send Us FeedBack", mailAddress: "assistance.scannr@gmail.com", cc: "", meessage: "")
         }
         
-       
+        
     }
     
     @IBAction func shareTheApp(_ sender: Any) {
