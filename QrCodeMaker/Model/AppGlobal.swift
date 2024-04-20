@@ -32,6 +32,7 @@ var currentIndexFolder = -1
 var currentFolderName  = ""
 var termsOfUseValue = "https://sites.google.com/view/scannr-terms"
 var privacyPolicyValue = "https://sites.google.com/view/scannr-privacy"
+var managesub = "https://sites.google.com/view/scannr-subscription-info"
 
 var dict = ["Image": "Enter Link/Text,Select an Image",
             "Email": "Enter Email Address,CC,Subject,Email Body",

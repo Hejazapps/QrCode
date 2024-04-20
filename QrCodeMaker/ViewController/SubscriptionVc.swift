@@ -275,6 +275,59 @@ class SubscriptionVc: UIViewController,UIScrollViewDelegate {
         }
     }
     
+    @IBAction func giotomange(_ sender: Any) {
+        
+        if currentReachabilityStatus == .notReachable {
+            self.showAlert()
+            
+        } else {
+            self.gotoWebView(name: "Subcription Info  ", url:managesub)
+        }
+    }
+    
+    func gotoWebView(name:String,url:String)
+    {
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "CommonViewController") as? CommonViewController
+        vc?.titleForValue = name
+        vc?.url = url
+        let navController = UINavigationController(rootViewController: vc!) // Creating a navigation controller with VC1 at the root of the navigation stack.
+        
+        navController.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+        present(navController, animated: true, completion: nil)
+    }
+    
+    func showAlert() {
+        
+        let alert = UIAlertController(title: "", message: "Check Your Internet", preferredStyle: .alert)
+            
+             let ok = UIAlertAction(title: "OK", style: .default, handler: { action in
+             })
+             alert.addAction(ok)
+             DispatchQueue.main.async(execute: {
+                self.present(alert, animated: true)
+        })
+        
+    }
+    
+    @IBAction func gototermsandpolicy(_ sender: Any) {
+        
+        if currentReachabilityStatus == .notReachable {
+            self.showAlert()
+            
+        } else {
+            self.gotoWebView(name: "Terms of Use", url: termsOfUseValue)
+        }
+    }
+    @IBAction func gotoPrivacyPolicy(_ sender: Any) {
+        
+        if currentReachabilityStatus == .notReachable {
+            self.showAlert()
+            
+        } else {
+            self.gotoWebView(name: "Privacy Policy", url: privacyPolicyValue)
+        }
+      
+    }
     
     @IBAction func continuebuttonpressed(_ sender: Any) {
         
@@ -303,6 +356,10 @@ class SubscriptionVc: UIViewController,UIScrollViewDelegate {
     }
     
     
+    @IBAction func gotoPrivacyPlolicy(_ sender: Any) {
+        
+        
+    }
     
 }
 
