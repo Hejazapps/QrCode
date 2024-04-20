@@ -1,93 +1,66 @@
 //
-//  ScannerVC.swift
-//  SwiftScanner
+//  QRScannerController.swift
+//  QRCodeScanner
 //
-//  Created by Jason on 2018/11/30.
-//  Copyright © 2018 Jason. All rights reserved.
+//  Created by Nitin Aggarwal on 22/05/21.
 //
 
 import UIKit
 import AVFoundation
-import IHProgressHUD
-import KRProgressHUD
-import AudioToolbox
 
-public class ScannerVC: UIViewController {
+class ScannerVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
+    // MARK: - Properties
+     @IBOutlet weak var permissionView: UIView!
     @IBOutlet weak var gotosettings: UIButton!
-    @IBOutlet weak var permissionView: UIView!
-    let soundID: SystemSoundID = 1104
-    
-    public lazy var headerViewController:HeaderVC = .init()
-    
-    public lazy var cameraViewController:CameraVC = .init()
-    
-    /// 动画样式
-    public var animationStyle:ScanAnimationStyle = .default{
-        didSet{
-            cameraViewController.animationStyle = animationStyle
-        }
-    }
-    
-    // 扫描框颜色
-    public var scannerColor:UIColor = .red{
-        didSet{
-            cameraViewController.scannerColor = scannerColor
-        }
-    }
-    
-    public var scannerTips:String = ""{
-        didSet{
-            cameraViewController.scanView.tips = scannerTips
-        }
-    }
-    
-    /// `AVCaptureMetadataOutput` metadata object types.
-    public var metadata = AVMetadataObject.ObjectType.metadata {
-        didSet{
-            cameraViewController.metadata = metadata
-        }
-    }
-    
+    private var captureSession: AVCaptureSession!
+    private var previewLayer: AVCaptureVideoPreviewLayer!
+    private var isPermissionGiven = false
     public var successBlock:((String)->())?
-    
-    public var errorBlock:((Error)->())?
-    
-    
-    /// 设置标题
-    public override var title: String?{
-        
-        didSet{
-            
-            if navigationController == nil {
-                headerViewController.title = title
-            }
-        }
-        
-    }
-    
-    
-    /// 设置Present模式时关闭按钮的图片
-    public var closeImage: UIImage?{
-        
-        didSet{
-            
-            if navigationController == nil {
-                headerViewController.closeImage = closeImage ?? UIImage()
-            }
-        }
-        
-    }
-    
-    override public func viewDidLoad() {
-        print("ScannerVC -> viewDidLoad()")
+     
+    // MARK: - LifeCycle
+    override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setupUI()
-        
-        
+        initialSetup()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
+        // Check for camera permission has given or not.
+        if isPermissionGiven {
+            if (captureSession?.isRunning == false) {
+                captureSession.startRunning()
+            }
+        } else {
+            checkCameraPermission()
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // stop capture session when this screen will disappear.
+        if (captureSession?.isRunning == true) {
+            captureSession.stopRunning()
+        }
+    }
+    
+    
+    // MARK: - Private Methods
+    private func initialSetup() {
+        view.backgroundColor = .black
+        navigationController?.navigationBar.barStyle = .black
+        
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .done, target: self, action: #selector(handleCancelAction))
+        cancelButton.tintColor = .white
+        navigationItem.rightBarButtonItem = cancelButton
+    }
+    
+    @objc private func handleCancelAction() {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func gotoSettings(_ sender: Any) {
         
@@ -95,7 +68,6 @@ public class ScannerVC: UIViewController {
         self.openAppSpecificSettings()
         
     }
-    
     
     @objc func openAppSpecificSettings() {
         guard let url = URL(string: UIApplication.openSettingsURLString),
@@ -108,97 +80,162 @@ public class ScannerVC: UIViewController {
     }
     
     
+    public func setupScanner(_ title:String? = nil, _ color:UIColor? = nil, _ style:ScanAnimationStyle? = nil, _ tips:String? = nil, _ success:@escaping ((String)->())){
+        
+       
+        successBlock = success
+        
+    }
+    
+    private func checkCameraPermission() {
+        switch AVCaptureDevice.authorizationStatus(for: .video) {
+        case .authorized:
+            DispatchQueue.main.async {
+                self.isPermissionGiven = true
+                self.setupCaptureSession()
+            }
+            
+        case .notDetermined:
+            AVCaptureDevice.requestAccess(for: .video) { success in
+                DispatchQueue.main.async {
+                    if success {
+                        self.isPermissionGiven = true
+                        self.setupCaptureSession()
+                    } else {
+                        self.isPermissionGiven = false
+                        self.accessDenied()
+                    }
+                }
+            }
+            
+        case .denied, .restricted:
+            DispatchQueue.main.async {
+                self.isPermissionGiven = false
+                self.accessDenied()
+            }
+            
+        @unknown default:
+            DispatchQueue.main.async {
+                self.isPermissionGiven = false
+                self.accessDenied()
+            }
+        }
+    }
+    
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        cameraViewController.startCapturing()
+        if (captureSession != nil ) {
+            
+            captureSession.startRunning()
+            
+        }
+     
     }
     
-    override public func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        KRProgressHUD.dismiss()
+    private func setupCaptureSession() {
+        captureSession = AVCaptureSession()
         
-        self.checkCameraAccess()
-        gotosettings.layer.cornerRadius = 15.0
-        gotosettings.clipsToBounds = true
+        guard let videoCaptureDevice = AVCaptureDevice.default(for: .video) else { return }
+        try! videoCaptureDevice.lockForConfiguration()
+        videoCaptureDevice.focusPointOfInterest = self.view.frame.origin
         
-    }
-    
-    
-    func presentCameraSettings() {
-//        let alertController = UIAlertController(title: "Error",
-//                                      message: "Camera access is denied",
-//                                      preferredStyle: .alert)
-//        alertController.addAction(UIAlertAction(title: "Cancel", style: .default))
-//        alertController.addAction(UIAlertAction(title: "Settings", style: .cancel) { _ in
-//            if let url = URL(string: UIApplication.openSettingsURLString) {
-//                UIApplication.shared.open(url, options: [:], completionHandler: { _ in
-//                    // Handle
-//                })
-//            }
-//        })
+        let videoInput: AVCaptureDeviceInput
+        do {
+            videoInput = try AVCaptureDeviceInput(device: videoCaptureDevice)
+        } catch {
+            return
+        }
+        
+        if (captureSession.canAddInput(videoInput)) {
+            captureSession.addInput(videoInput)
+        } else {
+            failedSession()
+            return
+        }
+        
+        let metadataOutput = AVCaptureMetadataOutput()
+        if (captureSession.canAddOutput(metadataOutput)) {
+            captureSession.addOutput(metadataOutput)
+            metadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
+            metadataOutput.metadataObjectTypes = metadataOutput.availableMetadataObjectTypes
+        } else {
+            failedSession()
+            return
+        }
+        
+        previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+        previewLayer.frame = view.layer.bounds
+        previewLayer.videoGravity = .resizeAspectFill
+        view.layer.addSublayer(previewLayer)
+        
+        let holeWidth: CGFloat = 270
+        let hollowedView = UIView(frame: view.frame)
+        hollowedView.backgroundColor = .clear
 
+        let hollowedLayer = CAShapeLayer()
+
+        let focusRect = CGRect(origin: CGPoint(x: (view.frame.width - holeWidth) / 2, y: (view.frame.height - holeWidth) / 2), size: CGSize(width: holeWidth, height: holeWidth))
+        let holePath = UIBezierPath(roundedRect: focusRect, cornerRadius: 12)
+        let externalPath = UIBezierPath(rect: hollowedView.frame).reversing()
+        holePath.append(externalPath)
+        holePath.usesEvenOddFillRule = true
+        
+        hollowedLayer.path = holePath.cgPath
+        hollowedLayer.fillColor = UIColor.black.cgColor
+        hollowedLayer.opacity = 0.5
+        
+        hollowedView.layer.addSublayer(hollowedLayer)
+        view.addSubview(hollowedView)
+
+        let scannerPlaceholderView = UIImageView(frame: focusRect)
+      
+        scannerPlaceholderView.image = UIImage(named: "qr_scan_placeholder")!.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
+        scannerPlaceholderView.tintColor = UIColor(red: 18.0/255, green: 119.0/255, blue: 254.0/255, alpha: 1.0)
+        scannerPlaceholderView.contentMode = .scaleAspectFill
+        scannerPlaceholderView.clipsToBounds = true
+        self.view.addSubview(scannerPlaceholderView)
+        self.view.bringSubviewToFront(scannerPlaceholderView)
+        
+        captureSession.commitConfiguration()
+        captureSession.startRunning()
+        metadataOutput.rectOfInterest = previewLayer.metadataOutputRectConverted(fromLayerRect: focusRect)
+    }
+    
+    private func failedSession() {
+        captureSession = nil
+        showAlert(message: "Your device does not support scanning a code from an item. Please use a device with a camera.")
+    }
+    
+    private func accessDenied() {
          
         permissionView.isHidden = false
-        self.view.bringSubviewToFront(permissionView)
     }
     
+    private func showAlert(message: String) {
+        let alert = UIAlertController(title: message, message: nil, preferredStyle: .alert)
+        let actionButton = UIAlertAction(title: "Okay", style: .default, handler: nil)
+        alert.addAction(actionButton)
+        present(alert, animated: true, completion: nil)
+    }
     
-    func checkCameraAccess() {
-        switch AVCaptureDevice.authorizationStatus(for: .video) {
-        case .denied:
-            print("Denied, request permission from settings")
-            presentCameraSettings()
-        case .restricted:
-            print("Restricted, device owner must approve")
-        case .authorized:
-            print("Authorized, proceed")
-        case .notDetermined:
-            AVCaptureDevice.requestAccess(for: .video) { success in
-                if success {
-                    print("Permission granted, proceed")
-                } else {
-                    print("Permission denied")
-                }
+    func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
+       
+       
+        if let metadataObject = metadataObjects.first {
+            captureSession.stopRunning()
+            guard let readableObject = metadataObject as? AVMetadataMachineReadableCodeObject else { return }
+            guard let object = metadataObjects.first as? AVMetadataMachineReadableCodeObject else {
+                
+              
+                captureSession.startRunning()
+                return
             }
-        @unknown default:
-            print("Hello")
-        }
-    }
-    
-}
-
-
-
-
-// MARK: - CustomMethod
-extension ScannerVC{
-    
-    func setupUI() {
-        print("ScannerVC -> setupUI()")
-        if title == nil {
-            title = "Scan"
-        }
-        
-        view.backgroundColor = .black
-        
-        headerViewController.delegate = self
-        
-        cameraViewController.metadata = metadata
-        
-        cameraViewController.animationStyle = animationStyle
-        
-        cameraViewController.delegate = self
-        
-        add(cameraViewController)
-        print("Added cameraVC")
-        
-        if navigationController == nil {
             
-            //add(headerViewController)
+            print("test qr code found \(object.stringValue) \(object.type.rawValue)")
             
-            view.bringSubviewToFront(headerViewController.view)
-            
+            didOutput(object.stringValue ?? "", type: object.type.rawValue)
+             
         }
     }
     
@@ -233,53 +270,7 @@ extension ScannerVC{
     }
     
     
-    
-    
-    public func setupScanner(_ title:String? = nil, _ color:UIColor? = nil, _ style:ScanAnimationStyle? = nil, _ tips:String? = nil, _ success:@escaping ((String)->())){
-        
-        if title != nil {
-            self.title = title
-        }
-        
-        if color != nil {
-            scannerColor = color!
-        }
-        
-        if style != nil {
-            animationStyle = style!
-        }
-        
-        if tips != nil {
-            scannerTips = tips!
-        }
-        
-        successBlock = success
-        
-    }
-    
-    
-}
 
-
-
-
-// MARK: - HeaderViewControllerDelegate
-extension ScannerVC:HeaderViewControllerDelegate{
-    
-    
-    /// 点击关闭
-    public func didClickedCloseButton() {
-        
-        dismiss(animated: true, completion: nil)
-        
-    }
-    
-}
-
-
-
-extension ScannerVC:CameraViewControllerDelegate{
-    
     func didOutput(_ code: String ,type: String) {
        
         
@@ -300,7 +291,7 @@ extension ScannerVC:CameraViewControllerDelegate{
                     UIApplication.shared.openURL(url)
                 }
                 
-                cameraViewController.startCapturing()
+                captureSession.startRunning()
                 return
             }
         }
@@ -354,16 +345,22 @@ extension ScannerVC:CameraViewControllerDelegate{
             
         }
         
-        cameraViewController.stopCapturing()
+        captureSession.stopRunning()
         
         successBlock?(code)
         
     }
     
-    func didReceiveError(_ error: Error) {
-        
-        errorBlock?(error)
-        
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
     
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
+    
+    deinit {
+        self.captureSession = nil
+    }
 }
+
