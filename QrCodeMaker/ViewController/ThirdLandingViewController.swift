@@ -21,8 +21,6 @@ class ThirdLandingViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        
         guard segue.identifier == "onboardPurchaseSegue" else { return }
         
         let destination = segue.destination as! SubscriptionVc // change that to the real class

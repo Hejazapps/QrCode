@@ -19,7 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LAK-tZ-0fY">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LAK-tZ-0fY">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="803"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Scan_3x" translatesAutoresizingMaskIntoConstraints="NO" id="A5U-Aj-URq">
@@ -4392,7 +4392,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="N9L-Qj-Klu"/>
+        <segue reference="fvf-Rn-EjM"/>
         <segue reference="YX3-B7-kMN"/>
     </inferredMetricsTieBreakers>
     <resources>
