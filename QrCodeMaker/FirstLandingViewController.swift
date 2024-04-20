@@ -13,6 +13,7 @@ class FirstLandingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        loadSub()
         let pp = "Privacy Policy"
         let ua = "User Agreements"
         

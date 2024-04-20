@@ -93,6 +93,8 @@ class SubscriptionVc: UIViewController,UIScrollViewDelegate {
         
     }
     
+    
+    
     func setRoundedView(view:UIView,radius:Int){
         view.layer.cornerRadius =  CGFloat(radius)
         view.layer.borderWidth = 2.0
