@@ -46,6 +46,38 @@ class SubscriptionVc: UIViewController,UIScrollViewDelegate {
         return button
     }()
     
+    
+    @IBAction func restorePurchase(_ sender: Any) {
+        
+        
+        ProgressHUD.animate("Restore...", interaction: false)
+        
+        SwiftyStoreKit.restorePurchases(atomically: true) { results in
+            if results.restoreFailedPurchases.count > 0 {
+                ProgressHUD.dismiss()
+            }
+            else if results.restoredPurchases.count > 0 {
+                
+                Store.sharedInstance.setPurchaseActive(value: true)
+                Store.sharedInstance.verifyReciept()
+                ProgressHUD.dismiss()
+                
+                let alert = UIAlertController(title: "", message: "Restore purhase done", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                
+            }
+            else {
+                
+                let alert = UIAlertController(title: "", message: "Nothing to restore", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                ProgressHUD.dismiss()
+            }
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         mainScrollView.delegate = self
@@ -202,9 +234,11 @@ class SubscriptionVc: UIViewController,UIScrollViewDelegate {
         currentSelectedSub = index;
         
         self.checkColorStatus()
-        
+        checkSub(index: currentSelectedSub)
         
     }
+    
+    
     
     func startContinuousAnimation() {
         // Define the animation parameters

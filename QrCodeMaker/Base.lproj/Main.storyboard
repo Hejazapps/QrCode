@@ -3498,18 +3498,27 @@
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="close" translatesAutoresizingMaskIntoConstraints="NO" id="A53-2m-H2I">
-                                                        <rect key="frame" x="20" y="50" width="45" height="45"/>
+                                                        <rect key="frame" x="20" y="50" width="35" height="35"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="A53-2m-H2I" secondAttribute="height" multiplier="1:1" id="Exq-nV-P6R"/>
-                                                            <constraint firstAttribute="width" constant="45" id="WPn-lh-fA2"/>
+                                                            <constraint firstAttribute="width" constant="35" id="WPn-lh-fA2"/>
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" alpha="0.10000000149011612" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nvp-SR-EPv">
-                                                        <rect key="frame" x="5" y="36.666666666666657" width="75" height="72"/>
+                                                        <rect key="frame" x="8.3333333333333321" y="39.666666666666657" width="58.333333333333343" height="56"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
                                                             <action selector="gotoDismiss:" destination="b2F-XB-jnz" eventType="touchUpInside" id="zI2-tZ-2N0"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DBY-ms-Ls8">
+                                                        <rect key="frame" x="300.33333333333331" y="47.333333333333329" width="82.666666666666686" height="40.333333333333329"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="Restore"/>
+                                                        <connections>
+                                                            <action selector="restorePurchase:" destination="b2F-XB-jnz" eventType="touchUpInside" id="KiL-Rg-cpB"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -3518,8 +3527,10 @@
                                                     <constraint firstItem="Nvp-SR-EPv" firstAttribute="width" secondItem="A53-2m-H2I" secondAttribute="width" multiplier="1.66667" id="AfP-GW-rRi"/>
                                                     <constraint firstItem="Nkq-OK-yXE" firstAttribute="top" secondItem="1Ts-L1-gHK" secondAttribute="top" id="Yxe-Ca-4bj"/>
                                                     <constraint firstItem="Nvp-SR-EPv" firstAttribute="centerX" secondItem="A53-2m-H2I" secondAttribute="centerX" id="ZaE-bJ-Fwk"/>
+                                                    <constraint firstAttribute="trailing" secondItem="DBY-ms-Ls8" secondAttribute="trailing" constant="10" id="alW-5r-tWW"/>
                                                     <constraint firstItem="Nkq-OK-yXE" firstAttribute="centerX" secondItem="1Ts-L1-gHK" secondAttribute="centerX" id="atc-qU-3Y9"/>
                                                     <constraint firstItem="Nvp-SR-EPv" firstAttribute="height" secondItem="A53-2m-H2I" secondAttribute="height" multiplier="1.6" id="cqo-wF-8b0"/>
+                                                    <constraint firstItem="DBY-ms-Ls8" firstAttribute="centerY" secondItem="Nvp-SR-EPv" secondAttribute="centerY" id="d3b-d6-F6T"/>
                                                     <constraint firstItem="A53-2m-H2I" firstAttribute="top" secondItem="1Ts-L1-gHK" secondAttribute="top" constant="50" id="gOb-8l-eJK"/>
                                                     <constraint firstItem="Nkq-OK-yXE" firstAttribute="leading" secondItem="1Ts-L1-gHK" secondAttribute="leading" id="gy0-Ph-ymt"/>
                                                     <constraint firstAttribute="trailing" secondItem="Nkq-OK-yXE" secondAttribute="trailing" id="h75-DU-iNZ"/>
@@ -4381,7 +4392,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="N9L-Qj-Klu"/>
+        <segue reference="fvf-Rn-EjM"/>
         <segue reference="YX3-B7-kMN"/>
     </inferredMetricsTieBreakers>
     <resources>
@@ -4413,7 +4424,7 @@
         <image name="Top Banner Design" width="393.33334350585938" height="288.33334350585938"/>
         <image name="Vibrate" width="32" height="32"/>
         <image name="White Redio Button" width="30" height="30"/>
-        <image name="close" width="32" height="31.666666030883789"/>
+        <image name="close" width="13.333333015441895" height="13"/>
         <image name="color code" width="32.333332061767578" height="32.333332061767578"/>
         <image name="continue" width="328.33334350585938" height="60.666667938232422"/>
         <image name="create" width="30" height="30"/>
