@@ -25,14 +25,27 @@ class SubscriptionVc: UIViewController,UIScrollViewDelegate {
     
     @IBOutlet weak var monthlyView: UIView!
     @IBOutlet weak var weeklyView: UIView!
-
+    
+    @IBOutlet weak var offerLabel: UILabel!
+    
+    
+  
+    @IBOutlet weak var label1: UILabel!
+    @IBOutlet weak var label2: UILabel!
+    @IBOutlet weak var label3: UILabel!
+    var currentSelectedSub = 0
+    
+    let subColor =  UIColor(red: 33.0/255, green: 187.0/255, blue: 69.0/255, alpha: 1.0)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         mainScrollView.delegate = self
        
         
         self.perform(#selector(self.targetMethod), with: self, afterDelay: 0.1)
-
+        
+       
+        self.checkColorStatus()
         self.setRoundedView(view: weeklyView, radius: 9)
         self.setRoundedView(view: monthlyView, radius: 9)
         self.setRoundedView(view: mostPopularView, radius: 15)
@@ -44,6 +57,39 @@ class SubscriptionVc: UIViewController,UIScrollViewDelegate {
         view.layer.borderWidth = 2.0
         view.layer.borderColor = UIColor(red: 33.0/255, green: 187.0/255, blue: 69.0/255, alpha: 1.0).cgColor
         view.clipsToBounds = true
+        
+        
+        offerLabel.layer.cornerRadius =  offerLabel.frame.size.height / 2.0
+        offerLabel.clipsToBounds = true
+    }
+    func checkColorStatus() {
+        
+        label1.backgroundColor = UIColor.clear
+        label2.backgroundColor = UIColor.clear
+        label3.backgroundColor = UIColor.clear
+     
+        
+        label1.textColor = UIColor.black
+        label2.textColor = UIColor.black
+        label3.textColor = UIColor.black
+        
+        if currentSelectedSub == 1 {
+            
+            label1.backgroundColor = subColor
+            label1.textColor = UIColor.white
+        }
+        
+        if currentSelectedSub == 0 {
+            
+            label2.backgroundColor = subColor
+            label2.textColor = UIColor.white
+        }
+        
+        if currentSelectedSub == 2 {
+            
+            label3.backgroundColor = subColor
+            label3.textColor = UIColor.white
+        }
     }
 
     
@@ -127,7 +173,14 @@ class SubscriptionVc: UIViewController,UIScrollViewDelegate {
     
     
     private func purchaseItemIndex(index: Int) {
+        
+        currentSelectedSub = index;
+        
+        self.checkColorStatus()
        
+        
+    }
+    func checkSub(index:Int) {
         DispatchQueue.main.async{
             
             ProgressHUD.animate("Purchasing...", interaction: false)
@@ -172,7 +225,6 @@ class SubscriptionVc: UIViewController,UIScrollViewDelegate {
                 
             }
         }
-        
     }
     
     
