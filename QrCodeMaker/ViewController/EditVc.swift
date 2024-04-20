@@ -156,7 +156,7 @@ class EditVc: UIViewController, UITextViewDelegate,CLLocationManagerDelegate {
             
             
             if let value = image {
-
+                
                 delegate?.processYelpData(ar: createDataModelArray, sh: showText, st: value1)
                 self.dismiss(animated: true, completion: {
                     
@@ -175,7 +175,7 @@ class EditVc: UIViewController, UITextViewDelegate,CLLocationManagerDelegate {
                 
             }
             
-            return 
+            return
             
         }
         
@@ -305,7 +305,7 @@ class EditVc: UIViewController, UITextViewDelegate,CLLocationManagerDelegate {
                     try vcard = CNContactVCardSerialization.data(with: [contact!] )  as NSData
                     mal = String(data: vcard as Data, encoding: .utf8)
                     // print("string  ", vcString)
-                   
+                    
                     
                 } catch {
                     print("Error \(error)")
@@ -363,6 +363,14 @@ class EditVc: UIViewController, UITextViewDelegate,CLLocationManagerDelegate {
         view.endEditing(true)
     }
     
+    @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let initialViewController = storyboard.instantiateViewController(withIdentifier: "SubscriptionVc") as! SubscriptionVc
+        initialViewController.modalPresentationStyle = .fullScreen
+        self.present(initialViewController, animated: true, completion: nil)
+         
+    }
     
     fileprivate func isOnlyDecimal(type: String) -> Bool {
         print("ayat : ", type)
@@ -385,14 +393,24 @@ class EditVc: UIViewController, UITextViewDelegate,CLLocationManagerDelegate {
      */
     
     
+    @objc func buttonAction(sender: UIButton!) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let initialViewController = storyboard.instantiateViewController(withIdentifier: "SubscriptionVc") as! SubscriptionVc
+        initialViewController.modalPresentationStyle = .fullScreen
+        self.present(initialViewController, animated: true, completion: nil)
+        
+    }
+    
+    
     @IBAction func gotoPreviousView(_ sender: Any) {
         self.dismiss(animated: true)
     }
     
     @objc func segmentAction(_ segmentedControl: UISegmentedControl) {
         currentTextview?.resignFirstResponder()
-       
-       
+        
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
             let indexPath = IndexPath(row: 2, section: 0)
             self.tableView.scrollToRow(at: indexPath , at: .bottom, animated: true)
@@ -400,7 +418,7 @@ class EditVc: UIViewController, UITextViewDelegate,CLLocationManagerDelegate {
         }
         
         if let gender = segmentedControl.titleForSegment(at: segmentedControl.selectedSegmentIndex) {
-          
+            
             self.createDataModelArray[2].description = gender
             
             
@@ -502,7 +520,7 @@ extension EditVc: UITableViewDelegate,UITableViewDataSource{
         let textF = self.createDataModelArray[indexPath.item].title
         
         cell.networkName.addTarget(self, action: #selector(segmentAction(_:)), for: .valueChanged)
-      //  cell.networkName.addTarget(self, action: #selector(segmentAction(_:)), for: .touchUpInside)
+        //  cell.networkName.addTarget(self, action: #selector(segmentAction(_:)), for: .touchUpInside)
         
         
         if textF.containsIgnoringCase(find: "Encription") {
@@ -524,7 +542,13 @@ extension EditVc: UITableViewDelegate,UITableViewDataSource{
     
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 150
+        
+        if !Store.sharedInstance.isActiveSubscription() {
+            return 150
+        }
+        
+        return 0
+        
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
@@ -533,7 +557,12 @@ extension EditVc: UITableViewDelegate,UITableViewDataSource{
         heightF = (164*widthF)/976
         let titleLabel = UIImageView(frame: CGRect(x:(Int(self.view.frame.width) - widthF)/Int(2.0),y: 40 ,width:widthF,height:heightF))
         titleLabel.image =  UIImage(named: "App Ad.png")
+        titleLabel.isUserInteractionEnabled = true
         vw.addSubview(titleLabel)
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+        vw.addGestureRecognizer(tap)
+        vw.isUserInteractionEnabled = true
+
         return vw
     }
 }
