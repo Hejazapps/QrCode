@@ -288,7 +288,8 @@ class SubscriptionVc: UIViewController,UIScrollViewDelegate {
         
         NSLayoutConstraint.activate([
             rightArrowButton.centerXAnchor.constraint(equalTo: holderbtn.centerXAnchor),
-            rightArrowButton.centerYAnchor.constraint(equalTo: holderbtn.centerYAnchor + 20)
+            rightArrowButton.centerYAnchor.constraint(equalTo: holderbtn.centerYAnchor, constant: 5),
+
         ])
         
         mainScrollView.contentOffset.y = 0
