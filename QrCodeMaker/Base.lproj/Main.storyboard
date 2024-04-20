@@ -4006,6 +4006,10 @@
                                                             <constraint firstItem="pqq-CZ-Tbk" firstAttribute="centerY" secondItem="FiS-Iq-DzL" secondAttribute="centerY" id="vNe-64-u89"/>
                                                         </constraints>
                                                     </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nhr-dN-sgG">
+                                                        <rect key="frame" x="253" y="260" width="110" height="88"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Hg-hW-qMo">
                                                         <rect key="frame" x="0.0" y="348" width="393" height="30"/>
                                                         <subviews>
@@ -4096,10 +4100,14 @@
                                                     <constraint firstItem="FiS-Iq-DzL" firstAttribute="width" secondItem="ax5-8d-hh7" secondAttribute="width" id="Af8-m1-8Qn"/>
                                                     <constraint firstItem="ax5-8d-hh7" firstAttribute="width" secondItem="V2t-kc-zmS" secondAttribute="width" multiplier="0.8" id="AtS-n7-mFh"/>
                                                     <constraint firstAttribute="trailing" secondItem="V2t-kc-zmS" secondAttribute="trailing" id="BGR-4S-9jl"/>
+                                                    <constraint firstItem="Nhr-dN-sgG" firstAttribute="width" secondItem="ax5-8d-hh7" secondAttribute="width" multiplier="0.35" id="Jmj-2p-gYL"/>
                                                     <constraint firstItem="0Hg-hW-qMo" firstAttribute="top" secondItem="ax5-8d-hh7" secondAttribute="bottom" constant="10" id="LJB-R5-tGe"/>
                                                     <constraint firstItem="FiS-Iq-DzL" firstAttribute="centerY" secondItem="ax5-8d-hh7" secondAttribute="centerY" id="NHJ-OP-Qoa"/>
+                                                    <constraint firstItem="Nhr-dN-sgG" firstAttribute="top" secondItem="V2t-kc-zmS" secondAttribute="bottom" id="NI7-67-otW"/>
                                                     <constraint firstItem="V2t-kc-zmS" firstAttribute="top" secondItem="4pm-jm-hzX" secondAttribute="top" id="Onl-Ep-f7Z"/>
+                                                    <constraint firstItem="0Hg-hW-qMo" firstAttribute="top" secondItem="Nhr-dN-sgG" secondAttribute="bottom" id="SW2-BJ-e9Y"/>
                                                     <constraint firstItem="sIx-MA-hfY" firstAttribute="top" secondItem="0Hg-hW-qMo" secondAttribute="bottom" constant="10" id="g1r-eT-uLD"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Nhr-dN-sgG" secondAttribute="trailing" constant="30" id="gIn-nl-gJ8"/>
                                                     <constraint firstItem="FiS-Iq-DzL" firstAttribute="height" secondItem="ax5-8d-hh7" secondAttribute="height" id="lUJ-uX-zhd"/>
                                                     <constraint firstItem="sIx-MA-hfY" firstAttribute="width" secondItem="4pm-jm-hzX" secondAttribute="width" multiplier="0.8" id="oG1-8i-hJK"/>
                                                     <constraint firstItem="0Hg-hW-qMo" firstAttribute="leading" secondItem="4pm-jm-hzX" secondAttribute="leading" id="pd1-hf-6Db"/>
@@ -4155,6 +4163,7 @@
                     <connections>
                         <outlet property="heightConstrainOfWholeView" destination="ydf-TJ-wsG" id="lCY-QT-NfZ"/>
                         <outlet property="holderView" destination="sIx-MA-hfY" id="bS1-Pa-oXm"/>
+                        <outlet property="holderbtn" destination="Nhr-dN-sgG" id="PbW-YN-Jht"/>
                         <outlet property="label1" destination="T2w-EU-qzs" id="d4p-eM-abI"/>
                         <outlet property="label2" destination="Y8R-T4-fco" id="h7K-6I-OtU"/>
                         <outlet property="label3" destination="ByH-bL-waR" id="qtd-QH-tph"/>

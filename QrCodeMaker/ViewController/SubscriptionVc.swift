@@ -14,6 +14,7 @@ class SubscriptionVc: UIViewController,UIScrollViewDelegate {
     var completeOnboarding : (() -> Void)?
     var presentMainTabOnAnyAction = false
     
+    @IBOutlet weak var holderbtn: UIView!
     @IBOutlet weak var holderView: UIView!
     
     @IBOutlet weak var middleView: UIView!
@@ -29,7 +30,7 @@ class SubscriptionVc: UIViewController,UIScrollViewDelegate {
     @IBOutlet weak var offerLabel: UILabel!
     
     
-  
+    
     @IBOutlet weak var label1: UILabel!
     @IBOutlet weak var label2: UILabel!
     @IBOutlet weak var label3: UILabel!
@@ -37,19 +38,27 @@ class SubscriptionVc: UIViewController,UIScrollViewDelegate {
     
     let subColor =  UIColor(red: 33.0/255, green: 187.0/255, blue: 69.0/255, alpha: 1.0)
     
+    let rightArrowButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("→", for: .normal) // Set the button's title to a right arrow symbol
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 35) // Set the font size
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         mainScrollView.delegate = self
-       
+        
         
         self.perform(#selector(self.targetMethod), with: self, afterDelay: 0.1)
-        
-       
+        rightArrowButton.setTitleColor(.white, for: .normal)
         self.checkColorStatus()
         self.setRoundedView(view: weeklyView, radius: 9)
         self.setRoundedView(view: monthlyView, radius: 9)
         self.setRoundedView(view: mostPopularView, radius: 15)
         // Do any additional setup after loading the view.
+        
     }
     
     func setRoundedView(view:UIView,radius:Int){
@@ -67,7 +76,7 @@ class SubscriptionVc: UIViewController,UIScrollViewDelegate {
         label1.backgroundColor = UIColor.clear
         label2.backgroundColor = UIColor.clear
         label3.backgroundColor = UIColor.clear
-     
+        
         
         label1.textColor = UIColor.black
         label2.textColor = UIColor.black
@@ -91,7 +100,7 @@ class SubscriptionVc: UIViewController,UIScrollViewDelegate {
             label3.textColor = UIColor.white
         }
     }
-
+    
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         print("nosto")
@@ -102,7 +111,7 @@ class SubscriptionVc: UIViewController,UIScrollViewDelegate {
         super.viewWillAppear(animated)
         setNeedsStatusBarAppearanceUpdate()
     }
-
+    
     @IBAction func gotoDismiss(_ sender: Any) {
         completeOnboarding?()
         
@@ -114,7 +123,7 @@ class SubscriptionVc: UIViewController,UIScrollViewDelegate {
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-       
+        
         let lastContentOffset = scrollView.contentOffset.y
         
         
@@ -170,16 +179,55 @@ class SubscriptionVc: UIViewController,UIScrollViewDelegate {
         }
     }
     
-    
-    
+    @objc func buttonTapped() {
+        // Animate the button when tapped
+        UIView.animate(withDuration: 0.3, animations: {
+            // Animate the button's position to the right
+            self.rightArrowButton.center.x += 50
+            
+            // Optionally, you can add other animations, such as rotation
+            // self.rightArrowButton.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 4)
+        }, completion: { finished in
+            // Reset the button's position after the animation completes
+            UIView.animate(withDuration: 0.3) {
+                self.rightArrowButton.center.x -= 50
+                
+                // Reset the rotation if applied
+                // self.rightArrowButton.transform = .identity
+            }
+        })
+    }
     private func purchaseItemIndex(index: Int) {
         
         currentSelectedSub = index;
         
         self.checkColorStatus()
-       
+        
         
     }
+    
+    func startContinuousAnimation() {
+        // Define the animation parameters
+        let animationDuration = 0.5 // Duration of the animation in seconds
+        let moveDistance: CGFloat = 30 // Distance to move the button in each animation
+        
+        // Perform the animation
+        UIView.animate(withDuration: animationDuration, animations: {
+            // Move the button to the right
+            self.rightArrowButton.center.x += moveDistance
+        }, completion: { finished in
+            // If the animation finished, reverse the animation to bring the button back to the starting point
+            UIView.animate(withDuration: animationDuration, animations: {
+                self.rightArrowButton.center.x -= moveDistance
+            }, completion: { finished in
+                // Continue the animation in a loop
+                self.startContinuousAnimation()
+            })
+        })
+    }
+    
+    
+    
     func checkSub(index:Int) {
         DispatchQueue.main.async{
             
@@ -188,13 +236,13 @@ class SubscriptionVc: UIViewController,UIScrollViewDelegate {
         }
         
         var productId =
-            [PoohWisdomProducts.yearlySub, PoohWisdomProducts.weeklySub,PoohWisdomProducts.monthlySub]
+        [PoohWisdomProducts.yearlySub, PoohWisdomProducts.weeklySub,PoohWisdomProducts.monthlySub]
         
         self.buyAproduct(value: productId[index])
         
         return
-            
-            Store.sharedInstance.setCurrentItem(value: productId[index])
+        
+        Store.sharedInstance.setCurrentItem(value: productId[index])
         PoohWisdomProducts.store.requestProducts { [weak self] success, products in
             guard let self = self else { return }
             guard success else {
@@ -215,7 +263,7 @@ class SubscriptionVc: UIViewController,UIScrollViewDelegate {
             PoohWisdomProducts.store.buyProduct(products![0] as SKProduct) { [weak self] success, productId in
                 guard let self = self else {
                     
-                   // return
+                    // return
                     
                 }
                 guard success else {
@@ -236,15 +284,26 @@ class SubscriptionVc: UIViewController,UIScrollViewDelegate {
     }
     
     @objc fileprivate func targetMethod(){
+        holderbtn.addSubview(rightArrowButton)
+        
+        NSLayoutConstraint.activate([
+            rightArrowButton.centerXAnchor.constraint(equalTo: holderbtn.centerXAnchor),
+            rightArrowButton.centerYAnchor.constraint(equalTo: holderbtn.centerYAnchor + 20)
+        ])
+        
         mainScrollView.contentOffset.y = 0
         heightConstrainOfWholeView.constant = holderView.frame.origin.y + middleView.frame.origin.y  + 70
-         
+        self.startContinuousAnimation()
+        
     }
+    
+    
+    
 }
 
 
 extension UIView {
-   func roundCorners(corners: UIRectCorner, radius: CGFloat) {
+    func roundCorners(corners: UIRectCorner, radius: CGFloat) {
         let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
         let mask = CAShapeLayer()
         mask.path = path.cgPath
