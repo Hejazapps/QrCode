@@ -276,6 +276,10 @@ class SubscriptionVc: UIViewController,UIScrollViewDelegate {
     }
     
     
+    @IBAction func continuebuttonpressed(_ sender: Any) {
+        
+        self.checkSub(index: currentSelectedSub)
+    }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         if scrollView.contentOffset.y < 0 {

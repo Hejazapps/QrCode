@@ -3767,8 +3767,8 @@
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OrX-zW-bTt">
                                                                         <rect key="frame" x="0.0" y="150" width="135.66666666666666" height="50"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$39.99 /year" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G7o-nd-XXh">
-                                                                                <rect key="frame" x="21" y="14.999999999999998" width="94" height="20.333333333333329"/>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$29.99 /year" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G7o-nd-XXh">
+                                                                                <rect key="frame" x="21.000000000000007" y="14.999999999999998" width="93.666666666666686" height="20.333333333333329"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="20.329999999999998" id="xTp-da-58q"/>
                                                                                 </constraints>
@@ -3853,7 +3853,7 @@
                                                                             <constraint firstItem="8la-2K-ygG" firstAttribute="centerX" secondItem="fgI-5b-uy7" secondAttribute="centerX" id="sRk-Wy-b62"/>
                                                                         </constraints>
                                                                     </view>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$2.99 /week" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjH-qx-Imx">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$1.99 /week" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjH-qx-Imx">
                                                                         <rect key="frame" x="0.0" y="90" width="108.66666666666667" height="66"/>
                                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3915,7 +3915,7 @@
                                                                             <constraint firstItem="hcv-sL-sNz" firstAttribute="centerY" secondItem="ywv-qH-z2D" secondAttribute="centerY" id="evM-Wp-rzv"/>
                                                                         </constraints>
                                                                     </view>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$5.99 /month" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="esm-IR-Flv">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$4.99 /month" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="esm-IR-Flv">
                                                                         <rect key="frame" x="0.0" y="90" width="108.66666666666667" height="66"/>
                                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3999,10 +3999,23 @@
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
+                                                            <button opaque="NO" alpha="0.10000000000000001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5BV-tJ-SeQ">
+                                                                <rect key="frame" x="0.0" y="0.0" width="314.33333333333331" height="58"/>
+                                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                                <connections>
+                                                                    <action selector="continuebuttonpressed:" destination="b2F-XB-jnz" eventType="touchUpInside" id="zHy-jy-Pvl"/>
+                                                                </connections>
+                                                            </button>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstItem="pqq-CZ-Tbk" firstAttribute="centerX" secondItem="FiS-Iq-DzL" secondAttribute="centerX" id="BTb-b6-R1Y"/>
+                                                            <constraint firstItem="5BV-tJ-SeQ" firstAttribute="leading" secondItem="FiS-Iq-DzL" secondAttribute="leading" id="MIo-m3-qQB"/>
+                                                            <constraint firstItem="5BV-tJ-SeQ" firstAttribute="top" secondItem="FiS-Iq-DzL" secondAttribute="top" id="UdL-Ah-Ekm"/>
+                                                            <constraint firstAttribute="trailing" secondItem="5BV-tJ-SeQ" secondAttribute="trailing" id="lnz-2R-2yL"/>
+                                                            <constraint firstAttribute="bottom" secondItem="5BV-tJ-SeQ" secondAttribute="bottom" id="tIo-5z-y7b"/>
                                                             <constraint firstItem="pqq-CZ-Tbk" firstAttribute="centerY" secondItem="FiS-Iq-DzL" secondAttribute="centerY" id="vNe-64-u89"/>
                                                         </constraints>
                                                     </view>
