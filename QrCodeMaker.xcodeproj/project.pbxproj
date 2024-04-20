@@ -1050,7 +1050,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 4;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 6LHLWBRU4S;
+				DEVELOPMENT_TEAM = 68W2966MBV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = QrCodeMaker/Info.plist;
 				INFOPLIST_KEY_NSCalendarsUsageDescription = "This allows you add a calendar event to your device's calendar after scanning a QR code containing a calendar event.";
@@ -1071,7 +1071,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hejazapps.scannr1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hejazapps.scannr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1093,7 +1093,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 4;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 6LHLWBRU4S;
+				DEVELOPMENT_TEAM = 68W2966MBV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = QrCodeMaker/Info.plist;
 				INFOPLIST_KEY_NSCalendarsUsageDescription = "This allows you add a calendar event to your device's calendar after scanning a QR code containing a calendar event.";
@@ -1114,7 +1114,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hejazapps.scannr1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hejazapps.scannr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

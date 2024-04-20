@@ -296,9 +296,9 @@ class Store: NSObject {
         SwiftyStoreKit.verifyReceipt(using: appleValidator) { result in
             switch result {
             case .success(let receipt):
-                let productIds = Set([ "com.zertinteractive.qrcode.yearly",
-                                       "com.zertinteractive.qrcode.weekly",
-                                       "com.zertinteractive.qrcode.monthly" ])
+                let productIds = Set([ "com.scannr.yearly",
+                                       "com.scannr.monthly",
+                                       "com.scannr.weekly" ])
                 let purchaseResult = SwiftyStoreKit.verifySubscriptions(productIds: productIds, inReceipt: receipt)
                 switch purchaseResult {
                 case .purchased(let expiryDate, let items):
