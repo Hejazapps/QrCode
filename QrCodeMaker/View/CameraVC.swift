@@ -73,31 +73,6 @@ public class CameraVC: UIViewController {
         
         guard let captureDevice = AVCaptureDevice.default(for: .video) else { return nil }
         
-        // 自动白平衡
-        if captureDevice.isWhiteBalanceModeSupported(.continuousAutoWhiteBalance) {
-            do {
-                try captureDevice.lockForConfiguration()
-                captureDevice.whiteBalanceMode = .continuousAutoWhiteBalance
-                captureDevice.unlockForConfiguration()
-            } catch {}
-        }
-        // 自动对焦
-        if captureDevice.isFocusModeSupported(.continuousAutoFocus) {
-            do {
-                try captureDevice.lockForConfiguration()
-                captureDevice.focusMode = .continuousAutoFocus
-                captureDevice.unlockForConfiguration()
-            } catch {}
-        }
-        // 自动曝光
-        if captureDevice.isExposureModeSupported(.continuousAutoExposure) {
-            do {
-                try captureDevice.lockForConfiguration()
-                captureDevice.exposureMode = .continuousAutoExposure
-                captureDevice.unlockForConfiguration()
-            } catch {}
-        }
-        
         return captureDevice
     }()
     /// Capture session.
@@ -118,13 +93,13 @@ public class CameraVC: UIViewController {
         super.viewDidAppear(animated)
         
         scanView.setNeedsDisplay()
-        scanView.startAnimation()
+        //scanView.startAnimation()
     }
     
     public override func viewDidDisappear(_ animated: Bool) {
         print("CameraVC -> viewDidDisappear()")
         super.viewDidDisappear(animated)
-        scanView.stopAnimation()
+      //  scanView.stopAnimation()
     }
     
     override public func viewWillAppear(_ animated: Bool) {
