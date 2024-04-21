@@ -8,7 +8,7 @@
 import UIKit
 import AVFoundation
 
-class ScannerVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
+class ScannerVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate, UNUserNotificationCenterDelegate {
     
     // MARK: - Properties
     private var captureSession: AVCaptureSession!
@@ -38,6 +38,24 @@ class ScannerVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         } else {
             checkCameraPermission()
         }
+        self.setNotification()
+    }
+    
+  
+    
+    func setNotification() {
+        
+        UNUserNotificationCenter.current().delegate = self
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { success, error in
+            if success {
+                print("[murad] success Push authorization")
+            } else {
+                print("[murad] error Push authorization: \(String(describing: error?.localizedDescription))")
+            }
+        }
+        UIApplication.shared.registerForRemoteNotifications()
+        
+      
     }
     
     override func viewWillDisappear(_ animated: Bool) {

@@ -35,17 +35,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
         Messaging.messaging().delegate = self
-        UNUserNotificationCenter.current().delegate = self
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { success, error in
-            if success {
-                print("[murad] success Push authorization")
-            } else {
-                print("[murad] error Push authorization: \(String(describing: error?.localizedDescription))")
-            }
-        }
-        application.registerForRemoteNotifications()
         
-        DBmanager.shared.initDB()
+        
         
         UISegmentedControl.appearance().selectedSegmentTintColor = UIColor.white
         UISegmentedControl.appearance().backgroundColor =  UIColor.white
