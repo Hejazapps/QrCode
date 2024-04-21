@@ -22,7 +22,7 @@ class SettingsVc: UIViewController, MFMailComposeViewControllerDelegate {
         super.viewDidLoad()
         soundWatch.addTarget(self, action: #selector(switchChanged), for: UIControl.Event.valueChanged)
         vibrateWatch.addTarget(self, action: #selector(switchChanged), for: UIControl.Event.valueChanged)
-        beepSwitch.addTarget(self, action: #selector(switchChanged), for: UIControl.Event.valueChanged)
+       // beepSwitch.addTarget(self, action: #selector(switchChanged), for: UIControl.Event.valueChanged)
         historySwitch.addTarget(self, action: #selector(switchChanged), for: UIControl.Event.valueChanged)
         linkOpen.addTarget(self, action: #selector(switchChanged), for: UIControl.Event.valueChanged)
         
@@ -118,12 +118,7 @@ class SettingsVc: UIViewController, MFMailComposeViewControllerDelegate {
             vibrateWatch.setOn(false, animated: true)
         }
         
-        if c == 2 {
-            beepSwitch.setOn(true, animated: true)
-        }
-        else {
-            beepSwitch.setOn(false, animated: true)
-        }
+         
         
         if d == 2 {
             linkOpen.setOn(true, animated: true)

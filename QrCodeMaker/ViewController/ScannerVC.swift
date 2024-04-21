@@ -179,26 +179,6 @@ class ScannerVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate, UNUse
         print("outpout  = \(code)")
         
         
-        let a = UserDefaults.standard.integer(forKey: "Link")
-        
-        if a == 2 {
-            if code.containsIgnoringCase(find: "https") {
-                guard let url = URL(string: code) else {
-                    return //be safe
-                }
-                
-                if #available(iOS 10.0, *) {
-                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                } else {
-                    UIApplication.shared.openURL(url)
-                }
-                
-                captureSession.stopRunning()
-                return
-            }
-        }
-        
-        
         let b = UserDefaults.standard.integer(forKey: "vibrate")
         
         if b == 2 {
@@ -218,6 +198,29 @@ class ScannerVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate, UNUse
             print("Playing capture")
             AudioServicesPlaySystemSound(SystemSoundID(1108))
         }
+        
+        
+        let a = UserDefaults.standard.integer(forKey: "Link")
+        
+        if a == 2 {
+            if code.containsIgnoringCase(find: "https") {
+                guard let url = URL(string: code) else {
+                    return //be safe
+                }
+                
+                if #available(iOS 10.0, *) {
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                } else {
+                    UIApplication.shared.openURL(url)
+                }
+                
+                captureSession.startRunning()
+                return
+            }
+        }
+        
+        
+     
         
         let fullNameArr = type.components(separatedBy: ".")
         let name = fullNameArr[2] as? String
