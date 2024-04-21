@@ -1662,6 +1662,12 @@
                                                                                                         <color key="tintColor" name="AccentColor"/>
                                                                                                         <color key="onTintColor" red="0.066666666669999999" green="0.51372549020000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                                     </switch>
+                                                                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TwF-L6-iJg">
+                                                                                                        <rect key="frame" x="159" y="24" width="75" height="41"/>
+                                                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                                        <state key="normal" title="Button"/>
+                                                                                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                                                                    </button>
                                                                                                 </subviews>
                                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                 <constraints>
@@ -1790,13 +1796,26 @@
                                                                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                         <nil key="highlightedColor"/>
                                                                                                     </label>
+                                                                                                    <button opaque="NO" alpha="0.10000000000000001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i8i-C9-2k7">
+                                                                                                        <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
+                                                                                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                                        <state key="normal" title="Button"/>
+                                                                                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                                                                        <connections>
+                                                                                                            <action selector="gotoSubscription:" destination="88R-HU-4D7" eventType="touchUpInside" id="ozS-eG-ckg"/>
+                                                                                                        </connections>
+                                                                                                    </button>
                                                                                                 </subviews>
                                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                 <constraints>
+                                                                                                    <constraint firstItem="i8i-C9-2k7" firstAttribute="height" secondItem="jwj-z1-nXX" secondAttribute="height" id="2iC-aw-oAr"/>
                                                                                                     <constraint firstItem="pmB-VT-bDr" firstAttribute="centerY" secondItem="KTG-Fu-GuW" secondAttribute="centerY" id="DwR-RV-PSB"/>
+                                                                                                    <constraint firstItem="i8i-C9-2k7" firstAttribute="width" secondItem="jwj-z1-nXX" secondAttribute="width" id="FRs-Gf-xg2"/>
+                                                                                                    <constraint firstItem="i8i-C9-2k7" firstAttribute="centerX" secondItem="jwj-z1-nXX" secondAttribute="centerX" id="MNB-b4-TML"/>
                                                                                                     <constraint firstItem="pmB-VT-bDr" firstAttribute="leading" secondItem="KTG-Fu-GuW" secondAttribute="trailing" constant="15" id="NNm-Qp-PmL"/>
                                                                                                     <constraint firstItem="KTG-Fu-GuW" firstAttribute="top" secondItem="jwj-z1-nXX" secondAttribute="top" constant="10" id="QZW-oa-gv4"/>
                                                                                                     <constraint firstItem="KTG-Fu-GuW" firstAttribute="leading" secondItem="jwj-z1-nXX" secondAttribute="leading" constant="20" id="iXq-yi-IFF"/>
+                                                                                                    <constraint firstItem="i8i-C9-2k7" firstAttribute="centerY" secondItem="jwj-z1-nXX" secondAttribute="centerY" id="ygv-If-NxO"/>
                                                                                                 </constraints>
                                                                                             </view>
                                                                                         </subviews>

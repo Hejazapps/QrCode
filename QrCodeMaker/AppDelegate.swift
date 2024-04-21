@@ -44,6 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
         Messaging.messaging().delegate = self
         
         self.addLog()
+        DBmanager.shared.initDB()
         
         
         UISegmentedControl.appearance().selectedSegmentTintColor = UIColor.white
