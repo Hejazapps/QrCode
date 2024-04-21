@@ -664,22 +664,9 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
             }
         }
         
-        let defaults = UserDefaults.standard
+       
         
-        var valueOfText  = defaults.integer(forKey: "no_of_image")
         
-        if( valueOfText % 5 == 0){
-            
-            if #available(iOS 14.0, *) {
-                if let scene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
-                    SKStoreReviewController.requestReview(in: scene)
-                }
-            } else {
-                SKStoreReviewController.requestReview()
-            }
-        }
-        
-        UserDefaults.standard.set(valueOfText + 1, forKey:"no_of_image")
     }
     
     @IBAction func gotoSve(_ sender: Any) {
@@ -693,6 +680,38 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "sadiq"), object: nil)
        // self.view.window!.rootViewController?.dismiss(animated: true, completion: nil)
         delegateDis?.dimissAllClass()
+        
+        
+        let defaults = UserDefaults.standard
+        
+        var valueOfText  = defaults.integer(forKey: "no_of_image")
+        
+        if (valueOfText == 0) {
+            
+            let alertView = SwiftAlertView(title: "Rate ScannR App",
+                                           message: "If you enjoy using ScannR App, would you mind taking a moment to rate it? It won't take more than a minute. Thanks for your support!",
+                                           buttonTitles: ["Rate Example App", "Remind me later", "No, thank"])
+            alertView.delegate = self
+            alertView.transitionType = .vertical
+            alertView.appearTime = 0.2
+            alertView.disappearTime = 0.2
+            alertView.show()
+            UserDefaults.standard.set(valueOfText + 1, forKey:"no_of_image")
+            return
+        }
+        
+        else if( valueOfText % 5 == 0){
+            
+            if #available(iOS 14.0, *) {
+                if let scene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
+                    SKStoreReviewController.requestReview(in: scene)
+                }
+            } else {
+                SKStoreReviewController.requestReview()
+            }
+        }
+        
+        UserDefaults.standard.set(valueOfText + 1, forKey:"no_of_image")
         self.dismiss(animated: true)
         
     }
@@ -1267,4 +1286,31 @@ extension ShowResultVc: UITableViewDelegate,UITableViewDataSource {
         cell.lbl.textColor  = UIColor.black
         return cell
     }
+}
+extension ShowResultVc: SwiftAlertViewDelegate {
+    func alertView(_ alertView: SwiftAlertView, clickedButtonAtIndex buttonIndex: Int) {
+        
+        if(buttonIndex == 0) {
+            
+            if #available(iOS 14.0, *) {
+                if let scene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
+                    SKStoreReviewController.requestReview(in: scene)
+                }
+            } else {
+                SKStoreReviewController.requestReview()
+            }
+        }
+        
+        self.dismiss(animated: true)
+    }
+
+    func didPresentAlertView(alertView: SwiftAlertView) {
+        print("Did Present Alert View\n")
+    }
+
+    func didDismissAlertView(alertView: SwiftAlertView) {
+        print("Did Dismiss Alert View\n")
+    }
+    
+     
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1BC73BDB2BD4C17F00DBBD9A /* SwiftAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC73BDA2BD4C17F00DBBD9A /* SwiftAlertView.swift */; };
 		3905623E2AA01DB700055103 /* Video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 3905623D2AA01DB700055103 /* Video.mp4 */; };
 		C0E0FEF62D27BB2E04E1E83F /* Pods_QrCodeMaker_QrCodeMakerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 146BE22696B41A2C6DD57E28 /* Pods_QrCodeMaker_QrCodeMakerUITests.framework */; };
 		C809AB782A6BD53000160B4E /* FolderVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = C809AB772A6BD53000160B4E /* FolderVc.swift */; };
@@ -128,6 +129,7 @@
 /* Begin PBXFileReference section */
 		146BE22696B41A2C6DD57E28 /* Pods_QrCodeMaker_QrCodeMakerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QrCodeMaker_QrCodeMakerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B9ACC202AE91A0C006C60E1 /* QrCodeMaker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QrCodeMaker.entitlements; sourceTree = "<group>"; };
+		1BC73BDA2BD4C17F00DBBD9A /* SwiftAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftAlertView.swift; sourceTree = "<group>"; };
 		3905623D2AA01DB700055103 /* Video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Video.mp4; sourceTree = "<group>"; };
 		430902186CC4F88528A4B98F /* Pods-QrCodeMaker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QrCodeMaker.release.xcconfig"; path = "Target Support Files/Pods-QrCodeMaker/Pods-QrCodeMaker.release.xcconfig"; sourceTree = "<group>"; };
 		44D4882A17311DC70BEC4FC8 /* Pods-QrCodeMakerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QrCodeMakerTests.debug.xcconfig"; path = "Target Support Files/Pods-QrCodeMakerTests/Pods-QrCodeMakerTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -346,6 +348,7 @@
 		C84FEBA32A567639002E9CE2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1BC73BDA2BD4C17F00DBBD9A /* SwiftAlertView.swift */,
 				C8E640AE2B09AA40005DEE84 /* IAPManager.swift */,
 				C8E640AC2B09AA1C005DEE84 /* PoohWisdomProducts.swift */,
 				C848F6C52A86175500B56456 /* MeCardGenerator.swift */,
@@ -829,6 +832,7 @@
 				C84FEBBE2A567639002E9CE2 /* CornerLocation.swift in Sources */,
 				C84FEBC82A567639002E9CE2 /* Alarm.swift in Sources */,
 				C84FEBA12A56761F002E9CE2 /* AVMetadataObject+Extensions.swift in Sources */,
+				1BC73BDB2BD4C17F00DBBD9A /* SwiftAlertView.swift in Sources */,
 				C84FEB842A56736D002E9CE2 /* IconViewColl.swift in Sources */,
 				C84FEBBF2A567639002E9CE2 /* Event.swift in Sources */,
 				C84FEB872A56736D002E9CE2 /* InputTextTableViewCell.swift in Sources */,
