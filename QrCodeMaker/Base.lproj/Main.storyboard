@@ -1662,12 +1662,6 @@
                                                                                                         <color key="tintColor" name="AccentColor"/>
                                                                                                         <color key="onTintColor" red="0.066666666669999999" green="0.51372549020000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                                     </switch>
-                                                                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TwF-L6-iJg">
-                                                                                                        <rect key="frame" x="159" y="24" width="75" height="41"/>
-                                                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                                                        <state key="normal" title="Button"/>
-                                                                                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                                                                                    </button>
                                                                                                 </subviews>
                                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                 <constraints>
@@ -4407,7 +4401,7 @@
         <image name="history_page" width="30" height="30"/>
         <image name="next" width="32" height="32"/>
         <image name="qrcode" catalog="system" width="128" height="114"/>
-        <image name="scan" width="32.333332061767578" height="32.333332061767578"/>
+        <image name="scan" width="30" height="30"/>
         <image name="second-landing" width="393" height="436"/>
         <image name="settings" width="30" height="30"/>
         <image name="third-landing" width="393" height="436"/>

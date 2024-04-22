@@ -234,13 +234,7 @@ class SettingsVc: UIViewController, MFMailComposeViewControllerDelegate {
     @IBAction func sendFeedBack(_ sender: Any) {
         
         
-        if currentReachabilityStatus == .notReachable {
-            self.showAlert()
-            
-        } else {
-            self.sendEmail(subject: "Send Us FeedBack", mailAddress: "assistance.scannr@gmail.com", cc: "", meessage: "")
-        }
-        
+        self.sendEmail(subject: "Send Us FeedBack", mailAddress: "assistance.scannr@gmail.com", cc: "", meessage: "")
         
     }
     
@@ -254,7 +248,17 @@ class SettingsVc: UIViewController, MFMailComposeViewControllerDelegate {
         
     }
     func gotoWebView(name:String,url:String)
+    
     {
+        
+        
+        if currentReachabilityStatus == .notReachable {
+            self.showAlert()
+            return
+            
+        }
+        
+        
         let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "CommonViewController") as? CommonViewController
         vc?.titleForValue = name
         vc?.url = url

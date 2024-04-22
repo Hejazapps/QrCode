@@ -321,6 +321,14 @@ class SubscriptionVc: UIViewController,UIScrollViewDelegate {
     
     func gotoWebView(name:String,url:String)
     {
+        
+        if currentReachabilityStatus == .notReachable {
+            self.showAlert()
+            return
+            
+        }
+        
+        
         let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "CommonViewController") as? CommonViewController
         vc?.titleForValue = name
         vc?.url = url
