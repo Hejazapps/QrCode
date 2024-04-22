@@ -43,7 +43,7 @@ class Store: NSObject {
     var currentLogo = ""
     var showPickerT = false
     var isFromHistory = true
-
+    
     static let sharedInstance = Store()
     
     func setstartDate(date:Date?) {
@@ -238,7 +238,7 @@ class Store: NSObject {
     func getPopValue()->Bool {
         return shouldPop
     }
-
+    
     func getIsNeededToBeUpdated()->Bool {
         return isNeededToUpdate
     }
@@ -250,11 +250,11 @@ class Store: NSObject {
     func setUpdateTableValue(value:Bool) {
         isNeededToUpdate = value
     }
-
+    
     func getDatabaseValue()->Bool {
         return shouldPresentDatabse
     }
-
+    
     func setDate(date:NSDate) {
         let returnValue: [NSString]? = UserDefaults.standard.object(forKey: "PURCHASED_EXPIRE_DATE") as? [NSString]
         
@@ -283,7 +283,7 @@ class Store: NSObject {
             return nil
         }
     }
-
+    
     func setDate(date:Date?) {
         if let valueForDate = date {
             UserDefaults.standard.set(valueForDate, forKey: "PURCHASED_EXPIRE_DATE")
@@ -292,92 +292,68 @@ class Store: NSObject {
     
     func verifyReciept () {
         
-        let appleValidator = AppleReceiptValidator(service: .production, sharedSecret: "9a065cb4616b4babb3b2b6c9632e405c")
-        SwiftyStoreKit.verifyReceipt(using: appleValidator) { result in
-            switch result {
-            case .success(let receipt):
-                let productIds = Set([ "com.scannr.yearly",
-                                       "com.scannr.monthly",
-                                       "com.scannr.weekly" ])
-                let purchaseResult = SwiftyStoreKit.verifySubscriptions(productIds: productIds, inReceipt: receipt)
-                switch purchaseResult {
-                case .purchased(let expiryDate, let items):
-                    self.setDate(date: expiryDate)
-                case .expired(let expiryDate, let items):
-                    print("\(productIds) are expired since \(expiryDate)\n\(items)\n")
-                case .notPurchased:
-                    print("The user has never purchased \(productIds)")
-                }
-            case .error(let error):
-                print("The user has never purchased")
-            }
-        }
         
-    }
-    
-    func getDataOfPurchase () {
-        let arr1 = NSArray(objects: "com.zertinteractive.qrcode.yearly","com.zertinteractive.qrcode.weekly","com.zertinteractive.qrcode.monthly")
-        let appleValidator = AppleReceiptValidator(service: .production, sharedSecret: "9a065cb4616b4babb3b2b6c9632e405c")
-        SwiftyStoreKit.verifyReceipt(using: appleValidator, forceRefresh: false) { result in
-            switch result {
-            case .success(let receipt):
-                Store.sharedInstance.setIsCalledPurchase(value: true)
-                
-                for item in arr1
-                {
-                    let productId = item  as? String
-                    let purchaseResult = SwiftyStoreKit.verifySubscription(
-                        ofType: .autoRenewable, // or .nonRenewing (see below)
-                        productId: productId!,
-                        inReceipt: receipt)
+        
+        let appleValidator = AppleReceiptValidator(service: .production, sharedSecret: "94835c2bce2b460f880232ea40ab5568")
+        
+      
+           
+            SwiftyStoreKit.verifyReceipt(using: appleValidator) { result in
+                switch result {
+                    
+                case .success(let receipt):
+                    let productIds = Set([ "com.scannr.yearly",
+                                           "com.scannr.monthly",
+                                           "com.scannr.weekly" ])
+                    let purchaseResult = SwiftyStoreKit.verifySubscriptions(productIds: productIds, inReceipt: receipt)
                     
                     switch purchaseResult {
-                    case .purchased(let expiryDate, let _):
-                        self.setDate(date: expiryDate as NSDate)
-                    case .expired(let expiryDate, let _):
-                        print("lol")
+                    case .purchased(let expiryDate, let items):
+                        self.setDate(date: expiryDate)
+                        
+                    case .expired(let expiryDate, let items):
+                        print("\(productIds) are expired since \(expiryDate)\n\(items)\n")
+                        
+                        
                     case .notPurchased:
-                        print("The user has never purchased \(productId!)")
+                        print("The user has never purchased \(productIds)")
+                    }
+                case .error(let error):
+                    print("The user has never purchased")
+                }
+            }
+            
+        }
+        
+        
+        
+        func isActiveSubscription() -> Bool {
+            
+            
+            let now = Date()
+            let mile = UserDefaults.standard.value(forKey: "PURCHASED_EXPIRE_DATE") as? Date
+            
+            print("\(now)")
+            if let mile = mile {
+                print("\(mile)")
+            }
+            var isActive = false
+            if mile != nil {
+                var result: ComparisonResult? = nil
+                if let mile = mile {
+                    result = now.compare(mile)
+                }
+                switch result {
+                case .orderedSame, .orderedAscending:
+                    isActive = true
+                case .orderedDescending:
+                    isActive = false
+                default:
+                    if let mile = mile {
+                        print("erorr dates \(mile), \(now)")
                     }
                 }
-            case .error(let error):
-                print("Verify receipt failed: \(error)")
             }
+            return isActive
         }
-        
     }
-    
-    func isActiveSubscription() -> Bool {
-         return true
-        
-        if Store.sharedInstance.getPurchase() {
-            return true
-        }
-        
-        let now = Date()
-        let mile = UserDefaults.standard.value(forKey: "PURCHASED_EXPIRE_DATE") as? Date
-        
-        print("\(now)")
-        if let mile = mile {
-            print("\(mile)")
-        }
-        var isActive = false
-        if mile != nil {
-            var result: ComparisonResult? = nil
-            if let mile = mile {
-                result = now.compare(mile)
-            }
-            switch result {
-            case .orderedSame, .orderedAscending:
-                isActive = true
-            case .orderedDescending:
-                isActive = false
-            default:
-                if let mile = mile {
-                    print("erorr dates \(mile), \(now)")
-                }
-            }
-        }
-        return isActive
-    }
-}
