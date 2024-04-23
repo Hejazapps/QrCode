@@ -86,6 +86,7 @@ class CustomizeDesignViewController: UIViewController, UIColorPickerViewControll
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setNeedsStatusBarAppearanceUpdate()
+        tableView.reloadData()
     }
     
     
@@ -390,6 +391,14 @@ extension CustomizeDesignViewController: UITableViewDelegate,UITableViewDataSour
         let view = self.tableView.dequeueReusableCell(withIdentifier: "HeaderViewTableViewCell")  as! HeaderViewTableViewCell
         
         view.label.text = categoryPlist[section] as? String
+        
+        
+        if(Store.sharedInstance.isActiveSubscription()) {
+            view.pro1.isHidden = true
+        }
+        else {
+            view.pro1.isHidden =  false
+        }
         
         return view
     }

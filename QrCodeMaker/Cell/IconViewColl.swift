@@ -23,6 +23,14 @@ class IconViewColl: UICollectionViewCell {
     @IBOutlet weak var imv5: UIImageView!
     @IBOutlet weak var imv6: UIImageView!
     
+    
+    @IBOutlet weak var pro1: UIImageView!
+    @IBOutlet weak var pro2: UIImageView!
+    @IBOutlet weak var pro3: UIImageView!
+    @IBOutlet weak var pro4: UIImageView!
+    @IBOutlet weak var pro5: UIImageView!
+    @IBOutlet weak var pro6: UIImageView!
+    
     @IBOutlet weak var lbl1: UILabel!
     @IBOutlet weak var lbl2: UILabel!
     @IBOutlet weak var lbl3: UILabel!

@@ -393,7 +393,7 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
             print("muntasir = \(currentIndex.row)")
             print("muntasir1 = \(currentIndex.section)")
             
-           
+            
             
             currentSelectedName = barCategoryArray[currentIndex.row * 6 + index] as! String
             inputParemeterArray = Constant.getInputParemeterByType(type: "BarCode")
@@ -413,7 +413,7 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
         print("muntasir = \(currentIndex.row)")
         print("muntasir1 = \(currentIndex.section)")
         
-       
+        
         
         let dic = qrCategoryArray[currentIndex.section] as? Dictionary<String, Any>
         if let  itemName  = dic!["items"] as? NSArray {
@@ -619,6 +619,7 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
         super.viewWillAppear(animated)
         self.dismissKeyboard()
         setNeedsStatusBarAppearanceUpdate()
+        print("it is called regularly")
     }
     
     
@@ -683,7 +684,7 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
                     return
                     
                 }
-
+                
             }
             
             
@@ -962,8 +963,8 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
     
     @objc func dismissKeyboard() {
         
-      
-       
+        
+        
         tableView.reloadData()
         UIView.animate(withDuration: 0.3) {
             self.topSpaceView.constant = 0
@@ -1160,6 +1161,65 @@ extension CreateVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollec
         cell.heightForBtn.constant = cell.view1.frame.height
         
         
+        
+        
+        
+        cell.pro1.isHidden = true
+        cell.pro2.isHidden = true
+        cell.pro3.isHidden = true
+        cell.pro4.isHidden = true
+        cell.pro5.isHidden = true
+        cell.pro6.isHidden = true
+        
+        
+        
+        if self.heightForView.constant < 300  {
+            
+             
+            let index =   indexPath.row*6
+            if let v =  barCategoryArray[index] as? String {
+                
+                
+                if(v.containsIgnoringCase(find: "ean-13")) {
+                    cell.pro1.isHidden = true
+                }
+                else {
+                    cell.pro1.isHidden = false
+                }
+            }
+            
+            if !Store.sharedInstance.isActiveSubscription() {
+                
+                
+                cell.pro2.isHidden = false
+                cell.pro3.isHidden = false
+                cell.pro4.isHidden = false
+                cell.pro5.isHidden = false
+                cell.pro6.isHidden = false
+            }
+        }
+        
+        
+        
+        if  self.heightForView.constant >= 300  {
+            
+            
+            if currentIndex.section > 1 {
+                
+                if(!Store.sharedInstance.isActiveSubscription()) {
+                    
+                    cell.pro1.isHidden = false
+                    cell.pro2.isHidden = false
+                    cell.pro3.isHidden = false
+                    cell.pro4.isHidden = false
+                    cell.pro5.isHidden = false
+                    cell.pro6.isHidden = false
+                }
+                
+            }
+        }
+        
+        
         let dic = qrCategoryArray[indexPath.section] as? Dictionary<String, Any>
         
         if heightForView.constant == 300 {
@@ -1301,7 +1361,7 @@ extension CreateVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollec
         self.topSpaceView.constant = 0
         self.bottomSpaceOftableView.constant = 0
         
-       
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
             let indexPath = IndexPath(row: 2, section: 0)
             self.tableView.scrollToRow(at: indexPath , at: .bottom, animated: true)
@@ -1309,7 +1369,7 @@ extension CreateVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollec
         }
         
         if let gender = segmentedControl.titleForSegment(at: segmentedControl.selectedSegmentIndex) {
-          
+            
             self.createDataModelArray[2].description = gender
             
             
@@ -1341,7 +1401,7 @@ extension CreateVc: UITableViewDelegate,UITableViewDataSource{
             print("perfect")
             return 0
         }
-       return   self.inputParemeterArray.count
+        return   self.inputParemeterArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -1404,7 +1464,7 @@ extension CreateVc: UITableViewDelegate,UITableViewDataSource{
         cell.textViewContainer.backgroundColor = UIColor.white
         
         cell.label.text =  self.inputParemeterArray[indexPath.item].title
-      
+        
         cell.label.textColor = UIColor.white
         cell.textView.textColor = UIColor.black
         cell.configCell()
