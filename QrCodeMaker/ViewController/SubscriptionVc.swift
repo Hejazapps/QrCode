@@ -183,6 +183,15 @@ class SubscriptionVc: UIViewController,UIScrollViewDelegate {
     
     func buyAproduct(value:String)
     {
+        
+        
+        if currentReachabilityStatus == .notReachable {
+            self.showAlert()
+            return
+            
+        }
+        
+        
         SwiftyStoreKit.purchaseProduct(value, quantity: 1, atomically: false) { result in
             switch result {
             case .success(let product):
@@ -194,6 +203,7 @@ class SubscriptionVc: UIViewController,UIScrollViewDelegate {
                     SwiftyStoreKit.finishTransaction(product.transaction)
                 }
                 print("Purchase Success: \(product.productId)")
+                Store.sharedInstance.issubscribedIntsantly = true
             case .error(let error):
                 switch error.code {
                 case .unknown: ProgressHUD.dismiss()

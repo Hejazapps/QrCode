@@ -43,7 +43,7 @@ class Store: NSObject {
     var currentLogo = ""
     var showPickerT = false
     var isFromHistory = true
-    
+    var issubscribedIntsantly = false
     static let sharedInstance = Store()
     
     func setstartDate(date:Date?) {
@@ -309,6 +309,7 @@ class Store: NSObject {
                     
                     switch purchaseResult {
                     case .purchased(let expiryDate, let items):
+                        print("\(productIds) are purchased since \(expiryDate)\n\(items)\n")
                         self.setDate(date: expiryDate)
                         
                     case .expired(let expiryDate, let items):
@@ -328,6 +329,10 @@ class Store: NSObject {
         
         
         func isActiveSubscription() -> Bool {
+            
+            if issubscribedIntsantly {
+                return true
+            }
             
             
             let now = Date()
