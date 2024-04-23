@@ -465,8 +465,25 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
         //self.currentTextView.becomeFirstResponder()
     }
     
+    @objc func methodOfReceivedNotification(notification: Notification) {
+        
+        print("it is called hahahahhahaa")
+        tableView.reloadData()
+        collectionViewForIcon.reloadData()
+        
+    }
+
+    
+   
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.methodOfReceivedNotification(notification:)), name: Notification.Name("purchaseNoti"), object: nil)
+        
+        
+        
         UITextField.appearance().keyboardAppearance = .light
         tableView.translatesAutoresizingMaskIntoConstraints = false
         

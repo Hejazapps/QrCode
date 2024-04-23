@@ -50,9 +50,18 @@ class EditVc: UIViewController, UITextViewDelegate,CLLocationManagerDelegate {
             
         }
         
+        NotificationCenter.default.addObserver(self, selector: #selector(self.methodOfReceivedNotification(notification:)), name: Notification.Name("purchaseNoti"), object: nil)
+        
         
         
         // Do any additional setup after loading the view.
+    }
+    
+    
+    @objc func methodOfReceivedNotification(notification: Notification) {
+        
+        tableView.reloadData()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

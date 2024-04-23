@@ -204,6 +204,8 @@ class SubscriptionVc: UIViewController,UIScrollViewDelegate {
                 }
                 print("Purchase Success: \(product.productId)")
                 Store.sharedInstance.issubscribedIntsantly = true
+                NotificationCenter.default.post(name: Notification.Name("purchaseNoti"), object: nil)
+
             case .error(let error):
                 switch error.code {
                 case .unknown: ProgressHUD.dismiss()

@@ -90,12 +90,21 @@ class CustomizeDesignViewController: UIViewController, UIColorPickerViewControll
     }
     
     
+    @objc func methodOfReceivedNotification(notification: Notification) {
+        
+        tableView.reloadData()
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.separatorColor = UIColor.clear
         categoryPlist = NSArray(contentsOfFile: path1!)
         self.setColor()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.methodOfReceivedNotification(notification:)), name: Notification.Name("purchaseNoti"), object: nil)
+        
         
         tableView.register(UINib(nibName: "HeaderViewTableViewCell", bundle: nil), forCellReuseIdentifier: "HeaderViewTableViewCell")
         
