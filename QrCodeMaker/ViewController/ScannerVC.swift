@@ -282,7 +282,11 @@ class ScannerVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate, UNUse
         if (captureSession.canAddOutput(metadataOutput)) {
             captureSession.addOutput(metadataOutput)
             metadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
-            metadataOutput.metadataObjectTypes = [.qr]
+            if #available(iOS 15.4, *) {
+                metadataOutput.metadataObjectTypes = [.qr,.ean8,.ean13,.aztec,.pdf417,.codabar,.code39,.code93,.dataMatrix,.upce,.code128]
+            } else {
+                metadataOutput.metadataObjectTypes = [.qr,.ean8,.ean13,.aztec,.pdf417,.code39,.code93,.dataMatrix,.upce,.code128]
+            }
         } else {
             failedSession()
             return
