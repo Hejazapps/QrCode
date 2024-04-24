@@ -686,7 +686,10 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
         
         var valueOfText  = defaults.integer(forKey: "no_of_image")
         
-        if (valueOfText == 0) {
+        let boolValue = UserDefaults.standard.bool(forKey: "given")
+         
+        
+        if (valueOfText % 5 == 0 && boolValue == false) {
             
             let alertView = SwiftAlertView(title: "Rate ScannR App",
                                            message: "If you enjoy using ScannR App, would you mind taking a moment to rate it? It won't take more than a minute. Thanks for your support!",
@@ -700,7 +703,7 @@ class ShowResultVc: UIViewController, MFMessageComposeViewControllerDelegate, se
             return
         }
         
-        else if( valueOfText % 5 == 0){
+        else if( valueOfText % 5 == 0 && valueOfText < 30){
             
             if #available(iOS 14.0, *) {
                 if let scene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
@@ -1302,6 +1305,7 @@ extension ShowResultVc: SwiftAlertViewDelegate {
         }
         
         self.dismiss(animated: true)
+        UserDefaults.standard.set(false, forKey: "given")
     }
 
     func didPresentAlertView(alertView: SwiftAlertView) {
