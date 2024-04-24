@@ -11,6 +11,7 @@ import MessageUI
 
 class SettingsVc: UIViewController, MFMailComposeViewControllerDelegate {
     
+    @IBOutlet weak var heightforsetting: NSLayoutConstraint!
     @IBOutlet weak var historySwitch: UISwitch!
     @IBOutlet weak var linkOpen: UISwitch!
     @IBOutlet weak var beepSwitch: UISwitch!
@@ -27,7 +28,17 @@ class SettingsVc: UIViewController, MFMailComposeViewControllerDelegate {
         linkOpen.addTarget(self, action: #selector(switchChanged), for: UIControl.Event.valueChanged)
         
         
+        NotificationCenter.default.addObserver(self, selector: #selector(self.methodOfReceivedNotification(notification:)), name: Notification.Name("purchaseNoti"), object: nil)
+        
+        
         // Do any additional setup after loading the view.
+    }
+    
+    
+    @objc func methodOfReceivedNotification(notification: Notification) {
+        
+        heightforsetting.constant = 0
+        
     }
     
     @objc func switchChanged(mySwitch: UISwitch) {
@@ -75,8 +86,16 @@ class SettingsVc: UIViewController, MFMailComposeViewControllerDelegate {
     }
     
     
+    
+    
     @IBAction func gotoSubscription(_ sender: Any) {
         
+        
+        if currentReachabilityStatus == .notReachable {
+            self.showAlert()
+            return
+            
+        }
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let initialViewController = storyboard.instantiateViewController(withIdentifier: "SubscriptionVc") as! SubscriptionVc
@@ -103,6 +122,12 @@ class SettingsVc: UIViewController, MFMailComposeViewControllerDelegate {
         let c = UserDefaults.standard.integer(forKey: "Beep")
         let d = UserDefaults.standard.integer(forKey: "Link")
         let e = UserDefaults.standard.integer(forKey: "history")
+        
+        
+        if(Store.sharedInstance.isActiveSubscription()) {
+            
+            heightforsetting.constant = 0
+        }
         
         if a == 2 {
             soundWatch.setOn(true, animated: true)

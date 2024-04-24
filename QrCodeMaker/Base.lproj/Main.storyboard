@@ -1468,17 +1468,30 @@
                                                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                 <nil key="highlightedColor"/>
                                                                                             </label>
+                                                                                            <button opaque="NO" alpha="0.10000000000000001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pb1-eB-ade">
+                                                                                                <rect key="frame" x="0.0" y="0.0" width="393" height="180"/>
+                                                                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                                <state key="normal" title="Button"/>
+                                                                                                <buttonConfiguration key="configuration" style="plain"/>
+                                                                                                <connections>
+                                                                                                    <action selector="gotoSubscription:" destination="88R-HU-4D7" eventType="touchUpInside" id="cVX-Tg-ai5"/>
+                                                                                                </connections>
+                                                                                            </button>
                                                                                         </subviews>
                                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                         <constraints>
                                                                                             <constraint firstItem="qQQ-Fd-W3U" firstAttribute="centerX" secondItem="sft-Cs-1lM" secondAttribute="centerX" id="10P-Wj-Cam"/>
                                                                                             <constraint firstItem="Z8B-XB-bWi" firstAttribute="top" secondItem="sft-Cs-1lM" secondAttribute="top" constant="15" id="6CG-c7-hTC"/>
                                                                                             <constraint firstItem="bS5-Mx-xtD" firstAttribute="top" secondItem="sft-Cs-1lM" secondAttribute="top" id="7cz-iX-XY3"/>
+                                                                                            <constraint firstItem="Pb1-eB-ade" firstAttribute="height" secondItem="sft-Cs-1lM" secondAttribute="height" id="MRy-7l-Rew"/>
                                                                                             <constraint firstItem="W8Q-G0-5Kc" firstAttribute="top" secondItem="Z8B-XB-bWi" secondAttribute="bottom" constant="5" id="TfF-1k-mwQ"/>
+                                                                                            <constraint firstItem="Pb1-eB-ade" firstAttribute="centerY" secondItem="sft-Cs-1lM" secondAttribute="centerY" id="W7e-7d-DNU"/>
                                                                                             <constraint firstItem="W8Q-G0-5Kc" firstAttribute="centerX" secondItem="sft-Cs-1lM" secondAttribute="centerX" id="XzM-ow-uMq"/>
                                                                                             <constraint firstItem="qQQ-Fd-W3U" firstAttribute="top" secondItem="W8Q-G0-5Kc" secondAttribute="bottom" constant="5" id="aOh-Pn-AXb"/>
                                                                                             <constraint firstItem="Z8B-XB-bWi" firstAttribute="centerX" secondItem="sft-Cs-1lM" secondAttribute="centerX" id="bNg-6K-6g4"/>
                                                                                             <constraint firstAttribute="trailing" secondItem="bS5-Mx-xtD" secondAttribute="trailing" id="fFB-zp-9O2"/>
+                                                                                            <constraint firstItem="Pb1-eB-ade" firstAttribute="centerX" secondItem="sft-Cs-1lM" secondAttribute="centerX" id="unP-pb-y07"/>
+                                                                                            <constraint firstItem="Pb1-eB-ade" firstAttribute="width" secondItem="sft-Cs-1lM" secondAttribute="width" id="uu9-us-lot"/>
                                                                                             <constraint firstAttribute="height" constant="180" id="xd5-Hk-REe"/>
                                                                                             <constraint firstItem="bS5-Mx-xtD" firstAttribute="leading" secondItem="sft-Cs-1lM" secondAttribute="leading" id="xsj-6B-ck9"/>
                                                                                         </constraints>
@@ -2218,6 +2231,7 @@
                     <tabBarItem key="tabBarItem" title="Settings" image="settings" id="fct-o0-zb5"/>
                     <connections>
                         <outlet property="HeightForTotal" destination="HlN-8R-qvQ" id="AZm-GH-azP"/>
+                        <outlet property="heightforsetting" destination="xd5-Hk-REe" id="nGQ-1y-c6b"/>
                         <outlet property="historySwitch" destination="xv3-Kh-kBp" id="vJ4-mr-ncx"/>
                         <outlet property="holderView" destination="umd-KK-V6H" id="uhg-Am-Oz3"/>
                         <outlet property="linkOpen" destination="p2V-dv-5JK" id="lxY-Th-qeC"/>
@@ -4401,7 +4415,7 @@
         <image name="history_page" width="30" height="30"/>
         <image name="next" width="32" height="32"/>
         <image name="qrcode" catalog="system" width="128" height="114"/>
-        <image name="scan" width="30" height="30"/>
+        <image name="scan" width="32.333332061767578" height="32.333332061767578"/>
         <image name="second-landing" width="393" height="436"/>
         <image name="settings" width="30" height="30"/>
         <image name="third-landing" width="393" height="436"/>
