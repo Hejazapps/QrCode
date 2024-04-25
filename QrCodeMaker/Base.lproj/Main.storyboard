@@ -4203,6 +4203,7 @@
                         <outlet property="heightConstrainOfWholeView" destination="ydf-TJ-wsG" id="lCY-QT-NfZ"/>
                         <outlet property="holderView" destination="sIx-MA-hfY" id="bS1-Pa-oXm"/>
                         <outlet property="holderbtn" destination="Nhr-dN-sgG" id="PbW-YN-Jht"/>
+                        <outlet property="label" destination="pqq-CZ-Tbk" id="r9Y-bh-Pks"/>
                         <outlet property="label1" destination="T2w-EU-qzs" id="d4p-eM-abI"/>
                         <outlet property="label2" destination="Y8R-T4-fco" id="h7K-6I-OtU"/>
                         <outlet property="label3" destination="ByH-bL-waR" id="qtd-QH-tph"/>
@@ -4374,7 +4375,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="N9L-Qj-Klu"/>
+        <segue reference="fvf-Rn-EjM"/>
         <segue reference="YX3-B7-kMN"/>
     </inferredMetricsTieBreakers>
     <resources>
@@ -4415,7 +4416,7 @@
         <image name="history_page" width="30" height="30"/>
         <image name="next" width="32" height="32"/>
         <image name="qrcode" catalog="system" width="128" height="114"/>
-        <image name="scan" width="32.333332061767578" height="32.333332061767578"/>
+        <image name="scan" width="30" height="30"/>
         <image name="second-landing" width="393" height="436"/>
         <image name="settings" width="30" height="30"/>
         <image name="third-landing" width="393" height="436"/>

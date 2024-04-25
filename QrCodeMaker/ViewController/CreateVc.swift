@@ -1189,51 +1189,52 @@ extension CreateVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollec
         cell.pro6.isHidden = true
         
         
-        
-        if self.heightForView.constant < 300  {
+        if (!Store.sharedInstance.isActiveSubscription()) {
             
-             
-            let index =   indexPath.row*6
-            if let v =  barCategoryArray[index] as? String {
+            if self.heightForView.constant < 300  {
                 
-                
-                if(v.containsIgnoringCase(find: "ean-13")) {
-                    cell.pro1.isHidden = true
-                }
-                else {
-                    cell.pro1.isHidden = false
-                }
-            }
-            
-            if !Store.sharedInstance.isActiveSubscription() {
-                
-                
-                cell.pro2.isHidden = false
-                cell.pro3.isHidden = false
-                cell.pro4.isHidden = false
-                cell.pro5.isHidden = false
-                cell.pro6.isHidden = false
-            }
-        }
-        
-        
-        
-        if  self.heightForView.constant >= 300  {
-            
-            
-            if currentIndex.section > 1 {
-                
-                if(!Store.sharedInstance.isActiveSubscription()) {
+                 
+                let index =   indexPath.row*6
+                if let v =  barCategoryArray[index] as? String {
                     
-                    cell.pro1.isHidden = false
+                    
+                    if(v.containsIgnoringCase(find: "ean-13")) {
+                        cell.pro1.isHidden = true
+                    }
+                    else {
+                        cell.pro1.isHidden = false
+                    }
+                }
+                
+                if !Store.sharedInstance.isActiveSubscription() {
+                    
+                    
                     cell.pro2.isHidden = false
                     cell.pro3.isHidden = false
                     cell.pro4.isHidden = false
                     cell.pro5.isHidden = false
                     cell.pro6.isHidden = false
                 }
-                
             }
+            
+            if  self.heightForView.constant >= 300  {
+                
+                
+                if currentIndex.section > 1 {
+                    
+                    if(!Store.sharedInstance.isActiveSubscription()) {
+                        
+                        cell.pro1.isHidden = false
+                        cell.pro2.isHidden = false
+                        cell.pro3.isHidden = false
+                        cell.pro4.isHidden = false
+                        cell.pro5.isHidden = false
+                        cell.pro6.isHidden = false
+                    }
+                    
+                }
+            }
+            
         }
         
         

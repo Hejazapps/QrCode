@@ -450,6 +450,7 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate {
                 self.picker?.delegate = self
                 self.picker?.sourceType = .savedPhotosAlbum
                 self.picker?.mediaTypes = [UTType.image.identifier]
+                self.picker?.mediaTypes = [UTType.image.identifier, UTType.movie.identifier]
                 self.picker?.modalPresentationStyle = .fullScreen
             }
             

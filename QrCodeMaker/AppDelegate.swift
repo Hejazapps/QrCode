@@ -43,7 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
         FirebaseApp.configure()
         Messaging.messaging().delegate = self
         
-        self.addLog()
+       // self.addLog()
         DBmanager.shared.initDB()
         
         SwiftyStoreKit.completeTransactions(atomically: true) { purchases in

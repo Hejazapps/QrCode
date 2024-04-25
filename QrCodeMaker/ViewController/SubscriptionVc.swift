@@ -29,8 +29,10 @@ class SubscriptionVc: UIViewController,UIScrollViewDelegate {
     
     @IBOutlet weak var offerLabel: UILabel!
     
+    var isfromPro = true
     
     
+    @IBOutlet weak var label: UILabel!
     @IBOutlet weak var label1: UILabel!
     @IBOutlet weak var label2: UILabel!
     @IBOutlet weak var label3: UILabel!
@@ -91,6 +93,20 @@ class SubscriptionVc: UIViewController,UIScrollViewDelegate {
         self.setRoundedView(view: mostPopularView, radius: 15)
         // Do any additional setup after loading the view.
         
+        NotificationCenter.default.addObserver(self, selector: #selector(self.methodOfReceivedNotification(notification:)), name: Notification.Name("purchaseNoti"), object: nil)
+        
+    }
+    
+    @objc func methodOfReceivedNotification(notification: Notification) {
+        
+        label.text  = "Purchased"
+        rightArrowButton.isHidden = true
+        
+        if isfromPro {
+            
+            self.dismiss(animated: true)
+        }
+        
     }
     
     func setRoundedView(view:UIView,radius:Int){
@@ -142,6 +158,12 @@ class SubscriptionVc: UIViewController,UIScrollViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setNeedsStatusBarAppearanceUpdate()
+        
+        if isfromPro {
+            
+            label.text  = "Purchased"
+            rightArrowButton.isHidden = true
+        }
     }
     
     @IBAction func gotoDismiss(_ sender: Any) {
@@ -188,6 +210,12 @@ class SubscriptionVc: UIViewController,UIScrollViewDelegate {
         if currentReachabilityStatus == .notReachable {
             self.showAlert()
             return
+            
+        }
+        
+        DispatchQueue.main.async{
+            
+            ProgressHUD.animate("Purchasing...", interaction: false)
             
         }
         
@@ -275,50 +303,14 @@ class SubscriptionVc: UIViewController,UIScrollViewDelegate {
     
     
     func checkSub(index:Int) {
-        DispatchQueue.main.async{
-            
-            ProgressHUD.animate("Purchasing...", interaction: false)
-            
-        }
+       
         
         var productId =
         [PoohWisdomProducts.yearlySub, PoohWisdomProducts.weeklySub,PoohWisdomProducts.monthlySub]
         
         self.buyAproduct(value: productId[index])
         
-        return
-        
-        Store.sharedInstance.setCurrentItem(value: productId[index])
-        PoohWisdomProducts.store.requestProducts { [weak self] success, products in
-            guard let self = self else { return }
-            guard success else {
-                
-                DispatchQueue.main.async {
-                    
-                    //ERProgressHud.sharedInstance.hide()
-                    let alertController = UIAlertController(title: "Failed to load list of products",
-                                                            message: "Check logs for details",
-                                                            preferredStyle: .alert)
-                    alertController.addAction(UIAlertAction(title: "OK", style: .default))
-                    
-                }
-                
-                
-                return
-            }
-            PoohWisdomProducts.store.buyProduct(products![0] as SKProduct) { [weak self] success, productId in
-                guard let self = self else {
-                    
-                    // return
-                    
-                }
-                guard success else {
-                    
-                    return
-                }
-                
-            }
-        }
+       
     }
     
     @IBAction func giotomange(_ sender: Any) {

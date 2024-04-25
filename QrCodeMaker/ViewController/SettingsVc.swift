@@ -100,6 +100,7 @@ class SettingsVc: UIViewController, MFMailComposeViewControllerDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let initialViewController = storyboard.instantiateViewController(withIdentifier: "SubscriptionVc") as! SubscriptionVc
         initialViewController.modalPresentationStyle = .fullScreen
+        initialViewController.isfromPro =  false
         self.present(initialViewController, animated: true, completion: nil)
         
     }
