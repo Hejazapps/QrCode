@@ -39,10 +39,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
         freopen(logFilePath.cString(using: String.Encoding.ascii)!, "a+", stderr)
     }
     
+   
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        UNUserNotificationCenter.current().delegate = self
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { success, error in
+            if success {
+                print("[murad] success Push authorization")
+            } else {
+                print("[murad] error Push authorization: \(String(describing: error?.localizedDescription))")
+            }
+        }
+        UIApplication.shared.registerForRemoteNotifications()
+        
         FirebaseApp.configure()
         Messaging.messaging().delegate = self
         
+        let token = Messaging.messaging().fcmToken
+        print("FCM token: \(token ?? "No token")")
        // self.addLog()
         DBmanager.shared.initDB()
         

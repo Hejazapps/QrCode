@@ -15,16 +15,16 @@
 	<key>STORAGE_BUCKET</key>
 	<string>scannr-push-2024.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_GCM_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:644276739033:ios:da61e07c83c137de7717c8</string>
+	<string>1:644276739033:ios:dbeed57bd6bbb7647717c8</string>
 </dict>
 </plist>
