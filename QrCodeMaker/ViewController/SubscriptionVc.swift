@@ -159,7 +159,7 @@ class SubscriptionVc: UIViewController,UIScrollViewDelegate {
         super.viewWillAppear(animated)
         setNeedsStatusBarAppearanceUpdate()
         
-        if isfromPro {
+        if Store.sharedInstance.isActiveSubscription() {
             
             label.text  = "Purchased"
             rightArrowButton.isHidden = true
@@ -315,12 +315,25 @@ class SubscriptionVc: UIViewController,UIScrollViewDelegate {
     
     @IBAction func giotomange(_ sender: Any) {
         
+        
         if currentReachabilityStatus == .notReachable {
             self.showAlert()
+            return
             
-        } else {
-            self.gotoWebView(name: "Subcription Info  ", url:managesub)
         }
+        
+        
+        guard let url = URL(string:  managesub) else {
+          return //be safe
+        }
+
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
+        
+      
     }
     
     func gotoWebView(name:String,url:String)
@@ -357,20 +370,44 @@ class SubscriptionVc: UIViewController,UIScrollViewDelegate {
     
     @IBAction func gototermsandpolicy(_ sender: Any) {
         
-        if currentReachabilityStatus == .notReachable {
-            self.showAlert()
-            
-        } else {
-            self.gotoWebView(name: "Terms of Use", url: termsOfUseValue)
-        }
-    }
-    @IBAction func gotoPrivacyPolicy(_ sender: Any) {
         
         if currentReachabilityStatus == .notReachable {
             self.showAlert()
+            return
             
+        }
+        
+        
+        guard let url = URL(string:  termsOfUseValue) else {
+          return //be safe
+        }
+
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
         } else {
-            self.gotoWebView(name: "Privacy Policy", url: privacyPolicyValue)
+            UIApplication.shared.openURL(url)
+        }
+        
+        
+    }
+    @IBAction func gotoPrivacyPolicy(_ sender: Any) {
+        
+        
+        if currentReachabilityStatus == .notReachable {
+            self.showAlert()
+            return
+            
+        }
+        
+        
+        guard let url = URL(string:  privacyPolicyValue) else {
+          return //be safe
+        }
+
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
         }
       
     }

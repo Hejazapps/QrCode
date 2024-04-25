@@ -285,13 +285,18 @@ class SettingsVc: UIViewController, MFMailComposeViewControllerDelegate {
         }
         
         
-        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "CommonViewController") as? CommonViewController
-        vc?.titleForValue = name
-        vc?.url = url
-        let navController = UINavigationController(rootViewController: vc!) // Creating a navigation controller with VC1 at the root of the navigation stack.
+        guard let url = URL(string:  url) else {
+          return //be safe
+        }
+
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
         
-        navController.modalPresentationStyle = UIModalPresentationStyle.fullScreen
-        present(navController, animated: true, completion: nil)
+        
+        
     }
     
     
