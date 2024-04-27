@@ -107,6 +107,7 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
     var currentTextViewF:UITextView?
     var currentBrCode  = 0
     var isFromEvnt = false
+    var createBtnPressed = false
     func eventEditViewController(_ controller: EKEventEditViewController, didCompleteWith action: EKEventEditViewAction) {
         
         if action.rawValue == 0 {
@@ -669,6 +670,7 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
         
         self.dismissKeyboard()
         print(createDataModelArray)
+        createBtnPressed =  true
         
         
         if self.heightForView.constant < 300  {
@@ -712,6 +714,11 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
        
     }
     func gotoeditView() {
+        
+        if createBtnPressed == false {
+            return
+        }
+        createBtnPressed = true
         
         if self.currentSelectedName == "Location" {
             

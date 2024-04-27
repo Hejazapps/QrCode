@@ -302,9 +302,9 @@ class Store: NSObject {
                 switch result {
                     
                 case .success(let receipt):
-                    let productIds = Set([ "com.scannr.yearly",
-                                           "com.scannr.monthly",
-                                           "com.scannr.weekly" ])
+                    let productIds = Set([  PoohWisdomProducts.monthlySub,
+                                            PoohWisdomProducts.weeklySub,
+                                            PoohWisdomProducts.yearlySub ])
                     let purchaseResult = SwiftyStoreKit.verifySubscriptions(productIds: productIds, inReceipt: receipt)
                     
                     switch purchaseResult {
