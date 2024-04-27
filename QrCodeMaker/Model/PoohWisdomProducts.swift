@@ -29,9 +29,9 @@
 import Foundation
 
 public struct PoohWisdomProducts {
-  public static let monthlySub = "com.scannr.monthly"
-  public static let weeklySub = "com.scannr.weekly"
-  public static let yearlySub = "com.scannr.yearly"
+  public static let monthlySub = "com.hejazapps.monthly"
+  public static let weeklySub = "com.hejazapps.weekly"
+  public static let yearlySub = "com.hejazapps.yearly"
   
   public static let store = IAPManager(productIDs: PoohWisdomProducts.productIDs)
     private static let productIDs: Set<ProductID> = [PoohWisdomProducts.yearlySub, PoohWisdomProducts.weeklySub,PoohWisdomProducts.monthlySub]
