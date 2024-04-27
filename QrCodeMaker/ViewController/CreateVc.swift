@@ -470,6 +470,7 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
         print("it is called hahahahhahaa")
         tableView.reloadData()
         collectionViewForIcon.reloadData()
+        self.gotoeditView()
         
     }
 
@@ -706,6 +707,11 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
             
             
         }
+        self.gotoeditView()
+        
+       
+    }
+    func gotoeditView() {
         
         if self.currentSelectedName == "Location" {
             

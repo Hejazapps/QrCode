@@ -103,38 +103,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "FBC9F518-F32B-4C10-8FCF-EFE2E03D6C1F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "QrCodeMaker/ViewController/SubscriptionVc.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "276"
-            endingLineNumber = "276"
-            landmarkName = "purchaseItemIndex(index:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "EBA0A27D-E745-4135-881F-6EA58767B79B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "QrCodeMaker/ViewController/SubscriptionVc.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "277"
-            endingLineNumber = "277"
-            landmarkName = "purchaseItemIndex(index:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "BE738735-7E15-440F-BB41-BE530EC9C215"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -167,96 +135,96 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D174123B-C0DB-4EFF-8634-F182F5B945C0"
+            uuid = "C9265E16-0C4E-432C-A925-777A4A0828CB"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "QrCodeMaker/AppDelegate.swift"
+            filePath = "QrCodeMaker/ViewController/CreateVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "messaging(_:didReceiveRegistrationToken:)"
+            startingLineNumber = "472"
+            endingLineNumber = "472"
+            landmarkName = "methodOfReceivedNotification(notification:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "633C9E60-FD15-4F24-9CFC-F95DF9E98132"
-            shouldBeEnabled = "No"
+            uuid = "4EE20627-E496-4945-BC2A-20FFD3B5F149"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "QrCodeMaker/AppDelegate.swift"
+            filePath = "QrCodeMaker/ViewController/CreateVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "messaging(_:didReceiveRegistrationToken:)"
+            startingLineNumber = "471"
+            endingLineNumber = "471"
+            landmarkName = "methodOfReceivedNotification(notification:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3900DC35-175B-4DD1-A0F0-A08E2660B78B"
+            uuid = "C1FE481D-BEB5-4CED-958E-E0B15F3A18B0"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "QrCodeMaker/AppDelegate.swift"
+            filePath = "QrCodeMaker/ViewController/CreateVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "messaging(_:didReceiveRegistrationToken:)"
+            startingLineNumber = "470"
+            endingLineNumber = "470"
+            landmarkName = "methodOfReceivedNotification(notification:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C6E8FBF5-AB69-410F-95EF-E7DADDBF8F50"
+            uuid = "0AADB7FF-56AE-4402-BA6A-A68FA243BB20"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "QrCodeMaker/AppDelegate.swift"
+            filePath = "QrCodeMaker/ViewController/SubscriptionVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "messaging(_:didReceiveRegistrationToken:)"
+            startingLineNumber = "233"
+            endingLineNumber = "233"
+            landmarkName = "buyAproduct(value:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "DB41070B-1CDF-46AB-BAA3-8255BD42D3E7"
+            uuid = "9EC9469F-F5A8-4FCF-BDAA-D7771DD10D65"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "QrCodeMaker/AppDelegate.swift"
+            filePath = "QrCodeMaker/ViewController/SubscriptionVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "messaging(_:didReceiveRegistrationToken:)"
+            startingLineNumber = "232"
+            endingLineNumber = "232"
+            landmarkName = "buyAproduct(value:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5F871C5F-B1E2-453F-A740-82252B540B83"
+            uuid = "2C6C22DF-AD42-4212-AEB1-85F99C2E0134"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "QrCodeMaker/AppDelegate.swift"
+            filePath = "QrCodeMaker/ViewController/SubscriptionVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "messaging(_:didReceiveRegistrationToken:)"
+            startingLineNumber = "231"
+            endingLineNumber = "231"
+            landmarkName = "buyAproduct(value:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

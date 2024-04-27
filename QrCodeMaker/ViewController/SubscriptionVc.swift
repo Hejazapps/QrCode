@@ -93,21 +93,11 @@ class SubscriptionVc: UIViewController,UIScrollViewDelegate {
         self.setRoundedView(view: mostPopularView, radius: 15)
         // Do any additional setup after loading the view.
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.methodOfReceivedNotification(notification:)), name: Notification.Name("purchaseNoti"), object: nil)
+        
         
     }
     
-    @objc func methodOfReceivedNotification(notification: Notification) {
-        
-        label.text  = "Purchased"
-        rightArrowButton.isHidden = true
-        
-        if isfromPro {
-            
-            self.dismiss(animated: true)
-        }
-        
-    }
+  
     
     func setRoundedView(view:UIView,radius:Int){
         view.layer.cornerRadius =  CGFloat(radius)
@@ -232,6 +222,15 @@ class SubscriptionVc: UIViewController,UIScrollViewDelegate {
                 }
                 print("Purchase Success: \(product.productId)")
                 Store.sharedInstance.issubscribedIntsantly = true
+              
+                
+                self.label.text  = "Purchased"
+                self.rightArrowButton.isHidden = true
+                
+                if self.isfromPro {
+                    
+                    self.dismiss(animated: true)
+                }
                 NotificationCenter.default.post(name: Notification.Name("purchaseNoti"), object: nil)
 
             case .error(let error):
