@@ -31,6 +31,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
             print("[murad] token: \(token)")
         }
     }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        print("[murad] push notification clicked!!!")
+        if #available(iOS 16.0, *) {
+            center.setBadgeCount(0)
+        } else {
+            UIApplication.shared.applicationIconBadgeNumber = 0;
+        }
+    }
+    
     func addLog() {
         let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         let documentsDirectory = paths[0]
@@ -42,6 +52,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
    
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        FirebaseApp.configure()
+        Messaging.messaging().delegate = self
         
         UNUserNotificationCenter.current().delegate = self
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { success, error in
@@ -51,10 +63,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
                 print("[murad] error Push authorization: \(String(describing: error?.localizedDescription))")
             }
         }
-        UIApplication.shared.registerForRemoteNotifications()
-        
-        FirebaseApp.configure()
-        Messaging.messaging().delegate = self
+        application.registerForRemoteNotifications()
         
         let token = Messaging.messaging().fcmToken
         print("FCM token: \(token ?? "No token")")
