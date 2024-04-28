@@ -174,7 +174,7 @@ class EditVc: UIViewController, UITextViewDelegate,CLLocationManagerDelegate {
             }
             else {
                 
-                let alert = UIAlertController(title: "Note", message: "Invalid Code", preferredStyle: UIAlertController.Style.alert)
+                let alert = UIAlertController(title: "Note", message: "Invalid Code!", preferredStyle: UIAlertController.Style.alert)
                 
                 alert.addAction(UIAlertAction(title: "ok", style: UIAlertAction.Style.default, handler: {_ in
                     ////self.dismissView()
@@ -202,7 +202,7 @@ class EditVc: UIViewController, UITextViewDelegate,CLLocationManagerDelegate {
                     }
                     else {
                         
-                        let alert = UIAlertController(title: "Note", message: "Enter  fields properly", preferredStyle: UIAlertController.Style.alert)
+                        let alert = UIAlertController(title: "Note", message: "Enter  fields properly.", preferredStyle: UIAlertController.Style.alert)
                         
                         alert.addAction(UIAlertAction(title: "ok", style: UIAlertAction.Style.default, handler: {_ in
                             ////self.dismissView()
@@ -229,7 +229,7 @@ class EditVc: UIViewController, UITextViewDelegate,CLLocationManagerDelegate {
                     }
                     else {
                         
-                        let alert = UIAlertController(title: "Note", message: "Enter  fields properly", preferredStyle: UIAlertController.Style.alert)
+                        let alert = UIAlertController(title: "Note", message: "Enter  fields properly.", preferredStyle: UIAlertController.Style.alert)
                         
                         alert.addAction(UIAlertAction(title: "ok", style: UIAlertAction.Style.default, handler: {_ in
                             ////self.dismissView()
@@ -257,7 +257,7 @@ class EditVc: UIViewController, UITextViewDelegate,CLLocationManagerDelegate {
                     }
                 }
                 if flag == 0 {
-                    let alert = UIAlertController(title: "Note", message: "Enter  fields properly", preferredStyle: UIAlertController.Style.alert)
+                    let alert = UIAlertController(title: "Note", message: "Enter  fields properly.", preferredStyle: UIAlertController.Style.alert)
                     
                     alert.addAction(UIAlertAction(title: "ok", style: UIAlertAction.Style.default, handler: {_ in
                         ////self.dismissView()
@@ -276,7 +276,7 @@ class EditVc: UIViewController, UITextViewDelegate,CLLocationManagerDelegate {
                 
                 if createDataModelArray[0].description.count < 1 {
                     
-                    let alert = UIAlertController(title: "Note", message: "Enter  fields properly", preferredStyle: UIAlertController.Style.alert)
+                    let alert = UIAlertController(title: "Note", message: "Enter  fields properly.", preferredStyle: UIAlertController.Style.alert)
                     
                     alert.addAction(UIAlertAction(title: "ok", style: UIAlertAction.Style.default, handler: {_ in
                         ////self.dismissView()

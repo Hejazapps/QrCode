@@ -432,7 +432,7 @@ class HistoryVc: UIViewController {
             
             if (textField?.text!.count)! < 1 {
                 
-                let refreshAlert = UIAlertController(title: "Alert", message: "Folder name is empty", preferredStyle: UIAlertController.Style.alert)
+                let refreshAlert = UIAlertController(title: "Alert", message: "Folder name is empty!", preferredStyle: UIAlertController.Style.alert)
                 
                 refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
                     print("Handle Ok logic here")
@@ -455,7 +455,7 @@ class HistoryVc: UIViewController {
                         
                         if (textField?.text!.count)! < 1 {
                             
-                            let refreshAlert = UIAlertController(title: "Alert", message: "Folder name is empty", preferredStyle: UIAlertController.Style.alert)
+                            let refreshAlert = UIAlertController(title: "Alert", message: "Folder name is empty!", preferredStyle: UIAlertController.Style.alert)
                             
                             refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { [weak self] (action: UIAlertAction!) in
                                 guard let self else {
@@ -474,7 +474,7 @@ class HistoryVc: UIViewController {
                         
                         if ar.count > 0 {
                             
-                            let refreshAlert = UIAlertController(title: "Alert", message: "Folder name exists Already", preferredStyle: UIAlertController.Style.alert)
+                            let refreshAlert = UIAlertController(title: "Alert", message: "Folder name exists Already!", preferredStyle: UIAlertController.Style.alert)
                             
                             refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
                                 print("Handle Ok logic here")

@@ -114,7 +114,7 @@ class FolderVc: UIViewController {
             
             let alert = UIAlertController(
                 title: "Warning",
-                message: "No folder has been selected",
+                message: "No folder has been selected!",
                 preferredStyle: UIAlertController.Style.alert
             )
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (alert) -> Void in
@@ -128,7 +128,7 @@ class FolderVc: UIViewController {
             
         }
         
-        let alert = UIAlertController(title: "", message: "Do you want to move the selected files to folder", preferredStyle: .alert)
+        let alert = UIAlertController(title: "", message: "Do you want to move the selected files to folder?", preferredStyle: .alert)
         
         let ok = UIAlertAction(title: "OK", style: .default, handler: { [weak self] action in
             guard let self else {

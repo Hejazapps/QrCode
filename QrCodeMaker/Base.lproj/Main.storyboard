@@ -3588,7 +3588,7 @@
                                                                 <rect key="frame" x="383" y="0.0" width="10" height="260"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </view>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50% OFF" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4k-2U-nNh">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="70% OFF" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4k-2U-nNh">
                                                                 <rect key="frame" x="122" y="15" width="149" height="40"/>
                                                                 <color key="backgroundColor" red="0.12941176470588234" green="0.73333333333333328" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
@@ -3617,7 +3617,7 @@
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yearly Plan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHT-gB-gPx">
                                                                                 <rect key="frame" x="0.0" y="17.333333333333371" width="135.66666666666666" height="20.333333333333329"/>
                                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                                                <color key="textColor" red="0.5568627451" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                         </subviews>
@@ -3633,15 +3633,15 @@
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UnZ-Hb-fey">
                                                                         <rect key="frame" x="0.0" y="95" width="135.66666666666666" height="55"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zep-UK-vcu">
-                                                                                <rect key="frame" x="60.333333333333343" y="0.0" width="15" height="27.666666666666668"/>
-                                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 days Free" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zep-UK-vcu">
+                                                                                <rect key="frame" x="28.333333333333336" y="10" width="79.333333333333314" height="17"/>
+                                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dys Free" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X8B-jj-zWf">
-                                                                                <rect key="frame" x="0.0" y="27.666666666666629" width="135.66666666666666" height="20.333333333333329"/>
-                                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.58 per week" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X8B-jj-zWf">
+                                                                                <rect key="frame" x="0.0" y="31" width="135.66666666666666" height="17"/>
+                                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
@@ -3660,9 +3660,9 @@
                                                                             <constraint firstItem="Rr1-gM-4A6" firstAttribute="centerX" secondItem="UnZ-Hb-fey" secondAttribute="centerX" constant="-8" id="DWn-Ex-WcH"/>
                                                                             <constraint firstItem="Zep-UK-vcu" firstAttribute="centerX" secondItem="UnZ-Hb-fey" secondAttribute="centerX" id="F6I-do-6U8"/>
                                                                             <constraint firstItem="Rr1-gM-4A6" firstAttribute="centerY" secondItem="UnZ-Hb-fey" secondAttribute="centerY" id="LT4-td-o6l"/>
-                                                                            <constraint firstItem="X8B-jj-zWf" firstAttribute="top" secondItem="Zep-UK-vcu" secondAttribute="bottom" id="Qb0-kW-gtn"/>
+                                                                            <constraint firstItem="X8B-jj-zWf" firstAttribute="top" secondItem="Zep-UK-vcu" secondAttribute="bottom" constant="4" id="Qb0-kW-gtn"/>
                                                                             <constraint firstItem="Rr1-gM-4A6" firstAttribute="width" secondItem="UnZ-Hb-fey" secondAttribute="width" id="f0w-bf-JNM"/>
-                                                                            <constraint firstItem="Zep-UK-vcu" firstAttribute="top" secondItem="UnZ-Hb-fey" secondAttribute="top" id="nFg-3O-iSy"/>
+                                                                            <constraint firstItem="Zep-UK-vcu" firstAttribute="top" secondItem="UnZ-Hb-fey" secondAttribute="top" constant="10" id="nFg-3O-iSy"/>
                                                                             <constraint firstItem="X8B-jj-zWf" firstAttribute="leading" secondItem="UnZ-Hb-fey" secondAttribute="leading" id="qpb-zC-RNw"/>
                                                                         </constraints>
                                                                     </view>
@@ -3755,7 +3755,7 @@
                                                                             <constraint firstItem="8la-2K-ygG" firstAttribute="centerX" secondItem="fgI-5b-uy7" secondAttribute="centerX" id="sRk-Wy-b62"/>
                                                                         </constraints>
                                                                     </view>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$1.99 /week" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjH-qx-Imx">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$1.99/week" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjH-qx-Imx">
                                                                         <rect key="frame" x="0.0" y="90" width="108.66666666666667" height="66"/>
                                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3817,7 +3817,7 @@
                                                                             <constraint firstItem="hcv-sL-sNz" firstAttribute="centerY" secondItem="ywv-qH-z2D" secondAttribute="centerY" id="evM-Wp-rzv"/>
                                                                         </constraints>
                                                                     </view>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$4.99 /month" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="esm-IR-Flv">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$4.99/month" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="esm-IR-Flv">
                                                                         <rect key="frame" x="0.0" y="90" width="108.66666666666667" height="66"/>
                                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3948,7 +3948,7 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Privacy Policy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OOz-YP-PFq">
                                                                 <rect key="frame" x="0.0" y="0.0" width="84" height="25"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                                <nil key="textColor"/>
+                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6r5-7g-Fd3">

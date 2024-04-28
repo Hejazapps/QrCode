@@ -468,6 +468,14 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
     
     @objc func methodOfReceivedNotification(notification: Notification) {
         
+        if !UserDefaults.standard.bool(forKey: "create") {
+            
+            return
+            
+        }
+        
+        UserDefaults.standard.set(false, forKey: "create")
+        
         print("it is called hahahahhahaa")
         tableView.reloadData()
         collectionViewForIcon.reloadData()
@@ -670,10 +678,13 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
         
         self.dismissKeyboard()
         print(createDataModelArray)
-        createBtnPressed =  true
         
         
+        UserDefaults.standard.set(true, forKey: "create")
         if self.heightForView.constant < 300  {
+            
+            
+            
             
             if currentBrCode > 0 {
                 if !Store.sharedInstance.isActiveSubscription() {
@@ -715,10 +726,10 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
     }
     func gotoeditView() {
         
-        if createBtnPressed == false {
-            return
-        }
-        createBtnPressed = true
+      
+        
+        print("called has been done")
+     
         
         if self.currentSelectedName == "Location" {
             
@@ -776,7 +787,7 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
                     }
                     else {
                         
-                        let alert = UIAlertController(title: "Note", message: "Enter  fields properly", preferredStyle: UIAlertController.Style.alert)
+                        let alert = UIAlertController(title: "Note", message: "Enter  fields properly!", preferredStyle: UIAlertController.Style.alert)
                         
                         alert.addAction(UIAlertAction(title: "ok", style: UIAlertAction.Style.default, handler: {_ in
                             ////self.dismissView()
@@ -803,7 +814,7 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
                     }
                     else {
                         
-                        let alert = UIAlertController(title: "Note", message: "Enter  fields properly", preferredStyle: UIAlertController.Style.alert)
+                        let alert = UIAlertController(title: "Note", message: "Enter  fields properly!", preferredStyle: UIAlertController.Style.alert)
                         
                         alert.addAction(UIAlertAction(title: "ok", style: UIAlertAction.Style.default, handler: {_ in
                             ////self.dismissView()
@@ -831,7 +842,7 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
                     }
                 }
                 if flag == 0 {
-                    let alert = UIAlertController(title: "Note", message: "Enter  fields properly", preferredStyle: UIAlertController.Style.alert)
+                    let alert = UIAlertController(title: "Note", message: "Enter  fields properly!", preferredStyle: UIAlertController.Style.alert)
                     
                     alert.addAction(UIAlertAction(title: "ok", style: UIAlertAction.Style.default, handler: {_ in
                         ////self.dismissView()
@@ -850,7 +861,7 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
                 
                 if createDataModelArray[0].description.count < 1 {
                     
-                    let alert = UIAlertController(title: "Note", message: "Enter  fields properly", preferredStyle: UIAlertController.Style.alert)
+                    let alert = UIAlertController(title: "Note", message: "Enter  fields properly!", preferredStyle: UIAlertController.Style.alert)
                     
                     alert.addAction(UIAlertAction(title: "ok", style: UIAlertAction.Style.default, handler: {_ in
                         ////self.dismissView()
@@ -868,7 +879,7 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
             
             if string == nil, !currentSelectedName.containsIgnoringCase(find: "vcard") {
                 
-                let alert = UIAlertController(title: "Note", message: "Enter  fields properly", preferredStyle: UIAlertController.Style.alert)
+                let alert = UIAlertController(title: "Note", message: "Enter  fields properly!", preferredStyle: UIAlertController.Style.alert)
                 
                 alert.addAction(UIAlertAction(title: "ok", style: UIAlertAction.Style.default, handler: {_ in
                     ////self.dismissView()
@@ -902,7 +913,7 @@ class CreateVc: UIViewController, sendIndex, UITextViewDelegate, EKEventEditView
                     
                 }
                 else {
-                    let alert = UIAlertController(title: "Note", message: "Invalid Code", preferredStyle: UIAlertController.Style.alert)
+                    let alert = UIAlertController(title: "Note", message: "Invalid Code!", preferredStyle: UIAlertController.Style.alert)
                     
                     alert.addAction(UIAlertAction(title: "ok", style: UIAlertAction.Style.default, handler: {_ in
                         ////self.dismissView()

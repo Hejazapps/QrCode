@@ -147,7 +147,7 @@ class ButtonView: UIView {
             
             let alert = UIAlertController(
                 title: "Warning",
-                message: "No file has been selected",
+                message: "No file has been selected!",
                 preferredStyle: UIAlertController.Style.alert
             )
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (alert) -> Void in
@@ -208,7 +208,7 @@ class ButtonView: UIView {
             
             let alert = UIAlertController(
                 title: "Warning",
-                message: "No file has been selected",
+                message: "No file has been selected!",
                 preferredStyle: UIAlertController.Style.alert
             )
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (alert) -> Void in
@@ -225,7 +225,7 @@ class ButtonView: UIView {
         
         let alert = UIAlertController(
             title: "Warning",
-            message: "Do you want to delete the file",
+            message: "Do you want to delete the file?",
             preferredStyle: UIAlertController.Style.alert
         )
         alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (alert) -> Void in

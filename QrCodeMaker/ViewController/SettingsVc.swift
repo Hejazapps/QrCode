@@ -182,7 +182,7 @@ class SettingsVc: UIViewController, MFMailComposeViewControllerDelegate {
     
     func showAlert() {
         
-        let alert = UIAlertController(title: "", message: "Check Your Internet", preferredStyle: .alert)
+        let alert = UIAlertController(title: "", message: "Check Your Internet!", preferredStyle: .alert)
         
         let ok = UIAlertAction(title: "OK", style: .default, handler: { action in
         })
@@ -226,7 +226,7 @@ class SettingsVc: UIViewController, MFMailComposeViewControllerDelegate {
             present(mail, animated: true)
             
         } else {
-            let alert = UIAlertController(title: "Note", message: "Email is not configured", preferredStyle: UIAlertController.Style.alert)
+            let alert = UIAlertController(title: "Note", message: "Email is not configured!", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }

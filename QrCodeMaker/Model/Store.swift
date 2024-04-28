@@ -310,10 +310,25 @@ class Store: NSObject {
                     switch purchaseResult {
                     case .purchased(let expiryDate, let items):
                         print("\(productIds) are purchased since \(expiryDate)\n\(items)\n")
+                        
+                        for item in items {
+                            
+                            let productId = item.productId
+                            UserDefaults.standard.set(true, forKey: productId)
+                        
+                        }
+                        
+                        
                         self.setDate(date: expiryDate)
                         
                     case .expired(let expiryDate, let items):
                         print("\(productIds) are expired since \(expiryDate)\n\(items)\n")
+                        for item in items {
+                            
+                            let productId = item.productId
+                            UserDefaults.standard.set(false, forKey: productId)
+                        
+                        }
                         
                         
                     case .notPurchased:

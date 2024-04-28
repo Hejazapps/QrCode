@@ -51,6 +51,12 @@ class SubscriptionVc: UIViewController,UIScrollViewDelegate {
     
     @IBAction func restorePurchase(_ sender: Any) {
         
+        if currentReachabilityStatus == .notReachable {
+            self.showAlert()
+            return
+            
+        }
+        
         
         ProgressHUD.animate("Restore...", interaction: false)
         
@@ -64,14 +70,14 @@ class SubscriptionVc: UIViewController,UIScrollViewDelegate {
                 Store.sharedInstance.verifyReciept()
                 ProgressHUD.dismiss()
                 
-                let alert = UIAlertController(title: "", message: "Restore purhase done", preferredStyle: UIAlertController.Style.alert)
+                let alert = UIAlertController(title: "", message: "Restore purhase done.", preferredStyle: UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
                 
             }
             else {
                 
-                let alert = UIAlertController(title: "", message: "Nothing to restore", preferredStyle: UIAlertController.Style.alert)
+                let alert = UIAlertController(title: "", message: "Nothing to restore!", preferredStyle: UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
                 ProgressHUD.dismiss()
@@ -154,6 +160,22 @@ class SubscriptionVc: UIViewController,UIScrollViewDelegate {
             label.text  = "Purchased"
             rightArrowButton.isHidden = true
         }
+        
+        if Store.sharedInstance.isActiveSubscription() {
+            
+            if UserDefaults.standard.bool(forKey: PoohWisdomProducts.weeklySub) {
+                weeklyView.alpha = 0.3
+            }
+            
+            if UserDefaults.standard.bool(forKey: PoohWisdomProducts.yearlySub) {
+                mostPopularView.alpha = 0.3
+            }
+            if UserDefaults.standard.bool(forKey: PoohWisdomProducts.monthlySub) {
+                monthlyView.alpha = 0.3
+            }
+            
+        }
+        
     }
     
     @IBAction func gotoDismiss(_ sender: Any) {
@@ -230,8 +252,15 @@ class SubscriptionVc: UIViewController,UIScrollViewDelegate {
                 if self.isfromPro {
                     
                     self.dismiss(animated: true)
+                    
+                    self.dismiss(animated: true) {
+                        NotificationCenter.default.post(name: Notification.Name("purchaseNoti"), object: nil)
+                    }
                 }
-                NotificationCenter.default.post(name: Notification.Name("purchaseNoti"), object: nil)
+                else {
+                    NotificationCenter.default.post(name: Notification.Name("purchaseNoti"), object: nil)
+                }
+              
 
             case .error(let error):
                 switch error.code {
@@ -245,6 +274,7 @@ class SubscriptionVc: UIViewController,UIScrollViewDelegate {
                 case .cloudServiceNetworkConnectionFailed: ProgressHUD.dismiss()
                 case .cloudServiceRevoked: ProgressHUD.dismiss()
                 default: print((error as NSError).localizedDescription)
+                    ProgressHUD.dismiss()
                 }
             }
         }
@@ -356,7 +386,7 @@ class SubscriptionVc: UIViewController,UIScrollViewDelegate {
     
     func showAlert() {
         
-        let alert = UIAlertController(title: "", message: "Check Your Internet", preferredStyle: .alert)
+        let alert = UIAlertController(title: "", message: "Check Your Internet!", preferredStyle: .alert)
             
              let ok = UIAlertAction(title: "OK", style: .default, handler: { action in
              })

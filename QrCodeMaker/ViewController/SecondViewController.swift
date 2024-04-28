@@ -248,7 +248,7 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate {
         if(currentBarCode.count < 1 && !isCodeFound)
         {
             print("halua2")
-            let alert = UIAlertController(title: "Note", message: "Can not Detect Any Code", preferredStyle: UIAlertController.Style.alert)
+            let alert = UIAlertController(title: "Note", message: "Can not Detect Any Code!", preferredStyle: UIAlertController.Style.alert)
             
             alert.addAction(UIAlertAction(title: "ok", style: UIAlertAction.Style.default, handler: {_ in
                 self.dismiss(animated: true) { [weak self] in
@@ -296,7 +296,7 @@ class SecondViewController: UIViewController, UINavigationControllerDelegate {
             else {
                 
                 print("halua")
-                let alert = UIAlertController(title: "Note", message: "Can not Detect Any Code", preferredStyle: UIAlertController.Style.alert)
+                let alert = UIAlertController(title: "Note", message: "Can not Detect Any Code!", preferredStyle: UIAlertController.Style.alert)
                 
                 alert.addAction(UIAlertAction(title: "ok", style: UIAlertAction.Style.default, handler: {_ in
                     
